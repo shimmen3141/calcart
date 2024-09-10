@@ -2,18 +2,13 @@ import React, { useState } from "react";
 import IngredientInput from "./IngredientInput";
 import "../App.css";
 
-const IngredientsContainer = ({ onAllCartsChange }) => {
-  const [allCarts, setAllCarts] = useState([
-    { id: Date.now(), ingredients: [], cartCount: 1 },
-    { id: Date.now() + 1, ingredients: [], cartCount: 1 },
-  ]);
+const IngredientsContainer = ({ allCarts, setAllCarts }) => {
 
   const handleIngredientChange = (id, newIngredients) => {
     const newAllCarts = allCarts.map((cart) =>
       cart.id === id ? { ...cart, ingredients: newIngredients } : cart
     );
     setAllCarts(newAllCarts);
-    onAllCartsChange(newAllCarts);
   };
 
   const handleCartCountChange = (id, newCartCount) => {
@@ -21,7 +16,6 @@ const IngredientsContainer = ({ onAllCartsChange }) => {
       cart.id === id ? { ...cart, cartCount: newCartCount } : cart
     );
     setAllCarts(newAllCarts);
-    onAllCartsChange(newAllCarts);
   };
 
   const handleClearInput = (id) => {
@@ -29,13 +23,11 @@ const IngredientsContainer = ({ onAllCartsChange }) => {
       cart.id === id ? { ...cart, ingredients: [] } : cart
     );
     setAllCarts(newAllCarts);
-    onAllCartsChange(newAllCarts);
   };
 
   const handleRemoveInput = (id) => {
     const newAllCarts = allCarts.filter((cart) => cart.id !== id);
     setAllCarts(newAllCarts);
-    onAllCartsChange(newAllCarts);
   };
 
   const handleAddInput = () => {

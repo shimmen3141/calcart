@@ -2,6 +2,9 @@ import React from "react";
 import CopyButton from "./CopyButton";
 
 const ShoppingList = ({ items }) => {
+
+    console.log("ShoppingList");
+
   // 文字列に含まれる数値を全てcartCount倍する関数
   const multiplyQuantities = (info, cartCount) => {
     return info.replace(/(\d+(?:\.\d+)?)/g, (match) => {

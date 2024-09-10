@@ -7,7 +7,10 @@ import {
 import IngredientsContainer from "./components/IngredientsContainer";
 
 const App = () => {
-  const [allCarts, setAllCarts] = useState([]);
+  const [allCarts, setAllCarts] = useState([
+    { id: Date.now(), ingredients: [], cartCount: 1 },
+    { id: Date.now() + 1, ingredients: [], cartCount: 1 },
+  ]);
 
   const organizeShoppingList = () => {
     return allCarts.flatMap((cart) =>
@@ -22,7 +25,7 @@ const App = () => {
   return (
     <div>
       <h1>Calcart</h1>
-      <IngredientsContainer onAllCartsChange={setAllCarts} />
+      <IngredientsContainer allCarts={allCarts} setAllCarts={setAllCarts} />
       <ShoppingList items={organizeShoppingList()} />
     </div>
   );
