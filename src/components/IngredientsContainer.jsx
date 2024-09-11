@@ -40,10 +40,11 @@ const IngredientsContainer = ({ allCarts, setAllCarts }) => {
   return (
     <div>
       <div className="input-group-container">
-        {allCarts.map((cart) => (
+        {allCarts.map((cart, index) => (
           <div key={cart.id} className="input-group">
             <IngredientInput
               cartID={cart.id}
+              cartNumber={index}
               onChange={(newIngredients) =>
                 handleIngredientChange(cart.id, newIngredients)
               }
