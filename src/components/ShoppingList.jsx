@@ -1,5 +1,5 @@
 import React from "react";
-import CopyButton from "./CopyButton";
+import { CopyButton } from "./index";
 
 const ShoppingList = ({ items }) => {
 
@@ -91,10 +91,11 @@ const ShoppingList = ({ items }) => {
       <h2>
         買い出しリスト <CopyButton text={shoppingListText} />
       </h2>
+      {/* <div>{shoppingListText}</div> */}
       <ul>
         {secondStageAggregation.map((item, index) => (
           <li key={index}>
-            {item.name}&nbsp;&nbsp;{item.info}
+            {item.name}  {item.info}
           </li>
         ))}
       </ul>
