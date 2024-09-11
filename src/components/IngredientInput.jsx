@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import gramPerTeaspoon from "../dataset";
 
-const IngredientInput = ({ onChange, cartID, onClear, onRemove }) => {
+const IngredientInput = ({ onChange, cartNumber, cartID, onClear, onRemove }) => {
   // 全角を半角に変換する関数
-  function FullWidthToHalfWidth(str) {
+  function fullWidthToHalfWidth(str) {
     // 半角変換
     var halfVal = str.replace(/[！-～]/g, function (tmpStr) {
       // 文字コードをシフト
@@ -21,7 +21,7 @@ const IngredientInput = ({ onChange, cartID, onClear, onRemove }) => {
   }
 
   // 分数を小数に変換する関数
-  function FractionsToDecimals(str) {
+  function fractionsToDecimals(str) {
     // "数値と数値/数値" の形式の分数を小数に変換
     str = str.replace(
       /(\d+)\s*と\s*(\d+)\s*\/\s*(\d+)/g,
@@ -45,7 +45,7 @@ const IngredientInput = ({ onChange, cartID, onClear, onRemove }) => {
   }
 
   // 大さじ・小さじ表記をグラム表記に変換する関数
-  function SpoonToGram(name, info) {
+  function spoonToGram(name, info) {
     // nameがgramPerTeaspoonに含まれているか確認
     let seasoningName = Object.keys(gramPerTeaspoon).find((key) =>
       name.includes(key)
@@ -91,8 +91,8 @@ const IngredientInput = ({ onChange, cartID, onClear, onRemove }) => {
 
     const lines = text
       .split("\n")
-      .map((line) => FullWidthToHalfWidth(line)) // 全角を半角に変換
-      .map((line) => FractionsToDecimals(line)); // 分数を小数に変換
+      .map((line) => fullWidthToHalfWidth(line)) // 全角を半角に変換
+      .map((line) => fractionsToDecimals(line)); // 分数を小数に変換
 
     const parsedIngredients = lines
       .filter((line) => line.trim()) // 空行を無視
@@ -105,7 +105,7 @@ const IngredientInput = ({ onChange, cartID, onClear, onRemove }) => {
             ? quantityWithUnit.replace(/\s+/g, "")
             : "適量";
 
-        info = SpoonToGram(name, info);
+        info = spoonToGram(name, info);
 
         return { name, info };
       })
@@ -121,7 +121,7 @@ const IngredientInput = ({ onChange, cartID, onClear, onRemove }) => {
 
   return (
     <div>
-      <h2>カート{cartID + 1}</h2>
+      <h2>カート{cartNumber + 1}</h2>
       <div>材料リストを入力：</div>
       <textarea
         value={inputText}
