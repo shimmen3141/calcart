@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import IngredientInput from "./IngredientInput";
+import { IngredientInput } from "./index";
 import "../App.css";
 
 const IngredientsContainer = ({ allCarts, setAllCarts }) => {
