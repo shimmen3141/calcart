@@ -1,7 +1,17 @@
 import React, { useState } from "react";
 import gramPerTeaspoon from "../dataset";
 
-const IngredientInput = ({ onChange, cartNumber, cartID, onClear, onRemove }) => {
+const IngredientInput = React.memo(({
+  cart,
+  onChange,
+  cartNumber,
+  cartID,
+  onClear,
+  onRemove,
+}) => {
+
+  console.log(`IngredientInput${cartNumber}`);
+
   // 全角を半角に変換する関数
   function fullWidthToHalfWidth(str) {
     // 半角変換
@@ -20,7 +30,7 @@ const IngredientInput = ({ onChange, cartNumber, cartID, onClear, onRemove }) =>
       .replace(/〜/g, "~");
   }
 
-  // 分数を小数に変換する関数
+  // 文字列中の分数を小数に変換する関数
   function fractionsToDecimals(str) {
     // "数値と数値/数値" の形式の分数を小数に変換
     str = str.replace(
@@ -44,7 +54,7 @@ const IngredientInput = ({ onChange, cartNumber, cartID, onClear, onRemove }) =>
     return str;
   }
 
-  // 大さじ・小さじ表記をグラム表記に変換する関数
+  // 文字列中の大さじ・小さじ表記をグラム表記に変換する関数
   function spoonToGram(name, info) {
     // nameがgramPerTeaspoonに含まれているか確認
     let seasoningName = Object.keys(gramPerTeaspoon).find((key) =>
@@ -136,6 +146,6 @@ const IngredientInput = ({ onChange, cartNumber, cartID, onClear, onRemove }) =>
       </div>
     </div>
   );
-};
+});
 
 export default IngredientInput;

@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useCallback } from "react";
 import { IngredientInput } from "./index";
 import "../App.css";
 
 const IngredientsContainer = ({ allCarts, setAllCarts }) => {
+
+  console.log("IngredientsContainer");
 
   const handleIngredientChange = (id, newIngredients) => {
     const newAllCarts = allCarts.map((cart) =>
@@ -43,6 +45,7 @@ const IngredientsContainer = ({ allCarts, setAllCarts }) => {
         {allCarts.map((cart, index) => (
           <div key={cart.id} className="input-group">
             <IngredientInput
+              cart={cart}
               cartID={cart.id}
               cartNumber={index}
               onChange={(newIngredients) =>
