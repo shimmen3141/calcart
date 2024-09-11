@@ -2,14 +2,21 @@ import React from "react";
 import { CopyButton } from "./index";
 
 const ShoppingList = ({ items }) => {
-
-    console.log("ShoppingList");
+  console.log("ShoppingList");
 
   // 文字列に含まれる数値を全てcartCount倍する関数
   const multiplyQuantities = (info, cartCount) => {
     return info.replace(/(\d+(?:\.\d+)?)/g, (match) => {
       // 小数第3位で四捨五入
       return Math.round(parseFloat(match) * cartCount * 1000) / 1000;
+    });
+  };
+
+  // 文字列に含まれる数値を全て小数第3位で四捨五入する関数
+  const roundQuantities = (info) => {
+    return info.replace(/(\d+(?:\.\d+)?)/g, (match) => {
+      // 小数第3位で四捨五入
+      return Math.round(parseFloat(match) * 1000) / 1000;
     });
   };
 
@@ -52,8 +59,8 @@ const ShoppingList = ({ items }) => {
           combinedInfo += existingParts[i];
         }
       }
-
-      existingItem.info = combinedInfo;
+      // 文字列に含まれる数値を小数第3位で四捨五入
+      existingItem.info = roundQuantities(combinedInfo);
     } else {
       acc.push({
         ...item,
