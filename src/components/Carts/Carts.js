@@ -1,16 +1,19 @@
-import React, { useCallback } from "react";
-import { Cart } from "./index";
-import "../App.css";
+import React from "react";
+import { Cart } from "../index";
+import "../../App.css";
 
 const Carts = ({ allCarts, setAllCarts }) => {
-
   console.log("Carts");
 
+  const maxCarts = 5;
+
   const handleAddInput = () => {
-    setAllCarts([
-      ...allCarts,
-      { id: Date.now(), ingredients: [], cartCount: 1 },
-    ]);
+    if (allCarts.length < maxCarts) {
+      setAllCarts([
+        ...allCarts,
+        { id: Date.now(), ingredients: [], cartCount: 1 },
+      ]);
+    }
   };
 
   return (
@@ -27,7 +30,9 @@ const Carts = ({ allCarts, setAllCarts }) => {
           </div>
         ))}
       </div>
-      <button onClick={handleAddInput}>入力欄を追加</button>
+      <button onClick={handleAddInput} disabled={allCarts.length >= maxCarts}>
+        入力欄を追加
+      </button>
     </div>
   );
 };
