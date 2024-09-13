@@ -1,10 +1,10 @@
 import React, { useCallback } from "react";
-import { IngredientInput } from "./index";
+import { Cart } from "./index";
 import "../App.css";
 
-const IngredientsContainer = ({ allCarts, setAllCarts }) => {
+const Carts = ({ allCarts, setAllCarts }) => {
 
-  console.log("IngredientsContainer");
+  console.log("Carts");
 
   const handleAddInput = () => {
     setAllCarts([
@@ -18,7 +18,7 @@ const IngredientsContainer = ({ allCarts, setAllCarts }) => {
       <div className="input-group-container">
         {allCarts.map((cart, index) => (
           <div key={cart.id} className="input-group">
-            <IngredientInput
+            <Cart
               allCarts={allCarts}
               setAllCarts={setAllCarts}
               cartID={cart.id}
@@ -32,4 +32,4 @@ const IngredientsContainer = ({ allCarts, setAllCarts }) => {
   );
 };
 
-export default IngredientsContainer;
+export default Carts;
