@@ -1,40 +1,18 @@
 import React from "react";
-import { CopyButton } from "./index";
+import {
+  multiplyQuantities,
+  roundQuantities,
+  containsNumber,
+  CopyButton,
+  removeNumbers,
+  splitIntoNumAndChar,
+} from "../index";
 
 const ShoppingList = ({ items }) => {
   console.log("ShoppingList");
 
-  // 文字列に含まれる数値を全てcartCount倍する関数
-  const multiplyQuantities = (info, cartCount) => {
-    return info.replace(/(\d+(?:\.\d+)?)/g, (match) => {
-      // 小数第3位で四捨五入
-      return Math.round(parseFloat(match) * cartCount * 1000) / 1000;
-    });
-  };
-
-  // 文字列に含まれる数値を全て小数第3位で四捨五入する関数
-  const roundQuantities = (info) => {
-    return info.replace(/(\d+(?:\.\d+)?)/g, (match) => {
-      // 小数第3位で四捨五入
-      return Math.round(parseFloat(match) * 1000) / 1000;
-    });
-  };
-
-  // 数値を含むかどうかを確認する関数
-  const containsNumber = (str) => /\d/.test(str);
-
-  // 数値を除いた文字列を抽出する関数
-  const removeNumbers = (str) => {
-    return str.replace(/\d+(?:\.\d+)?/g, "").trim();
-  };
-
-  // 数値とそれ以外の部分をマッチさせて分割する関数
-  const splitInfo = (info) => {
-    return info.split(/(\d+(?:\.\d+)?)/g).filter(Boolean);
-  };
-
   // 第一段階: name と infoの形式 が等しい要素を集約
-  const firstStageAggregation = items.reduce((acc, item) => {
+  const firstAggregation = items.reduce((acc, item) => {
     // info に含まれる数値を cartCount 倍したもの
     const updatedInfo = multiplyQuantities(item.info, item.cartCount);
 
@@ -46,8 +24,8 @@ const ShoppingList = ({ items }) => {
     );
 
     if (existingItem) {
-      const existingParts = splitInfo(existingItem.info);
-      const newParts = splitInfo(updatedInfo);
+      const existingParts = splitIntoNumAndChar(existingItem.info);
+      const newParts = splitIntoNumAndChar(updatedInfo);
       let combinedInfo = "";
 
       // 数値と文字列を交互に処理して結合
@@ -71,7 +49,7 @@ const ShoppingList = ({ items }) => {
   }, []);
 
   // 第二段階: name が同じで infoの形式 が異なる要素の info を + でつなげて集約
-  const secondStageAggregation = firstStageAggregation.reduce((acc, item) => {
+  const secondAggregation = firstAggregation.reduce((acc, item) => {
     // name が等しい要素を取得
     const existingItem = acc.find((i) => i.name === item.name);
 
@@ -89,7 +67,7 @@ const ShoppingList = ({ items }) => {
     return acc;
   }, []);
 
-  const shoppingListText = secondStageAggregation
+  const shoppingListText = secondAggregation
     .map((item) => `${item.name}  ${item.info}`)
     .join("\n");
 
@@ -100,9 +78,9 @@ const ShoppingList = ({ items }) => {
       </h2>
       {/* <div>{shoppingListText}</div> */}
       <ul>
-        {secondStageAggregation.map((item, index) => (
+        {secondAggregation.map((item, index) => (
           <li key={index}>
-            {item.name}  {item.info}
+            {item.name} {item.info}
           </li>
         ))}
       </ul>
