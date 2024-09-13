@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 import {
   ShoppingList,
-  IngredientsContainer,
+  Carts,
 } from "./components/index";
 
 const App = () => {
@@ -26,7 +26,7 @@ const App = () => {
   return (
     <div>
       <h1>Calcart</h1>
-      <IngredientsContainer allCarts={allCarts} setAllCarts={setAllCarts} />
+      <Carts allCarts={allCarts} setAllCarts={setAllCarts} />
       <ShoppingList items={organizeIngredient()} />
     </div>
   );

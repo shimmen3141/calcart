@@ -1,7 +1,7 @@
 import React from "react";
 import useCart from "../hooks/useCart";
 
-const IngredientInput = React.memo(
+const Cart = React.memo(
   ({
     allCarts,
     setAllCarts,
@@ -16,7 +16,7 @@ const IngredientInput = React.memo(
       hadleCartCountChange,
     } = useCart({allCarts, setAllCarts, cartID});
 
-    console.log(`IngredientInput${cartNumber}`);
+    console.log(`Cart${cartNumber}`);
 
     return (
       <div>
@@ -45,4 +45,4 @@ const IngredientInput = React.memo(
   }
 );
 
-export default IngredientInput;
+export default Cart;
