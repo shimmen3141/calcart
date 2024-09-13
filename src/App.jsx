@@ -12,13 +12,15 @@ const App = () => {
   ]);
 
   const organizeIngredient = () => {
-    return allCarts.flatMap((cart) =>
-      cart.ingredients.map((ingredient) => ({
-        name: ingredient.name,
-        info: ingredient.info,
-        cartCount: cart.cartCount,
-      }))
-    );
+    return allCarts
+      .filter((cart) => cart.cartCount > 0)
+      .flatMap((cart) =>
+        cart.ingredients.map((ingredient) => ({
+          name: ingredient.name,
+          info: ingredient.info,
+          cartCount: cart.cartCount,
+        }))
+      );
   };
 
   return (
