@@ -1,4 +1,4 @@
-// 全角の記号等を半角に変換する関数
+// 全角の記号、アルファベット等を半角に変換する関数
 export default function fullWidthToHalfWidth(str) {
   // 半角変換
   var halfVal = str.replace(/[！-～]/g, function (tmpStr) {
