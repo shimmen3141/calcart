@@ -1,21 +1,13 @@
 import React from "react";
 import { Cart } from "../index";
+import useCarts from "./useCarts";
 import "../../App.css";
 
 const Carts = ({ allCarts, setAllCarts }) => {
   console.log("Carts");
 
-  const maxCarts = 5;
-
-  const handleAddInput = () => {
-    if (allCarts.length < maxCarts) {
-      setAllCarts([
-        ...allCarts,
-        { id: Date.now(), ingredients: [], cartCount: 1 },
-      ]);
-    }
-  };
-
+  const { hasMaxCarts, handleAddInput } = useCarts({ allCarts, setAllCarts });
+  
   return (
     <div>
       <div className="input-group-container">
@@ -30,7 +22,7 @@ const Carts = ({ allCarts, setAllCarts }) => {
           </div>
         ))}
       </div>
-      <button onClick={handleAddInput} disabled={allCarts.length >= maxCarts}>
+      <button onClick={handleAddInput} disabled={hasMaxCarts()}>
         入力欄を追加
       </button>
     </div>
