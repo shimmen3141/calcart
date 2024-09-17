@@ -50,8 +50,15 @@ const useCart = ({ allCarts, setAllCarts, cartID }) => {
 
   // ✕ボタンの押下により発火する関数
   const handleRemove = () => {
-    const newAllCarts = allCarts.filter((cart) => cart.id !== cartID);
-    setAllCarts(newAllCarts);
+    if (allCarts.length > 1) {
+      const newAllCarts = allCarts.filter((cart) => cart.id !== cartID);
+      setAllCarts(newAllCarts);
+    }
+  };
+
+  // カート数が上限に達したか判定する関数
+  const isLastCart = () => {
+    return allCarts.length <= 1;
   };
 
   // カート台数のスピンボタン変更時に発火する関数
@@ -69,6 +76,7 @@ const useCart = ({ allCarts, setAllCarts, cartID }) => {
     handleInputChange,
     handleClear,
     handleRemove,
+    isLastCart,
     hadleCartCountChange,
   };
 };

@@ -7,6 +7,7 @@ const Cart = React.memo(({ allCarts, setAllCarts, cartNumber, cartID }) => {
     handleInputChange,
     handleClear,
     handleRemove,
+    isLastCart,
     hadleCartCountChange,
   } = useCart({ allCarts, setAllCarts, cartID });
 
@@ -25,7 +26,7 @@ const Cart = React.memo(({ allCarts, setAllCarts, cartNumber, cartID }) => {
       />
       <div>
         <button onClick={handleClear}>クリア</button>
-        <button onClick={handleRemove}>×</button>
+        <button onClick={handleRemove} disabled={isLastCart()}>×</button>
       </div>
       <div>カート台数：</div>
       <input
