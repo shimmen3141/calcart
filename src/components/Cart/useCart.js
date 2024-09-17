@@ -5,7 +5,13 @@ import {
   spoonToGram,
 } from "../index";
 
-const useCart = ({ allCarts, setAllCarts, cartID }) => {
+const useCart = ({
+  allCarts,
+  setAllCarts,
+  cartID,
+  cartNumber,
+  cartRefs,
+}) => {
   const [inputText, setInputText] = useState("");
 
   // 入力欄の変更により発火する関数
@@ -53,6 +59,18 @@ const useCart = ({ allCarts, setAllCarts, cartID }) => {
     if (allCarts.length > 1) {
       const newAllCarts = allCarts.filter((cart) => cart.id !== cartID);
       setAllCarts(newAllCarts);
+
+      setTimeout(() => {
+        // 削除されたカートの次のカートにスクロール
+        if (cartRefs.current[cartNumber]) {
+          cartRefs.current[cartNumber].scrollIntoView({ behavior: "smooth" });
+        } else if (cartRefs.current[cartNumber - 1]) {
+          // 次のカートが存在しない場合は、前のカートにスクロール
+          cartRefs.current[cartNumber - 1].scrollIntoView({
+            behavior: "smooth",
+          });
+        }
+      }, 0);
     }
   };
 
