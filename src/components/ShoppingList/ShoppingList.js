@@ -10,14 +10,14 @@ const ShoppingList = ({ items }) => {
   return (
     <div>
       <h2>
-        買い出しリスト <CopyButton text={shoppingListText} />
+        買い物リスト <CopyButton text={shoppingListText} />
       </h2>
       {/* <div>{shoppingListText}</div> */}
       <ul>
         {shoppingList.map((item, index) => (
-          <li key={index}>
-            {item.name} {item.info}
-          </li>
+          <div key={index}>
+            <input type="checkbox"/> {item.name} {item.info}
+          </div>
         ))}
       </ul>
     </div>

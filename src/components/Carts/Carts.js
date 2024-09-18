@@ -1,5 +1,5 @@
 import React from "react";
-import { Cart } from "../index";
+import { Cart, InputModeToggleButton } from "../index";
 import { motion, AnimatePresence } from "framer-motion";
 import useCarts from "./useCarts";
 import "./Carts.css";
@@ -7,14 +7,22 @@ import "./Carts.css";
 const Carts = ({ allCarts, setAllCarts }) => {
   console.log("Carts");
 
-  const { hasMaxCarts, handleAddCart, setRefs, cartRefs } =
-    useCarts({
-      allCarts,
-      setAllCarts,
-    });
+  const {
+    hasMaxCarts,
+    handleAddCart,
+    setRefs,
+    cartRefs,
+  } = useCarts({
+    allCarts,
+    setAllCarts,
+  });
   
   return (
     <div>
+      {/* <InputModeToggleButton
+        inputMode={inputMode}
+        setInputMode={setInputMode}
+      /> */}
       <div className="input-group-container">
         <AnimatePresence>
           {allCarts.map((cart, index) => (

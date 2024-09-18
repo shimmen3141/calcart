@@ -3,6 +3,7 @@ export { default as Cart } from "./Cart/Cart";
 export { default as Carts } from "./Carts/Carts";
 export { default as ShoppingList } from "./ShoppingList/ShoppingList";
 export { default as CopyButton } from "./CopyButton/CopyButton";
+export { default as InputModeToggleButton} from "./InputModeToggleButton/InputModeToggleButton";
 
 // functions
 export { default as containsNumber } from "../functions/containsNumber";
