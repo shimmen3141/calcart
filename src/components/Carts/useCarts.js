@@ -1,6 +1,7 @@
-import { useRef } from "react";
+import { useState, useRef } from "react";
 
 const useCarts = ({ allCarts, setAllCarts }) => {
+
   // 全てのカートに対応する ref を格納するための配列
   const cartRefs = useRef([]);
 
@@ -17,10 +18,29 @@ const useCarts = ({ allCarts, setAllCarts }) => {
       ]);
 
       // 新しい入力欄にスクロール
+      //   setTimeout(() => {
+      //     const lastIndex = allCarts.length; // 新しいカートが追加された後の最後のカートのインデックス
+      //     if (cartRefs.current[lastIndex]) {
+      //         console.log(lastIndex);
+      //       cartRefs.current[lastIndex].scrollIntoView({ behavior: "smooth", block: "end" });
+      //     }
+      //   }, 0);
+
+      // 新しい入力欄にスクロール
       setTimeout(() => {
-        const lastIndex = allCarts.length; // 新しいカートが追加された後の最後のカートのインデックス
+        // 追加されたカートの index
+        const lastIndex = allCarts.length;
+        // スクロールの親要素を指定
+        const cartContainer = document.querySelector(".input-group-container");
+
         if (cartRefs.current[lastIndex]) {
-          cartRefs.current[lastIndex].scrollIntoView({ behavior: "smooth" });
+          const targetCart = cartRefs.current[lastIndex];
+          const targetLeftPosition = targetCart.offsetLeft;
+            // 追加されたカートにスクロール
+          cartContainer.scrollTo({
+            left: targetLeftPosition,
+            behavior: "smooth",
+          });
         }
       }, 0);
     }
@@ -39,7 +59,12 @@ const useCarts = ({ allCarts, setAllCarts }) => {
     }
   };
 
-  return { hasMaxCarts, handleAddCart, setRefs, cartRefs };
+  return {
+    hasMaxCarts,
+    handleAddCart,
+    setRefs,
+    cartRefs,
+  };
 };
 
 export default useCarts;
