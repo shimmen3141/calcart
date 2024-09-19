@@ -1,5 +1,5 @@
 import React from "react";
-import { Cart, InputModeToggleButton } from "../index";
+import { Cart } from "../index";
 import { motion, AnimatePresence } from "framer-motion";
 import useCarts from "./useCarts";
 import "./Carts.css";
@@ -19,10 +19,6 @@ const Carts = ({ allCarts, setAllCarts }) => {
   
   return (
     <div>
-      {/* <InputModeToggleButton
-        inputMode={inputMode}
-        setInputMode={setInputMode}
-      /> */}
       <div className="input-group-container">
         <AnimatePresence>
           {allCarts.map((cart, index) => (
