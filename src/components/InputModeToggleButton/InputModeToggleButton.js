@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./InputModeToggleButton.css";
 
-const InputModeToggleButton = ({ inputMode, setInputMode }) => {
-  //const [inputMode, setInputMode] = useState("auto");
+const InputModeToggleButton = () => {
+  const [inputMode, setInputMode] = useState("auto");
 
   return (
     <div className="toggle-buttons">
