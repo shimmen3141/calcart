@@ -164,6 +164,7 @@ const useCart = ({
     handleRemove,
     isLastCart,
     hadleCartCountChange,
+    inputFormat,
   };
 };
 
