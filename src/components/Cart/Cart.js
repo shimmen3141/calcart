@@ -16,6 +16,7 @@ const Cart = React.memo(
       handleRemove,
       isLastCart,
       hadleCartCountChange,
+      inputFormat,
     } = useCart({
       allCarts,
       setAllCarts,
@@ -28,7 +29,8 @@ const Cart = React.memo(
 
     return (
       <div>
-        <h2>カート{cartNumber + 1}</h2>
+        <h2>カート{cartNumber + 1} </h2>
+        <div>{inputFormat}</div>
         <div>材料リストを入力：</div>
         <textarea
           value={inputText}
