@@ -19,13 +19,16 @@ const InputFormatTag = ({ inputFormat }) => {
     <div>
       <div
         style={{
+          height: "auto",
+          width: "5rem",
+          margin: "0 0 0 auto",
           padding: "8px 12px",
           backgroundColor: "#f0f0f0",
           borderRadius: "8px",
           cursor: "pointer",
           border: "1px solid #ddd",
         }}
-        //onClick={() => setIsModalOpen(true)} // タグをクリックでモーダルを開く
+        //onClick={() => setIsModalOpen(true)}
       >
         {getTagLabel()}
       </div>
