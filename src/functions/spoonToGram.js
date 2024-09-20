@@ -16,7 +16,7 @@ export default function spoonToGram(name, info) {
 
     // 大さじ表記をグラム表記に変換
     info = info.replace(
-      /大\s*さ\s*じ\s*(\d+(?:\.\d+)?)/g,
+      /大\s*さ\s*じ\s*(\d+(?:\.\d+)?)(?:\s*杯)?/g,
       (match, tablespoon) => {
         const grams =
           3 * gramPerTeaspoon[seasoningName] * parseFloat(tablespoon);
@@ -26,7 +26,7 @@ export default function spoonToGram(name, info) {
 
     // 小さじ表記をグラム表記に変換
     info = info.replace(
-      /小\s*さ\s*じ\s*(\d+(?:\.\d+)?)/g,
+      /小\s*さ\s*じ\s*(\d+(?:\.\d+)?)(?:\s*杯)?/g,
       (match, teaspoon) => {
         const grams = gramPerTeaspoon[seasoningName] * parseFloat(teaspoon);
         return `${grams}g`;
