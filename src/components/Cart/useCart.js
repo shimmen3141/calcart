@@ -2,6 +2,7 @@ import { useState } from "react";
 import {
   fullWidthToHalfWidth,
   fractionToDecimal,
+  ellipsisToSpace,
   spoonToGram,
 } from "../index";
 
@@ -35,9 +36,10 @@ const useCart = ({
     const lines = text
       .split("\n")
       .map((line) => fullWidthToHalfWidth(line)) // 全角を半角に変換
+      .map((line) => ellipsisToSpace(line)) // 三点リーダーを半角スペースに置換
       .filter((line) => line.trim()) // 空行を無視
-      .map((line) => line.trim()) // 余計な空白文字を削除
-      .map((line) => fractionToDecimal(line)); // 分数を小数に変換
+      .map((line) => fractionToDecimal(line)) // 分数を小数に変換
+      .map((line) => line.trim()); // 余計な空白文字を削除
 
     // const parsedIngredients = lines
     //   .map((line) => {
@@ -142,7 +144,7 @@ const useCart = ({
     }
   };
 
-  // カート数が上限に達したか判定する関数
+  // カート数が下限に達したか判定する関数
   const isLastCart = () => {
     return allCarts.length <= 1;
   };
