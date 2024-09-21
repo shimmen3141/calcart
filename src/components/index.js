@@ -7,10 +7,12 @@ export { default as InputFormatTag } from "./InputFormatTag/InputFormatTag";
 
 // functions
 export { default as containsNumber } from "../functions/containsNumber";
+export { default as ellipsisToSpace } from "../functions/ellipsisToSpace";
 export { default as fractionToDecimal } from "../functions/fractionToDecimal";
 export { default as fullWidthToHalfWidth } from "../functions/fullWidthToHalfWidth";
 export { default as multiplyQuantities } from "../functions/multiplyQuantities";
 export { default as removeNumbers } from "../functions/removeNumbers";
+export { default as removeSymbols } from "../functions/removeSymbols";
 export { default as roundQuantities } from "../functions/roundQuantities";
 export { default as splitIntoNumAndChar } from "../functions/splitIntoNumAndChar";
 export { default as spoonToGram } from "../functions/spoonToGram";
