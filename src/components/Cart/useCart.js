@@ -3,6 +3,7 @@ import {
   fullWidthToHalfWidth,
   fractionToDecimal,
   ellipsisToSpace,
+  removeSymbols,
   spoonToGram,
 } from "../index";
 
@@ -39,7 +40,9 @@ const useCart = ({
       .map((line) => ellipsisToSpace(line)) // 三点リーダーを半角スペースに置換
       .filter((line) => line.trim()) // 空行を無視
       .map((line) => fractionToDecimal(line)) // 分数を小数に変換
-      .map((line) => line.trim()); // 余計な空白文字を削除
+      .map((line) => line.trim()) // 余計な空白文字を削除
+      .map((line) => removeSymbols(line)); // 余計な空白文字を削除
+
 
     // const parsedIngredients = lines
     //   .map((line) => {
