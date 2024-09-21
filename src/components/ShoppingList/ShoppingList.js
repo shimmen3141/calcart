@@ -16,7 +16,7 @@ const ShoppingList = ({ items }) => {
       <ul>
         {shoppingList.map((item, index) => (
           <div key={index}>
-            <input type="checkbox"/> {item.name} {item.info}
+            <input type="checkbox"/> {item.name}  {item.info}
           </div>
         ))}
       </ul>
