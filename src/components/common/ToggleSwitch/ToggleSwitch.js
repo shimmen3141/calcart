@@ -1,7 +1,7 @@
 import React from "react";
 import "./ToggleSwitch.css";
 
-const ToggleSwitch = ({ title, isChecked, setIsChecked }) => {
+const ToggleSwitch = ({ id, title, isChecked, setIsChecked }) => {
 
   // チェックボックスの状態を変更する関数
   const handleChange = (event) => {
@@ -13,12 +13,12 @@ const ToggleSwitch = ({ title, isChecked, setIsChecked }) => {
       <div>{title}</div>
       <div className="toggleButton">
         <input
-          id="toggle"
+          id={id}
           type="checkbox"
           checked={isChecked}
           onChange={handleChange}
         />
-        <label htmlFor="toggle" />
+        <label htmlFor={id} />
       </div>
     </div>
   );
