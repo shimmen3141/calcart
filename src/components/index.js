@@ -5,6 +5,9 @@ export { default as ShoppingList } from "./ShoppingList/ShoppingList";
 export { default as CopyButton } from "./CopyButton/CopyButton";
 export { default as InputFormatTag } from "./InputFormatTag/InputFormatTag";
 
+// components/common
+export { default as ToggleSwitch } from "./common/ToggleSwitch/ToggleSwitch";
+
 // functions
 export { default as containsNumber } from "../functions/containsNumber";
 export { default as ellipsisToSpace } from "../functions/ellipsisToSpace";

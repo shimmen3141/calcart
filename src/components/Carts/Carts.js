@@ -1,5 +1,5 @@
-import React from "react";
-import { Cart } from "../index";
+import React, { useState } from "react";
+import { Cart, ToggleSwitch } from "../index";
 import { motion, AnimatePresence } from "framer-motion";
 import useCarts from "./useCarts";
 import "./Carts.css";
@@ -16,9 +16,16 @@ const Carts = ({ allCarts, setAllCarts }) => {
     allCarts,
     setAllCarts,
   });
+
+  const [applyRemoveSymbols, setApplyRemoveSymbols] = useState(true);
   
   return (
     <div>
+      <ToggleSwitch
+        title={"記号を消去"}
+        isChecked={applyRemoveSymbols}
+        setIsChecked={setApplyRemoveSymbols}
+      />
       <div className="input-group-container">
         <AnimatePresence>
           {allCarts.map((cart, index) => (
@@ -38,6 +45,7 @@ const Carts = ({ allCarts, setAllCarts }) => {
                 cartID={cart.id}
                 cartNumber={index}
                 cartRefs={cartRefs}
+                applyRemoveSymbols={applyRemoveSymbols}
               />
             </motion.div>
           ))}

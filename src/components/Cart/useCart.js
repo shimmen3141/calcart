@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   fullWidthToHalfWidth,
   fractionToDecimal,
@@ -13,10 +13,17 @@ const useCart = ({
   cartID,
   cartNumber,
   cartRefs,
+  applyRemoveSymbols,
 }) => {
   const [inputText, setInputText] = useState("");
 
   const [inputFormat, setInputFormat] = useState("not-entered");
+
+  useEffect(() => {
+    console.log(applyRemoveSymbols);
+    console.log(inputText);
+    parseInput(inputText);
+  }, [applyRemoveSymbols]);
 
   const detectInputFormat = (lines) => {
     let currentFormat = "";
@@ -38,11 +45,10 @@ const useCart = ({
       .split("\n")
       .map((line) => fullWidthToHalfWidth(line)) // 全角を半角に変換
       .map((line) => ellipsisToSpace(line)) // 三点リーダーを半角スペースに置換
+      .map((line) => (applyRemoveSymbols ? removeSymbols(line) : line)) // 余計な空白文字を削除
       .filter((line) => line.trim()) // 空行を無視
       .map((line) => fractionToDecimal(line)) // 分数を小数に変換
-      .map((line) => line.trim()) // 余計な空白文字を削除
-      .map((line) => removeSymbols(line)); // 余計な空白文字を削除
-
+      .map((line) => line.trim()); // 余計な空白文字を削除
 
     // const parsedIngredients = lines
     //   .map((line) => {
@@ -84,10 +90,15 @@ const useCart = ({
       }
     }
 
-    const newAllCarts = allCarts.map((cart) =>
-      cart.id === cartID ? { ...cart, ingredients: parsedIngredients } : cart
+    // const newAllCarts = allCarts.map((cart) =>
+    //   cart.id === cartID ? { ...cart, ingredients: parsedIngredients } : cart
+    // );
+    // setAllCarts(newAllCarts);
+    setAllCarts((prevAllCarts) =>
+      prevAllCarts.map((cart) =>
+        cart.id === cartID ? { ...cart, ingredients: parsedIngredients } : cart
+      )
     );
-    setAllCarts(newAllCarts);
   };
 
   // 入力欄の変更により発火する関数

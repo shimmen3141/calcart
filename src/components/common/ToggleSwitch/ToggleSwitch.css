@@ -1,0 +1,58 @@
+.toggleButton {
+  /* 標準の四角形のチェックボックスを消す。 */
+  input {
+    display: none;
+  }
+
+  --switchHeight: 2rem;
+  --switchWidth: calc(var(--switchHeight) * 2);
+  /* 外側と丸の隙間 */
+  --switchPadding: 0.2rem;
+  
+  /* 自動で決定される */
+  --circleSize: calc(var(--switchHeight) - var(--switchPadding) * 2);
+
+  label {
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    width: var(--switchWidth);
+    height: var(--switchHeight);
+    border-radius: var(--switchHeight);
+
+    background: #ccc;
+    transition: 0.4s;
+
+    &:after {
+      cursor: pointer;
+      content: '';
+      position: absolute;
+      left: var(--switchPadding);
+      top: 0;
+      bottom: 0;
+      margin: auto;
+
+      width: var(--circleSize);
+      height: var(--circleSize);
+      border-radius: 50%;
+      
+      /* 影は適当。丸がはみ出ない場合は影を消したほうが、よりマテリアルデザイン風でいいかもしれない */
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+
+      background: #fff;
+      transition: 0.4s;
+    }
+  }
+
+  input:checked {
+    + label {
+      background-color: #4bd865;
+
+      &:after {
+        left: calc(
+          var(--switchWidth) - var(--circleSize) - var(--switchPadding)
+        );
+      }
+    }
+  }
+}
