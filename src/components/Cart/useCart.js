@@ -15,6 +15,7 @@ const useCart = ({
   cartNumber,
   cartRefs,
   isRemoveSymbolsApplied,
+  isSpoonToGramApplied,
 }) => {
   const [inputText, setInputText] = useState("");
 
@@ -22,50 +23,49 @@ const useCart = ({
 
   useEffect(() => {
     parseInput(inputText);
-  }, [isRemoveSymbolsApplied]);
+  }, [isRemoveSymbolsApplied, isSpoonToGramApplied]);
 
+  const divideInput = (text, isRemoveSymbolsApplied) => {
+    const lines = text
+      .split("\n")
+      .map((line) => fullWidthToHalfWidth(line)) // 全角を半角に変換
+      .map((line) => ellipsisToSpace(line)) // 三点リーダーを半角スペースに置換
+      .map((line) => (isRemoveSymbolsApplied ? removeSymbols(line) : line)) // 余計な空白文字を削除
+      .filter((line) => line.trim()) // 空行を無視
+      .map((line) => fractionToDecimal(line)) // 分数を小数に変換
+      .map((line) => line.trim()); // 余計な空白文字を削除
 
-const divideInput = (text, isRemoveSymbolsApplied) => {
-  const lines = text
-    .split("\n")
-    .map((line) => fullWidthToHalfWidth(line)) // 全角を半角に変換
-    .map((line) => ellipsisToSpace(line)) // 三点リーダーを半角スペースに置換
-    .map((line) => (isRemoveSymbolsApplied ? removeSymbols(line) : line)) // 余計な空白文字を削除
-    .filter((line) => line.trim()) // 空行を無視
-    .map((line) => fractionToDecimal(line)) // 分数を小数に変換
-    .map((line) => line.trim()); // 余計な空白文字を削除
+    return lines;
+  };
 
-  return lines;
-};
+  const parseLines = (lines, currentFormat) => {
+    let parsedIngredients = [];
 
-const parseLines = (lines, currentFormat) => {
-  let parsedIngredients = [];
+    if (currentFormat === "one-line") {
+      parsedIngredients = lines
+        .map((line) => {
+          // 最初のスペースで2つに分割
+          const [name, quantity] = line.split(/(?<=^[^\s]+)\s/);
+          const info =
+            quantity !== undefined ? quantity.replace(/\s+/g, "") : "適量";
+          const fixedInfo = spoonToGram(name, info);
 
-  if (currentFormat === "one-line") {
-    parsedIngredients = lines
-      .map((line) => {
-        // 最初のスペースで2つに分割
-        const [name, quantity] = line.split(/(?<=^[^\s]+)\s/);
-        const info =
-          quantity !== undefined ? quantity.replace(/\s+/g, "") : "適量";
-        const fixedInfo = spoonToGram(name, info);
-
-        return { name: name, info: fixedInfo };
-      })
-      .filter((ingredient) => ingredient !== null);
-  } else if (currentFormat === "two-line") {
-    for (let i = 0; i < lines.length; i += 2) {
-      // 偶数行が材料名
-      const name = lines[i];
-      // 奇数行が分量
-      const quantity = lines[i + 1] ? lines[i + 1] : "適量";
-      const fixedInfo = spoonToGram(name, quantity);
-      parsedIngredients.push({ name: name, info: fixedInfo });
+          return { name: name, info: fixedInfo };
+        })
+        .filter((ingredient) => ingredient !== null);
+    } else if (currentFormat === "two-line") {
+      for (let i = 0; i < lines.length; i += 2) {
+        // 偶数行が材料名
+        const name = lines[i];
+        // 奇数行が分量
+        const quantity = lines[i + 1] ? lines[i + 1] : "適量";
+        const fixedInfo = spoonToGram(name, quantity);
+        parsedIngredients.push({ name: name, info: fixedInfo });
+      }
     }
-  }
 
-  return parsedIngredients;
-};
+    return parsedIngredients;
+  };
 
   const parseInput = (text) => {
     const lines = text
@@ -89,7 +89,7 @@ const parseLines = (lines, currentFormat) => {
           const [name, quantity] = line.split(/(?<=^[^\s]+)\s/);
           const info =
             quantity !== undefined ? quantity.replace(/\s+/g, "") : "適量";
-          const fixedInfo = spoonToGram(name, info);
+          const fixedInfo = isSpoonToGramApplied ? spoonToGram(name, info) : info;
 
           return { name: name, info: fixedInfo };
         })
@@ -100,7 +100,7 @@ const parseLines = (lines, currentFormat) => {
         const name = lines[i];
         // 奇数行が分量
         const quantity = lines[i + 1] ? lines[i + 1] : "適量";
-        const fixedInfo = spoonToGram(name, quantity);
+        const fixedInfo = isSpoonToGramApplied ? spoonToGram(name, quantity) : quantity;
         parsedIngredients.push({ name: name, info: fixedInfo });
       }
     }

@@ -17,15 +17,27 @@ const Carts = ({ allCarts, setAllCarts }) => {
     setAllCarts,
   });
 
-  const [isRemoveSymbolsApplied, setApplyRemoveSymbols] = useState(true);
+  const [isRemoveSymbolsApplied, setIsRemoveSymbolsApplied] = useState(true);
+  const [isSpoonToGramApplied, setIsSpoonToGramApplied] = useState(true);
   
   return (
     <div>
-      <ToggleSwitch
-        title={"記号を消去"}
-        isChecked={isRemoveSymbolsApplied}
-        setIsChecked={setApplyRemoveSymbols}
-      />
+      <div>
+        <ToggleSwitch
+          id="remove-symbols-toggle"
+          title={"記号を消去"}
+          isChecked={isRemoveSymbolsApplied}
+          setIsChecked={setIsRemoveSymbolsApplied}
+        />
+      </div>
+      <div>
+        <ToggleSwitch
+          id="spoon-to-gram-toggle"
+          title={"大さじ・小さじ → g に変換"}
+          isChecked={isSpoonToGramApplied}
+          setIsChecked={setIsSpoonToGramApplied}
+        />
+      </div>
       <div className="input-group-container">
         <AnimatePresence>
           {allCarts.map((cart, index) => (
@@ -46,6 +58,7 @@ const Carts = ({ allCarts, setAllCarts }) => {
                 cartNumber={index}
                 cartRefs={cartRefs}
                 isRemoveSymbolsApplied={isRemoveSymbolsApplied}
+                isSpoonToGramApplied={isSpoonToGramApplied}
               />
             </motion.div>
           ))}

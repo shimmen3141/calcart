@@ -10,6 +10,7 @@ const Cart = React.memo(
     cartNumber,
     cartRefs,
     isRemoveSymbolsApplied,
+    isSpoonToGramApplied,
   }) => {
     const {
       inputText,
@@ -26,6 +27,7 @@ const Cart = React.memo(
       cartNumber,
       cartRefs,
       isRemoveSymbolsApplied,
+      isSpoonToGramApplied,
     });
 
     console.log(`Cart${cartNumber}`);
