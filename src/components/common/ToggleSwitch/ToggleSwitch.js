@@ -1,9 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import "./ToggleSwitch.css";
 
 const ToggleSwitch = ({ title, isChecked, setIsChecked }) => {
-  // チェックボックスの状態を管理する変数
-  //const [isChecked, setIsChecked] = useState(true);
 
   // チェックボックスの状態を変更する関数
   const handleChange = (event) => {
