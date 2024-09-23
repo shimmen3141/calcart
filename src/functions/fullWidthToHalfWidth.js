@@ -14,4 +14,4 @@ export default function fullWidthToHalfWidth(str) {
     .replace(/￥/g, "\\")
     .replace(/　/g, " ")
     .replace(/〜/g, "~");
-}
+};

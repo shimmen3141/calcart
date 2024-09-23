@@ -1,5 +1,6 @@
 import { spoonToGram } from "../index";
 
+// 入力形式をもとに入力内容を処理する関数
 export default function parseLines(lines, currentFormat, isSpoonToGramApplied) {
   let parsedIngredients = [];
 

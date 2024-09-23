@@ -14,12 +14,12 @@ const Cart = React.memo(
   }) => {
     const {
       inputText,
+      inputFormat,
       handleInputChange,
       handleClear,
       handleRemove,
       isLastCart,
       hadleCartCountChange,
-      inputFormat,
     } = useCart({
       allCarts,
       setAllCarts,

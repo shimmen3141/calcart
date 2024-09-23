@@ -17,4 +17,4 @@ export default function fractionToDecimal(str) {
   });
 
   return str;
-}
+};

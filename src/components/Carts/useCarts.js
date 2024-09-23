@@ -18,15 +18,6 @@ const useCarts = ({ allCarts, setAllCarts }) => {
       ]);
 
       // 新しい入力欄にスクロール
-      //   setTimeout(() => {
-      //     const lastIndex = allCarts.length; // 新しいカートが追加された後の最後のカートのインデックス
-      //     if (cartRefs.current[lastIndex]) {
-      //         console.log(lastIndex);
-      //       cartRefs.current[lastIndex].scrollIntoView({ behavior: "smooth", block: "end" });
-      //     }
-      //   }, 0);
-
-      // 新しい入力欄にスクロール
       setTimeout(() => {
         // 追加されたカートの index
         const lastIndex = allCarts.length;

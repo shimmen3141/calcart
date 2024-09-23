@@ -107,12 +107,12 @@ const useCart = ({
 
   return {
     inputText,
+    inputFormat,
     handleInputChange,
     handleClear,
     handleRemove,
     isLastCart,
     hadleCartCountChange,
-    inputFormat,
   };
 };
 
