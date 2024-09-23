@@ -1,12 +1,7 @@
 import { useState, useEffect } from "react";
-import {
-  fullWidthToHalfWidth,
-  fractionToDecimal,
-  ellipsisToSpace,
-  removeSymbols,
-  spoonToGram,
-} from "../index";
 import classifyInputFormat from "./classifyInputFormat";
+import divideInput from "./divideInput";
+import parseLines from "./parseLines";
 
 const useCart = ({
   allCarts,
@@ -17,94 +12,33 @@ const useCart = ({
   isRemoveSymbolsApplied,
   isSpoonToGramApplied,
 }) => {
+  // 入力内容を管理する変数
   const [inputText, setInputText] = useState("");
-
+  // 入力形式を管理する変数
   const [inputFormat, setInputFormat] = useState("not-entered");
 
   useEffect(() => {
     parseInput(inputText);
+    // eslint-disable-next-line
   }, [isRemoveSymbolsApplied, isSpoonToGramApplied]);
 
-  const divideInput = (text, isRemoveSymbolsApplied) => {
-    const lines = text
-      .split("\n")
-      .map((line) => fullWidthToHalfWidth(line)) // 全角を半角に変換
-      .map((line) => ellipsisToSpace(line)) // 三点リーダーを半角スペースに置換
-      .map((line) => (isRemoveSymbolsApplied ? removeSymbols(line) : line)) // 余計な空白文字を削除
-      .filter((line) => line.trim()) // 空行を無視
-      .map((line) => fractionToDecimal(line)) // 分数を小数に変換
-      .map((line) => line.trim()); // 余計な空白文字を削除
-
-    return lines;
-  };
-
-  const parseLines = (lines, currentFormat) => {
-    let parsedIngredients = [];
-
-    if (currentFormat === "one-line") {
-      parsedIngredients = lines
-        .map((line) => {
-          // 最初のスペースで2つに分割
-          const [name, quantity] = line.split(/(?<=^[^\s]+)\s/);
-          const info =
-            quantity !== undefined ? quantity.replace(/\s+/g, "") : "適量";
-          const fixedInfo = spoonToGram(name, info);
-
-          return { name: name, info: fixedInfo };
-        })
-        .filter((ingredient) => ingredient !== null);
-    } else if (currentFormat === "two-line") {
-      for (let i = 0; i < lines.length; i += 2) {
-        // 偶数行が材料名
-        const name = lines[i];
-        // 奇数行が分量
-        const quantity = lines[i + 1] ? lines[i + 1] : "適量";
-        const fixedInfo = spoonToGram(name, quantity);
-        parsedIngredients.push({ name: name, info: fixedInfo });
-      }
-    }
-
-    return parsedIngredients;
-  };
-
+  // 入力内容を処理し、入力形式とカートを更新する関数
   const parseInput = (text) => {
-    const lines = text
-      .split("\n")
-      .map((line) => fullWidthToHalfWidth(line)) // 全角を半角に変換
-      .map((line) => ellipsisToSpace(line)) // 三点リーダーを半角スペースに置換
-      .map((line) => (isRemoveSymbolsApplied ? removeSymbols(line) : line)) // 余計な空白文字を削除
-      .filter((line) => line.trim()) // 空行を無視
-      .map((line) => fractionToDecimal(line)) // 分数を小数に変換
-      .map((line) => line.trim()); // 余計な空白文字を削除
+    // 入力内容を改行ごとに分割してそれぞれ処理する
+    const lines = divideInput(text, isRemoveSymbolsApplied);
 
+    // 入力内容から入力形式を分類する
     const currentFormat = classifyInputFormat(lines);
     setInputFormat(currentFormat);
 
-    let parsedIngredients = [];
+    // 入力形式をもとに入力内容を処理する
+    const parsedIngredients = parseLines(
+      lines,
+      currentFormat,
+      isSpoonToGramApplied
+    );
 
-    if (currentFormat === "one-line") {
-      parsedIngredients = lines
-        .map((line) => {
-          // 最初のスペースで2つに分割
-          const [name, quantity] = line.split(/(?<=^[^\s]+)\s/);
-          const info =
-            quantity !== undefined ? quantity.replace(/\s+/g, "") : "適量";
-          const fixedInfo = isSpoonToGramApplied ? spoonToGram(name, info) : info;
-
-          return { name: name, info: fixedInfo };
-        })
-        .filter((ingredient) => ingredient !== null);
-    } else if (currentFormat === "two-line") {
-      for (let i = 0; i < lines.length; i += 2) {
-        // 偶数行が材料名
-        const name = lines[i];
-        // 奇数行が分量
-        const quantity = lines[i + 1] ? lines[i + 1] : "適量";
-        const fixedInfo = isSpoonToGramApplied ? spoonToGram(name, quantity) : quantity;
-        parsedIngredients.push({ name: name, info: fixedInfo });
-      }
-    }
-
+    // カートを更新する
     setAllCarts((prevAllCarts) =>
       prevAllCarts.map((cart) =>
         cart.id === cartID ? { ...cart, ingredients: parsedIngredients } : cart
