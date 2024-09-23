@@ -17,13 +17,13 @@ const Carts = ({ allCarts, setAllCarts }) => {
     setAllCarts,
   });
 
-  const [applyRemoveSymbols, setApplyRemoveSymbols] = useState(true);
+  const [isRemoveSymbolsApplied, setApplyRemoveSymbols] = useState(true);
   
   return (
     <div>
       <ToggleSwitch
         title={"記号を消去"}
-        isChecked={applyRemoveSymbols}
+        isChecked={isRemoveSymbolsApplied}
         setIsChecked={setApplyRemoveSymbols}
       />
       <div className="input-group-container">
@@ -45,7 +45,7 @@ const Carts = ({ allCarts, setAllCarts }) => {
                 cartID={cart.id}
                 cartNumber={index}
                 cartRefs={cartRefs}
-                applyRemoveSymbols={applyRemoveSymbols}
+                isRemoveSymbolsApplied={isRemoveSymbolsApplied}
               />
             </motion.div>
           ))}

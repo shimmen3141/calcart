@@ -9,7 +9,7 @@ const Cart = React.memo(
     cartID,
     cartNumber,
     cartRefs,
-    applyRemoveSymbols,
+    isRemoveSymbolsApplied,
   }) => {
     const {
       inputText,
@@ -25,7 +25,7 @@ const Cart = React.memo(
       cartID,
       cartNumber,
       cartRefs,
-      applyRemoveSymbols,
+      isRemoveSymbolsApplied,
     });
 
     console.log(`Cart${cartNumber}`);
