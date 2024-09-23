@@ -37,4 +37,4 @@ export default function spoonToGram(name, info) {
   } else {
     return info;
   }
-}
+};

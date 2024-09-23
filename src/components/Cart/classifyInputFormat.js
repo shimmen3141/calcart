@@ -1,3 +1,4 @@
+// 入力内容をもとに入力形式を分類する関数
 export default function classifyInputFormat (lines) {
   let currentFormat = "";
   if (lines.length === 0) {

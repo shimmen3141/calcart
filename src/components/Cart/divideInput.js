@@ -5,6 +5,7 @@ import {
   removeSymbols,
 } from "../index";
 
+// 入力内容を改行ごとに分割し、それぞれ処理する関数
 export default function divideInput (text, isRemoveSymbolsApplied) {
   const lines = text
     .split("\n")

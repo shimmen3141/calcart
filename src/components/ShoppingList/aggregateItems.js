@@ -71,4 +71,4 @@ export default function aggregateItems ({ items }) {
     .join("\n");
 
   return { shoppingList, shoppingListText };
-}
+};
