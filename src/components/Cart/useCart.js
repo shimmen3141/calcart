@@ -39,13 +39,10 @@ const useCart = ({
     );
 
     // カートを更新する
-    setAllCarts((prevAllCarts) =>
-      prevAllCarts.map((cart) =>
-        cart.id === cartID ? { ...cart, ingredients: parsedIngredients } : cart
-      )
-    );
+    updateCart("ingredients", parsedIngredients);
   };
 
+  // カートを更新する関数
   const updateCart = (key, value) => {
     setAllCarts((prevAllCarts) =>
       prevAllCarts.map((cart) =>
@@ -64,11 +61,7 @@ const useCart = ({
   // クリアボタンの押下により発火する関数
   const handleClear = () => {
     setInputText("");
-    setAllCarts((prevAllCarts) =>
-      prevAllCarts.map((cart) =>
-        cart.id === cartID ? { ...cart, ingredients: [] } : cart
-      )
-    );
+    updateCart("ingredients", []);
   };
 
   // ✕ボタンの押下により発火する関数
@@ -109,13 +102,7 @@ const useCart = ({
 
   // カート台数のスピンボタン変更時に発火する関数
   const hadleCartCountChange = (event) => {
-    setAllCarts((prevAllCarts) =>
-      prevAllCarts.map((cart) =>
-        cart.id === cartID
-          ? { ...cart, cartCount: Number(event.target.value) }
-          : cart
-      )
-    );
+    updateCart("cartCount", Number(event.target.value));
   };
 
   return {
