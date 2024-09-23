@@ -20,8 +20,6 @@ const useCart = ({
   const [inputFormat, setInputFormat] = useState("not-entered");
 
   useEffect(() => {
-    console.log(applyRemoveSymbols);
-    console.log(inputText);
     parseInput(inputText);
   }, [applyRemoveSymbols]);
 
@@ -90,10 +88,6 @@ const useCart = ({
       }
     }
 
-    // const newAllCarts = allCarts.map((cart) =>
-    //   cart.id === cartID ? { ...cart, ingredients: parsedIngredients } : cart
-    // );
-    // setAllCarts(newAllCarts);
     setAllCarts((prevAllCarts) =>
       prevAllCarts.map((cart) =>
         cart.id === cartID ? { ...cart, ingredients: parsedIngredients } : cart
@@ -111,17 +105,19 @@ const useCart = ({
   // クリアボタンの押下により発火する関数
   const handleClear = () => {
     setInputText("");
-    const newAllCarts = allCarts.map((cart) =>
-      cart.id === cartID ? { ...cart, ingredients: [] } : cart
+    setAllCarts((prevAllCarts) =>
+      prevAllCarts.map((cart) =>
+        cart.id === cartID ? { ...cart, ingredients: [] } : cart
+      )
     );
-    setAllCarts(newAllCarts);
   };
 
   // ✕ボタンの押下により発火する関数
   const handleRemove = () => {
     if (allCarts.length > 1) {
-      const newAllCarts = allCarts.filter((cart) => cart.id !== cartID);
-      setAllCarts(newAllCarts);
+      setAllCarts((prevAllCarts) =>
+        prevAllCarts.filter((cart) => cart.id !== cartID)
+      );
 
       // setTimeout(() => {
       //   // 削除されたカートの次のカートにスクロール
@@ -165,12 +161,13 @@ const useCart = ({
 
   // カート台数のスピンボタン変更時に発火する関数
   const hadleCartCountChange = (event) => {
-    const newAllCarts = allCarts.map((cart) =>
-      cart.id === cartID
-        ? { ...cart, cartCount: Number(event.target.value) }
-        : cart
+    setAllCarts((prevAllCarts) =>
+      prevAllCarts.map((cart) =>
+        cart.id === cartID
+          ? { ...cart, cartCount: Number(event.target.value) }
+          : cart
+      )
     );
-    setAllCarts(newAllCarts);
   };
 
   return {
