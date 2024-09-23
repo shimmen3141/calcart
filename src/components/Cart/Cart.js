@@ -35,7 +35,6 @@ const Cart = React.memo(
     return (
       <div>
         <h2>カート{cartNumber + 1} </h2>
-        {/* <div>{inputFormat}</div> */}
         <InputFormatTag inputFormat={inputFormat} />
         <div>材料リストを入力：</div>
         <textarea
