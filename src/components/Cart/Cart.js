@@ -1,6 +1,6 @@
 import React from "react";
 import useCart from "./useCart";
-import { InputFormatTag } from "../index";
+import { InputFormatTag, CloseButton } from "../index";
 
 const Cart = React.memo(
   ({
@@ -33,8 +33,9 @@ const Cart = React.memo(
     console.log(`Cart${cartNumber}`);
 
     return (
-      <div>
+      <div style={{position: "relative"}}>
         <h2>カート{cartNumber + 1} </h2>
+        <CloseButton onClick={handleRemove} disabled={isLastCart()} />
         <InputFormatTag inputFormat={inputFormat} />
         <div>材料リストを入力：</div>
         <textarea
@@ -46,9 +47,6 @@ const Cart = React.memo(
         />
         <div>
           <button onClick={handleClear}>クリア</button>
-          <button onClick={handleRemove} disabled={isLastCart()}>
-            ×
-          </button>
         </div>
         <div>カート台数：</div>
         <input
