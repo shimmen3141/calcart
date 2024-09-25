@@ -4,6 +4,8 @@ export { default as Carts } from "./Carts/Carts";
 export { default as ShoppingList } from "./ShoppingList/ShoppingList";
 export { default as CopyButton } from "./CopyButton/CopyButton";
 export { default as InputFormatTag } from "./InputFormatTag/InputFormatTag";
+export { default as RemoveSymbolsModal } from "./RemoveSymbolsModal/RemoveSymbolsModal";
+export { default as SpoonToGramModal } from "./SpoonToGramModal/SpoonToGramModal";
 
 // components/common
 export { default as CloseButton } from "./common/CloseButton/CloseButton";
@@ -22,4 +24,3 @@ export { default as removeSymbols } from "../functions/removeSymbols";
 export { default as roundQuantities } from "../functions/roundQuantities";
 export { default as splitIntoNumAndChar } from "../functions/splitIntoNumAndChar";
 export { default as spoonToGram } from "../functions/spoonToGram";
-
