@@ -7,8 +7,9 @@ export { default as InputFormatTag } from "./InputFormatTag/InputFormatTag";
 
 // components/common
 export { default as CloseButton } from "./common/CloseButton/CloseButton";
-export { default as ToggleSwitch } from "./common/ToggleSwitch/ToggleSwitch";
+export { default as HelpButton } from "./common/HelpButton/HelpButton";
 export { default as Modal } from "./common/Modal/Modal";
+export { default as ToggleSwitch } from "./common/ToggleSwitch/ToggleSwitch";
 
 // functions
 export { default as containsNumber } from "../functions/containsNumber";

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Cart, ToggleSwitch, Modal } from "../index";
+import { Cart, ToggleSwitch, Modal, HelpButton } from "../index";
 import { motion, AnimatePresence } from "framer-motion";
 import useCarts from "./useCarts";
 import "./Carts.css";
@@ -27,7 +27,6 @@ const Carts = ({ allCarts, setAllCarts }) => {
   
   return (
     <div>
-      <button onClick={() => setIsOpen(true)}>モーダルを開く</button>
       <Modal isOpen={isOpen} onClose={handleCloseModal} />
       <div>
         <ToggleSwitch
@@ -36,6 +35,7 @@ const Carts = ({ allCarts, setAllCarts }) => {
           isChecked={isRemoveSymbolsApplied}
           setIsChecked={setIsRemoveSymbolsApplied}
         />
+        <HelpButton onClick={() => setIsOpen(true)} />
       </div>
       <div>
         <ToggleSwitch
