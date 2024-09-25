@@ -5,6 +5,7 @@ import {
   HelpButton,
   RemoveSymbolsModal,
   SpoonToGramModal,
+  useModal
 } from "../index";
 import { motion, AnimatePresence } from "framer-motion";
 import useCarts from "./useCarts";
@@ -21,28 +22,30 @@ const Carts = ({ allCarts, setAllCarts }) => {
   const [isRemoveSymbolsApplied, setIsRemoveSymbolsApplied] = useState(true);
   const [isSpoonToGramApplied, setIsSpoonToGramApplied] = useState(true);
 
-  const [showRemoveSymbolsModal, setShowRemoveSymbolsModal] = useState(false);
-  const handleCloseRemoveSymbolsModal = () => {
-    setShowRemoveSymbolsModal(
-      (showRemoveSymbolsModal) => !showRemoveSymbolsModal
-    );
-  };
+  // const [showRemoveSymbolsModal, setShowRemoveSymbolsModal] = useState(false);
+  // const handleShowRemoveSymbolsModal = () => {
+  //   setShowRemoveSymbolsModal(
+  //     (showRemoveSymbolsModal) => !showRemoveSymbolsModal
+  //   );
+  // };
 
-  const [showSpoonToGramModal, setShowSpoonToGramModal] = useState(false);
-  const handleCloseSpoonToGramModal = () => {
-    setShowSpoonToGramModal((showSpoonToGramModal) => !showSpoonToGramModal);
-  };
+  // const [showSpoonToGramModal, setShowSpoonToGramModal] = useState(false);
+  // const handleShowSpoonToGramModal = () => {
+  //   setShowSpoonToGramModal((showSpoonToGramModal) => !showSpoonToGramModal);
+  // };
+
+  const { handleOpenModal, handleCloseModal, isModalOpen } = useModal();
 
   return (
     <div>
-      <RemoveSymbolsModal
+      {/* <RemoveSymbolsModal
         isOpen={showRemoveSymbolsModal}
-        onClose={handleCloseRemoveSymbolsModal}
-      />
-      <SpoonToGramModal
+        onClose={handleShowRemoveSymbolsModal}
+      /> */}
+      {/* <SpoonToGramModal
         isOpen={showSpoonToGramModal}
-        onClose={handleCloseSpoonToGramModal}
-      />
+        onClose={handleShowSpoonToGramModal}
+      /> */}
       <div>
         <ToggleSwitch
           id="remove-symbols-toggle"
@@ -50,7 +53,9 @@ const Carts = ({ allCarts, setAllCarts }) => {
           isChecked={isRemoveSymbolsApplied}
           setIsChecked={setIsRemoveSymbolsApplied}
         />
-        <HelpButton onClick={() => setShowRemoveSymbolsModal(true)} />
+        {/* <HelpButton onClick={handleShowRemoveSymbolsModal} /> */}
+        <HelpButton onClick={() => handleOpenModal("removeSymbols")} />
+        <RemoveSymbolsModal isOpen={isModalOpen} onClose={handleCloseModal} />
       </div>
       <div>
         <ToggleSwitch
@@ -59,7 +64,9 @@ const Carts = ({ allCarts, setAllCarts }) => {
           isChecked={isSpoonToGramApplied}
           setIsChecked={setIsSpoonToGramApplied}
         />
-        <HelpButton onClick={() => setShowSpoonToGramModal(true)} />
+        {/* <HelpButton onClick={handleShowSpoonToGramModal} /> */}
+        <HelpButton onClick={() => handleOpenModal("spoonToGram")} />
+        <SpoonToGramModal isOpen={isModalOpen} onClose={handleCloseModal} />
       </div>
       <div className="input-group-container">
         <AnimatePresence>

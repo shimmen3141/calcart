@@ -11,6 +11,7 @@ export { default as SpoonToGramModal } from "./SpoonToGramModal/SpoonToGramModal
 export { default as CloseButton } from "./common/CloseButton/CloseButton";
 export { default as HelpButton } from "./common/HelpButton/HelpButton";
 export { default as Modal } from "./common/Modal/Modal";
+export { default as useModal } from "./common/Modal/useModal";
 export { default as ToggleSwitch } from "./common/ToggleSwitch/ToggleSwitch";
 
 // functions
