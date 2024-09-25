@@ -6,6 +6,7 @@ export { default as CopyButton } from "./CopyButton/CopyButton";
 export { default as InputFormatTag } from "./InputFormatTag/InputFormatTag";
 
 // components/common
+export { default as CloseButton } from "./common/CloseButton/CloseButton";
 export { default as ToggleSwitch } from "./common/ToggleSwitch/ToggleSwitch";
 export { default as Modal } from "./common/Modal/Modal";
 
