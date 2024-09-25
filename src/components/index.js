@@ -7,6 +7,7 @@ export { default as InputFormatTag } from "./InputFormatTag/InputFormatTag";
 
 // components/common
 export { default as ToggleSwitch } from "./common/ToggleSwitch/ToggleSwitch";
+export { default as Modal } from "./common/Modal/Modal";
 
 // functions
 export { default as containsNumber } from "../functions/containsNumber";

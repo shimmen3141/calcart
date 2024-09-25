@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Cart, ToggleSwitch } from "../index";
+import { Cart, ToggleSwitch, Modal } from "../index";
 import { motion, AnimatePresence } from "framer-motion";
 import useCarts from "./useCarts";
 import "./Carts.css";
@@ -19,9 +19,16 @@ const Carts = ({ allCarts, setAllCarts }) => {
 
   const [isRemoveSymbolsApplied, setIsRemoveSymbolsApplied] = useState(true);
   const [isSpoonToGramApplied, setIsSpoonToGramApplied] = useState(true);
+
+  const [isOpen, setIsOpen] = useState(false);
+  const handleCloseModal = () => {
+    setIsOpen((isOpen) => !isOpen);
+  };
   
   return (
     <div>
+      <button onClick={() => setIsOpen(true)}>モーダルを開く</button>
+      <Modal isOpen={isOpen} onClose={handleCloseModal} />
       <div>
         <ToggleSwitch
           id="remove-symbols-toggle"
