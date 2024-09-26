@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
-import {
-  ShoppingList,
-  Carts,
-} from "./components/index";
+import { ShoppingList, Carts } from "./components/index";
+import { ToggleSwitchProvider } from "./contexts/ToggleSwitchContext";
 
 const App = () => {
   const [allCarts, setAllCarts] = useState([
@@ -24,11 +22,11 @@ const App = () => {
   };
 
   return (
-    <div>
+    <ToggleSwitchProvider>
       <h1>Calcart</h1>
       <Carts allCarts={allCarts} setAllCarts={setAllCarts} />
       <ShoppingList items={organizeIngredient()} />
-    </div>
+    </ToggleSwitchProvider>
   );
 };
 

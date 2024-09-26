@@ -15,6 +15,9 @@ export { default as Modal } from "./common/Modal/Modal";
 export { default as useModal } from "./common/Modal/useModal";
 export { default as ToggleSwitch } from "./common/ToggleSwitch/ToggleSwitch";
 
+// contexts
+export { ToggleSwitchProvider, useToggleSwitch } from "../contexts/ToggleSwitchContext";
+
 // functions
 export { default as containsNumber } from "../functions/containsNumber";
 export { default as ellipsisToSpace } from "../functions/ellipsisToSpace";
