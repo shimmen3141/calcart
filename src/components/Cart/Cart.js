@@ -1,6 +1,12 @@
 import React from "react";
 import useCart from "./useCart";
-import { InputFormatTag, CloseButton } from "../index";
+import {
+  InputFormatTag,
+  CloseButton,
+  useModal,
+  InputFormatModal,
+  HelpButton,
+} from "../index";
 
 const Cart = React.memo(
   ({
@@ -30,13 +36,20 @@ const Cart = React.memo(
       isSpoonToGramApplied,
     });
 
+    const { handleOpenModal, handleCloseModal, isModalOpen } = useModal();
+
     console.log(`Cart${cartNumber}`);
 
     return (
       <div style={{ position: "relative" }}>
         <h2>カート{cartNumber + 1} </h2>
         <CloseButton onClick={handleRemove} disabled={isLastCart()} />
-        <InputFormatTag inputFormat={inputFormat} />
+        <InputFormatTag
+          inputFormat={inputFormat}
+          onClick={() => handleOpenModal("inputFormat")}
+        />
+        {/* <HelpButton onClick={() => handleOpenModal("inputFormat")} /> */}
+        <InputFormatModal isOpen={isModalOpen} onClose={handleCloseModal} />
         <div>材料リストを入力：</div>
         <textarea
           value={inputText}

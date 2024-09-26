@@ -1,6 +1,6 @@
 import React from "react";
 
-const InputFormatTag = ({ inputFormat }) => {
+const InputFormatTag = ({ inputFormat, onClick }) => {
   // inputFormatに基づいて表示するテキストを決定
   const getTagLabel = () => {
     switch (inputFormat) {
@@ -28,7 +28,7 @@ const InputFormatTag = ({ inputFormat }) => {
           cursor: "pointer",
           border: "1px solid #ddd",
         }}
-        //onClick={() => setIsModalOpen(true)}
+        onClick={onClick}
       >
         {getTagLabel()}
       </div>
