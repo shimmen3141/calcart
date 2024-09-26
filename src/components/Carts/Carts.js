@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Cart,
   ToggleSwitch,
@@ -20,9 +20,6 @@ const Carts = ({ allCarts, setAllCarts }) => {
     setAllCarts,
   });
 
-  const [isRemoveSymbolsApplied, setIsRemoveSymbolsApplied] = useState(true);
-  const [isSpoonToGramApplied, setIsSpoonToGramApplied] = useState(true);
-
   const { toggleStates, handleToggleSwitchChange } = useToggleSwitch();
 
   const { handleOpenModal, handleCloseModal, isModalOpen } = useModal();
@@ -30,33 +27,21 @@ const Carts = ({ allCarts, setAllCarts }) => {
   return (
     <div>
       <div>
-        {/* <ToggleSwitch
-          id="removeSymbols"
-          title={"記号を消去"}
-          isChecked={isRemoveSymbolsApplied}
-          setIsChecked={setIsRemoveSymbolsApplied}
-        /> */}
         <ToggleSwitch
           id="removeSymbols"
           title={"記号を消去"}
           isChecked={toggleStates.removeSymbols}
-          setIsChecked={() => handleToggleSwitchChange("removeSymbols")}
+          onChange={handleToggleSwitchChange}
         />
         <HelpButton onClick={() => handleOpenModal("removeSymbols")} />
         <RemoveSymbolsModal isOpen={isModalOpen} onClose={handleCloseModal} />
       </div>
       <div>
-        {/* <ToggleSwitch
-          id="spoonToGram"
-          title={"大さじ・小さじ → g に変換"}
-          isChecked={isSpoonToGramApplied}
-          setIsChecked={setIsSpoonToGramApplied}
-        /> */}
         <ToggleSwitch
           id="spoonToGram"
           title={"大さじ・小さじ → g に変換"}
           isChecked={toggleStates.spoonToGram}
-          setIsChecked={() => handleToggleSwitchChange("spoonToGram")}
+          onChange={handleToggleSwitchChange}
         />
         <HelpButton onClick={() => handleOpenModal("spoonToGram")} />
         <SpoonToGramModal isOpen={isModalOpen} onClose={handleCloseModal} />
@@ -80,8 +65,6 @@ const Carts = ({ allCarts, setAllCarts }) => {
                 cartID={cart.id}
                 cartNumber={index}
                 cartRefs={cartRefs}
-                isRemoveSymbolsApplied={isRemoveSymbolsApplied}
-                isSpoonToGramApplied={isSpoonToGramApplied}
               />
             </motion.div>
           ))}
