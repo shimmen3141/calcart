@@ -22,30 +22,10 @@ const Carts = ({ allCarts, setAllCarts }) => {
   const [isRemoveSymbolsApplied, setIsRemoveSymbolsApplied] = useState(true);
   const [isSpoonToGramApplied, setIsSpoonToGramApplied] = useState(true);
 
-  // const [showRemoveSymbolsModal, setShowRemoveSymbolsModal] = useState(false);
-  // const handleShowRemoveSymbolsModal = () => {
-  //   setShowRemoveSymbolsModal(
-  //     (showRemoveSymbolsModal) => !showRemoveSymbolsModal
-  //   );
-  // };
-
-  // const [showSpoonToGramModal, setShowSpoonToGramModal] = useState(false);
-  // const handleShowSpoonToGramModal = () => {
-  //   setShowSpoonToGramModal((showSpoonToGramModal) => !showSpoonToGramModal);
-  // };
-
   const { handleOpenModal, handleCloseModal, isModalOpen } = useModal();
 
   return (
     <div>
-      {/* <RemoveSymbolsModal
-        isOpen={showRemoveSymbolsModal}
-        onClose={handleShowRemoveSymbolsModal}
-      /> */}
-      {/* <SpoonToGramModal
-        isOpen={showSpoonToGramModal}
-        onClose={handleShowSpoonToGramModal}
-      /> */}
       <div>
         <ToggleSwitch
           id="remove-symbols-toggle"
@@ -53,7 +33,6 @@ const Carts = ({ allCarts, setAllCarts }) => {
           isChecked={isRemoveSymbolsApplied}
           setIsChecked={setIsRemoveSymbolsApplied}
         />
-        {/* <HelpButton onClick={handleShowRemoveSymbolsModal} /> */}
         <HelpButton onClick={() => handleOpenModal("removeSymbols")} />
         <RemoveSymbolsModal isOpen={isModalOpen} onClose={handleCloseModal} />
       </div>
@@ -64,7 +43,6 @@ const Carts = ({ allCarts, setAllCarts }) => {
           isChecked={isSpoonToGramApplied}
           setIsChecked={setIsSpoonToGramApplied}
         />
-        {/* <HelpButton onClick={handleShowSpoonToGramModal} /> */}
         <HelpButton onClick={() => handleOpenModal("spoonToGram")} />
         <SpoonToGramModal isOpen={isModalOpen} onClose={handleCloseModal} />
       </div>
