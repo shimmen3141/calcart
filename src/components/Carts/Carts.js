@@ -5,7 +5,8 @@ import {
   HelpButton,
   RemoveSymbolsModal,
   SpoonToGramModal,
-  useModal
+  useModal,
+  useToggleSwitch,
 } from "../index";
 import { motion, AnimatePresence } from "framer-motion";
 import useCarts from "./useCarts";
@@ -22,26 +23,40 @@ const Carts = ({ allCarts, setAllCarts }) => {
   const [isRemoveSymbolsApplied, setIsRemoveSymbolsApplied] = useState(true);
   const [isSpoonToGramApplied, setIsSpoonToGramApplied] = useState(true);
 
+  const { toggleStates, handleToggleSwitchChange } = useToggleSwitch();
+
   const { handleOpenModal, handleCloseModal, isModalOpen } = useModal();
 
   return (
     <div>
       <div>
-        <ToggleSwitch
-          id="remove-symbols-toggle"
+        {/* <ToggleSwitch
+          id="removeSymbols"
           title={"記号を消去"}
           isChecked={isRemoveSymbolsApplied}
           setIsChecked={setIsRemoveSymbolsApplied}
+        /> */}
+        <ToggleSwitch
+          id="removeSymbols"
+          title={"記号を消去"}
+          isChecked={toggleStates.removeSymbols}
+          setIsChecked={() => handleToggleSwitchChange("removeSymbols")}
         />
         <HelpButton onClick={() => handleOpenModal("removeSymbols")} />
         <RemoveSymbolsModal isOpen={isModalOpen} onClose={handleCloseModal} />
       </div>
       <div>
-        <ToggleSwitch
-          id="spoon-to-gram-toggle"
+        {/* <ToggleSwitch
+          id="spoonToGram"
           title={"大さじ・小さじ → g に変換"}
           isChecked={isSpoonToGramApplied}
           setIsChecked={setIsSpoonToGramApplied}
+        /> */}
+        <ToggleSwitch
+          id="spoonToGram"
+          title={"大さじ・小さじ → g に変換"}
+          isChecked={toggleStates.spoonToGram}
+          setIsChecked={() => handleToggleSwitchChange("spoonToGram")}
         />
         <HelpButton onClick={() => handleOpenModal("spoonToGram")} />
         <SpoonToGramModal isOpen={isModalOpen} onClose={handleCloseModal} />

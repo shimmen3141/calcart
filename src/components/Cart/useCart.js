@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import classifyInputFormat from "./classifyInputFormat";
 import divideInput from "./divideInput";
 import parseLines from "./parseLines";
+import { useToggleSwitch } from "../index";
 
 const useCart = ({
   allCarts,
@@ -17,15 +18,18 @@ const useCart = ({
   // 入力形式を管理する変数
   const [inputFormat, setInputFormat] = useState("not-entered");
 
+  const { toggleStates } = useToggleSwitch();
+
   useEffect(() => {
     parseInput(inputText);
     // eslint-disable-next-line
-  }, [isRemoveSymbolsApplied, isSpoonToGramApplied]);
+  }, [toggleStates]);
 
   // 入力内容を処理し、入力形式とカートを更新する関数
   const parseInput = (text) => {
     // 入力内容を改行ごとに分割してそれぞれ処理する
-    const lines = divideInput(text, isRemoveSymbolsApplied);
+    // const lines = divideInput(text, isRemoveSymbolsApplied);
+    const lines = divideInput(text, toggleStates.removeSymbols);
 
     // 入力内容から入力形式を分類する
     const currentFormat = classifyInputFormat(lines);
@@ -35,7 +39,7 @@ const useCart = ({
     const parsedIngredients = parseLines(
       lines,
       currentFormat,
-      isSpoonToGramApplied
+      toggleStates.spoonToGram
     );
 
     // カートを更新する
