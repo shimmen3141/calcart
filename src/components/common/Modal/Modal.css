@@ -20,7 +20,9 @@
   background: #fff;
   z-index: 2;
 
-  overflow: hidden;
+  overflow: auto;
+
+  /* overflow: hidden; */
 
   /* display: flex;
         align-items: center;

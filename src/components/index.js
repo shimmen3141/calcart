@@ -25,3 +25,6 @@ export { default as removeSymbols } from "../functions/removeSymbols";
 export { default as roundQuantities } from "../functions/roundQuantities";
 export { default as splitIntoNumAndChar } from "../functions/splitIntoNumAndChar";
 export { default as spoonToGram } from "../functions/spoonToGram";
+
+// hooks
+export { default as useScrollLock } from "../hooks/useScrollLock";

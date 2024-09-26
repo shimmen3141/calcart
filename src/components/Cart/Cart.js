@@ -33,7 +33,7 @@ const Cart = React.memo(
     console.log(`Cart${cartNumber}`);
 
     return (
-      <div style={{position: "relative"}}>
+      <div style={{ position: "relative" }}>
         <h2>カート{cartNumber + 1} </h2>
         <CloseButton onClick={handleRemove} disabled={isLastCart()} />
         <InputFormatTag inputFormat={inputFormat} />
