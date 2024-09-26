@@ -5,7 +5,6 @@ import {
   CloseButton,
   useModal,
   InputFormatModal,
-  HelpButton,
 } from "../index";
 
 const Cart = React.memo(
@@ -15,8 +14,6 @@ const Cart = React.memo(
     cartID,
     cartNumber,
     cartRefs,
-    isRemoveSymbolsApplied,
-    isSpoonToGramApplied,
   }) => {
     const {
       inputText,
@@ -32,8 +29,6 @@ const Cart = React.memo(
       cartID,
       cartNumber,
       cartRefs,
-      isRemoveSymbolsApplied,
-      isSpoonToGramApplied,
     });
 
     const { handleOpenModal, handleCloseModal, isModalOpen } = useModal();
@@ -48,7 +43,6 @@ const Cart = React.memo(
           inputFormat={inputFormat}
           onClick={() => handleOpenModal("inputFormat")}
         />
-        {/* <HelpButton onClick={() => handleOpenModal("inputFormat")} /> */}
         <InputFormatModal isOpen={isModalOpen} onClose={handleCloseModal} />
         <div>材料リストを入力：</div>
         <textarea
