@@ -5,7 +5,11 @@ import {
   clearAllBodyScrollLocks,
 } from "body-scroll-lock";
 
-const useScrollLock = ({isScrollLocked}) => {
+/* 
+  targetRef.current に要素が存在し、isScrollLocked が true のとき
+  スクロールを停止する 
+*/
+const useScrollLock = ({ isScrollLocked }) => {
   const targetRef = useRef(null);
 
   useEffect(() => {
