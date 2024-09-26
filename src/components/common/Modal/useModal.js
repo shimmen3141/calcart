@@ -4,9 +4,9 @@ const useModal = () => {
   const [openedModal, setOpenedModal] = useState(null);
 
   // モーダルの開閉どちらも扱える関数。分かりづらいので未使用。
-  const handleToggleModal = (id) => {
-    setOpenedModal((prevOpenedModal) => (prevOpenedModal === id ? null : id));
-  };
+//   const handleToggleModal = (id) => {
+//     setOpenedModal((prevOpenedModal) => (prevOpenedModal === id ? null : id));
+//   };
 
   // 引数として受け取った id のモーダルを開く関数
   const handleOpenModal = (id) => {
@@ -23,7 +23,11 @@ const useModal = () => {
     return openedModal === id;
   };
 
-  return { handleOpenModal, handleCloseModal, isModalOpen };
+  return {
+    handleOpenModal,
+    handleCloseModal,
+    isModalOpen,
+  };
 };
 
 export default useModal;
