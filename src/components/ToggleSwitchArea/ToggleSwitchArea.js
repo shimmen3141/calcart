@@ -16,25 +16,30 @@ const ToggleSwitchArea = () => {
 
   return (
     <div>
+      {/* <LabeledToggleSwitch id="removeSymbols" labelText="記号を消去" />
+      <LabeledToggleSwitch
+        id="spoonToGram"
+        labelText="大さじ・小さじ → g に変換"
+      /> */}
       <div>
+        記号を消去
+        <HelpButton onClick={() => handleOpenModal("removeSymbols")} />
+        <RemoveSymbolsModal isOpen={isModalOpen} onClose={handleCloseModal} />
         <ToggleSwitch
           id="removeSymbols"
-          title={"記号を消去"}
           isChecked={toggleStates.removeSymbols}
           onChange={handleToggleSwitchChange}
         />
-        <HelpButton onClick={() => handleOpenModal("removeSymbols")} />
-        <RemoveSymbolsModal isOpen={isModalOpen} onClose={handleCloseModal} />
       </div>
       <div>
+        大さじ・小さじ → g に変換
+        <HelpButton onClick={() => handleOpenModal("spoonToGram")} />
+        <SpoonToGramModal isOpen={isModalOpen} onClose={handleCloseModal} />
         <ToggleSwitch
           id="spoonToGram"
-          title={"大さじ・小さじ → g に変換"}
           isChecked={toggleStates.spoonToGram}
           onChange={handleToggleSwitchChange}
         />
-        <HelpButton onClick={() => handleOpenModal("spoonToGram")} />
-        <SpoonToGramModal isOpen={isModalOpen} onClose={handleCloseModal} />
       </div>
     </div>
   );
