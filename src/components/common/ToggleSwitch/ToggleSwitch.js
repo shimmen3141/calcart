@@ -1,11 +1,10 @@
 import React from "react";
 import "./ToggleSwitch.css";
 
-const ToggleSwitch = ({ id, title, isChecked, onChange }) => {
+const ToggleSwitch = ({ id, isChecked, onChange }) => {
 
   return (
     <div>
-      <div>{title}</div>
       <div className="toggleButton">
         <input
           id={id}
