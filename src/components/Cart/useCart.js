@@ -10,8 +10,6 @@ const useCart = ({
   cartID,
   cartNumber,
   cartRefs,
-  isRemoveSymbolsApplied,
-  isSpoonToGramApplied,
 }) => {
   // 入力内容を管理する変数
   const [inputText, setInputText] = useState("");
@@ -28,7 +26,6 @@ const useCart = ({
   // 入力内容を処理し、入力形式とカートを更新する関数
   const parseInput = (text) => {
     // 入力内容を改行ごとに分割してそれぞれ処理する
-    // const lines = divideInput(text, isRemoveSymbolsApplied);
     const lines = divideInput(text, toggleStates.removeSymbols);
 
     // 入力内容から入力形式を分類する

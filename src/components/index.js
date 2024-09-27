@@ -1,8 +1,9 @@
 // components
+export { default as AppHeader } from "./AppHeader/AppHeader";
+export { default as AppFooter } from "./AppFooter/AppFooter";
 export { default as Cart } from "./Cart/Cart";
 export { default as Carts } from "./Carts/Carts";
 export { default as ShoppingList } from "./ShoppingList/ShoppingList";
-export { default as CopyButton } from "./CopyButton/CopyButton";
 export { default as InputFormatTag } from "./InputFormatTag/InputFormatTag";
 export { default as InputFormatModal } from "./InputFormatModal/InputFormatModal";
 export { default as RemoveSymbolsModal } from "./RemoveSymbolsModal/RemoveSymbolsModal";
@@ -10,6 +11,7 @@ export { default as SpoonToGramModal } from "./SpoonToGramModal/SpoonToGramModal
 
 // components/common
 export { default as CloseButton } from "./common/CloseButton/CloseButton";
+export { default as CopyButton } from "./common/CopyButton/CopyButton";
 export { default as HelpButton } from "./common/HelpButton/HelpButton";
 export { default as Modal } from "./common/Modal/Modal";
 export { default as useModal } from "./common/Modal/useModal";
