@@ -1,13 +1,5 @@
 import React from "react";
-import {
-  Cart,
-  ToggleSwitch,
-  HelpButton,
-  RemoveSymbolsModal,
-  SpoonToGramModal,
-  useModal,
-  useToggleSwitch,
-} from "../index";
+import { Cart } from "../index";
 import { motion, AnimatePresence } from "framer-motion";
 import useCarts from "./useCarts";
 import "./Carts.css";
@@ -20,32 +12,8 @@ const Carts = ({ allCarts, setAllCarts }) => {
     setAllCarts,
   });
 
-  const { toggleStates, handleToggleSwitchChange } = useToggleSwitch();
-
-  const { handleOpenModal, handleCloseModal, isModalOpen } = useModal();
-
   return (
     <div>
-      <div>
-        <ToggleSwitch
-          id="removeSymbols"
-          title={"記号を消去"}
-          isChecked={toggleStates.removeSymbols}
-          onChange={handleToggleSwitchChange}
-        />
-        <HelpButton onClick={() => handleOpenModal("removeSymbols")} />
-        <RemoveSymbolsModal isOpen={isModalOpen} onClose={handleCloseModal} />
-      </div>
-      <div>
-        <ToggleSwitch
-          id="spoonToGram"
-          title={"大さじ・小さじ → g に変換"}
-          isChecked={toggleStates.spoonToGram}
-          onChange={handleToggleSwitchChange}
-        />
-        <HelpButton onClick={() => handleOpenModal("spoonToGram")} />
-        <SpoonToGramModal isOpen={isModalOpen} onClose={handleCloseModal} />
-      </div>
       <div className="input-group-container">
         <AnimatePresence>
           {allCarts.map((cart, index) => (
