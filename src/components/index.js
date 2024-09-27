@@ -9,6 +9,7 @@ export { default as InputFormatTag } from "./InputFormatTag/InputFormatTag";
 export { default as InputFormatModal } from "./InputFormatModal/InputFormatModal";
 export { default as RemoveSymbolsModal } from "./RemoveSymbolsModal/RemoveSymbolsModal";
 export { default as SpoonToGramModal } from "./SpoonToGramModal/SpoonToGramModal";
+export { default as ToggleSwitchArea } from "./ToggleSwitchArea/ToggleSwitchArea";
 
 // components/common
 export { default as CloseButton } from "./common/CloseButton/CloseButton";
