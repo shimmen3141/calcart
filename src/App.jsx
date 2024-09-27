@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
-import { ShoppingList, Carts } from "./components/index";
+import { AppHeader, AppFooter, ShoppingList, Carts } from "./components/index";
 import { ToggleSwitchProvider } from "./contexts/ToggleSwitchContext";
 
 const App = () => {
@@ -23,9 +23,10 @@ const App = () => {
 
   return (
     <ToggleSwitchProvider>
-      <h1>Calcart</h1>
+      <AppHeader />
       <Carts allCarts={allCarts} setAllCarts={setAllCarts} />
       <ShoppingList items={organizeIngredient()} />
+      <AppFooter />
     </ToggleSwitchProvider>
   );
 };
