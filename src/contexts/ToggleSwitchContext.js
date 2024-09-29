@@ -10,7 +10,7 @@ export const ToggleSwitchProvider = ({ children }) => {
     spoonToGram: true,
   });
 
-  const handleToggleSwitchChange = (id) => {
+  const handleSwitchChange = (id) => {
     setToggleStates((prevStates) => ({
       ...prevStates,
       [id]: !prevStates[id], // 該当のスイッチだけを反転
@@ -19,7 +19,7 @@ export const ToggleSwitchProvider = ({ children }) => {
 
   return (
     <ToggleSwitchContext.Provider
-      value={{ toggleStates, handleToggleSwitchChange }}
+      value={{ toggleStates, handleSwitchChange }}
     >
       {children}
     </ToggleSwitchContext.Provider>

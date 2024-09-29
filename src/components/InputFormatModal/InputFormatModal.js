@@ -7,7 +7,7 @@ const InputFormatModal = ({ isOpen, onClose }) => {
       onClose={() => onClose("inputFormat")}
       title="入力形式について"
     >
-      <p>
+      <div>
         ・オンにすると、材料名の先頭の記号等を消去したものが買い物リストに出力されます。
         <br />
         <br />
@@ -35,7 +35,7 @@ const InputFormatModal = ({ isOpen, onClose }) => {
         <br />
         ※記号は、「漢字・ひらがな・カタカナ・数字・アルファベット以外の文字」、
         または「（ ）に囲まれた部分」としています。
-      </p>
+      </div>
     </Modal>
   );
 };

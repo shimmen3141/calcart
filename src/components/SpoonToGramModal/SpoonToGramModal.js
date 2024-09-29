@@ -8,7 +8,7 @@ const SpoonToGramModal = ({ isOpen, onClose }) => {
       onClose={() => onClose("spoonToGram")}
       title="大さじ・小さじ → g の変換について"
     >
-      <p>
+      <div>
         ・オンにすると、材料名をもとに分量の「大さじ・小さじ」表記をグラムに変換します。
         <br />
         <br />
@@ -37,7 +37,7 @@ const SpoonToGramModal = ({ isOpen, onClose }) => {
         <br />
         <br />
         <TeaspoonTable />
-      </p>
+      </div>
     </Modal>
   );
 };
