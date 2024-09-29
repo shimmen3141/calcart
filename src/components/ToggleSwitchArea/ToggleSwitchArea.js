@@ -11,7 +11,7 @@ import LabeledToggleSwitch from "../LabeledToggleSwitch/LabeledToggleSwitch";
 const ToggleSwitchArea = () => {
   console.log("ToggleSwitchArea");
 
-  const { toggleStates, handleToggleSwitchChange } = useToggleSwitch();
+  const { toggleStates, handleSwitchChange } = useToggleSwitch();
 
   const { handleOpenModal, handleCloseModal, isModalOpen } = useModal();
 
@@ -29,7 +29,7 @@ const ToggleSwitchArea = () => {
         <ToggleSwitch
           id="removeSymbols"
           isChecked={toggleStates.removeSymbols}
-          onChange={handleToggleSwitchChange}
+          onChange={handleSwitchChange}
         />
       </div>
       <div>
@@ -39,7 +39,7 @@ const ToggleSwitchArea = () => {
         <ToggleSwitch
           id="spoonToGram"
           isChecked={toggleStates.spoonToGram}
-          onChange={handleToggleSwitchChange}
+          onChange={handleSwitchChange}
         />
       </div>
     </div>

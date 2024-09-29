@@ -12,7 +12,7 @@ import { modalContents } from "../common/Modal/modalContents";
 const LabeledToggleSwitch = ({ id, labelText }) => {
   console.log("LabeledToggleSwitch");
 
-  const { toggleStates, handleToggleSwitchChange } = useToggleSwitch();
+  const { toggleStates, handleSwitchChange } = useToggleSwitch();
 
   const { handleOpenModal, handleCloseModal, isModalOpen } = useModal();
 
@@ -25,7 +25,7 @@ const LabeledToggleSwitch = ({ id, labelText }) => {
       <ToggleSwitch
         id={id}
         isChecked={toggleStates[id]}
-        onChange={handleToggleSwitchChange}
+        onChange={handleSwitchChange}
       />
       {/* <RemoveSymbolsModal isOpen={isModalOpen} onClose={handleCloseModal} />
       <SpoonToGramModal isOpen={isModalOpen} onClose={handleCloseModal} /> */}
