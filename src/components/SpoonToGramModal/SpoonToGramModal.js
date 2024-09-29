@@ -1,4 +1,5 @@
 import { Modal } from "../index";
+import TeaspoonTable from "./TeaspoonTable";
 
 const SpoonToGramModal = ({ isOpen, onClose }) => {
   return (
@@ -34,6 +35,8 @@ const SpoonToGramModal = ({ isOpen, onClose }) => {
         <br />
         ※表に含まれていない調味料は変換されません。
         <br />
+        <br />
+        <TeaspoonTable />
       </p>
     </Modal>
   );
