@@ -3,9 +3,11 @@ import {
   HelpButton,
   RemoveSymbolsModal,
   SpoonToGramModal,
+  Modal,
   useModal,
   useToggleSwitch,
 } from "../index";
+import { modalContents } from "../common/Modal/modalContents";
 
 const LabeledToggleSwitch = ({ id, labelText }) => {
   console.log("LabeledToggleSwitch");
@@ -14,18 +16,26 @@ const LabeledToggleSwitch = ({ id, labelText }) => {
 
   const { handleOpenModal, handleCloseModal, isModalOpen } = useModal();
 
+  const { title, content } = modalContents[id] || modalContents.default;
+
   return (
     <div>
-      <div>{labelText}</div>
+      {labelText}
       <HelpButton onClick={() => handleOpenModal(id)} />
       <ToggleSwitch
         id={id}
         isChecked={toggleStates[id]}
         onChange={handleToggleSwitchChange}
       />
-
-      <RemoveSymbolsModal isOpen={isModalOpen} onClose={handleCloseModal} />
-      <SpoonToGramModal isOpen={isModalOpen} onClose={handleCloseModal} />
+      {/* <RemoveSymbolsModal isOpen={isModalOpen} onClose={handleCloseModal} />
+      <SpoonToGramModal isOpen={isModalOpen} onClose={handleCloseModal} /> */}
+      <Modal
+        isOpen={isModalOpen(id)}
+        onClose={() => handleCloseModal(id)}
+        title={title}
+      >
+        {content}
+      </Modal>
     </div>
   );
 };

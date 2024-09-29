@@ -6,6 +6,7 @@ import {
   useModal,
   useToggleSwitch,
 } from "../index";
+import LabeledToggleSwitch from "../LabeledToggleSwitch/LabeledToggleSwitch";
 
 const ToggleSwitchArea = () => {
   console.log("ToggleSwitchArea");
