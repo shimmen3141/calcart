@@ -1,4 +1,4 @@
-.toggleButton {
+.toggleSwitch {
   /* 標準の四角形のチェックボックスを消す。 */
   input {
     display: none;

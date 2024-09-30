@@ -5,7 +5,7 @@ const ToggleSwitch = ({ id, isChecked, onChange }) => {
 
   return (
     <div>
-      <div className="toggleButton">
+      <div className="toggleSwitch">
         <input
           id={id}
           type="checkbox"

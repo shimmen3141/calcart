@@ -1,0 +1,31 @@
+.toggleSwitchArea {
+  display: grid;
+  justify-content: flex-end;
+  /* row-gap: 1rem; */
+
+  margin: 1rem;
+
+  .labeledToggleSwitch {
+    width: fit-content;
+    border: 3px solid #ddd;
+    padding: 1rem;
+    margin-bottom: -3px; /* border を重ねるためborder幅の分ずらす*/
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .labelText {
+      width: 8rem;
+      text-align: center;
+    }
+
+    .helpButton {
+      margin-left: 1rem;
+    }
+
+    .toggleSwitch {
+      margin-left: 4rem;
+    }
+  }
+}

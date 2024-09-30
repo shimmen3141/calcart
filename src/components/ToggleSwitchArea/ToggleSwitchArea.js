@@ -7,6 +7,7 @@ import {
   useToggleSwitch,
 } from "../index";
 import LabeledToggleSwitch from "../LabeledToggleSwitch/LabeledToggleSwitch";
+import "./ToggleSwitchArea.css";
 
 const ToggleSwitchArea = () => {
   console.log("ToggleSwitchArea");
@@ -16,14 +17,14 @@ const ToggleSwitchArea = () => {
   const { handleOpenModal, handleCloseModal, isModalOpen } = useModal();
 
   return (
-    <div>
+    <div className="toggleSwitchArea">
       {/* <LabeledToggleSwitch id="removeSymbols" labelText="記号を消去" />
       <LabeledToggleSwitch
         id="spoonToGram"
         labelText="大さじ・小さじ → g に変換"
       /> */}
-      <div>
-        記号を消去
+      <div className="labeledToggleSwitch">
+        <div className="labelText">記号を消去</div>
         <HelpButton onClick={() => handleOpenModal("removeSymbols")} />
         <RemoveSymbolsModal isOpen={isModalOpen} onClose={handleCloseModal} />
         <ToggleSwitch
@@ -32,8 +33,8 @@ const ToggleSwitchArea = () => {
           onChange={handleSwitchChange}
         />
       </div>
-      <div>
-        大さじ・小さじ → g に変換
+      <div className="labeledToggleSwitch">
+        <div className="labelText">大さじ・小さじをグラムに変換</div>
         <HelpButton onClick={() => handleOpenModal("spoonToGram")} />
         <SpoonToGramModal isOpen={isModalOpen} onClose={handleCloseModal} />
         <ToggleSwitch
