@@ -9,6 +9,8 @@
   max-height: 3rem;
   top: 0;
   right: 0;
+  background-color: transparent;
+  border: none;
 
   cursor: pointer;
   transition: 0.3s all;
@@ -37,7 +39,17 @@
     background-color: #ff2020;
   }
 
-  &:hover:before, &:hover:after {
+  &:hover:before,
+  &:hover:after {
     background: #fff;
+  }
+
+  &:disabled {
+    pointer-events: none;
+  }
+
+  &:disabled:before,
+  &:disabled:after {
+    background: transparent;
   }
 }

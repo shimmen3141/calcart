@@ -6,6 +6,7 @@ import {
   useModal,
   InputFormatModal,
 } from "../index";
+import "./Cart.css";
 
 const Cart = React.memo(
   ({
@@ -36,7 +37,7 @@ const Cart = React.memo(
     console.log(`Cart${cartNumber}`);
 
     return (
-      <div style={{ position: "relative" }}>
+      <div className="cart">
         <h2>カート{cartNumber + 1} </h2>
         <CloseButton onClick={handleRemove} disabled={isLastCart()} />
         <InputFormatTag
