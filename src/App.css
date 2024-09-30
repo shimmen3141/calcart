@@ -1,4 +1,4 @@
 .app {
   scrollbar-gutter: stable;
-  overflow: auto;
+  /* overflow: auto; */
 }
