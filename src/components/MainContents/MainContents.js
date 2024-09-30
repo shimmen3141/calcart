@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ToggleSwitchArea, ShoppingList, Carts } from "../index";
+import "./MainContents.css";
 
 const MainContents = () => {
   const [allCarts, setAllCarts] = useState([
@@ -20,7 +21,7 @@ const MainContents = () => {
   };
 
   return (
-    <div>
+    <div className="mainContents">
       <ToggleSwitchArea />
       <Carts allCarts={allCarts} setAllCarts={setAllCarts} />
       <ShoppingList items={organizeIngredient()} />

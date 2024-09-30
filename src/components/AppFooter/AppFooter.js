@@ -1,9 +1,7 @@
+import "./AppFooter.css";
+
 const AppFooter = () => {
-  return (
-    <div>
-      <h1>Hooter</h1>
-    </div>
-  );
+  return <div className="appFooter">Hooter</div>;
 };
 
 export default AppFooter;
