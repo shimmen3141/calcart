@@ -6,9 +6,9 @@ export { default as Cart } from "./Cart/Cart";
 export { default as Carts } from "./Carts/Carts";
 export { default as ShoppingList } from "./ShoppingList/ShoppingList";
 export { default as InputFormatTag } from "./InputFormatTag/InputFormatTag";
-export { default as InputFormatModal } from "./InputFormatModal/InputFormatModal";
-export { default as RemoveSymbolsModal } from "./RemoveSymbolsModal/RemoveSymbolsModal";
-export { default as SpoonToGramModal } from "./SpoonToGramModal/SpoonToGramModal";
+export { default as InputFormatModal } from "./Modals/InputFormatModal";
+export { default as RemoveSymbolsModal } from "./Modals/RemoveSymbolsModal";
+export { default as SpoonToGramModal } from "./Modals/SpoonToGramModal";
 export { default as ToggleSwitchArea } from "./ToggleSwitchArea/ToggleSwitchArea";
 
 // components/common
