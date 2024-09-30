@@ -3,16 +3,17 @@ import { CloseButton, useScrollLock } from "../../index";
 import "./Modal.css";
 
 const Modal = ({ isOpen, onClose, title, children }) => {
-
-    const { targetRef } = useScrollLock({ isScrollLocked: isOpen });
+  const { targetRef } = useScrollLock({ isScrollLocked: isOpen });
 
   return isOpen ? (
     <div>
       <div className="overlay" onClick={onClose}></div>
-      <div className="modal-content" ref={targetRef}>
-        <h2>{title}</h2>
-        {children}
-        <CloseButton onClick={onClose} />
+      <div className="modal-window" ref={targetRef}>
+        <div className="header">
+          <CloseButton onClick={onClose} />
+          {title}
+        </div>
+        <div className="main">{children}</div>
       </div>
     </div>
   ) : null;
