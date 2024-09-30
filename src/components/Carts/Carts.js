@@ -14,7 +14,7 @@ const Carts = ({ allCarts, setAllCarts }) => {
 
   return (
     <div>
-      <div className="input-group-container">
+      <div className="carts">
         <AnimatePresence>
           {allCarts.map((cart, index) => (
             <motion.div
@@ -39,7 +39,7 @@ const Carts = ({ allCarts, setAllCarts }) => {
         </AnimatePresence>
       </div>
       <button onClick={handleAddCart} disabled={hasMaxCarts()}>
-        入力欄を追加
+        + カートを追加
       </button>
     </div>
   );

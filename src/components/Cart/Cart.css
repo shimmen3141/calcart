@@ -1,0 +1,17 @@
+.cart {
+  position: relative;
+  padding: 1rem;
+  background-color: rgb(226, 255, 229);
+  border: 3px solid #00b90f;
+  border-radius: 10px;
+  overflow: hidden;
+
+  & h2 {
+    font-size: 24px;
+    margin: 0 0 2rem 1rem;
+  }
+
+  & textarea {
+    resize: none;
+  }
+}

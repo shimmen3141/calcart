@@ -22,7 +22,7 @@ const useCarts = ({ allCarts, setAllCarts }) => {
         // 追加されたカートの index
         const lastIndex = allCarts.length;
         // スクロールの親要素を指定
-        const cartContainer = document.querySelector(".input-group-container");
+        const cartContainer = document.querySelector(".carts");
 
         if (cartRefs.current[lastIndex]) {
           const targetCart = cartRefs.current[lastIndex];

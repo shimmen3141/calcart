@@ -3,7 +3,7 @@
   justify-content: flex-end;
   /* row-gap: 1rem; */
 
-  margin: 1rem;
+  margin: 1rem 1rem 2rem auto;
 
   .labeledToggleSwitch {
     width: fit-content;

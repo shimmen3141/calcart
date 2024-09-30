@@ -2,7 +2,7 @@ import "./CloseButton.css";
 
 const CloseButton = ({ onClick, disabled }) => {
   return (
-    <div className="closeButton" onClick={onClick} disabled={disabled}></div>
+    <button className="closeButton" onClick={onClick} disabled={disabled}></button>
   );
 };
 
