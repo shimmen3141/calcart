@@ -1,0 +1,12 @@
+.copyButton {
+  height: 2rem;
+  width: 6rem;
+  border-radius: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: white;
+  border: 1px solid gray;
+  box-shadow: 0px 2px 0px rgba(0,0,0,0.2);
+}

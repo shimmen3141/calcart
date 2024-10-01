@@ -1,12 +1,13 @@
 import React from 'react';
 import useCopyButton from './useCopyButton';
+import "./CopyButton.css";
 
 const CopyButton = ({ text }) => {
 
     const { copyStatus, handleCopy } = useCopyButton({ text });
 
     return (
-        <button onClick={handleCopy}>
+        <button className="copyButton" onClick={handleCopy}>
             {copyStatus}
         </button>
     );

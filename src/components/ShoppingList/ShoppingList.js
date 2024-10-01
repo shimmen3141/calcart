@@ -1,6 +1,7 @@
 import React from "react";
 import aggregateItems from "./aggregateItems";
 import { CopyButton } from "../index";
+import "./ShoppingList.css";
 
 const ShoppingList = ({ items }) => {
   console.log("ShoppingList");
@@ -8,12 +9,12 @@ const ShoppingList = ({ items }) => {
   const { shoppingList, shoppingListText } = aggregateItems({ items });
 
   return (
-    <div>
-      <h2>
+    <div className="shoppingList">
+      <div className="title">
         買い物リスト <CopyButton text={shoppingListText} />
-      </h2>
+      </div>
       {/* <div>{shoppingListText}</div> */}
-      <ul>
+      <ul className="list">
         {shoppingList.map((item, index) => (
           <div key={index}>
             <input type="checkbox"/> {item.name}  {item.info}
