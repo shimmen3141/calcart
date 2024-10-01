@@ -1,4 +1,5 @@
 import React from "react";
+import "./InputFormatTag.css";
 
 const InputFormatTag = ({ inputFormat, onClick }) => {
   // inputFormatに基づいて表示するテキストを決定
@@ -17,19 +18,7 @@ const InputFormatTag = ({ inputFormat, onClick }) => {
 
   return (
     <div>
-      <div
-        style={{
-          height: "auto",
-          width: "5rem",
-          margin: "0 0 0 auto",
-          padding: "8px 12px",
-          backgroundColor: "#f0f0f0",
-          borderRadius: "8px",
-          cursor: "pointer",
-          border: "1px solid #ddd",
-        }}
-        onClick={onClick}
-      >
+      <div className="inputFormatTag" onClick={onClick}>
         {getTagLabel()}
       </div>
     </div>
