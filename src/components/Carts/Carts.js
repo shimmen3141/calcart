@@ -14,6 +14,13 @@ const Carts = ({ allCarts, setAllCarts }) => {
 
   return (
     <div>
+      <button
+        className="addCartButton"
+        onClick={handleAddCart}
+        disabled={hasMaxCarts()}
+      >
+        + カートを追加
+      </button>
       <div className="carts">
         <AnimatePresence>
           {allCarts.map((cart, index) => (
@@ -24,7 +31,6 @@ const Carts = ({ allCarts, setAllCarts }) => {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
               layout
-              className="input-group"
               ref={(node) => setRefs(node, index)}
             >
               <Cart
@@ -38,9 +44,6 @@ const Carts = ({ allCarts, setAllCarts }) => {
           ))}
         </AnimatePresence>
       </div>
-      <button onClick={handleAddCart} disabled={hasMaxCarts()}>
-        + カートを追加
-      </button>
     </div>
   );
 };

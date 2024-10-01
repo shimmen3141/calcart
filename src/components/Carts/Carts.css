@@ -3,11 +3,28 @@
   flex-wrap: nowrap;
   gap: 24px;
   overflow-x: auto;
+  margin: 0 1rem 0 1rem;
 }
 
-.input-group {
-  /* display: flex;
-  flex-direction: column;
+.addCartButton {
+  position: relative;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  flex-shrink: 0; */
+
+  border-radius: 100vh;
+  border: 2px solid #b84c00;
+  background-color: rgb(255, 129, 56);
+  color: white;
+  box-shadow: 2px 2px 4px gray;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  margin: 0 0 1rem 1rem;
+  cursor: pointer;
+
+  &:hover {
+    transition: 0.2s all;
+    transform: scale(1.05);
+  }
 }
