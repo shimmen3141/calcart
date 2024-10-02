@@ -25,7 +25,6 @@ const Cart = React.memo(
       handleRemove,
       isLastCart,
       hadleCartCountChange,
-      hadleCartCountChange2,
     } = useCart({
       allCarts,
       setAllCarts,
@@ -59,14 +58,7 @@ const Cart = React.memo(
           <button onClick={handleClear}>クリア</button>
         </div>
         <div>カート台数：</div>
-        {/* <input
-          type="number"
-          // step="0.01"
-          min="0"
-          defaultValue="1"
-          onChange={hadleCartCountChange}
-        /> */}
-        <CartCountSpinButton hadleCartCountChange2={hadleCartCountChange2} />
+        <CartCountSpinButton hadleCartCountChange={hadleCartCountChange} />
       </div>
     );
   }

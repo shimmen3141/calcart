@@ -103,11 +103,11 @@ const useCart = ({
   };
 
   // カート台数のスピンボタン変更時に発火する関数
-  const hadleCartCountChange = (event) => {
-    updateCart("cartCount", Number(event.target.value));
-  };
+  // const hadleCartCountChange = (event) => {
+  //   updateCart("cartCount", Number(event.target.value));
+  // };
 
-  const hadleCartCountChange2 = (count) => {
+  const hadleCartCountChange = (count) => {
     updateCart("cartCount", Number(count));
   };
 
@@ -119,7 +119,6 @@ const useCart = ({
     handleRemove,
     isLastCart,
     hadleCartCountChange,
-    hadleCartCountChange2,
   };
 };
 
