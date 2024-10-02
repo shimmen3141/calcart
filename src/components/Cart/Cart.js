@@ -7,6 +7,7 @@ import {
   InputFormatModal,
 } from "../index";
 import "./Cart.css";
+import CartCountSpinButton from "../CartCountSpinButton/CartCountSpinButton";
 
 const Cart = React.memo(
   ({
@@ -24,6 +25,7 @@ const Cart = React.memo(
       handleRemove,
       isLastCart,
       hadleCartCountChange,
+      hadleCartCountChange2,
     } = useCart({
       allCarts,
       setAllCarts,
@@ -57,12 +59,14 @@ const Cart = React.memo(
           <button onClick={handleClear}>クリア</button>
         </div>
         <div>カート台数：</div>
-        <input
+        {/* <input
           type="number"
+          // step="0.01"
           min="0"
           defaultValue="1"
           onChange={hadleCartCountChange}
-        />
+        /> */}
+        <CartCountSpinButton hadleCartCountChange2={hadleCartCountChange2} />
       </div>
     );
   }

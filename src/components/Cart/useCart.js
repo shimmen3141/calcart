@@ -62,6 +62,7 @@ const useCart = ({
   // クリアボタンの押下により発火する関数
   const handleClear = () => {
     setInputText("");
+    setInputFormat("not-entered");
     updateCart("ingredients", []);
   };
 
@@ -106,6 +107,10 @@ const useCart = ({
     updateCart("cartCount", Number(event.target.value));
   };
 
+  const hadleCartCountChange2 = (count) => {
+    updateCart("cartCount", Number(count));
+  };
+
   return {
     inputText,
     inputFormat,
@@ -114,6 +119,7 @@ const useCart = ({
     handleRemove,
     isLastCart,
     hadleCartCountChange,
+    hadleCartCountChange2,
   };
 };
 
