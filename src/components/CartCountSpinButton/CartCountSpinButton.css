@@ -1,0 +1,29 @@
+.spinButton {
+  & input {
+    height: 1.5rem;
+    width: 3rem;
+    text-align: center;
+  }
+
+  & button {
+    height: 2rem;
+    width: 2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: rgb(255, 129, 56);
+    color: white;
+    border: 1px solid #b84c00;
+    cursor: pointer;
+
+    &:hover {
+      transition: 0.2s all;
+      transform: scale(1.1);
+    }
+
+    &:disabled {
+      pointer-events: none;
+      background-color: rgb(190, 190, 190);
+      border: 1px solid rgb(190, 190, 190);
+    }
+  }
+}

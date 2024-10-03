@@ -14,4 +14,10 @@
   & textarea {
     resize: none;
   }
+
+  .spinButtonArea {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+  }
 }
