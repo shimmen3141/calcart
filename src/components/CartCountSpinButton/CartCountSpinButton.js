@@ -31,6 +31,7 @@ const CartCountSpinButton = ({ hadleCartCountChange }) => {
       </button>
       {errorMessage && (
         <motion.div
+          className="errorMessage"
           initial={{ opacity: 1 }}
           animate={{ opacity: 0 }}
           transition={{ duration: 0.5, delay: 1.5 }}
