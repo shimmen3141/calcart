@@ -55,7 +55,7 @@ const Cart = React.memo(
           cols="50"
         />
         <div>
-          <button onClick={handleClear}>クリア</button>
+          <button className="clearButton" onClick={handleClear}>クリア</button>
         </div>
         <div className="spinButtonArea">
           <div>カート台数：</div>
