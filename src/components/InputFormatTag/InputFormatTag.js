@@ -18,7 +18,7 @@ const InputFormatTag = ({ inputFormat, onClick }) => {
 
   return (
     <div>
-      <div className="inputFormatTag" onClick={onClick}>
+      <div className={`inputFormatTag ${inputFormat}`} onClick={onClick}>
         {getTagLabel()}
       </div>
     </div>
