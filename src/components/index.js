@@ -28,6 +28,7 @@ export { default as ellipsisToSpace } from "../functions/ellipsisToSpace";
 export { default as fractionToDecimal } from "../functions/fractionToDecimal";
 export { default as fullWidthToHalfWidth } from "../functions/fullWidthToHalfWidth";
 export { default as multiplyQuantities } from "../functions/multiplyQuantities";
+export { default as removeExtraSpaces } from "../functions/removeExtraSpaces";
 export { default as removeNumbers } from "../functions/removeNumbers";
 export { default as removeSymbols } from "../functions/removeSymbols";
 export { default as roundQuantities } from "../functions/roundQuantities";
