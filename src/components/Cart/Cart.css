@@ -15,6 +15,25 @@
     resize: none;
   }
 
+  .clearButton {
+    height: 2rem;
+    width: 4rem;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: white;
+    border: 1px solid gray;
+    box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+
+    &:hover {
+      transition: 0.2s all;
+      transform: scale(1.05);
+    }
+  }
+
   .spinButtonArea {
     display: flex;
     flex-flow: column;
