@@ -37,3 +37,7 @@ export { default as spoonToGram } from "../functions/spoonToGram";
 
 // hooks
 export { default as useScrollLock } from "../hooks/useScrollLock";
+
+// data
+export { default as meatList } from "../data/meatList";
+export { default as vegetableList } from "../data/vegetableList";

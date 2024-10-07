@@ -43,6 +43,15 @@ const ToggleSwitchArea = () => {
           onChange={handleSwitchChange}
         />
       </div>
+      <div className="labeledToggleSwitch">
+        <div className="labelText">リストを分割</div>
+        <HelpButton onClick={() => handleOpenModal("spoonToGram")} />
+        <ToggleSwitch
+          id="classifyItems"
+          isChecked={toggleStates.classifyItems}
+          onChange={handleSwitchChange}
+        />
+      </div>
     </div>
   );
 };
