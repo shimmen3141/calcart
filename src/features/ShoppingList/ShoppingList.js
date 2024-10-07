@@ -23,11 +23,11 @@ const ShoppingList = ({ items }) => {
         <div>
           {/* 野菜リスト */}
           {vegetableItemList.length > 0 && (
-            <ul className="list">
-              <h3>野菜</h3>
+            <ul className="vegetableList">
+              <div className="listTypeTag">野菜</div>
               {vegetableItemList.map((item, index) => (
                 <div key={index}>
-                  <input type="checkbox" /> {item.name} {item.info}
+                  <input type="checkbox" /> {item.name}  {item.info}
                 </div>
               ))}
             </ul>
@@ -35,11 +35,11 @@ const ShoppingList = ({ items }) => {
 
           {/* 肉リスト */}
           {meatItemList.length > 0 && (
-            <ul className="list">
-              <h3>肉</h3>
+            <ul className="meatList">
+              <div className="listTypeTag">肉</div>
               {meatItemList.map((item, index) => (
                 <div key={index}>
-                  <input type="checkbox" /> {item.name} {item.info}
+                  <input type="checkbox" /> {item.name}  {item.info}
                 </div>
               ))}
             </ul>
@@ -47,21 +47,21 @@ const ShoppingList = ({ items }) => {
 
           {/* その他リスト */}
           {otherItemList.length > 0 && (
-            <ul className="list">
-              <h3>その他</h3>
+            <ul className="normalList">
+              <div className="listTypeTag">その他</div>
               {otherItemList.map((item, index) => (
                 <div key={index}>
-                  <input type="checkbox" /> {item.name} {item.info}
+                  <input type="checkbox" /> {item.name}  {item.info}
                 </div>
               ))}
             </ul>
           )}
         </div>
       ) : (
-        <ul className="list">
+        <ul className="normalList">
           {shoppingList.map((item, index) => (
             <div key={index}>
-              <input type="checkbox" /> {item.name} {item.info}
+              <input type="checkbox" /> {item.name}  {item.info}
             </div>
           ))}
         </ul>
