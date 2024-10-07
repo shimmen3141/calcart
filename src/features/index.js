@@ -1,4 +1,4 @@
-// components
+// features
 export { default as AppHeader } from "./AppHeader/AppHeader";
 export { default as MainContents } from "./MainContents/MainContents";
 export { default as AppFooter } from "./AppFooter/AppFooter";
@@ -11,13 +11,13 @@ export { default as RemoveSymbolsModal } from "./Modals/RemoveSymbolsModal";
 export { default as SpoonToGramModal } from "./Modals/SpoonToGramModal";
 export { default as ToggleSwitchArea } from "./ToggleSwitchArea/ToggleSwitchArea";
 
-// components/common
-export { default as CloseButton } from "./common/CloseButton/CloseButton";
-export { default as CopyButton } from "./common/CopyButton/CopyButton";
-export { default as HelpButton } from "./common/HelpButton/HelpButton";
-export { default as Modal } from "./common/Modal/Modal";
-export { default as useModal } from "./common/Modal/useModal";
-export { default as ToggleSwitch } from "./common/ToggleSwitch/ToggleSwitch";
+// components
+export { default as CloseButton } from "../components/CloseButton/CloseButton";
+export { default as CopyButton } from "../components/CopyButton/CopyButton";
+export { default as HelpButton } from "../components/HelpButton/HelpButton";
+export { default as Modal } from "../components/Modal/Modal";
+export { default as useModal } from "../components/Modal/useModal";
+export { default as ToggleSwitch } from "../components/ToggleSwitch/ToggleSwitch";
 
 // contexts
 export { ToggleSwitchProvider, useToggleSwitch } from "../contexts/ToggleSwitchContext";
