@@ -1,5 +1,5 @@
 import React from "react";
-import { CloseButton, useScrollLock } from "../../index";
+import { CloseButton, useScrollLock } from "../../features/index";
 import "./Modal.css";
 
 const Modal = ({ isOpen, onClose, title, children }) => {
