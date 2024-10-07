@@ -8,6 +8,7 @@ export const ToggleSwitchProvider = ({ children }) => {
   const [toggleStates, setToggleStates] = useState({
     removeSymbols: true,
     spoonToGram: true,
+    classifyItems: true,
   });
 
   const handleSwitchChange = (id) => {
