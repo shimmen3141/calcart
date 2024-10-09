@@ -8,24 +8,28 @@ const ShoppingList = ({ items }) => {
   console.log("ShoppingList");
 
   const { toggleStates } = useToggleSwitch();
-  const { shoppingList, shoppingListText } = aggregateItems({ items });
-  const { vegetableItemList, meatItemList, otherItemList } = classifyItems({
-    shoppingList,
+  const { itemList, itemListText } = aggregateItems({ items });
+  const { classifiedItemList, classifiedItemListText } = classifyItems({
+    itemList,
   });
+
+  const copyText = toggleStates.classifyItems
+    ? classifiedItemListText
+    : itemListText;
 
   return (
     <div className="shoppingList">
       <div className="title">
-        買い物リスト <CopyButton text={shoppingListText} />
+        買い物リスト <CopyButton text={copyText} />
       </div>
-      {/* <div>{shoppingListText}</div> */}
+      {/* <div>{copyText}</div> */}
       {toggleStates.classifyItems ? (
         <div>
           {/* 野菜リスト */}
-          {vegetableItemList.length > 0 && (
+          {classifiedItemList.vegetable.length > 0 && (
             <ul className="vegetableList">
               <div className="listTypeTag">野菜</div>
-              {vegetableItemList.map((item, index) => (
+              {classifiedItemList.vegetable.map((item, index) => (
                 <div key={index}>
                   <input type="checkbox" /> {item.name}  {item.info}
                 </div>
@@ -34,10 +38,10 @@ const ShoppingList = ({ items }) => {
           )}
 
           {/* 肉リスト */}
-          {meatItemList.length > 0 && (
+          {classifiedItemList.meat.length > 0 && (
             <ul className="meatList">
               <div className="listTypeTag">肉</div>
-              {meatItemList.map((item, index) => (
+              {classifiedItemList.meat.map((item, index) => (
                 <div key={index}>
                   <input type="checkbox" /> {item.name}  {item.info}
                 </div>
@@ -46,10 +50,10 @@ const ShoppingList = ({ items }) => {
           )}
 
           {/* その他リスト */}
-          {otherItemList.length > 0 && (
+          {classifiedItemList.others.length > 0 && (
             <ul className="normalList">
               <div className="listTypeTag">その他</div>
-              {otherItemList.map((item, index) => (
+              {classifiedItemList.others.map((item, index) => (
                 <div key={index}>
                   <input type="checkbox" /> {item.name}  {item.info}
                 </div>
@@ -59,7 +63,7 @@ const ShoppingList = ({ items }) => {
         </div>
       ) : (
         <ul className="normalList">
-          {shoppingList.map((item, index) => (
+          {itemList.map((item, index) => (
             <div key={index}>
               <input type="checkbox" /> {item.name}  {item.info}
             </div>
