@@ -64,11 +64,11 @@ export default function aggregateItems ({ items }) {
     return acc;
   }, []);
 
-  const shoppingList = secondAggregation;
+  const itemList = secondAggregation;
 
-  const shoppingListText = shoppingList
+  const itemListText = itemList
     .map((item) => `${item.name}  ${item.info}`)
     .join("\n");
 
-  return { shoppingList, shoppingListText };
+  return { itemList, itemListText };
 };
