@@ -6,9 +6,11 @@ import { ToggleSwitchProvider } from "./contexts/ToggleSwitchContext";
 const App = () => {
   return (
     <ToggleSwitchProvider>
-      <AppHeader />
-      <MainContents />
-      <AppFooter />
+      <div className="app">
+        <AppHeader />
+        <MainContents />
+        <AppFooter />
+      </div>
     </ToggleSwitchProvider>
   );
 };

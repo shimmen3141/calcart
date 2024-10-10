@@ -1,4 +1,5 @@
 .app {
   scrollbar-gutter: stable;
+  background-color: gray;
   /* overflow: auto; */
 }

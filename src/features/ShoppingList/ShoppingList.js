@@ -22,7 +22,6 @@ const ShoppingList = ({ items }) => {
       <div className="title">
         買い物リスト <CopyButton text={copyText} />
       </div>
-      {/* <div>{copyText}</div> */}
       {toggleStates.classifyItems ? (
         <div>
           {/* 野菜リスト */}
@@ -31,7 +30,7 @@ const ShoppingList = ({ items }) => {
               <div className="listTypeTag">野菜</div>
               {classifiedItemList.vegetable.map((item, index) => (
                 <div key={index}>
-                  <input type="checkbox" /> {item.name}  {item.info}
+                  <input type="checkbox" /> {item.name} {item.info}
                 </div>
               ))}
             </ul>
@@ -43,7 +42,7 @@ const ShoppingList = ({ items }) => {
               <div className="listTypeTag">肉</div>
               {classifiedItemList.meat.map((item, index) => (
                 <div key={index}>
-                  <input type="checkbox" /> {item.name}  {item.info}
+                  <input type="checkbox" /> {item.name} {item.info}
                 </div>
               ))}
             </ul>
@@ -55,20 +54,24 @@ const ShoppingList = ({ items }) => {
               <div className="listTypeTag">その他</div>
               {classifiedItemList.others.map((item, index) => (
                 <div key={index}>
-                  <input type="checkbox" /> {item.name}  {item.info}
+                  <input type="checkbox" /> {item.name} {item.info}
                 </div>
               ))}
             </ul>
           )}
         </div>
       ) : (
-        <ul className="normalList">
-          {itemList.map((item, index) => (
-            <div key={index}>
-              <input type="checkbox" /> {item.name}  {item.info}
-            </div>
-          ))}
-        </ul>
+        <div>
+          {itemList.length > 0 && (
+            <ul className="normalList">
+              {itemList.map((item, index) => (
+                <div key={index}>
+                  <input type="checkbox" /> {item.name} {item.info}
+                </div>
+              ))}
+            </ul>
+          )}
+        </div>
       )}
     </div>
   );
