@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ToggleSwitchArea, ShoppingList, Carts } from "../index";
+import { ToggleSwitchArea, ShoppingListArea, Carts } from "../index";
 import "./MainContents.css";
 
 const MainContents = () => {
@@ -24,7 +24,7 @@ const MainContents = () => {
     <div className="mainContents">
       <ToggleSwitchArea />
       <Carts allCarts={allCarts} setAllCarts={setAllCarts} />
-      <ShoppingList items={organizeIngredient()} />
+      <ShoppingListArea items={organizeIngredient()} />
     </div>
   );
 };
