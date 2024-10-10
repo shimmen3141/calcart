@@ -50,9 +50,7 @@ const Cart = React.memo(
         <textarea
           value={inputText}
           onChange={handleInputChange}
-          placeholder={`例:\nにんじん 2本\nタマネギ 3個\n醤油 50ml`}
-          rows="30"
-          cols="50"
+          placeholder={`例:\nにんじん 2本\nタマネギ 3個\n醤油 50ml`} 
         />
         <div>
           <button className="clearButton" onClick={handleClear}>クリア</button>
