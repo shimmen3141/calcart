@@ -1,8 +1,8 @@
 .mainContents {
     position: relative;
-    width: 800px;
+    max-width: 800px;
     margin: 0 auto;
-    padding: 1rem;
+    padding: 0.5rem;
     display: flex;
     flex-direction: column;
     background-color: white;

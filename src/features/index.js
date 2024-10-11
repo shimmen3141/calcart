@@ -6,6 +6,7 @@ export { default as Cart } from "./Cart/Cart";
 export { default as Carts } from "./Carts/Carts";
 export { default as ShoppingList } from "./ShoppingList/ShoppingList";
 export { default as ClassifiedShoppingList } from "./ShoppingList/ClassifiedShoppingList";
+export { default as EmptyShoppingList } from "./ShoppingList/EmptyShoppingList";
 export { default as ShoppingListArea } from "./ShoppingListArea/ShoppingListArea";
 export { default as InputFormatTag } from "./InputFormatTag/InputFormatTag";
 export { default as InputFormatModal } from "./Modals/InputFormatModal";

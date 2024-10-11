@@ -6,6 +6,7 @@ import {
   useToggleSwitch,
   ShoppingList,
   ClassifiedShoppingList,
+  EmptyShoppingList,
 } from "../index";
 import "./ShoppingList.css";
 
@@ -21,6 +22,15 @@ const ShoppingListArea = ({ items }) => {
   const copyText = toggleStates.classifyItems
     ? classifiedItemListText
     : itemListText;
+
+  if (itemList.length === 0) {
+    return (
+      <div className="shoppingList">
+        <div className="title">買い物リスト</div>
+        <EmptyShoppingList />
+      </div>
+    );
+  }
 
   return (
     <div className="shoppingList">
