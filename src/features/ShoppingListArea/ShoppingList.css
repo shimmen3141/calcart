@@ -7,9 +7,11 @@
   padding: 1rem;
 
   .title {
+    height: 2rem;
     font-size: 1.5rem;
     font-weight: bold;
     display: flex;
+    align-items: center;
   }
 
   .normalList {
@@ -81,6 +83,22 @@
       font-weight: bold;
       padding: 2px 4px;
       border-radius: 0 0 0 8px;
+    }
+  }
+
+  .empty {
+    position: relative;
+    width: auto;
+    min-height: 300px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 1rem;
+    background-color: white;
+
+    & div {
+      text-align: center;
+      font-size: 1.2rem;
+      font-weight: bold;
     }
   }
 }
