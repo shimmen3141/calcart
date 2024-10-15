@@ -44,3 +44,4 @@ export { default as useScrollLock } from "../hooks/useScrollLock";
 // data
 export { default as meatList } from "../data/meatList";
 export { default as vegetableList } from "../data/vegetableList";
+export { default as vegetableExceptionList } from "../data/vegetableExceptionList";

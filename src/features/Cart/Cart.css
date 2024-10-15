@@ -1,7 +1,7 @@
 .cart {
   position: relative;
-  width: calc(100vw - 3.5rem);
-  max-width: 380px;
+  width: 85vw;/* calc(100vw-3.5rem) */
+  max-width: 360px;
   padding: 1rem 1rem 2rem 1rem;
   background-color: rgb(226, 255, 229);
   border: 3px solid #00b90f;
@@ -18,7 +18,8 @@
     display: flex;
     width: 98%;
     margin: 0 auto 5px auto;
-    height: 400px;
+    height: calc(75vw*1.2);
+    max-height: 400px;
     resize: none;
   }
 
