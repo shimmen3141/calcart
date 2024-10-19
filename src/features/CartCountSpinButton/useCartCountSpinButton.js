@@ -4,6 +4,8 @@ const useCartCountSpinButton = ({ hadleCartCountChange }) => {
   const maxCount = 1000;
   const [count, setCount] = useState(1);
   const [errorMessage, setErrorMessage] = useState("");
+  // 入力が日本語の変換中かを管理する変数
+  const [isComposing, setIsComposing] = useState(false);
 
   const handleCountUp = () => {
     setCount((prevCount) => {
@@ -50,6 +52,14 @@ const useCartCountSpinButton = ({ hadleCartCountChange }) => {
     }, 2000);
   };
 
+  // Enterキーが押されたときの処理
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter" && !isComposing) {
+      handleBlur();
+      event.target.blur();
+    }
+  };
+
   // 入力が下限に達したか判定する関数
   const isMinCount = () => {
     return Number(count) <= 0;
@@ -65,6 +75,8 @@ const useCartCountSpinButton = ({ hadleCartCountChange }) => {
     handleCountDown,
     handleCountChange,
     handleBlur,
+    handleKeyDown,
+    setIsComposing,
     isMinCount,
     isMaxCount,
     count,
