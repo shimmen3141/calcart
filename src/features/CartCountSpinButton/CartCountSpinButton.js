@@ -8,6 +8,8 @@ const CartCountSpinButton = ({ hadleCartCountChange }) => {
     handleCountDown,
     handleCountChange,
     handleBlur,
+    handleKeyDown,
+    setIsComposing,
     isMinCount,
     isMaxCount,
     count,
@@ -25,6 +27,9 @@ const CartCountSpinButton = ({ hadleCartCountChange }) => {
         value={count}
         onChange={handleCountChange}
         onBlur={handleBlur}
+        onKeyDown={handleKeyDown}
+        onCompositionStart={() => setIsComposing(true)}
+        onCompositionEnd={() => setIsComposing(false)}
       />
       <button onClick={handleCountUp} disabled={isMaxCount()}>
         +
