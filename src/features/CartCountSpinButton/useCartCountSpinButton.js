@@ -37,7 +37,7 @@ const useCartCountSpinButton = ({ hadleCartCountChange }) => {
     } else if (isNaN(inputNumber) || inputNumber < 0) {
       setCount(0);
       hadleCartCountChange(0);
-      setErrorMessage("無効な値です。");
+      setErrorMessage("半角の数値を入力してください。");
     } else if (inputNumber > maxCount) {
       setCount(maxCount);
       hadleCartCountChange(maxCount);

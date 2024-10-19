@@ -29,6 +29,7 @@
 
   .errorMessage {
     position: absolute;
+    white-space: nowrap;
     left: 50%;
     transform: translateX(-50%);
     background-color: gray;
