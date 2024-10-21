@@ -1,15 +1,15 @@
 .toggleSwitchArea {
   display: grid;
   justify-content: flex-end;
-  /* row-gap: 1rem; */
 
-  margin: 1rem 1rem 2rem auto;
+  margin: 1rem 1rem 1rem auto;
 
   .labeledToggleSwitch {
     width: fit-content;
+    height: 3rem;
     border: 3px solid #ddd;
-    padding: 1rem;
-    margin-bottom: -3px; /* border を重ねるためborder幅の分ずらす*/
+    padding: 0.5rem 1rem;
+    margin-bottom: -3px; /* borderを重ねるためborder幅の分ずらす */
 
     display: flex;
     flex-direction: row;
