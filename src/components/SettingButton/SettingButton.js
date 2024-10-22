@@ -1,8 +1,8 @@
 import "./SettingButton.css";
 
-const SettingButton = () => {
+const SettingButton = ({ onClick }) => {
     return (
-        <img src="gear.svg" alt="setting" className="settingButton" />
+        <img src="gear.svg" alt="setting" className="settingButton" onClick={onClick} />
     );
 };
 

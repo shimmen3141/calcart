@@ -1,20 +1,20 @@
 import React from "react";
 import useAccordion from "./useAccordion";
 
-const Accordion = ({ accordionButton, children }) => {
+const Accordion = ({ isOpen, children }) => {
 
-  const { isOpen, toggleAccordion } = useAccordion();
+  //const { isOpen, toggleAccordion } = useAccordion();
 
   return (
     <div>
-      <div onClick={toggleAccordion}>
+      {/* <div onClick={toggleAccordion}>
         {accordionButton}
-      </div>
+      </div> */}
 
       <div
         style={{
           maxHeight: isOpen ? "1000px" : "0",
-          overflow: "hidden",
+        //   overflow: "hidden",
           transition: "max-height 0.3s ease",
         }}
       >
