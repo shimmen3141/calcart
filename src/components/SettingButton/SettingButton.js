@@ -1,6 +1,8 @@
+import "./SettingButton.css";
+
 const SettingButton = () => {
     return (
-        <img src="gear.svg" />
+        <img src="gear.svg" className="settingButton" />
     );
 };
 
