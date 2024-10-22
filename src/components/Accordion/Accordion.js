@@ -1,12 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
+import useAccordion from "./useAccordion";
 
 const Accordion = ({ accordionButton, children }) => {
-  const [isOpen, setIsOpen] = useState(false);
 
-  // アコーディオンの開閉を切り替える関数
-  const toggleAccordion = () => {
-    setIsOpen((prevStates) => !prevStates);
-  };
+  const { isOpen, toggleAccordion } = useAccordion();
 
   return (
     <div>
