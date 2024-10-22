@@ -2,7 +2,7 @@ import "./SettingButton.css";
 
 const SettingButton = () => {
     return (
-        <img src="gear.svg" className="settingButton" />
+        <img src="gear.svg" alt="setting" className="settingButton" />
     );
 };
 
