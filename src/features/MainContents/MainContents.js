@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { ToggleSwitchArea, ShoppingListArea, Carts } from "../index";
 import "./MainContents.css";
-import Accordion from "../../components/Accordion/Accordion";
-import SettingButton from "../../components/SettingButton/SettingButton";
 
 const MainContents = () => {
   const [allCarts, setAllCarts] = useState([
@@ -24,9 +22,6 @@ const MainContents = () => {
 
   return (
     <div className="mainContents">
-      <Accordion accordionButton={< SettingButton />}>
-        <ToggleSwitchArea />
-      </Accordion>
       <Carts allCarts={allCarts} setAllCarts={setAllCarts} />
       <ShoppingListArea items={organizeIngredient()} />
     </div>
