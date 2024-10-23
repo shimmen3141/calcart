@@ -17,7 +17,9 @@ const AppHeader = () => {
   return (
     <div className="appHeader">
       <div className="title">Calcart</div>
-      <SettingButton onClick={toggleAccordion} />
+      <div className="settingButton">
+        <SettingButton onClick={toggleAccordion} />
+      </div>
       <Accordion isOpen={isOpen}>
         <ToggleSwitchArea />
       </Accordion>
