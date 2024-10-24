@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ToggleSwitchArea, ShoppingListArea, Carts } from "../index";
+import { ShoppingListArea, Carts } from "../index";
 import "./MainContents.css";
 
 const MainContents = () => {
