@@ -1,28 +1,23 @@
 import React from "react";
-import useAccordion from "./useAccordion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Accordion = ({ isOpen, children }) => {
-
-  //const { isOpen, toggleAccordion } = useAccordion();
-
   return (
-    <div>
-      {/* <div onClick={toggleAccordion}>
-        {accordionButton}
-      </div> */}
-
-      <div
-        style={{
-          maxHeight: isOpen ? "1000px" : "0",
-        //   overflow: "hidden",
-          transition: "max-height 0.3s ease",
-        }}
-      >
-        <div style={{ padding: isOpen ? "10px" : "0" }}>
-          {isOpen && children}
-        </div>
-      </div>
-    </div>
+    <motion.div>
+      <AnimatePresence initial={false}>
+        {isOpen && (
+          <motion.div
+            key="content"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            {children}
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.div>
   );
 };
 
