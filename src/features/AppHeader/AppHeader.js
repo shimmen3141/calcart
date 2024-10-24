@@ -1,22 +1,22 @@
 import "./AppHeader.css";
 import { ToggleSwitchArea } from "../index";
-import Accordion from "../../components/Accordion/Accordion";
+import DropdownMenu from "../../components/DropdownMenu/DropdownMenu";
 import SettingButton from "../../components/SettingButton/SettingButton";
-import useAccordion from "../../components/Accordion/useAccordion";
+import useDropdownMenu from "../../components/DropdownMenu/useDropdownMenu";
 
 const AppHeader = () => {
   
-  const { isOpen, toggleAccordion } = useAccordion();
+  const { isOpen, toggleDropdown } = useDropdownMenu();
 
   return (
     <div className="appHeader">
       <div className="title">Calcart</div>
       <div className="settingButton">
-        <SettingButton onClick={toggleAccordion} />
+        <SettingButton onClick={toggleDropdown} />
       </div>
-      <Accordion isOpen={isOpen}>
+      <DropdownMenu isOpen={isOpen}>
         <ToggleSwitchArea />
-      </Accordion>
+      </DropdownMenu>
     </div>
   );
 };

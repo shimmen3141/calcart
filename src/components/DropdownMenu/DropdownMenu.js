@@ -1,7 +1,7 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const Accordion = ({ isOpen, children }) => {
+const DropdownMenu = ({ isOpen, children }) => {
   return (
     <motion.div>
       <AnimatePresence initial={false}>
@@ -11,7 +11,7 @@ const Accordion = ({ isOpen, children }) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.2 }}
           >
             {children}
           </motion.div>
@@ -21,4 +21,4 @@ const Accordion = ({ isOpen, children }) => {
   );
 };
 
-export default Accordion;
+export default DropdownMenu;
