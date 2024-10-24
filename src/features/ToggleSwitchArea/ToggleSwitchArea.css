@@ -1,10 +1,13 @@
 .toggleSwitchArea {
   display: grid;
   justify-content: flex-end;
-  background-color: white;
-  /* margin: 1rem 1rem 1rem auto; */
+  border-radius: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15);
 
-  .labeledToggleSwitch {
+  .labeledToggleSwitch,
+  .labeledToggleSwitch_top,
+  .labeledToggleSwitch_bottom {
+    background-color: white;
     width: fit-content;
     height: 3rem;
     border: 3px solid #ddd;
@@ -27,5 +30,13 @@
     .toggleSwitch {
       margin-left: 4rem;
     }
+  }
+
+  .labeledToggleSwitch_top {
+    border-radius: 20px 20px 0 0;
+  }
+
+  .labeledToggleSwitch_bottom {
+    border-radius: 0 0 20px 20px;
   }
 }
