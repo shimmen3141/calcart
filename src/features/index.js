@@ -22,6 +22,7 @@ export { default as useDropdownMenu } from "../components/DropdownMenu/useDropdo
 export { default as HelpButton } from "../components/HelpButton/HelpButton";
 export { default as Modal } from "../components/Modal/Modal";
 export { default as useModal } from "../components/Modal/useModal";
+export { default as SettingButton } from "../components/SettingButton/SettingButton";
 export { default as ToggleSwitch } from "../components/ToggleSwitch/ToggleSwitch";
 
 // contexts
