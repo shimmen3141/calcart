@@ -23,6 +23,7 @@
     border-radius: 10px;
     box-sizing: border-box;
     padding: 2rem 1rem;
+    white-space: pre-wrap;
 
     .listTypeTag {
       position: absolute;
@@ -46,6 +47,7 @@
     border-radius: 10px;
     box-sizing: border-box;
     padding: 2rem 1rem;
+    white-space: pre-wrap;
 
     .listTypeTag {
       position: absolute;
@@ -69,6 +71,7 @@
     border-radius: 10px;
     box-sizing: border-box;
     padding: 2rem 1rem;
+    white-space: pre-wrap;
 
     .listTypeTag {
       position: absolute;
