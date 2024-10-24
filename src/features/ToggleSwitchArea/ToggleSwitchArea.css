@@ -39,4 +39,14 @@
   .labeledToggleSwitch_bottom {
     border-radius: 0 0 20px 20px;
   }
+
+  .triangle {
+    position: absolute;
+    top: calc(3px - 1rem);
+    right: 36px;
+    background: white;
+    height: calc(tan(60deg) * 20px / 2);
+    width: 20px;
+    clip-path: polygon(50% 0, 100% 100%, 0 100%);
+  }
 }

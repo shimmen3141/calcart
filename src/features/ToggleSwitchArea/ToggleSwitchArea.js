@@ -23,6 +23,7 @@ const ToggleSwitchArea = () => {
         id="spoonToGram"
         labelText="大さじ・小さじ → g に変換"
       /> */}
+      <div className="triangle"></div>
       <div className="labeledToggleSwitch_top">
         <div className="labelText">記号を消去</div>
         <HelpButton onClick={() => handleOpenModal("removeSymbols")} />
