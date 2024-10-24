@@ -11,7 +11,7 @@ const AppHeader = () => {
   return (
     <div className="appHeader">
       <div className="title">Calcart</div>
-      <div className="settingButton">
+      <div className={`settingButton ${isOpen ? "open" : ""}`}>
         <SettingButton onClick={toggleDropdown} />
       </div>
       <DropdownMenu isOpen={isOpen}>

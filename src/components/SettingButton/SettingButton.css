@@ -7,18 +7,11 @@
 /* 参考: https://qiita.com/mimoe/items/0bcba94da365499e9c6b */
 
 .outer {
-  --sizeZoomRatio: 1.5;
-
   position: relative;
   width: 30px;
   height: 30px;
-  transform: scale(var(--sizeZoomRatio));
+  transform: scale(1.5);
   cursor: pointer;
-
-  &:hover {
-    transition: 0.2s all;
-    transform:  rotate(45deg) scale(calc(1.1 * var(--sizeZoomRatio)));
-  }
 }
 
 .iconGear,
