@@ -5,7 +5,6 @@ import SettingButton from "../../components/SettingButton/SettingButton";
 import useDropdownMenu from "../../components/DropdownMenu/useDropdownMenu";
 
 const AppHeader = () => {
-  
   const { isOpen, toggleDropdown } = useDropdownMenu();
 
   return (
@@ -17,6 +16,7 @@ const AppHeader = () => {
       <DropdownMenu isOpen={isOpen}>
         <ToggleSwitchArea />
       </DropdownMenu>
+      {isOpen && <div className="outsideMenu" onClick={toggleDropdown}></div>}
     </div>
   );
 };
