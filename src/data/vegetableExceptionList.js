@@ -14,6 +14,11 @@ const vegetableExceptionList = [
   //   "トマト缶",
   //   "コーン缶",
   "ジュース",
+  
+  "豆板醬",
+  "豆板醤",
+  "豆鼓醬",
+  "豆鼓醤",
 ];
 
 export default vegetableExceptionList;
