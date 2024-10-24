@@ -23,7 +23,7 @@ const ToggleSwitchArea = () => {
         id="spoonToGram"
         labelText="大さじ・小さじ → g に変換"
       /> */}
-      <div className="labeledToggleSwitch">
+      <div className="labeledToggleSwitch_top">
         <div className="labelText">記号を消去</div>
         <HelpButton onClick={() => handleOpenModal("removeSymbols")} />
         <RemoveSymbolsModal isOpen={isModalOpen} onClose={handleCloseModal} />
@@ -43,7 +43,7 @@ const ToggleSwitchArea = () => {
           onChange={handleSwitchChange}
         />
       </div>
-      <div className="labeledToggleSwitch">
+      <div className="labeledToggleSwitch_bottom">
         <div className="labelText">リストを分割</div>
         <HelpButton onClick={() => handleOpenModal("spoonToGram")} />
         <ToggleSwitch
