@@ -1,15 +1,15 @@
 import { useState } from "react";
 
-const useAccordion = () => {
+const useDropdownMenu = () => {
   // アコーディオンの開閉を管理する変数
   const [isOpen, setIsOpen] = useState(false);
 
   // アコーディオンの開閉を切り替える関数
-  const toggleAccordion = () => {
+  const toggleDropdown = () => {
     setIsOpen((prevStates) => !prevStates);
   };
 
-  return { isOpen, toggleAccordion };
+  return { isOpen, toggleDropdown };
 };
 
-export default useAccordion;
+export default useDropdownMenu;
