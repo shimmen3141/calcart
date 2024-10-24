@@ -1,8 +1,10 @@
 import "./AppHeader.css";
-import { ToggleSwitchArea } from "../index";
-import DropdownMenu from "../../components/DropdownMenu/DropdownMenu";
-import SettingButton from "../../components/SettingButton/SettingButton";
-import useDropdownMenu from "../../components/DropdownMenu/useDropdownMenu";
+import {
+  ToggleSwitchArea,
+  DropdownMenu,
+  useDropdownMenu,
+  SettingButton,
+} from "../index";
 
 const AppHeader = () => {
   const { isOpen, toggleDropdown } = useDropdownMenu();
