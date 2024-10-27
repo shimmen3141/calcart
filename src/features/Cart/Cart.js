@@ -13,6 +13,7 @@ const Cart = React.memo(
   ({ allCarts, setAllCarts, cartID, cartNumber, cartRefs }) => {
     const {
       inputText,
+      cartCount,
       inputFormat,
       handleInputChange,
       handleClear,
@@ -53,7 +54,10 @@ const Cart = React.memo(
         </div>
         <div className="spinButtonArea">
           <div>カート台数：</div>
-          <CartCountSpinButton hadleCartCountChange={hadleCartCountChange} />
+          <CartCountSpinButton
+            cartCount={cartCount}
+            hadleCartCountChange={hadleCartCountChange}
+          />
         </div>
       </div>
     );

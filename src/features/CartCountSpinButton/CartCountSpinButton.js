@@ -2,7 +2,7 @@ import useCartCountSpinButton from "./useCartCountSpinButton";
 import { motion } from "framer-motion";
 import "./CartCountSpinButton.css";
 
-const CartCountSpinButton = ({ hadleCartCountChange }) => {
+const CartCountSpinButton = ({ cartCount, hadleCartCountChange }) => {
   const {
     handleCountUp,
     handleCountDown,
@@ -14,7 +14,7 @@ const CartCountSpinButton = ({ hadleCartCountChange }) => {
     isMaxCount,
     value,
     errorMessage,
-  } = useCartCountSpinButton({ hadleCartCountChange });
+  } = useCartCountSpinButton({ cartCount, hadleCartCountChange });
 
   return (
     <div className="spinButton">

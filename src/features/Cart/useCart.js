@@ -116,6 +116,7 @@ const useCart = ({
 
   return {
     inputText,
+    cartCount,
     inputFormat,
     handleInputChange,
     handleClear,

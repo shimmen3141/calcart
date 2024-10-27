@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-const useCartCountSpinButton = ({ hadleCartCountChange }) => {
+const useCartCountSpinButton = ({ cartCount, hadleCartCountChange }) => {
   const maxCount = 1000;
-  const [value, setValue] = useState(1);
+  const [value, setValue] = useState(cartCount);
   const [errorMessage, setErrorMessage] = useState("");
   // 入力が日本語の変換中かを管理する変数
   const [isComposing, setIsComposing] = useState(false);
