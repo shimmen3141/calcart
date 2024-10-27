@@ -12,7 +12,7 @@ const CartCountSpinButton = ({ hadleCartCountChange }) => {
     setIsComposing,
     isMinCount,
     isMaxCount,
-    count,
+    value,
     errorMessage,
   } = useCartCountSpinButton({ hadleCartCountChange });
 
@@ -24,7 +24,7 @@ const CartCountSpinButton = ({ hadleCartCountChange }) => {
       <input
         type="text"
         inputmode="numeric"
-        value={count}
+        value={value}
         onChange={handleCountChange}
         onBlur={handleBlur}
         onKeyDown={handleKeyDown}

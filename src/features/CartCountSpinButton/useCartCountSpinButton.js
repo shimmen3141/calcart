@@ -2,13 +2,13 @@ import { useState } from "react";
 
 const useCartCountSpinButton = ({ hadleCartCountChange }) => {
   const maxCount = 1000;
-  const [count, setCount] = useState(1);
+  const [value, setValue] = useState(1);
   const [errorMessage, setErrorMessage] = useState("");
   // 入力が日本語の変換中かを管理する変数
   const [isComposing, setIsComposing] = useState(false);
 
   const handleCountUp = () => {
-    setCount((prevCount) => {
+    setValue((prevCount) => {
       const newCount = Math.min(prevCount + 1, maxCount);
       hadleCartCountChange(newCount);
       return newCount;
@@ -16,7 +16,7 @@ const useCartCountSpinButton = ({ hadleCartCountChange }) => {
   };
 
   const handleCountDown = () => {
-    setCount((prevCount) => {
+    setValue((prevCount) => {
       const newCount = Math.max(0, prevCount - 1);
       hadleCartCountChange(newCount);
       return newCount;
@@ -25,25 +25,25 @@ const useCartCountSpinButton = ({ hadleCartCountChange }) => {
 
   const handleCountChange = (event) => {
     const inputValue = event.target.value;
-    setCount(inputValue);
+    setValue(inputValue);
   };
 
   // 入力欄からフォーカスを外した際の処理
   const handleBlur = () => {
-    const inputNumber = Number(count);
-    if (count === "") {
-      setCount(0);
+    const inputNumber = Number(value);
+    if (value === "") {
+      setValue(0);
       hadleCartCountChange(0);
     } else if (isNaN(inputNumber) || inputNumber < 0) {
-      setCount(0);
+      setValue(0);
       hadleCartCountChange(0);
       setErrorMessage("半角の数値を入力してください。");
     } else if (inputNumber > maxCount) {
-      setCount(maxCount);
+      setValue(maxCount);
       hadleCartCountChange(maxCount);
       setErrorMessage(`最大値は${maxCount}です。`);
     } else {
-      setCount(inputNumber);
+      setValue(inputNumber);
       hadleCartCountChange(inputNumber);
     }
 
@@ -62,12 +62,12 @@ const useCartCountSpinButton = ({ hadleCartCountChange }) => {
 
   // 入力が下限に達したか判定する関数
   const isMinCount = () => {
-    return Number(count) <= 0;
+    return Number(value) <= 0;
   };
 
   // 入力が上限に達したか判定する関数
   const isMaxCount = () => {
-    return Number(count) >= maxCount;
+    return Number(value) >= maxCount;
   };
 
   return {
@@ -79,7 +79,7 @@ const useCartCountSpinButton = ({ hadleCartCountChange }) => {
     setIsComposing,
     isMinCount,
     isMaxCount,
-    count,
+    value,
     errorMessage,
   };
 };

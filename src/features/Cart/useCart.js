@@ -13,6 +13,8 @@ const useCart = ({
 }) => {
   // 入力内容を管理する変数
   const [inputText, setInputText] = useState("");
+  // カート台数を管理する変数
+  const [cartCount, setCartCount] = useState(1);
   // 入力形式を管理する変数
   const [inputFormat, setInputFormat] = useState("not-entered");
 
@@ -108,6 +110,7 @@ const useCart = ({
   // };
 
   const hadleCartCountChange = (count) => {
+    setCartCount(Number(count));
     updateCart("cartCount", Number(count));
   };
 

@@ -10,13 +10,7 @@ import "./Cart.css";
 import CartCountSpinButton from "../CartCountSpinButton/CartCountSpinButton";
 
 const Cart = React.memo(
-  ({
-    allCarts,
-    setAllCarts,
-    cartID,
-    cartNumber,
-    cartRefs,
-  }) => {
+  ({ allCarts, setAllCarts, cartID, cartNumber, cartRefs }) => {
     const {
       inputText,
       inputFormat,
@@ -50,10 +44,12 @@ const Cart = React.memo(
         <textarea
           value={inputText}
           onChange={handleInputChange}
-          placeholder={`---例1 (1行1材料)---\nにんじん 2本\nタマネギ 3個\n醤油 50ml\n\n---例2 (2行1材料)---\nにんじん\n2本\nタマネギ\n3個\n醤油\n50ml`} 
+          placeholder={`---例1 (1行1材料)---\nにんじん 2本\nタマネギ 3個\n醤油 50ml\n\n---例2 (2行1材料)---\nにんじん\n2本\nタマネギ\n3個\n醤油\n50ml`}
         />
         <div>
-          <button className="clearButton" onClick={handleClear}>クリア</button>
+          <button className="clearButton" onClick={handleClear}>
+            クリア
+          </button>
         </div>
         <div className="spinButtonArea">
           <div>カート台数：</div>
