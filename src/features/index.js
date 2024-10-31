@@ -33,16 +33,16 @@ export {
 
 // functions
 export { default as containsNumber } from "../functions/containsNumber";
-export { default as ellipsisToSpace } from "../functions/ellipsisToSpace";
+export { default as convertEllipsisToSpace } from "../functions/convertEllipsisToSpace";
 export { default as convertFractionToDecimal } from "../functions/convertFractionToDecimal";
 export { default as convertFullToHalf } from "../functions/convertFullToHalf";
+export { default as convertSpoonToGram } from "../functions/convertSpoonToGram";
 export { default as multiplyQuantities } from "../functions/multiplyQuantities";
 export { default as removeExtraSpaces } from "../functions/removeExtraSpaces";
 export { default as removeNumbers } from "../functions/removeNumbers";
 export { default as removeSymbols } from "../functions/removeSymbols";
 export { default as roundQuantities } from "../functions/roundQuantities";
 export { default as splitIntoNumAndChar } from "../functions/splitIntoNumAndChar";
-export { default as convertSpoonToGram } from "../functions/convertSpoonToGram";
 
 // hooks
 export { default as useScrollLock } from "../hooks/useScrollLock";
