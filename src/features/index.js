@@ -26,13 +26,16 @@ export { default as SettingButton } from "../components/SettingButton/SettingBut
 export { default as ToggleSwitch } from "../components/ToggleSwitch/ToggleSwitch";
 
 // contexts
-export { ToggleSwitchProvider, useToggleSwitch } from "../contexts/ToggleSwitchContext";
+export {
+  ToggleSwitchProvider,
+  useToggleSwitch,
+} from "../contexts/ToggleSwitchContext";
 
 // functions
 export { default as containsNumber } from "../functions/containsNumber";
 export { default as ellipsisToSpace } from "../functions/ellipsisToSpace";
 export { default as fractionToDecimal } from "../functions/fractionToDecimal";
-export { default as fullWidthToHalfWidth } from "../functions/fullWidthToHalfWidth";
+export { default as convertFullToHalf } from "../functions/convertFullToHalf";
 export { default as multiplyQuantities } from "../functions/multiplyQuantities";
 export { default as removeExtraSpaces } from "../functions/removeExtraSpaces";
 export { default as removeNumbers } from "../functions/removeNumbers";
