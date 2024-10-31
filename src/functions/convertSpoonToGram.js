@@ -1,7 +1,7 @@
 import gramPerTeaspoon from "../dataset";
 
 // 文字列中の大さじ・小さじ表記をグラム表記に変換する関数
-export default function spoonToGram(name, info) {
+export default function convertSpoonToGram(name, info) {
   // nameがgramPerTeaspoonに含まれているか確認
   let seasoningName = Object.keys(gramPerTeaspoon).find((key) =>
     name.includes(key)
@@ -37,4 +37,4 @@ export default function spoonToGram(name, info) {
   } else {
     return info;
   }
-};
+}

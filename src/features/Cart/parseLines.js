@@ -1,4 +1,4 @@
-import { spoonToGram } from "../index";
+import { convertSpoonToGram } from "../index";
 
 // 入力形式をもとに入力内容を処理する関数
 export default function parseLines(lines, currentFormat, isSpoonToGramApplied) {
@@ -11,7 +11,9 @@ export default function parseLines(lines, currentFormat, isSpoonToGramApplied) {
         const [name, quantity] = line.split(/(?<=^[^\s]+)\s/);
         const info =
           quantity !== undefined ? quantity.replace(/\s+/g, "") : "適量";
-        const fixedInfo = isSpoonToGramApplied ? spoonToGram(name, info) : info;
+        const fixedInfo = isSpoonToGramApplied
+          ? convertSpoonToGram(name, info)
+          : info;
 
         return { name: name, info: fixedInfo };
       })
@@ -23,11 +25,11 @@ export default function parseLines(lines, currentFormat, isSpoonToGramApplied) {
       // 奇数行が分量
       const quantity = lines[i + 1] ? lines[i + 1] : "適量";
       const fixedInfo = isSpoonToGramApplied
-        ? spoonToGram(name, quantity)
+        ? convertSpoonToGram(name, quantity)
         : quantity;
       parsedIngredients.push({ name: name, info: fixedInfo });
     }
   }
 
   return parsedIngredients;
-};
+}

@@ -42,7 +42,7 @@ export { default as removeNumbers } from "../functions/removeNumbers";
 export { default as removeSymbols } from "../functions/removeSymbols";
 export { default as roundQuantities } from "../functions/roundQuantities";
 export { default as splitIntoNumAndChar } from "../functions/splitIntoNumAndChar";
-export { default as spoonToGram } from "../functions/spoonToGram";
+export { default as convertSpoonToGram } from "../functions/convertSpoonToGram";
 
 // hooks
 export { default as useScrollLock } from "../hooks/useScrollLock";
