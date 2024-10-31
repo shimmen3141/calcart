@@ -34,7 +34,7 @@ export {
 // functions
 export { default as containsNumber } from "../functions/containsNumber";
 export { default as ellipsisToSpace } from "../functions/ellipsisToSpace";
-export { default as fractionToDecimal } from "../functions/fractionToDecimal";
+export { default as convertFractionToDecimal } from "../functions/convertFractionToDecimal";
 export { default as convertFullToHalf } from "../functions/convertFullToHalf";
 export { default as multiplyQuantities } from "../functions/multiplyQuantities";
 export { default as removeExtraSpaces } from "../functions/removeExtraSpaces";

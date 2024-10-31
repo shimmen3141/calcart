@@ -1,6 +1,6 @@
 import {
   convertFullToHalf,
-  fractionToDecimal,
+  convertFractionToDecimal,
   ellipsisToSpace,
   removeSymbols,
   removeExtraSpaces,
@@ -15,7 +15,7 @@ export default function divideInput(text, isRemoveSymbolsApplied) {
     .map((line) => (isRemoveSymbolsApplied ? removeSymbols(line) : line)) // 余計な記号を削除
     .map((line) => removeExtraSpaces(line)) // 括弧の周りの余計な空白文字を削除
     .filter((line) => line.trim()) // 空行を無視
-    .map((line) => fractionToDecimal(line)) // 分数を小数に変換
+    .map((line) => convertFractionToDecimal(line)) // 分数を小数に変換
     .map((line) => line.trim()); // 文字列前後の余計な空白文字を削除
 
   return lines;

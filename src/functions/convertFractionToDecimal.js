@@ -1,5 +1,5 @@
 // 文字列中の分数を小数に変換する関数
-export default function fractionToDecimal(str) {
+export default function convertFractionToDecimal(str) {
   // "数値と数値/数値" の形式の分数を小数に変換
   str = str.replace(
     /(\d+)\s*と\s*(\d+)\s*\/\s*(\d+)/g,
@@ -17,4 +17,4 @@ export default function fractionToDecimal(str) {
   });
 
   return str;
-};
+}
