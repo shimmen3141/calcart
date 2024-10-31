@@ -37,6 +37,7 @@ export { default as convertEllipsisToSpace } from "../functions/convertEllipsisT
 export { default as convertFractionToDecimal } from "../functions/convertFractionToDecimal";
 export { default as convertFullToHalf } from "../functions/convertFullToHalf";
 export { default as convertSpoonToGram } from "../functions/convertSpoonToGram";
+export { default as convertRadicalToKanji } from "../functions/convertRadicalToKanji";
 export { default as multiplyQuantities } from "../functions/multiplyQuantities";
 export { default as removeExtraSpaces } from "../functions/removeExtraSpaces";
 export { default as removeNumbers } from "../functions/removeNumbers";

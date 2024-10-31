@@ -1,4 +1,4 @@
-import { radicalToKanjiMap } from "../data/radicalToKanjiMap";
+import radicalToKanjiMap from "../data/radicalToKanjiMap";
 
 /* 
     CJK部首、康煕部首を通常の漢字に変換する関数

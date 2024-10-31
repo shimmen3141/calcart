@@ -2,6 +2,7 @@ import {
   convertFullToHalf,
   convertFractionToDecimal,
   convertEllipsisToSpace,
+  convertRadicalToKanji,
   removeSymbols,
   removeExtraSpaces,
 } from "../index";
@@ -11,6 +12,7 @@ export default function divideInput(text, isRemoveSymbolsApplied) {
   const lines = text
     .split("\n")
     .map((line) => convertFullToHalf(line)) // 全角を半角に変換
+    .map((line) => convertRadicalToKanji(line)) // 部首文字を漢字に変換
     .map((line) => convertEllipsisToSpace(line)) // 三点リーダーを半角スペースに置換
     .map((line) => (isRemoveSymbolsApplied ? removeSymbols(line) : line)) // 余計な記号を削除
     .map((line) => removeExtraSpaces(line)) // 括弧の周りの余計な空白文字を削除
