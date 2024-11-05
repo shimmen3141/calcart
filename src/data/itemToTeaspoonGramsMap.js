@@ -1,4 +1,4 @@
-const itemToTeaspoonWeightMap = new Map([
+const itemToTeaspoonGramsMap = new Map([
   ["しょうゆ", 6],
   ["醤油", 6],
   ["みそ", 6],
@@ -50,4 +50,4 @@ const itemToTeaspoonWeightMap = new Map([
   ["鶏ガラスープの素", 2.5],
 ]);
 
-export default itemToTeaspoonWeightMap;
+export default itemToTeaspoonGramsMap;
