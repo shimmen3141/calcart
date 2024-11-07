@@ -1,43 +1,41 @@
 import itemToTeaspoonGramsMap from "../data/itemToTeaspoonGramsMap";
 
 // 文字列中の大さじ・小さじ表記をグラム表記に変換する関数
-export default function convertSpoonToGram(name, info) {
-  // nameがgramPerTeaspoonに含まれているか確認
+export default function convertSpoonToGram(itemName, itemInfo) {
+  // itemName が itemToTeaspoonGramsMap に含まれているか確認
   const seasoningName = Array.from(itemToTeaspoonGramsMap.keys()).find(
-    (seasoningName) => name.includes(seasoningName)
+    (seasoningName) => itemName.includes(seasoningName)
   );
 
   if (seasoningName) {
     // 一般的な "大さじ" 、"小さじ" の表記に変換
-    info = info
+    itemInfo = itemInfo
       .replace(/匙/g, "さじ")
       .replace(/お\s*お\s*さ\s*じ/g, "大さじ")
       .replace(/こ\s*さ\s*じ/g, "小さじ");
 
     // 大さじ表記をグラム表記に変換
-    info = info.replace(
+    itemInfo = itemInfo.replace(
       /大\s*さ\s*じ\s*(\d+(?:\.\d+)?)(?:\s*杯)?/g,
-      (match, tablespoon) => {
+      (match, value) => {
         const grams =
-          3 *
-          itemToTeaspoonGramsMap.get(seasoningName) *
-          parseFloat(tablespoon);
+          3 * itemToTeaspoonGramsMap.get(seasoningName) * parseFloat(value);
         return `${grams}g`;
       }
     );
 
     // 小さじ表記をグラム表記に変換
-    info = info.replace(
+    itemInfo = itemInfo.replace(
       /小\s*さ\s*じ\s*(\d+(?:\.\d+)?)(?:\s*杯)?/g,
-      (match, teaspoon) => {
+      (match, value) => {
         const grams =
-          itemToTeaspoonGramsMap.get(seasoningName) * parseFloat(teaspoon);
+          itemToTeaspoonGramsMap.get(seasoningName) * parseFloat(value);
         return `${grams}g`;
       }
     );
 
-    return info;
+    return itemInfo;
   } else {
-    return info;
+    return itemInfo;
   }
 }
