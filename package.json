@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^13.5.0",
     "body-scroll-lock": "^4.0.0-beta.0",
     "framer-motion": "^11.5.4",
+    "gh-pages": "^6.2.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-flip-toolkit": "^7.2.4",
@@ -16,7 +17,10 @@
     "react-transition-group": "^4.4.5",
     "web-vitals": "^2.1.4"
   },
+  "homepage": "https://shimmen3141.github.io/calcart",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
