@@ -52,3 +52,4 @@ export { default as useScrollLock } from "../hooks/useScrollLock";
 export { default as meatList } from "../data/meatList";
 export { default as vegetableList } from "../data/vegetableList";
 export { default as vegetableExceptionList } from "../data/vegetableExceptionList";
+export { default as radicalToKanjiMap } from "../data/radicalToKanjiMap";
