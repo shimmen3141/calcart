@@ -1,10 +1,10 @@
-import gramPerTeaspoon from "../dataset";
+import itemToTeaspoonGramsMap from "../data/itemToTeaspoonGramsMap";
 
 // 文字列中の大さじ・小さじ表記をグラム表記に変換する関数
 export default function convertSpoonToGram(name, info) {
   // nameがgramPerTeaspoonに含まれているか確認
-  const seasoningName = Object.keys(gramPerTeaspoon).find((key) =>
-    name.includes(key)
+  const seasoningName = Array.from(itemToTeaspoonGramsMap.keys()).find(
+    (seasoningName) => name.includes(seasoningName)
   );
 
   if (seasoningName) {
@@ -19,7 +19,9 @@ export default function convertSpoonToGram(name, info) {
       /大\s*さ\s*じ\s*(\d+(?:\.\d+)?)(?:\s*杯)?/g,
       (match, tablespoon) => {
         const grams =
-          3 * gramPerTeaspoon[seasoningName] * parseFloat(tablespoon);
+          3 *
+          itemToTeaspoonGramsMap.get(seasoningName) *
+          parseFloat(tablespoon);
         return `${grams}g`;
       }
     );
@@ -28,7 +30,8 @@ export default function convertSpoonToGram(name, info) {
     info = info.replace(
       /小\s*さ\s*じ\s*(\d+(?:\.\d+)?)(?:\s*杯)?/g,
       (match, teaspoon) => {
-        const grams = gramPerTeaspoon[seasoningName] * parseFloat(teaspoon);
+        const grams =
+          itemToTeaspoonGramsMap.get(seasoningName) * parseFloat(teaspoon);
         return `${grams}g`;
       }
     );
