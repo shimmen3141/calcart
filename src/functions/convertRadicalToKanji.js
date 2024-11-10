@@ -7,6 +7,6 @@ import { radicalToKanjiMap } from "../features/index";
 export default function convertRadicalToKanji(str) {
   // 部首文字と漢字の連想配列を用いて変換
   return Array.from(str)
-    .map((char) => radicalToKanjiMap[char] || char)
+    .map((char) => radicalToKanjiMap.get(char) || char)
     .join("");
 }
