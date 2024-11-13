@@ -1,4 +1,4 @@
-@use "../../styles/mixin.scss" as *;
+@use "../../styles/mixin" as *;
 
 .spinButton {
   & input {
@@ -17,7 +17,7 @@
     border: 1px solid #b84c00;
     cursor: pointer;
 
-    @include hover  {
+    @include hover {
       transition: 0.2s all;
       transform: scale(1.1);
     }
