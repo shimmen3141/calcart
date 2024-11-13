@@ -1,4 +1,4 @@
-import "./SettingButton.css";
+import "./SettingButton.scss";
 
 const SettingButton = ({ onClick }) => {
   return (

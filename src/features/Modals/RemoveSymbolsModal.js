@@ -1,5 +1,5 @@
 import { Modal } from "../index";
-import "./ModalContents.css";
+import "./ModalContents.scss";
 
 const RemoveSymbolsModal = ({ isOpen, onClose }) => {
   return (

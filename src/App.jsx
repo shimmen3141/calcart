@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.css";
+import "./App.scss";
 import { AppHeader, MainContents, AppFooter } from "./features/index";
 import { ToggleSwitchProvider } from "./contexts/ToggleSwitchContext";
 

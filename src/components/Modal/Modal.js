@@ -1,6 +1,6 @@
 import React from "react";
 import { CloseButton, useScrollLock } from "../../features/index";
-import "./Modal.css";
+import "./Modal.scss";
 
 const Modal = ({ isOpen, onClose, title, children }) => {
   const { targetRef } = useScrollLock({ isScrollLocked: isOpen });

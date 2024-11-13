@@ -8,7 +8,7 @@ import {
   ClassifiedShoppingList,
   EmptyShoppingList,
 } from "../index";
-import "./ShoppingList.css";
+import "./ShoppingList.scss";
 
 const ShoppingListArea = ({ items }) => {
   console.log("ShoppingList");

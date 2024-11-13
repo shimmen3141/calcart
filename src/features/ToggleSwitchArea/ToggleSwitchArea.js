@@ -7,7 +7,7 @@ import {
   useToggleSwitch,
 } from "../index";
 import LabeledToggleSwitch from "../LabeledToggleSwitch/LabeledToggleSwitch";
-import "./ToggleSwitchArea.css";
+import "./ToggleSwitchArea.scss";
 
 const ToggleSwitchArea = () => {
   console.log("ToggleSwitchArea");

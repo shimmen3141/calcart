@@ -1,5 +1,5 @@
 import React from "react";
-import "./InputFormatTag.css";
+import "./InputFormatTag.scss";
 
 const InputFormatTag = ({ inputFormat, onClick }) => {
   // inputFormatに基づいて表示するテキストを決定

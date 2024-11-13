@@ -1,5 +1,5 @@
 import gramPerTeaspoon from "./gramPerTeaspoon";
-import "./TeaspoonTable.css";
+import "./TeaspoonTable.scss";
 
 const TeaspoonTable = () => {
   return (

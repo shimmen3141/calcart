@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ShoppingListArea, Carts } from "../index";
-import "./MainContents.css";
+import "./MainContents.scss";
 
 const MainContents = () => {
   const [allCarts, setAllCarts] = useState([
