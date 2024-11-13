@@ -1,6 +1,6 @@
 import React from 'react';
 import useCopyButton from './useCopyButton';
-import "./CopyButton.css";
+import "./CopyButton.scss";
 
 const CopyButton = ({ text }) => {
 
