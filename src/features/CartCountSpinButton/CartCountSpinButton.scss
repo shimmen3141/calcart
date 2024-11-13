@@ -1,3 +1,5 @@
+@use "../../styles/mixin.scss" as *;
+
 .spinButton {
   & input {
     height: 1.5rem;
@@ -15,7 +17,7 @@
     border: 1px solid #b84c00;
     cursor: pointer;
 
-    &:hover {
+    @include hover  {
       transition: 0.2s all;
       transform: scale(1.1);
     }
