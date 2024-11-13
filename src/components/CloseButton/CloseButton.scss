@@ -1,3 +1,5 @@
+@use "../../styles/mixin.scss"  as *;
+
 .closeButton {
   /* border-radius: 50%; */
   position: absolute;
@@ -35,13 +37,13 @@
     transform: translate(-50%, -50%) rotate(-45deg);
   }
 
-  &:hover {
+  @include hover  {
     background-color: #ff2020;
-  }
-
-  &:hover:before,
-  &:hover:after {
-    background: #fff;
+    
+    &:before,
+    &:after {
+      background-color: #fff;
+    }
   }
 
   &:disabled {

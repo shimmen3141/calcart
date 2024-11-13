@@ -1,4 +1,4 @@
-import "./CloseButton.css";
+import "./CloseButton.scss";
 
 const CloseButton = ({ onClick, disabled }) => {
   return (
