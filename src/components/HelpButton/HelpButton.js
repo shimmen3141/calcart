@@ -1,4 +1,4 @@
-import "./HelpButton.css";
+import "./HelpButton.scss";
 
 const HelpButton = ({ onClick }) => {
   return (

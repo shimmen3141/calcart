@@ -1,3 +1,5 @@
+@use "../../styles/mixin.scss" as *;
+
 .helpButton {
     display: inline-block;
     /* もとはwidth: 20px; font-size: 16px;*/
@@ -14,7 +16,7 @@
 
     cursor: pointer;
 
-  &:hover {
+  @include hover  {
     /* color: gray; */
     background-color: gray;
   }
