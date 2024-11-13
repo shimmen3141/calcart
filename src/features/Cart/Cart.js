@@ -6,7 +6,7 @@ import {
   useModal,
   InputFormatModal,
 } from "../index";
-import "./Cart.css";
+import "./Cart.scss";
 import CartCountSpinButton from "../CartCountSpinButton/CartCountSpinButton";
 
 const Cart = React.memo(

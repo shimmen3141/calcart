@@ -1,3 +1,5 @@
+@use "../../styles/mixin.scss" as *;
+
 .cart {
   position: relative;
   width: 85vw;/* calc(100vw-3.5rem) */
@@ -36,7 +38,7 @@
     box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.2);
     cursor: pointer;
 
-    &:hover {
+    @include hover {
       transition: 0.2s all;
       transform: scale(1.05);
     }
