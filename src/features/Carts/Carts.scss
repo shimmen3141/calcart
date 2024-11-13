@@ -1,3 +1,5 @@
+@use "../../styles/mixin.scss" as *;
+
 .carts {
   display: flex;
   flex-wrap: nowrap;
@@ -23,7 +25,7 @@
   margin: 0 0 1rem 1rem;
   cursor: pointer;
 
-  &:hover {
+  @include hover {
     transition: 0.2s all;
     transform: scale(1.05);
   }

@@ -2,7 +2,7 @@ import React from "react";
 import { Cart } from "../index";
 import { motion, AnimatePresence } from "framer-motion";
 import useCarts from "./useCarts";
-import "./Carts.css";
+import "./Carts.scss";
 
 const Carts = ({ allCarts, setAllCarts }) => {
   console.log("Carts");
