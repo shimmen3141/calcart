@@ -28,6 +28,6 @@ export const ModalProvider = ({ children }) => {
 };
 
 // カスタムフックで Context を使用
-export const useModals = () => {
+export const useModal = () => {
   return useContext(ModalContext);
 };

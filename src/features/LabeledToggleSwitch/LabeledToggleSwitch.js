@@ -1,9 +1,4 @@
-import {
-  ToggleSwitch,
-  HelpButton,
-  useModals,
-  useToggleSwitch,
-} from "../index";
+import { ToggleSwitch, HelpButton, useModal, useToggleSwitch } from "../index";
 import "./LabeledToggleSwitch.scss";
 
 const LabeledToggleSwitch = ({ id, labelText }) => {
@@ -11,7 +6,7 @@ const LabeledToggleSwitch = ({ id, labelText }) => {
 
   const { toggleStates, handleSwitchChange } = useToggleSwitch();
 
-  const { handleOpenModal } = useModals();
+  const { handleOpenModal } = useModal();
 
   return (
     <div className="labeledToggleSwitch">

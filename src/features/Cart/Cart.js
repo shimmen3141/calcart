@@ -1,10 +1,6 @@
 import React from "react";
 import useCart from "./useCart";
-import {
-  InputFormatTag,
-  CloseButton,
-  useModals,
-} from "../index";
+import { InputFormatTag, CloseButton, useModal } from "../index";
 import "./Cart.scss";
 import CartCountSpinButton from "../CartCountSpinButton/CartCountSpinButton";
 
@@ -27,7 +23,7 @@ const Cart = React.memo(
       cartRefs,
     });
 
-    const { handleOpenModal } = useModals();
+    const { handleOpenModal } = useModal();
 
     console.log(`Cart${cartNumber}`);
 

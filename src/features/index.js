@@ -26,7 +26,7 @@ export {
   ToggleSwitchProvider,
   useToggleSwitch,
 } from "../contexts/ToggleSwitchContext";
-export { ModalProvider, useModals } from "../contexts/ModalContext";
+export { ModalProvider, useModal } from "../contexts/ModalContext";
 
 // functions
 export { default as containsNumber } from "../functions/containsNumber";
