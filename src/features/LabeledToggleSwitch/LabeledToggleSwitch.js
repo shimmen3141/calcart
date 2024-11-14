@@ -7,7 +7,7 @@ import {
   useModal,
   useToggleSwitch,
 } from "../index";
-import { modalContents } from "../../components/Modal/modalContents";
+import { modalContents } from "../../components/Modal/ModalContents";
 
 const LabeledToggleSwitch = ({ id, labelText }) => {
   console.log("LabeledToggleSwitch");
