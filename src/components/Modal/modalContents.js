@@ -1,7 +1,7 @@
 import "./ModalContents.scss";
 import TeaspoonGramsTable from "./TeaspoonGramsTable";
 
-export const modalContents = {
+export const ModalContents = {
   removeSymbols: {
     title: "記号の消去",
     content: (

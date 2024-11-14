@@ -7,7 +7,7 @@ import {
   useModal,
   useToggleSwitch,
 } from "../index";
-import { modalContents } from "../../components/Modal/ModalContents";
+import { ModalContents } from "../../components/Modal/ModalContents";
 
 const LabeledToggleSwitch = ({ id, labelText }) => {
   console.log("LabeledToggleSwitch");
@@ -16,7 +16,7 @@ const LabeledToggleSwitch = ({ id, labelText }) => {
 
   const { handleOpenModal, handleCloseModal, isModalOpen } = useModal();
 
-  const { title, content } = modalContents[id] || modalContents.default;
+  const { title, content } = ModalContents[id] || ModalContents.default;
 
   return (
     <div>
