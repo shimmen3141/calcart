@@ -1,4 +1,4 @@
-const gramPerTeaspoon = [
+const teaspoonGramsList = [
   { id: 1, name: "醤油", grams: 6 },
   { id: 2, name: "味噌", grams: 6 },
   { id: 3, name: "みりん", grams: 6 },
@@ -39,4 +39,4 @@ const gramPerTeaspoon = [
   { id: 38, name: "鶏がらスープの素", grams: 2.5 },
 ];
 
-export default gramPerTeaspoon;
+export default teaspoonGramsList;

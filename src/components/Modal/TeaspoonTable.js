@@ -1,4 +1,4 @@
-import gramPerTeaspoon from "./gramPerTeaspoon";
+import teaspoonGramsList from "./teaspoonGramsList";
 import "./TeaspoonTable.scss";
 
 const TeaspoonTable = () => {
@@ -11,7 +11,7 @@ const TeaspoonTable = () => {
         </tr>
       </thead>
       <tbody>
-        {gramPerTeaspoon.map((item) => (
+        {teaspoonGramsList.map((item) => (
           <tr key={item.id}>
             <td>{item.name}</td>
             <td>{item.grams} g</td>
