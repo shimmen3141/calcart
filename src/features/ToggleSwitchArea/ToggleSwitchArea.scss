@@ -1,10 +1,20 @@
 .toggleSwitchArea {
-  display: grid;
-  justify-content: flex-end;
-  border-radius: 20px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15);
+  .triangle {
+    position: absolute;
+    top: calc(3px - 1rem);
+    right: 36px;
+    background: white;
+    height: calc(tan(60deg) * 20px / 2);
+    width: 20px;
+    clip-path: polygon(50% 0, 100% 100%, 0 100%);
+  }
 
   .labeledToggleSwitches {
+    display: grid;
+    justify-content: flex-end;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15);
+
     .labeledToggleSwitch {
       background-color: white;
       width: fit-content;
@@ -38,15 +48,5 @@
       border-radius: 0 0 20px 20px;
       }
     }
-  }
-
-  .triangle {
-    position: absolute;
-    top: calc(3px - 1rem);
-    right: 36px;
-    background: white;
-    height: calc(tan(60deg) * 20px / 2);
-    width: 20px;
-    clip-path: polygon(50% 0, 100% 100%, 0 100%);
   }
 }

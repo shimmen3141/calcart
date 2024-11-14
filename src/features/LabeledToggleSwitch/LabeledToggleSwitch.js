@@ -6,6 +6,7 @@ import {
   useToggleSwitch,
 } from "../index";
 import { ModalContents } from "../../components/Modal/ModalContents";
+import "./LabeledToggleSwitch.scss";
 
 const LabeledToggleSwitch = ({ id, labelText }) => {
   console.log("LabeledToggleSwitch");
@@ -17,8 +18,8 @@ const LabeledToggleSwitch = ({ id, labelText }) => {
   const { title, content } = ModalContents[id] || ModalContents.default;
 
   return (
-    <div>
-      {labelText}
+    <div className="labeledToggleSwitch">
+      <div className="labelText">{labelText}</div>
       <HelpButton onClick={() => handleOpenModal(id)} />
       <ToggleSwitch
         id={id}
