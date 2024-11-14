@@ -4,40 +4,40 @@
   border-radius: 20px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15);
 
-  .labeledToggleSwitch,
-  .labeledToggleSwitch_top,
-  .labeledToggleSwitch_bottom {
-    background-color: white;
-    width: fit-content;
-    height: 3rem;
-    border: 3px solid #ddd;
-    padding: 0.5rem 1rem;
-    margin-bottom: -3px; /* borderを重ねるためborder幅の分ずらす */
+  .labeledToggleSwitches {
+    .labeledToggleSwitch {
+      background-color: white;
+      width: fit-content;
+      height: 3rem;
+      border: 3px solid #ddd;
+      padding: 0.5rem 1rem;
+      margin-bottom: -3px; /* borderを重ねるためborder幅の分ずらす */
 
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
 
-    .labelText {
-      width: 8rem;
-      text-align: center;
+      .labelText {
+        width: 8rem;
+        text-align: center;
+      }
+
+      .helpButton {
+        margin-left: 1rem;
+      }
+
+      .toggleSwitch {
+        margin-left: 4rem;
+      }
+
+      &:first-child {
+      border-radius: 20px 20px 0 0;
+      }
+
+      &:last-child {
+      border-radius: 0 0 20px 20px;
+      }
     }
-
-    .helpButton {
-      margin-left: 1rem;
-    }
-
-    .toggleSwitch {
-      margin-left: 4rem;
-    }
-  }
-
-  .labeledToggleSwitch_top {
-    border-radius: 20px 20px 0 0;
-  }
-
-  .labeledToggleSwitch_bottom {
-    border-radius: 0 0 20px 20px;
   }
 
   .triangle {
