@@ -9,7 +9,6 @@ export { default as ClassifiedShoppingList } from "./ShoppingList/ClassifiedShop
 export { default as EmptyShoppingList } from "./ShoppingList/EmptyShoppingList";
 export { default as ShoppingListArea } from "./ShoppingListArea/ShoppingListArea";
 export { default as InputFormatTag } from "./InputFormatTag/InputFormatTag";
-//export { default as InputFormatModal } from "./Modals/InputFormatModal";
 export { default as ToggleSwitchArea } from "./ToggleSwitchArea/ToggleSwitchArea";
 
 // components
@@ -19,7 +18,6 @@ export { default as DropdownMenu } from "../components/DropdownMenu/DropdownMenu
 export { default as useDropdownMenu } from "../components/DropdownMenu/useDropdownMenu";
 export { default as HelpButton } from "../components/HelpButton/HelpButton";
 export { default as Modal } from "../components/Modal/Modal";
-//export { default as useModal } from "../components/Modal/useModal";
 export { default as SettingButton } from "../components/SettingButton/SettingButton";
 export { default as ToggleSwitch } from "../components/ToggleSwitch/ToggleSwitch";
 
