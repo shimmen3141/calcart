@@ -1,8 +1,6 @@
 import {
   ToggleSwitch,
   HelpButton,
-  RemoveSymbolsModal,
-  SpoonToGramModal,
   Modal,
   useModal,
   useToggleSwitch,
@@ -27,8 +25,6 @@ const LabeledToggleSwitch = ({ id, labelText }) => {
         isChecked={toggleStates[id]}
         onChange={handleSwitchChange}
       />
-      {/* <RemoveSymbolsModal isOpen={isModalOpen} onClose={handleCloseModal} />
-      <SpoonToGramModal isOpen={isModalOpen} onClose={handleCloseModal} /> */}
       <Modal
         isOpen={isModalOpen(id)}
         onClose={() => handleCloseModal(id)}

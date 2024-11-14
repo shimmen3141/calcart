@@ -3,11 +3,6 @@ import { useState } from "react";
 const useModal = () => {
   const [openedModal, setOpenedModal] = useState(null);
 
-  // モーダルの開閉どちらも扱える関数。分かりづらいので未使用。
-//   const handleToggleModal = (id) => {
-//     setOpenedModal((prevOpenedModal) => (prevOpenedModal === id ? null : id));
-//   };
-
   // 引数として受け取った id のモーダルを開く関数
   const handleOpenModal = (id) => {
     setOpenedModal(() => id);
