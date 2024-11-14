@@ -35,7 +35,7 @@ export const ModalContents = {
     ),
   },
   spoonToGram: {
-    title: "大さじ・小さじ → g の変換",
+    title: "大さじ・小さじ→グラムの変換",
     content: (
       <div className="modal-content">
         <p>
@@ -67,12 +67,31 @@ export const ModalContents = {
       </div>
     ),
   },
+  classifyItems: {
+    title: "リストの分割",
+    content: (
+      <div className="modal-content">
+        <p>
+          ・オンにすると、材料名ごとに「肉」、「野菜」、「その他」にリストを分割します。
+        </p>
+      </div>
+    ),
+  },
   inputFormat: {
     title: "入力形式について",
-    content: <div>入力形式が表示されます。</div>,
+    content: (
+      <div className="modal-content">
+        <p>・入力形式が表示されます。</p>
+        <p>入力形式は「未入力」、「1行1材料」、「2行1材料」の3種類あります。</p>
+        <p>
+          入力したつもりの形式と表示される入力形式が異なる場合、入力が不適切な可能性があります。
+          入力を確認し、適切な形式に修正してください。
+        </p>
+      </div>
+    ),
   },
   default: {
     title: "エラー",
-    content: <p>この機能についてはまだ説明がありません。</p>,
+    content: <p>説明がありません。</p>,
   },
 };
