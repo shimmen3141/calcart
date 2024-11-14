@@ -17,8 +17,10 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 50%;
-  height: 50%;
+  width: 75vw;
+  max-width: 500px;
+  height: 75vh;
+  max-height: 1000px;
   border-radius: var(--border-radius);
   background: #fff;
   z-index: 4;
