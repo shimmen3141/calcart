@@ -1,5 +1,5 @@
 import "./ModalContents.scss";
-import TeaspoonTable from "./TeaspoonTable";
+import TeaspoonGramsTable from "./TeaspoonGramsTable";
 
 export const modalContents = {
   removeSymbols: {
@@ -63,7 +63,7 @@ export const modalContents = {
           <br />
           ※表に含まれていない調味料は変換されません。
         </p>
-        <TeaspoonTable />
+        <TeaspoonGramsTable />
       </div>
     ),
   },

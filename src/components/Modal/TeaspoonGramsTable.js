@@ -1,7 +1,7 @@
 import teaspoonGramsList from "./teaspoonGramsList";
-import "./TeaspoonTable.scss";
+import "./TeaspoonGramsTable.scss";
 
-const TeaspoonTable = () => {
+const TeaspoonGramsTable = () => {
   return (
     <table className="striped-table">
       <thead>
@@ -22,4 +22,4 @@ const TeaspoonTable = () => {
   );
 };
 
-export default TeaspoonTable;
+export default TeaspoonGramsTable;
