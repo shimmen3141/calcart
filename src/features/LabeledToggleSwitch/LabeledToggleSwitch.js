@@ -26,13 +26,7 @@ const LabeledToggleSwitch = ({ id, labelText }) => {
         isChecked={toggleStates[id]}
         onChange={handleSwitchChange}
       />
-      <Modal
-        isOpen={isModalOpen(id)}
-        onClose={() => handleCloseModal(id)}
-        title={title}
-      >
-        {content}
-      </Modal>
+      <Modal id={id} />
     </div>
   );
 };

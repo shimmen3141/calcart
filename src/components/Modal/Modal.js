@@ -1,19 +1,22 @@
 import React from "react";
-import { CloseButton, useScrollLock } from "../../features/index";
+import { CloseButton, useModal, useScrollLock } from "../../features/index";
+import { ModalContents } from "./ModalContents";
 import "./Modal.scss";
 
-const Modal = ({ isOpen, onClose, title, children }) => {
-  const { targetRef } = useScrollLock({ isScrollLocked: isOpen });
+const Modal = ({ id }) => {
+  const { handleCloseModal, isModalOpen } = useModal();
+  const { targetRef } = useScrollLock({ isScrollLocked: isModalOpen(id) });
+  const { title, content } = ModalContents[id] || ModalContents.default;
 
-  return isOpen ? (
+  return isModalOpen(id) ? (
     <div>
-      <div className="overlay" onClick={onClose}></div>
+      <div className="overlay" onClick={() => handleCloseModal(id)}></div>
       <div className="modal-window" ref={targetRef}>
         <div className="header">
-          <CloseButton onClick={onClose} />
+          <CloseButton onClick={() => handleCloseModal(id)} />
           {title}
         </div>
-        <div className="main">{children}</div>
+        <div className="main">{content}</div>
       </div>
     </div>
   ) : null;
