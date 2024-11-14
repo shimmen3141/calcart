@@ -4,11 +4,11 @@ import { ModalContents } from "./ModalContents";
 import "./Modal.scss";
 
 const Modal = ({ id }) => {
-  const { handleCloseModal, isModalOpen } = useModals();
-  const { targetRef } = useScrollLock({ isScrollLocked: isModalOpen(id) });
+  const { openedModal, handleCloseModal } = useModals();
+  const { targetRef } = useScrollLock({ isScrollLocked: openedModal });
   const { title, content } = ModalContents[id] || ModalContents.default;
 
-  return isModalOpen(id) ? (
+  return openedModal ? (
     <div>
       <div className="overlay" onClick={() => handleCloseModal(id)}></div>
       <div className="modal-window" ref={targetRef}>

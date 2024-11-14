@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ShoppingListArea, Carts } from "../index";
+import { ShoppingListArea, Carts, Modal, useModals } from "../index";
 import "./MainContents.scss";
 
 const MainContents = () => {
@@ -20,10 +20,13 @@ const MainContents = () => {
       );
   };
 
+  const { openedModal } = useModals();
+
   return (
     <div className="mainContents">
       <Carts allCarts={allCarts} setAllCarts={setAllCarts} />
       <ShoppingListArea items={organizeIngredient()} />
+      <Modal id={openedModal} />
     </div>
   );
 };

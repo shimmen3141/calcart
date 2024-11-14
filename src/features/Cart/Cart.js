@@ -4,7 +4,6 @@ import {
   InputFormatTag,
   CloseButton,
   useModals,
-  Modal,
 } from "../index";
 import "./Cart.scss";
 import CartCountSpinButton from "../CartCountSpinButton/CartCountSpinButton";
@@ -40,7 +39,6 @@ const Cart = React.memo(
           inputFormat={inputFormat}
           onClick={() => handleOpenModal("inputFormat")}
         />
-        <Modal id={"inputFormat"} />
         <div>材料リストを入力：</div>
         <textarea
           value={inputText}

@@ -18,14 +18,9 @@ export const ModalProvider = ({ children }) => {
     setOpenedModal(() => null);
   };
 
-  // 引数として受け取った id のモーダルが開かれているかを返す関数
-  const isModalOpen = (id) => {
-    return openedModal === id;
-  };
-
   return (
     <ModalContext.Provider
-      value={{ handleOpenModal, handleCloseModal, isModalOpen }}
+      value={{ openedModal, handleOpenModal, handleCloseModal }}
     >
       {children}
     </ModalContext.Provider>

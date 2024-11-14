@@ -1,7 +1,6 @@
 import {
   ToggleSwitch,
   HelpButton,
-  Modal,
   useModals,
   useToggleSwitch,
 } from "../index";
@@ -23,7 +22,6 @@ const LabeledToggleSwitch = ({ id, labelText }) => {
         isChecked={toggleStates[id]}
         onChange={handleSwitchChange}
       />
-      <Modal id={id} />
     </div>
   );
 };
