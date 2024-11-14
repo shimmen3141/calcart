@@ -10,8 +10,6 @@ export { default as EmptyShoppingList } from "./ShoppingList/EmptyShoppingList";
 export { default as ShoppingListArea } from "./ShoppingListArea/ShoppingListArea";
 export { default as InputFormatTag } from "./InputFormatTag/InputFormatTag";
 export { default as InputFormatModal } from "./Modals/InputFormatModal";
-export { default as RemoveSymbolsModal } from "./Modals/RemoveSymbolsModal";
-export { default as SpoonToGramModal } from "./Modals/SpoonToGramModal";
 export { default as ToggleSwitchArea } from "./ToggleSwitchArea/ToggleSwitchArea";
 
 // components
