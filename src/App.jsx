@@ -1,10 +1,11 @@
 import React from "react";
 import "./App.scss";
 import { AppHeader, MainContents, AppFooter } from "./features/index";
-import { ToggleSwitchProvider } from "./contexts/ToggleSwitchContext";
+import { ToggleSwitchProvider, ModalProvider } from "./features/index";
 
 const App = () => {
   return (
+    <ModalProvider>
     <ToggleSwitchProvider>
       <div className="app">
         <AppHeader />
@@ -12,6 +13,7 @@ const App = () => {
         <AppFooter />
       </div>
     </ToggleSwitchProvider>
+    </ModalProvider>
   );
 };
 
