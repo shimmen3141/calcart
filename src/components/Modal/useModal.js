@@ -1,28 +1,28 @@
-import { useState } from "react";
+// import { useState } from "react";
 
-const useModal = () => {
-  const [openedModal, setOpenedModal] = useState(null);
+// const useModal = () => {
+//   const [openedModal, setOpenedModal] = useState(null);
 
-  // 引数として受け取った id のモーダルを開く関数
-  const handleOpenModal = (id) => {
-    setOpenedModal(() => id);
-  };
+//   // 引数として受け取った id のモーダルを開く関数
+//   const handleOpenModal = (id) => {
+//     setOpenedModal(() => id);
+//   };
 
-  // モーダルを閉じる関数
-  const handleCloseModal = () => {
-    setOpenedModal(() => null);
-  };
+//   // モーダルを閉じる関数
+//   const handleCloseModal = () => {
+//     setOpenedModal(() => null);
+//   };
 
-  // 引数として受け取った id のモーダルが開かれているかを返す関数
-  const isModalOpen = (id) => {
-    return openedModal === id;
-  };
+//   // 引数として受け取った id のモーダルが開かれているかを返す関数
+//   const isModalOpen = (id) => {
+//     return openedModal === id;
+//   };
 
-  return {
-    handleOpenModal,
-    handleCloseModal,
-    isModalOpen,
-  };
-};
+//   return {
+//     handleOpenModal,
+//     handleCloseModal,
+//     isModalOpen,
+//   };
+// };
 
-export default useModal;
+// export default useModal;

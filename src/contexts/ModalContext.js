@@ -8,13 +8,13 @@ export const ModalProvider = ({ children }) => {
   // 現在開いているモーダルの id を管理する state
   const [openedModal, setOpenedModal] = useState(null);
 
-  // モーダルを開く関数（モーダルの id を設定）
-  const openModal = (id) => {
+  // モーダルを開く関数
+  const handleOpenModal = (id) => {
     setOpenedModal(() => id);
   };
 
-  // モーダルを閉じる関数（id を null にリセット）
-  const closeModal = () => {
+  // モーダルを閉じる関数
+  const handleCloseModal = () => {
     setOpenedModal(() => null);
   };
 
@@ -25,7 +25,7 @@ export const ModalProvider = ({ children }) => {
 
   return (
     <ModalContext.Provider
-      value={{ openedModal, openModal, closeModal, isModalOpen }}
+      value={{ handleOpenModal, handleCloseModal, isModalOpen }}
     >
       {children}
     </ModalContext.Provider>

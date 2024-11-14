@@ -6,13 +6,13 @@ import { ToggleSwitchProvider, ModalProvider } from "./features/index";
 const App = () => {
   return (
     <ModalProvider>
-    <ToggleSwitchProvider>
-      <div className="app">
-        <AppHeader />
-        <MainContents />
-        <AppFooter />
-      </div>
-    </ToggleSwitchProvider>
+      <ToggleSwitchProvider>
+        <div className="app">
+          <AppHeader />
+          <MainContents />
+          <AppFooter />
+        </div>
+      </ToggleSwitchProvider>
     </ModalProvider>
   );
 };

@@ -1,10 +1,10 @@
 import React from "react";
-import { CloseButton, useModal, useScrollLock } from "../../features/index";
+import { CloseButton, useModals, useScrollLock } from "../../features/index";
 import { ModalContents } from "./ModalContents";
 import "./Modal.scss";
 
 const Modal = ({ id }) => {
-  const { handleCloseModal, isModalOpen } = useModal();
+  const { handleCloseModal, isModalOpen } = useModals();
   const { targetRef } = useScrollLock({ isScrollLocked: isModalOpen(id) });
   const { title, content } = ModalContents[id] || ModalContents.default;
 
