@@ -3,6 +3,8 @@ import { ShoppingListArea, Carts, Modal, useModal } from "../index";
 import "./MainContents.scss";
 
 const MainContents = () => {
+  console.log("MainContents");
+
   const [allCarts, setAllCarts] = useState([
     { id: Date.now(), ingredients: [], cartCount: 1 },
     { id: Date.now() + 1, ingredients: [], cartCount: 1 },

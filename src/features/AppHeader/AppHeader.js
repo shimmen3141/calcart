@@ -7,6 +7,8 @@ import {
 } from "../index";
 
 const AppHeader = () => {
+  console.log("AppHeader");
+
   const { isOpen, toggleDropdown } = useDropdownMenu();
 
   return (
