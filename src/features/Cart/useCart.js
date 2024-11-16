@@ -15,35 +15,26 @@ const useCart = ({
   const [inputText, setInputText] = useState("");
   // カート台数を管理する変数
   const [cartCount, setCartCount] = useState(1);
-  // 入力形式を管理する変数
-  const [inputFormat, setInputFormat] = useState("not-entered");
 
   const { toggleStates } = useToggleSwitch();
 
+  // 入力内容を改行ごとに分割してそれぞれ処理する
+  const lines = divideInput(inputText, toggleStates.removeSymbols);
+
+  // 入力内容から入力形式を分類する
+  const inputFormat = classifyInputFormat(lines);
+
+  // 入力形式をもとに入力内容を処理する
+  const parsedIngredients = parseLines(
+    lines,
+    inputFormat,
+    toggleStates.spoonToGram
+  );
+
   useEffect(() => {
-    parseInput(inputText);
-    // eslint-disable-next-line
-  }, [toggleStates]);
-
-  // 入力内容を処理し、入力形式とカートを更新する関数
-  const parseInput = (text) => {
-    // 入力内容を改行ごとに分割してそれぞれ処理する
-    const lines = divideInput(text, toggleStates.removeSymbols);
-
-    // 入力内容から入力形式を分類する
-    const currentFormat = classifyInputFormat(lines);
-    setInputFormat(currentFormat);
-
-    // 入力形式をもとに入力内容を処理する
-    const parsedIngredients = parseLines(
-      lines,
-      currentFormat,
-      toggleStates.spoonToGram
-    );
-
-    // カートを更新する
     updateCart("ingredients", parsedIngredients);
-  };
+    // eslint-disable-next-line
+  }, [toggleStates, inputText]);
 
   // カートを更新する関数
   const updateCart = (key, value) => {
@@ -58,14 +49,11 @@ const useCart = ({
   const handleInputChange = (event) => {
     const text = event.target.value;
     setInputText(text);
-    parseInput(text);
   };
 
   // クリアボタンの押下により発火する関数
   const handleClear = () => {
     setInputText("");
-    setInputFormat("not-entered");
-    updateCart("ingredients", []);
   };
 
   // ✕ボタンの押下により発火する関数
