@@ -1,16 +1,12 @@
-import { useState } from "react";
-import { ShoppingListArea, Carts, Modal } from "../index";
+import { ShoppingListArea, Carts, Modal, useCart } from "../index";
 import "./MainContents.scss";
 
 const MainContents = () => {
   console.log("MainContents");
 
-  const [carts, setCarts] = useState([
-    { id: Date.now(), ingredients: [], cartCount: 1 },
-    { id: Date.now() + 1, ingredients: [], cartCount: 1 },
-  ]);
+  const { carts, setCarts } = useCart();
 
-  const organizeIngredient = () => {
+  const organizeIngredient = (carts) => {
     return carts
       .filter((cart) => cart.cartCount > 0)
       .flatMap((cart) =>
@@ -22,10 +18,12 @@ const MainContents = () => {
       );
   };
 
+  const items = organizeIngredient(carts);
+
   return (
     <div className="mainContents">
       <Carts carts={carts} setCarts={setCarts} />
-      <ShoppingListArea items={organizeIngredient()} />
+      <ShoppingListArea items={items} />
       <Modal />
     </div>
   );

@@ -11,8 +11,8 @@ const CartContext = createContext();
 export const CartProvider = ({ children }) => {
   // carts の初期状態
   const [carts, setCarts] = useState([
-    { id: Date.now(), ingredients: [], count: 1 },
-    { id: Date.now() + 1, ingredients: [], count: 1 },
+    { id: Date.now(), ingredients: [], cartCount: 1 },
+    { id: Date.now() + 1, ingredients: [], cartCount: 1 },
   ]);
 
   // カートを更新する関数
@@ -41,13 +41,13 @@ export const CartProvider = ({ children }) => {
 
   //   const organizeIngredient = () => {
   //     return carts
-  //       .filter((cart) => cart.count > 0)
+  //       .filter((cart) => cart.cartCount > 0)
   //       // ここに上の処理を入れる
   //       .flatMap((cart) =>
   //         cart.ingredients.map((ingredient) => ({
   //           name: ingredient.name,
   //           info: ingredient.info,
-  //           count: cart.count,
+  //           cartCount: cart.cartCount,
   //         }))
   //       );
   //   };
