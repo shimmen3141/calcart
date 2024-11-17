@@ -5,13 +5,13 @@ import "./MainContents.scss";
 const MainContents = () => {
   console.log("MainContents");
 
-  const [allCarts, setAllCarts] = useState([
+  const [carts, setCarts] = useState([
     { id: Date.now(), ingredients: [], cartCount: 1 },
     { id: Date.now() + 1, ingredients: [], cartCount: 1 },
   ]);
 
   const organizeIngredient = () => {
-    return allCarts
+    return carts
       .filter((cart) => cart.cartCount > 0)
       .flatMap((cart) =>
         cart.ingredients.map((ingredient) => ({
@@ -24,7 +24,7 @@ const MainContents = () => {
 
   return (
     <div className="mainContents">
-      <Carts allCarts={allCarts} setAllCarts={setAllCarts} />
+      <Carts carts={carts} setCarts={setCarts} />
       <ShoppingListArea items={organizeIngredient()} />
       <Modal />
     </div>

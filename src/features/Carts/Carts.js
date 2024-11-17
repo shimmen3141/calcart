@@ -4,12 +4,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import useCarts from "./useCarts";
 import "./Carts.scss";
 
-const Carts = ({ allCarts, setAllCarts }) => {
+const Carts = ({ carts, setCarts }) => {
   console.log("Carts");
 
   const { hasMaxCarts, handleAddCart, setRefs, cartRefs } = useCarts({
-    allCarts,
-    setAllCarts,
+    carts,
+    setCarts,
   });
 
   return (
@@ -23,7 +23,7 @@ const Carts = ({ allCarts, setAllCarts }) => {
       </button>
       <div className="carts">
         <AnimatePresence>
-          {allCarts.map((cart, index) => (
+          {carts.map((cart, index) => (
             <motion.div
               key={cart.id}
               initial={{ opacity: 0, x: 100 }}
@@ -34,8 +34,8 @@ const Carts = ({ allCarts, setAllCarts }) => {
               ref={(node) => setRefs(node, index)}
             >
               <Cart
-                allCarts={allCarts}
-                setAllCarts={setAllCarts}
+                carts={carts}
+                setCarts={setCarts}
                 cartID={cart.id}
                 cartNumber={index}
                 cartRefs={cartRefs}
