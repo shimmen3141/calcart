@@ -1,7 +1,11 @@
 import React from "react";
+import { useModal } from "../index";
 import "./InputFormatTag.scss";
 
-const InputFormatTag = ({ inputFormat, onClick }) => {
+const InputFormatTag = ({ inputFormat }) => {
+
+  const { handleOpenModal } = useModal();
+
   // inputFormatに基づいて表示するテキストを決定
   const getTagLabel = () => {
     switch (inputFormat) {
@@ -18,7 +22,10 @@ const InputFormatTag = ({ inputFormat, onClick }) => {
 
   return (
     <div>
-      <div className={`inputFormatTag ${inputFormat}`} onClick={onClick}>
+      <div
+        className={`inputFormatTag ${inputFormat}`}
+        onClick={() => handleOpenModal("inputFormat")}
+      >
         {getTagLabel()}
       </div>
     </div>
