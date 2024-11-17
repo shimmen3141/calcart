@@ -1,11 +1,13 @@
 import React from "react";
-import { Cart } from "../index";
+import { Cart, useCart } from "../index";
 import { motion, AnimatePresence } from "framer-motion";
 import useCarts from "./useCarts";
 import "./Carts.scss";
 
-const Carts = ({ carts, setCarts }) => {
+const Carts = () => {
   console.log("Carts");
+
+  const { carts, setCarts } = useCart();
 
   const { hasMaxCarts, handleAddCart, setRefs, cartRefs } = useCarts({
     carts,

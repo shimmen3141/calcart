@@ -1,14 +1,12 @@
-import { ShoppingListArea, Carts, Modal, useCart } from "../index";
+import { ShoppingListArea, Carts, Modal } from "../index";
 import "./MainContents.scss";
 
 const MainContents = () => {
   console.log("MainContents");
 
-  const { carts, setCarts } = useCart();
-
   return (
     <div className="mainContents">
-      <Carts carts={carts} setCarts={setCarts} />
+      <Carts />
       <ShoppingListArea />
       <Modal />
     </div>
