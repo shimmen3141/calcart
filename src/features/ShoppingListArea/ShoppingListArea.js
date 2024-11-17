@@ -3,6 +3,7 @@ import aggregateItems from "./aggregateItems";
 import classifyItems from "./classifyItems";
 import {
   CopyButton,
+  useCart,
   useToggleSwitch,
   ShoppingList,
   ClassifiedShoppingList,
@@ -10,8 +11,24 @@ import {
 } from "../index";
 import "./ShoppingList.scss";
 
-const ShoppingListArea = ({ items }) => {
+const ShoppingListArea = () => {
   console.log("ShoppingList");
+
+  const { carts } = useCart();
+
+  const organizeIngredient = (carts) => {
+    return carts
+      .filter((cart) => cart.cartCount > 0)
+      .flatMap((cart) =>
+        cart.ingredients.map((ingredient) => ({
+          name: ingredient.name,
+          info: ingredient.info,
+          cartCount: cart.cartCount,
+        }))
+      );
+  };
+
+  const items = organizeIngredient(carts);
 
   const { toggleStates } = useToggleSwitch();
   const { itemList, itemListText } = aggregateItems({ items });
