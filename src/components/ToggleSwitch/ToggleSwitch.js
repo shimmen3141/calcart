@@ -10,7 +10,7 @@ const ToggleSwitch = ({ id, isChecked, onChange }) => {
           id={id}
           type="checkbox"
           checked={isChecked}
-          onChange={() => onChange(id)}
+          onChange={onChange}
         />
         <label htmlFor={id} />
       </div>

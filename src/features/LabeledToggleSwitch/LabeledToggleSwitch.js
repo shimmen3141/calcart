@@ -15,7 +15,7 @@ const LabeledToggleSwitch = ({ id, labelText }) => {
       <ToggleSwitch
         id={id}
         isChecked={toggleStates[id]}
-        onChange={handleSwitchChange}
+        onChange={() => handleSwitchChange(id)}
       />
     </div>
   );
