@@ -27,6 +27,7 @@ export {
   useToggleSwitch,
 } from "../contexts/ToggleSwitchContext";
 export { ModalProvider, useModal } from "../contexts/ModalContext";
+export { CartProvider, useCart } from "../contexts/CartContext";
 
 // functions
 export { default as containsNumber } from "../functions/containsNumber";

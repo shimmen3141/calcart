@@ -11,8 +11,8 @@ const CartContext = createContext();
 export const CartProvider = ({ children }) => {
   // carts の初期状態
   const [carts, setCarts] = useState([
-    { id: Date.now(), inputText: "", count: 1 },
-    { id: Date.now() + 1, inputText: "", count: 1 },
+    { id: Date.now(), ingredients: [], count: 1 },
+    { id: Date.now() + 1, ingredients: [], count: 1 },
   ]);
 
   // カートを更新する関数
@@ -60,4 +60,4 @@ export const CartProvider = ({ children }) => {
 };
 
 // カスタムフックで Context を使用
-export const useCartContext = () => useContext(CartContext);
+export const useCart = () => useContext(CartContext);
