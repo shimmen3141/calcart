@@ -4,7 +4,7 @@ import divideInput from "./divideInput";
 import parseLines from "./parseLines";
 import { useToggleSwitch } from "../index";
 
-const useCart = ({ carts, setCarts, cartID, cartNumber, cartRefs }) => {
+const useCartInput = ({ carts, setCarts, cartID, cartNumber, cartRefs }) => {
   // 入力内容を管理する変数
   const [inputText, setInputText] = useState("");
   // カート台数を管理する変数
@@ -106,4 +106,4 @@ const useCart = ({ carts, setCarts, cartID, cartNumber, cartRefs }) => {
   };
 };
 
-export default useCart;
+export default useCartInput;
