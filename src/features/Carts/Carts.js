@@ -1,18 +1,18 @@
 import React from "react";
 import { Cart, useCart } from "../index";
 import { motion, AnimatePresence } from "framer-motion";
-import useCarts from "./useCarts";
+// import useCarts from "./useCarts";
 import "./Carts.scss";
 
 const Carts = () => {
   console.log("Carts");
 
-  const { carts, setCarts } = useCart();
+  const { carts, setCarts, cartRefs, setRefs, handleAddCart, hasMaxCarts } = useCart();
 
-  const { hasMaxCarts, handleAddCart, setRefs, cartRefs } = useCarts({
-    carts,
-    setCarts,
-  });
+  // const { hasMaxCarts, handleAddCart, setRefs, cartRefs } = useCarts({
+  //   carts,
+  //   setCarts,
+  // });
 
   return (
     <div>

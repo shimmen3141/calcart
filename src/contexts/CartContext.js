@@ -88,12 +88,12 @@ export const CartProvider = ({ children }) => {
   };
 
   // カート数が下限に達したか判定する関数
-  const isMinCarts = () => {
+  const hasMinCarts = () => {
     return carts.length <= minCarts;
   };
 
   // カート数が上限に達したか判定する関数
-  const isMaxCarts = () => {
+  const hasMaxCarts = () => {
     return carts.length >= maxCarts;
   };
 
@@ -135,7 +135,9 @@ export const CartProvider = ({ children }) => {
   //   };
 
   return (
-    <CartContext.Provider value={{ carts, setCarts }}>
+    <CartContext.Provider
+      value={{ carts, setCarts, cartRefs, setRefs, handleAddCart, hasMaxCarts }}
+    >
       {children}
     </CartContext.Provider>
   );
