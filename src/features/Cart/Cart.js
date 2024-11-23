@@ -7,13 +7,11 @@ import CartCountSpinButton from "../CartCountSpinButton/CartCountSpinButton";
 const Cart = React.memo(({ carts, setCarts, cartId, cartNumber, cartRefs }) => {
   const {
     inputText,
-    cartCount,
     inputFormat,
     handleInputChange,
     handleClear,
     handleRemove,
     isLastCart,
-    handleCartCountChange,
   } = useCartInput({
     carts,
     setCarts,
@@ -43,8 +41,7 @@ const Cart = React.memo(({ carts, setCarts, cartId, cartNumber, cartRefs }) => {
       <div className="spinButtonArea">
         <div>カート台数：</div>
         <CartCountSpinButton
-          cartCount={cartCount}
-          handleCartCountChange={handleCartCountChange}
+          cartId={cartId}
         />
       </div>
     </div>

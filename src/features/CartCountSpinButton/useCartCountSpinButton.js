@@ -1,16 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useCart } from "../index";
 
-const useCartCountSpinButton = ({ cartCount, handleCartCountChange }) => {
+const useCartCountSpinButton = ({ cartId }) => {
+  const { updateCart } = useCart();
   const maxCount = 1000;
-  const [value, setValue] = useState(cartCount);
+  const [value, setValue] = useState(1);
   const [errorMessage, setErrorMessage] = useState("");
   // 入力が日本語の変換中かを管理する変数
   const [isComposing, setIsComposing] = useState(false);
 
+  useEffect(() => {
+    updateCart(cartId, "cartCount", Number(value));
+  }, [value]);
+
   const handleCountUp = () => {
     setValue((prevCount) => {
       const newCount = Math.min(prevCount + 1, maxCount);
-      handleCartCountChange(newCount);
       return newCount;
     });
   };
@@ -18,7 +23,6 @@ const useCartCountSpinButton = ({ cartCount, handleCartCountChange }) => {
   const handleCountDown = () => {
     setValue((prevCount) => {
       const newCount = Math.max(0, prevCount - 1);
-      handleCartCountChange(newCount);
       return newCount;
     });
   };
@@ -33,18 +37,14 @@ const useCartCountSpinButton = ({ cartCount, handleCartCountChange }) => {
     const inputNumber = Number(value);
     if (value === "") {
       setValue(0);
-      handleCartCountChange(0);
     } else if (isNaN(inputNumber) || inputNumber < 0) {
       setValue(0);
-      handleCartCountChange(0);
       setErrorMessage("半角の数値を入力してください。");
     } else if (inputNumber > maxCount) {
       setValue(maxCount);
-      handleCartCountChange(maxCount);
       setErrorMessage(`最大値は${maxCount}です。`);
     } else {
       setValue(inputNumber);
-      handleCartCountChange(inputNumber);
     }
 
     setTimeout(() => {

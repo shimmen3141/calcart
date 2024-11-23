@@ -7,8 +7,6 @@ import { useToggleSwitch } from "../index";
 const useCartInput = ({ carts, setCarts, cartId, cartNumber, cartRefs }) => {
   // 入力内容を管理する変数
   const [inputText, setInputText] = useState("");
-  // カート台数を管理する変数
-  const [cartCount, setCartCount] = useState(1);
 
   const { toggleStates } = useToggleSwitch();
 
@@ -89,20 +87,13 @@ const useCartInput = ({ carts, setCarts, cartId, cartNumber, cartRefs }) => {
   //   updateCart("cartCount", Number(event.target.value));
   // };
 
-  const handleCartCountChange = (count) => {
-    setCartCount(Number(count));
-    updateCart("cartCount", Number(count));
-  };
-
   return {
     inputText,
-    cartCount,
     inputFormat,
     handleInputChange,
     handleClear,
     handleRemove,
     isLastCart,
-    handleCartCountChange,
   };
 };
 
