@@ -13,7 +13,7 @@ const Cart = React.memo(({ carts, setCarts, cartID, cartNumber, cartRefs }) => {
     handleClear,
     handleRemove,
     isLastCart,
-    hadleCartCountChange,
+    handleCartCountChange,
   } = useCartInput({
     carts,
     setCarts,
@@ -44,7 +44,7 @@ const Cart = React.memo(({ carts, setCarts, cartID, cartNumber, cartRefs }) => {
         <div>カート台数：</div>
         <CartCountSpinButton
           cartCount={cartCount}
-          hadleCartCountChange={hadleCartCountChange}
+          handleCartCountChange={handleCartCountChange}
         />
       </div>
     </div>

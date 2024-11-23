@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const useCartCountSpinButton = ({ cartCount, hadleCartCountChange }) => {
+const useCartCountSpinButton = ({ cartCount, handleCartCountChange }) => {
   const maxCount = 1000;
   const [value, setValue] = useState(cartCount);
   const [errorMessage, setErrorMessage] = useState("");
@@ -10,7 +10,7 @@ const useCartCountSpinButton = ({ cartCount, hadleCartCountChange }) => {
   const handleCountUp = () => {
     setValue((prevCount) => {
       const newCount = Math.min(prevCount + 1, maxCount);
-      hadleCartCountChange(newCount);
+      handleCartCountChange(newCount);
       return newCount;
     });
   };
@@ -18,7 +18,7 @@ const useCartCountSpinButton = ({ cartCount, hadleCartCountChange }) => {
   const handleCountDown = () => {
     setValue((prevCount) => {
       const newCount = Math.max(0, prevCount - 1);
-      hadleCartCountChange(newCount);
+      handleCartCountChange(newCount);
       return newCount;
     });
   };
@@ -33,18 +33,18 @@ const useCartCountSpinButton = ({ cartCount, hadleCartCountChange }) => {
     const inputNumber = Number(value);
     if (value === "") {
       setValue(0);
-      hadleCartCountChange(0);
+      handleCartCountChange(0);
     } else if (isNaN(inputNumber) || inputNumber < 0) {
       setValue(0);
-      hadleCartCountChange(0);
+      handleCartCountChange(0);
       setErrorMessage("半角の数値を入力してください。");
     } else if (inputNumber > maxCount) {
       setValue(maxCount);
-      hadleCartCountChange(maxCount);
+      handleCartCountChange(maxCount);
       setErrorMessage(`最大値は${maxCount}です。`);
     } else {
       setValue(inputNumber);
-      hadleCartCountChange(inputNumber);
+      handleCartCountChange(inputNumber);
     }
 
     setTimeout(() => {

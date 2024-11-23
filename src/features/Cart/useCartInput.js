@@ -85,11 +85,11 @@ const useCartInput = ({ carts, setCarts, cartID, cartNumber, cartRefs }) => {
   };
 
   // カート台数のスピンボタン変更時に発火する関数
-  // const hadleCartCountChange = (event) => {
+  // const handleCartCountChange = (event) => {
   //   updateCart("cartCount", Number(event.target.value));
   // };
 
-  const hadleCartCountChange = (count) => {
+  const handleCartCountChange = (count) => {
     setCartCount(Number(count));
     updateCart("cartCount", Number(count));
   };
@@ -102,7 +102,7 @@ const useCartInput = ({ carts, setCarts, cartID, cartNumber, cartRefs }) => {
     handleClear,
     handleRemove,
     isLastCart,
-    hadleCartCountChange,
+    handleCartCountChange,
   };
 };
 
