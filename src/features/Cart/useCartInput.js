@@ -4,7 +4,7 @@ import divideInput from "./divideInput";
 import parseLines from "./parseLines";
 import { useToggleSwitch } from "../index";
 
-const useCartInput = ({ carts, setCarts, cartID, cartNumber, cartRefs }) => {
+const useCartInput = ({ carts, setCarts, cartId, cartNumber, cartRefs }) => {
   // 入力内容を管理する変数
   const [inputText, setInputText] = useState("");
   // カート台数を管理する変数
@@ -34,7 +34,7 @@ const useCartInput = ({ carts, setCarts, cartID, cartNumber, cartRefs }) => {
   const updateCart = (key, value) => {
     setCarts((prevCarts) =>
       prevCarts.map((cart) =>
-        cart.id === cartID ? { ...cart, [key]: value } : cart
+        cart.id === cartId ? { ...cart, [key]: value } : cart
       )
     );
   };
@@ -53,7 +53,7 @@ const useCartInput = ({ carts, setCarts, cartID, cartNumber, cartRefs }) => {
   // ✕ボタンの押下により発火する関数
   const handleRemove = () => {
     if (carts.length > 1) {
-      setCarts((prevCarts) => prevCarts.filter((cart) => cart.id !== cartID));
+      setCarts((prevCarts) => prevCarts.filter((cart) => cart.id !== cartId));
 
       setTimeout(() => {
         // 削除されたカートの次のカートにスクロール

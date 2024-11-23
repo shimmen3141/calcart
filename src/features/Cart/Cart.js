@@ -4,7 +4,7 @@ import { InputFormatTag, CloseButton } from "../index";
 import "./Cart.scss";
 import CartCountSpinButton from "../CartCountSpinButton/CartCountSpinButton";
 
-const Cart = React.memo(({ carts, setCarts, cartID, cartNumber, cartRefs }) => {
+const Cart = React.memo(({ carts, setCarts, cartId, cartNumber, cartRefs }) => {
   const {
     inputText,
     cartCount,
@@ -17,7 +17,7 @@ const Cart = React.memo(({ carts, setCarts, cartID, cartNumber, cartRefs }) => {
   } = useCartInput({
     carts,
     setCarts,
-    cartID,
+    cartId,
     cartNumber,
     cartRefs,
   });

@@ -38,7 +38,7 @@ const Carts = () => {
               <Cart
                 carts={carts}
                 setCarts={setCarts}
-                cartID={cart.id}
+                cartId={cart.id}
                 cartNumber={index}
                 cartRefs={cartRefs}
               />
