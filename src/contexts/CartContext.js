@@ -142,7 +142,9 @@ export const CartProvider = ({ children }) => {
         cartRefs,
         setRefs,
         handleAddCart,
+        handleRemoveCart,
         hasMaxCarts,
+        hasMinCarts,
         updateCart,
       }}
     >

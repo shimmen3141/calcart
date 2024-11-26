@@ -2,13 +2,15 @@ import { useState, useEffect } from "react";
 import classifyInputFormat from "./classifyInputFormat";
 import divideInput from "./divideInput";
 import parseLines from "./parseLines";
-import { useToggleSwitch } from "../index";
+import { useToggleSwitch, useCart } from "../index";
 
-const useCartInput = ({ carts, setCarts, cartId, cartNumber, cartRefs }) => {
+const useCartInput = ({ cartId }) => {
   // 入力内容を管理する変数
   const [inputText, setInputText] = useState("");
 
   const { toggleStates } = useToggleSwitch();
+
+  const { updateCart } = useCart();
 
   // 入力内容を改行ごとに分割してそれぞれ処理する
   const lines = divideInput(inputText, toggleStates.removeSymbols);
@@ -24,18 +26,9 @@ const useCartInput = ({ carts, setCarts, cartId, cartNumber, cartRefs }) => {
   );
 
   useEffect(() => {
-    updateCart("ingredients", parsedIngredients);
+    updateCart(cartId, "ingredients", parsedIngredients);
     // eslint-disable-next-line
   }, [toggleStates, inputText]);
-
-  // カートを更新する関数
-  const updateCart = (key, value) => {
-    setCarts((prevCarts) =>
-      prevCarts.map((cart) =>
-        cart.id === cartId ? { ...cart, [key]: value } : cart
-      )
-    );
-  };
 
   // 入力欄の変更により発火する関数
   const handleInputChange = (event) => {
@@ -48,52 +41,11 @@ const useCartInput = ({ carts, setCarts, cartId, cartNumber, cartRefs }) => {
     setInputText("");
   };
 
-  // ✕ボタンの押下により発火する関数
-  const handleRemove = () => {
-    if (carts.length > 1) {
-      setCarts((prevCarts) => prevCarts.filter((cart) => cart.id !== cartId));
-
-      setTimeout(() => {
-        // 削除されたカートの次のカートにスクロール
-        if (cartRefs.current[cartNumber]) {
-          const targetCart = cartRefs.current[cartNumber];
-          const targetLeftPosition = targetCart.offsetLeft;
-
-          window.scrollTo({
-            left: targetLeftPosition, // 横方向にスクロール
-            behavior: "smooth",
-          });
-        } else if (cartRefs.current[cartNumber - 1]) {
-          // 次のカートが存在しない場合は、前のカートにスクロール
-          const targetCart = cartRefs.current[cartNumber - 1];
-          const targetLeftPosition = targetCart.offsetLeft;
-
-          window.scrollTo({
-            left: targetLeftPosition, // 横方向にスクロール
-            behavior: "smooth",
-          });
-        }
-      }, 0);
-    }
-  };
-
-  // カート数が下限に達したか判定する関数
-  const isLastCart = () => {
-    return carts.length <= 1;
-  };
-
-  // カート台数のスピンボタン変更時に発火する関数
-  // const handleCartCountChange = (event) => {
-  //   updateCart("cartCount", Number(event.target.value));
-  // };
-
   return {
     inputText,
     inputFormat,
     handleInputChange,
     handleClear,
-    handleRemove,
-    isLastCart,
   };
 };
 

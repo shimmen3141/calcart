@@ -1,18 +1,12 @@
 import React from "react";
 import { Cart, useCart } from "../index";
 import { motion, AnimatePresence } from "framer-motion";
-// import useCarts from "./useCarts";
 import "./Carts.scss";
 
 const Carts = () => {
   console.log("Carts");
 
-  const { carts, setCarts, cartRefs, setRefs, handleAddCart, hasMaxCarts } = useCart();
-
-  // const { hasMaxCarts, handleAddCart, setRefs, cartRefs } = useCarts({
-  //   carts,
-  //   setCarts,
-  // });
+  const { carts, setRefs, handleAddCart, hasMaxCarts } = useCart();
 
   return (
     <div>
@@ -35,13 +29,7 @@ const Carts = () => {
               layout
               ref={(node) => setRefs(node, index)}
             >
-              <Cart
-                carts={carts}
-                setCarts={setCarts}
-                cartId={cart.id}
-                cartNumber={index}
-                cartRefs={cartRefs}
-              />
+              <Cart cartId={cart.id} cartNumber={index} />
             </motion.div>
           ))}
         </AnimatePresence>
