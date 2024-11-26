@@ -1,22 +1,17 @@
 import React from "react";
 import { Cart, useCart } from "../index";
+import AddCartButton from "../AddCartButton/AddCartButton";
 import { motion, AnimatePresence } from "framer-motion";
 import "./Carts.scss";
 
 const Carts = () => {
   console.log("Carts");
 
-  const { carts, setRefs, handleAddCart, hasMaxCarts } = useCart();
+  const { carts, setRefs } = useCart();
 
   return (
     <div>
-      <button
-        className="addCartButton"
-        onClick={handleAddCart}
-        disabled={hasMaxCarts()}
-      >
-        + カートを追加
-      </button>
+      <AddCartButton />
       <div className="carts">
         <AnimatePresence>
           {carts.map((cart, index) => (
