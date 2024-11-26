@@ -1,0 +1,30 @@
+@use "../../styles/mixin" as *;
+
+.addCartButton {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 100vh;
+  border: 2px solid #b84c00;
+  background-color: rgb(255, 129, 56);
+  color: white;
+  box-shadow: 2px 2px 4px gray;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  margin: 0 0 1rem 1rem;
+  cursor: pointer;
+
+  @include hover {
+    transition: 0.2s all;
+    transform: scale(1.05);
+  }
+
+  &:disabled {
+    pointer-events: none;
+    background-color: rgb(190, 190, 190);
+    border: 2px solid rgb(190, 190, 190);
+  }
+}

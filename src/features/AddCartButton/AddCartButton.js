@@ -1,4 +1,5 @@
 import { useCart } from "../index";
+import "./AddCartButton.scss";
 
 const AddCartButton = () => {
   const { handleAddCart, hasMaxCarts } = useCart();
