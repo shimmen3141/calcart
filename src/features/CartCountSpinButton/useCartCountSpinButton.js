@@ -2,9 +2,13 @@ import { useState, useEffect } from "react";
 import { useCart } from "../index";
 
 const useCartCountSpinButton = ({ cartId }) => {
-  const { updateCart } = useCart();
   const maxCount = 1000;
-  const [value, setValue] = useState(1);
+  const { getCartCount, updateCart } = useCart();
+
+  // valueの初期値をcartsから取得
+  const initialValue = getCartCount(cartId);
+  const [value, setValue] = useState(initialValue);
+  
   const [errorMessage, setErrorMessage] = useState("");
   // 入力が日本語の変換中かを管理する変数
   const [isComposing, setIsComposing] = useState(false);

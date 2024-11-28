@@ -106,6 +106,11 @@ export const CartProvider = ({ children }) => {
     );
   };
 
+  const getCartCount = (cartId) => {
+    const cart = carts.find((cart) => cart.id === cartId);
+    return cart ? Number(cart.cartCount) : 1;
+  };
+
   //   const { toggleStates } = useToggleSwitch();
 
   //   // 入力内容を改行ごとに分割してそれぞれ処理する
@@ -146,6 +151,7 @@ export const CartProvider = ({ children }) => {
         hasMaxCarts,
         hasMinCarts,
         updateCart,
+        getCartCount,
       }}
     >
       {children}
