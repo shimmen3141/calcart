@@ -1,5 +1,6 @@
 import React from "react";
-import { CloseButton, useModal, useScrollLock } from "../../features/index";
+import { CloseButton, useModal } from "../../features/index";
+import { useScrollLock } from "../../hooks/index";
 import { modalContents } from "./modalContents";
 import "./Modal.scss";
 

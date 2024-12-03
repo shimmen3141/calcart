@@ -46,9 +46,6 @@ export { default as removeSymbols } from "../functions/removeSymbols";
 export { default as roundQuantities } from "../functions/roundQuantities";
 export { default as splitIntoNumAndChar } from "../functions/splitIntoNumAndChar";
 
-// hooks
-export { default as useScrollLock } from "../hooks/useScrollLock";
-
 // data
 export { default as meatList } from "../data/meatList";
 export { default as vegetableList } from "../data/vegetableList";
