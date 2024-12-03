@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import classifyInputFormat from "./classifyInputFormat";
 import divideInput from "./divideInput";
-import parseLines from "./parseLines";
 import { useToggleSwitch, useCart } from "../index";
 
 const useCartInput = ({ cartId }) => {
@@ -18,17 +17,10 @@ const useCartInput = ({ cartId }) => {
   // 入力内容から入力形式を分類する
   const inputFormat = classifyInputFormat(lines);
 
-  // 入力形式をもとに入力内容を処理する
-  const parsedIngredients = parseLines(
-    lines,
-    inputFormat,
-    toggleStates.spoonToGram
-  );
-
   useEffect(() => {
     updateCart(cartId, "ingredients", inputText);
     // eslint-disable-next-line
-  }, [toggleStates, inputText]);
+  }, [inputText]);
 
   // 入力欄の変更により発火する関数
   const handleInputChange = (event) => {
