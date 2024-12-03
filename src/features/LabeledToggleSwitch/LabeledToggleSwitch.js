@@ -1,4 +1,4 @@
-import { ToggleSwitch, HelpButton } from "../index";
+import { ToggleSwitch, HelpButton } from "components";
 import { useModal, useToggleSwitch } from "contexts";
 import "./LabeledToggleSwitch.scss";
 

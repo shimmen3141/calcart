@@ -1,10 +1,6 @@
 import "./AppHeader.scss";
-import {
-  ToggleSwitchArea,
-  DropdownMenu,
-  useDropdownMenu,
-  SettingButton,
-} from "../index";
+import { ToggleSwitchArea } from "../index";
+import { DropdownMenu, useDropdownMenu, SettingButton } from "components";
 
 const AppHeader = () => {
   console.log("AppHeader");

@@ -1,4 +1,5 @@
-import { ShoppingListArea, Carts, Modal } from "../index";
+import { ShoppingListArea, Carts } from "../index";
+import { Modal } from "components";
 import "./MainContents.scss";
 
 const MainContents = () => {

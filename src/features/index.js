@@ -10,13 +10,3 @@ export { default as EmptyShoppingList } from "./ShoppingList/EmptyShoppingList";
 export { default as ShoppingListArea } from "./ShoppingListArea/ShoppingListArea";
 export { default as InputFormatTag } from "./InputFormatTag/InputFormatTag";
 export { default as ToggleSwitchArea } from "./ToggleSwitchArea/ToggleSwitchArea";
-
-// components
-export { default as CloseButton } from "../components/CloseButton/CloseButton";
-export { default as CopyButton } from "../components/CopyButton/CopyButton";
-export { default as DropdownMenu } from "../components/DropdownMenu/DropdownMenu";
-export { default as useDropdownMenu } from "../components/DropdownMenu/useDropdownMenu";
-export { default as HelpButton } from "../components/HelpButton/HelpButton";
-export { default as Modal } from "../components/Modal/Modal";
-export { default as SettingButton } from "../components/SettingButton/SettingButton";
-export { default as ToggleSwitch } from "../components/ToggleSwitch/ToggleSwitch";

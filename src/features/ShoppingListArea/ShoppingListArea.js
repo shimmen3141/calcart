@@ -2,11 +2,11 @@ import React from "react";
 import aggregateItems from "./aggregateItems";
 import classifyItems from "./classifyItems";
 import {
-  CopyButton,
   ShoppingList,
   ClassifiedShoppingList,
   EmptyShoppingList,
 } from "../index";
+import { CopyButton } from "components";
 import { useCart, useToggleSwitch } from "contexts";
 import { classifyInputFormat, divideInput, parseLines } from "functions";
 import "./ShoppingList.scss";
