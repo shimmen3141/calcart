@@ -1,4 +1,4 @@
-import { radicalToKanjiMap } from "../features/index";
+import { radicalToKanjiMap } from "data";
 /* 
     CJK部首、康煕部首を通常の漢字に変換する関数
     (PDFをコピーすると、漢字が部首文字に化ける場合があるため)

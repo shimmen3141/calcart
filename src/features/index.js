@@ -46,8 +46,3 @@ export { default as removeSymbols } from "../functions/removeSymbols";
 export { default as roundQuantities } from "../functions/roundQuantities";
 export { default as splitIntoNumAndChar } from "../functions/splitIntoNumAndChar";
 
-// data
-export { default as meatList } from "../data/meatList";
-export { default as vegetableList } from "../data/vegetableList";
-export { default as vegetableExceptionList } from "../data/vegetableExceptionList";
-export { default as radicalToKanjiMap } from "../data/radicalToKanjiMap";

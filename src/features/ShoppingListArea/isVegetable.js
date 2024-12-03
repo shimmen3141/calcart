@@ -1,4 +1,4 @@
-import { vegetableList, vegetableExceptionList } from "../index";
+import { vegetableList, vegetableExceptionList } from "data";
 
 // 文字列が vegetableList の単語を含むか判定する関数
 const isVegetable = (input) => {
