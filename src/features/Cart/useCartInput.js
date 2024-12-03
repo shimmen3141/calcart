@@ -1,21 +1,11 @@
 import { useState, useEffect } from "react";
-import classifyInputFormat from "./classifyInputFormat";
-import divideInput from "./divideInput";
-import { useToggleSwitch, useCart } from "../index";
+import { useCart } from "../index";
 
 const useCartInput = ({ cartId }) => {
   // 入力内容を管理する変数
   const [inputText, setInputText] = useState("");
 
-  const { toggleStates } = useToggleSwitch();
-
   const { updateCart } = useCart();
-
-  // 入力内容を改行ごとに分割してそれぞれ処理する
-  const lines = divideInput(inputText, toggleStates.removeSymbols);
-
-  // 入力内容から入力形式を分類する
-  const inputFormat = classifyInputFormat(lines);
 
   useEffect(() => {
     updateCart(cartId, "ingredients", inputText);
@@ -35,7 +25,6 @@ const useCartInput = ({ cartId }) => {
 
   return {
     inputText,
-    inputFormat,
     handleInputChange,
     handleClear,
   };

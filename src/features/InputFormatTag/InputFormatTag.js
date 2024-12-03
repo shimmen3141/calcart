@@ -1,10 +1,20 @@
 import React from "react";
-import { useModal } from "../index";
+import classifyInputFormat from "./classifyInputFormat";
+import divideInput from "./divideInput";
+import { useToggleSwitch, useModal } from "../index";
 import "./InputFormatTag.scss";
 
-const InputFormatTag = ({ inputFormat }) => {
+const InputFormatTag = ({ inputText }) => {
 
   const { handleOpenModal } = useModal();
+
+  const { toggleStates } = useToggleSwitch();
+
+  // 入力内容を改行ごとに分割してそれぞれ処理する
+  const lines = divideInput(inputText, toggleStates.removeSymbols);
+
+  // 入力内容から入力形式を分類する
+  const inputFormat = classifyInputFormat(lines);
 
   // inputFormatに基づいて表示するテキストを決定
   const getTagLabel = () => {

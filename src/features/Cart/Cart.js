@@ -5,7 +5,7 @@ import "./Cart.scss";
 import CartCountSpinButton from "../CartCountSpinButton/CartCountSpinButton";
 
 const Cart = React.memo(({ cartId, cartNumber }) => {
-  const { inputText, inputFormat, handleInputChange, handleClear } =
+  const { inputText, handleInputChange, handleClear } =
     useCartInput({
       cartId,
     });
@@ -21,7 +21,7 @@ const Cart = React.memo(({ cartId, cartNumber }) => {
         onClick={() => handleRemoveCart(cartId, cartNumber)}
         disabled={hasMinCarts()}
       />
-      <InputFormatTag inputFormat={inputFormat} />
+      <InputFormatTag inputText={inputText} />
       <div>材料リストを入力：</div>
       <textarea
         value={inputText}
