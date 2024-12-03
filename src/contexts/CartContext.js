@@ -1,8 +1,4 @@
 import React, { createContext, useContext, useState, useRef } from "react";
-// import classifyInputFormat from "./classifyInputFormat";
-// import divideInput from "./divideInput";
-// import parseLines from "./parseLines";
-// import { useToggleSwitch } from "../index";
 
 // Context の作成
 const CartContext = createContext();
@@ -110,34 +106,6 @@ export const CartProvider = ({ children }) => {
     const cart = carts.find((cart) => cart.id === cartId);
     return cart ? Number(cart.cartCount) : 1;
   };
-
-  //   const { toggleStates } = useToggleSwitch();
-
-  //   // 入力内容を改行ごとに分割してそれぞれ処理する
-  //   const lines = divideInput(inputText, toggleStates.removeSymbols);
-
-  //   // 入力内容から入力形式を分類する
-  //   const inputFormat = classifyInputFormat(lines);
-
-  //   // 入力形式をもとに入力内容を処理する
-  //   const parsedIngredients = parseLines(
-  //     lines,
-  //     inputFormat,
-  //     toggleStates.spoonToGram
-  //   );
-
-  //   const organizeIngredient = () => {
-  //     return carts
-  //       .filter((cart) => cart.cartCount > 0)
-  //       // ここに上の処理を入れる
-  //       .flatMap((cart) =>
-  //         cart.ingredients.map((ingredient) => ({
-  //           name: ingredient.name,
-  //           info: ingredient.info,
-  //           cartCount: cart.cartCount,
-  //         }))
-  //       );
-  //   };
 
   return (
     <CartContext.Provider
