@@ -1,4 +1,4 @@
-import teaspoonGramsList from "../../data/teaspoonGramsList";
+import { teaspoonGramsList } from "data";
 import "./TeaspoonGramsTable.scss";
 
 const TeaspoonGramsTable = () => {

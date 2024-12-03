@@ -1,4 +1,4 @@
-import itemToTeaspoonGramsMap from "../data/itemToTeaspoonGramsMap";
+import { itemToTeaspoonGramsMap } from "data";
 
 // itemInfo 中の大さじ・小さじ表記をグラム表記に変換する関数
 export default function convertSpoonToGram(itemName, itemInfo) {
