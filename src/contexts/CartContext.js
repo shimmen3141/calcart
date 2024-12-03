@@ -11,8 +11,8 @@ const CartContext = createContext();
 export const CartProvider = ({ children }) => {
   // carts の初期状態
   const [carts, setCarts] = useState([
-    { id: Date.now(), ingredients: [], cartCount: 1 },
-    { id: Date.now() + 1, ingredients: [], cartCount: 1 },
+    { id: Date.now(), ingredients: "", cartCount: 1 },
+    { id: Date.now() + 1, ingredients: "", cartCount: 1 },
   ]);
 
   // 全てのカートに対応する ref を格納するための配列

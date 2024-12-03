@@ -26,7 +26,7 @@ const useCartInput = ({ cartId }) => {
   );
 
   useEffect(() => {
-    updateCart(cartId, "ingredients", parsedIngredients);
+    updateCart(cartId, "ingredients", inputText);
     // eslint-disable-next-line
   }, [toggleStates, inputText]);
 
