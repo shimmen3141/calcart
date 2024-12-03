@@ -7,11 +7,11 @@ import {
 } from "functions";
 
 // 重複した item を集約する関数
-export default function aggregateItems ({ items }) {
+export default function aggregateItems({ items }) {
   // 第一段階: name と infoの形式 が等しい要素を集約
   const firstAggregation = items.reduce((acc, item) => {
-    // info に含まれる数値を cartCount 倍したもの
-    const updatedInfo = multiplyQuantities(item.info, item.cartCount);
+    // info に含まれる数値を count 倍したもの
+    const updatedInfo = multiplyQuantities(item.info, item.count);
 
     // name と infoの形式 が等しい要素を取得
     const existingItem = acc.find(
@@ -71,4 +71,4 @@ export default function aggregateItems ({ items }) {
     .join("\n");
 
   return { itemList, itemListText };
-};
+}

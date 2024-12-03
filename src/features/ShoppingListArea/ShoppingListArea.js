@@ -19,7 +19,7 @@ const ShoppingListArea = () => {
 
   const organizeIngredient = (carts) => {
     return carts
-      .filter((cart) => cart.cartCount > 0)
+      .filter((cart) => cart.count > 0)
       .flatMap((cart) => {
         // 入力内容を改行ごとに分割してそれぞれ処理する
         const lines = divideInput(cart.inputText, toggleStates.removeSymbols);
@@ -35,7 +35,7 @@ const ShoppingListArea = () => {
         return parsedIngredients.map((ingredient) => ({
           name: ingredient.name,
           info: ingredient.info,
-          cartCount: cart.cartCount,
+          count: cart.count,
         }));
       });
   };

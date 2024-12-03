@@ -8,13 +8,13 @@ const useCartCountSpinButton = ({ cartId }) => {
   // valueの初期値をcartsから取得
   const initialValue = getCartCount(cartId);
   const [value, setValue] = useState(initialValue);
-  
+
   const [errorMessage, setErrorMessage] = useState("");
   // 入力が日本語の変換中かを管理する変数
   const [isComposing, setIsComposing] = useState(false);
 
   useEffect(() => {
-    updateCart(cartId, "cartCount", Number(value));
+    updateCart(cartId, "count", Number(value));
   }, [value]);
 
   const handleCountUp = () => {

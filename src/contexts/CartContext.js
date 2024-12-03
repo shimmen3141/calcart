@@ -7,8 +7,8 @@ const CartContext = createContext();
 export const CartProvider = ({ children }) => {
   // carts の初期状態
   const [carts, setCarts] = useState([
-    { id: Date.now(), inputText: "", cartCount: 1 },
-    { id: Date.now() + 1, inputText: "", cartCount: 1 },
+    { id: Date.now(), inputText: "", count: 1 },
+    { id: Date.now() + 1, inputText: "", count: 1 },
   ]);
 
   // 全てのカートに対応する ref を格納するための配列
@@ -32,7 +32,7 @@ export const CartProvider = ({ children }) => {
   const handleAddCart = () => {
     if (carts.length < maxCarts) {
       // 新しいカートを追加
-      setCarts([...carts, { id: Date.now(), inputText: "", cartCount: 1 }]);
+      setCarts([...carts, { id: Date.now(), inputText: "", count: 1 }]);
 
       // 新しい入力欄にスクロール
       setTimeout(() => {
@@ -104,7 +104,7 @@ export const CartProvider = ({ children }) => {
 
   const getCartCount = (cartId) => {
     const cart = carts.find((cart) => cart.id === cartId);
-    return cart ? Number(cart.cartCount) : 1;
+    return cart ? Number(cart.count) : 1;
   };
 
   return (
