@@ -1,7 +1,10 @@
 import React from "react";
-import classifyInputFormat from "./classifyInputFormat";
-import divideInput from "./divideInput";
-import { useToggleSwitch, useModal } from "../index";
+import {
+  useToggleSwitch,
+  useModal,
+  classifyInputFormat,
+  divideInput,
+} from "../index";
 import "./InputFormatTag.scss";
 
 const InputFormatTag = ({ inputText }) => {

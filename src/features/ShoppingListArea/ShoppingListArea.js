@@ -1,9 +1,6 @@
 import React from "react";
 import aggregateItems from "./aggregateItems";
 import classifyItems from "./classifyItems";
-import classifyInputFormat from "./classifyInputFormat";
-import divideInput from "./divideInput";
-import parseLines from "./parseLines";
 import {
   CopyButton,
   useCart,
@@ -11,6 +8,9 @@ import {
   ShoppingList,
   ClassifiedShoppingList,
   EmptyShoppingList,
+  classifyInputFormat,
+  divideInput,
+  parseLines,
 } from "../index";
 import "./ShoppingList.scss";
 
