@@ -24,11 +24,11 @@ const ShoppingListArea = () => {
     return carts
       .filter((cart) => cart.cartCount > 0)
       .flatMap((cart) => {
-        
+        // 入力内容を改行ごとに分割してそれぞれ処理する
         const lines = divideInput(cart.ingredients, toggleStates.removeSymbols);
-
+        // 入力内容から入力形式を分類する
         const inputFormat = classifyInputFormat(lines);
-
+        // 入力形式をもとに入力内容を処理する
         const parsedIngredients = parseLines(
           lines,
           inputFormat,
