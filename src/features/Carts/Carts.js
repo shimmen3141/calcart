@@ -1,5 +1,5 @@
 import React from "react";
-import { Cart } from "../index";
+import { Cart } from "features";
 import { useCart } from "contexts";
 import AddCartButton from "../AddCartButton/AddCartButton";
 import { motion, AnimatePresence } from "framer-motion";

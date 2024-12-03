@@ -1,4 +1,4 @@
-import { ShoppingListArea, Carts } from "../index";
+import { ShoppingListArea, Carts } from "features";
 import { Modal } from "components";
 import "./MainContents.scss";
 

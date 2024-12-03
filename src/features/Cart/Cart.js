@@ -1,6 +1,6 @@
 import React from "react";
 import useCartInput from "./useCartInput";
-import { InputFormatTag } from "../index";
+import { InputFormatTag } from "features";
 import { CloseButton } from "components";
 import { useCart } from "contexts"
 import "./Cart.scss";

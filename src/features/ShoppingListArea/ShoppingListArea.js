@@ -5,7 +5,7 @@ import {
   ShoppingList,
   ClassifiedShoppingList,
   EmptyShoppingList,
-} from "../index";
+} from "features";
 import { CopyButton } from "components";
 import { useCart, useToggleSwitch } from "contexts";
 import { classifyInputFormat, divideInput, parseLines } from "functions";
