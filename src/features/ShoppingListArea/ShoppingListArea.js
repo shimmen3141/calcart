@@ -3,12 +3,11 @@ import aggregateItems from "./aggregateItems";
 import classifyItems from "./classifyItems";
 import {
   CopyButton,
-  useCart,
-  useToggleSwitch,
   ShoppingList,
   ClassifiedShoppingList,
   EmptyShoppingList,
 } from "../index";
+import { useCart, useToggleSwitch } from "contexts";
 import { classifyInputFormat, divideInput, parseLines } from "functions";
 import "./ShoppingList.scss";
 

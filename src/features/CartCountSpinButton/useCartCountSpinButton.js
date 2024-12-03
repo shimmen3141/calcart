@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useCart } from "../index";
+import { useCart } from "contexts";
 
 const useCartCountSpinButton = ({ cartId }) => {
   const maxCount = 1000;

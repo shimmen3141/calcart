@@ -1,5 +1,5 @@
 import React from "react";
-import { useToggleSwitch, useModal } from "../index";
+import { useToggleSwitch, useModal } from "contexts";
 import { classifyInputFormat, divideInput } from "functions";
 import "./InputFormatTag.scss";
 

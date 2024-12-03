@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.scss";
 import { AppHeader, MainContents, AppFooter } from "./features/index";
-import { CartProvider, ToggleSwitchProvider, ModalProvider } from "./features/index";
+import { CartProvider, ToggleSwitchProvider, ModalProvider } from "contexts";
 
 const App = () => {
   return (

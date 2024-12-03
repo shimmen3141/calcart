@@ -20,12 +20,3 @@ export { default as HelpButton } from "../components/HelpButton/HelpButton";
 export { default as Modal } from "../components/Modal/Modal";
 export { default as SettingButton } from "../components/SettingButton/SettingButton";
 export { default as ToggleSwitch } from "../components/ToggleSwitch/ToggleSwitch";
-
-// contexts
-export {
-  ToggleSwitchProvider,
-  useToggleSwitch,
-} from "../contexts/ToggleSwitchContext";
-export { ModalProvider, useModal } from "../contexts/ModalContext";
-export { CartProvider, useCart } from "../contexts/CartContext";
-

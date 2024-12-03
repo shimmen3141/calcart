@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useCart } from "../index";
+import { useCart } from "contexts";
 
 const useCartInput = ({ cartId }) => {
   // 入力内容を管理する変数

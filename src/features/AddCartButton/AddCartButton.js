@@ -1,4 +1,4 @@
-import { useCart } from "../index";
+import { useCart } from "contexts";
 import "./AddCartButton.scss";
 
 const AddCartButton = () => {
