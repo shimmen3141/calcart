@@ -23,7 +23,7 @@ const CartCountSpinButton = ({ cartId }) => {
       </button>
       <input
         type="text"
-        inputmode="numeric"
+        inputMode="numeric"
         value={value}
         onChange={handleCountChange}
         onBlur={handleBlur}

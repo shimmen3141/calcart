@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, useRef } from "react";
+import { useLocalStorage } from "hooks";
 
 // Context の作成
 const CartContext = createContext();
@@ -6,7 +7,7 @@ const CartContext = createContext();
 // Context プロバイダの作成
 export const CartProvider = ({ children }) => {
   // carts の初期状態
-  const [carts, setCarts] = useState([
+  const [carts, setCarts] = useLocalStorage("carts", [
     { id: Date.now(), inputText: "", count: 1 },
     { id: Date.now() + 1, inputText: "", count: 1 },
   ]);
