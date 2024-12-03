@@ -4,7 +4,7 @@ import {
   containsNumber,
   removeNumbers,
   splitIntoNumAndChar,
-} from "../index";
+} from "functions";
 
 // 重複した item を集約する関数
 export default function aggregateItems ({ items }) {

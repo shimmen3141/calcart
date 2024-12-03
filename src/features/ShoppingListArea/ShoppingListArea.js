@@ -8,10 +8,8 @@ import {
   ShoppingList,
   ClassifiedShoppingList,
   EmptyShoppingList,
-  classifyInputFormat,
-  divideInput,
-  parseLines,
 } from "../index";
+import { classifyInputFormat, divideInput, parseLines } from "functions";
 import "./ShoppingList.scss";
 
 const ShoppingListArea = () => {

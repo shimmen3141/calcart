@@ -1,14 +1,9 @@
 import React from "react";
-import {
-  useToggleSwitch,
-  useModal,
-  classifyInputFormat,
-  divideInput,
-} from "../index";
+import { useToggleSwitch, useModal } from "../index";
+import { classifyInputFormat, divideInput } from "functions";
 import "./InputFormatTag.scss";
 
 const InputFormatTag = ({ inputText }) => {
-
   const { handleOpenModal } = useModal();
 
   const { toggleStates } = useToggleSwitch();

@@ -29,20 +29,3 @@ export {
 export { ModalProvider, useModal } from "../contexts/ModalContext";
 export { CartProvider, useCart } from "../contexts/CartContext";
 
-// functions
-export { default as classifyInputFormat } from "../functions/classifyInputFormat";
-export { default as containsNumber } from "../functions/containsNumber";
-export { default as convertEllipsisToSpace } from "../functions/convertEllipsisToSpace";
-export { default as convertFractionToDecimal } from "../functions/convertFractionToDecimal";
-export { default as convertFullToHalf } from "../functions/convertFullToHalf";
-export { default as convertSpoonToGram } from "../functions/convertSpoonToGram";
-export { default as convertRadicalToKanji } from "../functions/convertRadicalToKanji";
-export { default as divideInput } from "../functions/divideInput";
-export { default as multiplyQuantities } from "../functions/multiplyQuantities";
-export { default as parseLines } from "../functions/parseLines";
-export { default as removeExtraSpaces } from "../functions/removeExtraSpaces";
-export { default as removeNumbers } from "../functions/removeNumbers";
-export { default as removeSymbols } from "../functions/removeSymbols";
-export { default as roundQuantities } from "../functions/roundQuantities";
-export { default as splitIntoNumAndChar } from "../functions/splitIntoNumAndChar";
-

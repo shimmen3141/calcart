@@ -5,7 +5,7 @@ import {
   convertRadicalToKanji,
   removeSymbols,
   removeExtraSpaces,
-} from "../features/index";
+} from "functions";
 
 // 入力内容を改行ごとに分割し、それぞれ処理する関数
 export default function divideInput(text, isRemoveSymbolsApplied) {

@@ -1,4 +1,4 @@
-import { convertSpoonToGram } from "../features/index";
+import { convertSpoonToGram } from "functions";
 
 // 入力形式をもとに入力内容を処理する関数
 export default function parseLines(lines, currentFormat, isSpoonToGramApplied) {
