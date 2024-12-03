@@ -2,10 +2,11 @@ import { useState, useEffect } from "react";
 import { useCart } from "contexts";
 
 const useCartInput = ({ cartId }) => {
-  // 入力内容を管理する変数
-  const [inputText, setInputText] = useState("");
+  const { updateCart, getCartInputText } = useCart();
 
-  const { updateCart } = useCart();
+  // inputTextの初期値をcartsから取得
+  const initialValue = getCartInputText(cartId);
+  const [inputText, setInputText] = useState(initialValue);
 
   useEffect(() => {
     updateCart(cartId, "inputText", inputText);

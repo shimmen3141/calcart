@@ -108,6 +108,11 @@ export const CartProvider = ({ children }) => {
     return cart ? Number(cart.count) : 1;
   };
 
+  const getCartInputText = (cartId) => {
+    const cart = carts.find((cart) => cart.id === cartId);
+    return cart ? cart.inputText : "";
+  };
+
   return (
     <CartContext.Provider
       value={{
@@ -121,6 +126,7 @@ export const CartProvider = ({ children }) => {
         hasMinCarts,
         updateCart,
         getCartCount,
+        getCartInputText,
       }}
     >
       {children}
