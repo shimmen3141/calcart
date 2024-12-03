@@ -1,4 +1,4 @@
-import LabeledToggleSwitch from "../LabeledToggleSwitch/LabeledToggleSwitch";
+import { LabeledToggleSwitch } from "features";
 import "./ToggleSwitchArea.scss";
 
 const ToggleSwitchArea = () => {
@@ -8,18 +8,12 @@ const ToggleSwitchArea = () => {
     <div className="toggleSwitchArea">
       <div className="triangle"></div>
       <div className="labeledToggleSwitches">
-        <LabeledToggleSwitch 
-          id="removeSymbols" 
-          labelText="記号を消去" 
-        />
+        <LabeledToggleSwitch id="removeSymbols" labelText="記号を消去" />
         <LabeledToggleSwitch
           id="spoonToGram"
           labelText="大さじ・小さじをグラムに変換"
         />
-        <LabeledToggleSwitch 
-          id="classifyItems" 
-          labelText="リストを分割" 
-        />
+        <LabeledToggleSwitch id="classifyItems" labelText="リストを分割" />
       </div>
     </div>
   );
