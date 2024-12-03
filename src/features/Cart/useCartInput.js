@@ -8,7 +8,7 @@ const useCartInput = ({ cartId }) => {
   const { updateCart } = useCart();
 
   useEffect(() => {
-    updateCart(cartId, "ingredients", inputText);
+    updateCart(cartId, "inputText", inputText);
     // eslint-disable-next-line
   }, [inputText]);
 
