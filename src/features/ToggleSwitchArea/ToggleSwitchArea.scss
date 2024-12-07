@@ -1,12 +1,24 @@
 .toggleSwitchArea {
   .triangle {
     position: absolute;
-    top: calc(3px - 1rem);
+    top: calc(6px - 1rem);
     right: 36px;
     background: white;
     height: calc(tan(60deg) * 20px / 2);
     width: 20px;
     clip-path: polygon(50% 0, 100% 100%, 0 100%);
+  }
+
+  .triangleBorder {
+    position: absolute;
+    top: calc(6px - 1rem);
+    right: 36px;
+    background: #ddd;
+    height: calc(tan(60deg) * 20px / 2);
+    width: 20px;
+    clip-path: polygon(50% 0, 100% 100%, 0 100%);
+    transform: scale(1.5);
+    z-index: -1;
   }
 
   .labeledToggleSwitches {
