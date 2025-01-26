@@ -1,41 +1,25 @@
+import ShoppingList from "./ShoppingList";
+
 const ClassifiedShoppingList = ({ classifiedItemList }) => {
+  const getCategoryLabel = (categoryKey) => {
+    const labels = {
+      vegetable: "野菜",
+      meat: "肉",
+      others: "その他",
+    };
+    return labels[categoryKey] || "";
+  };
+
   return (
     <div>
-      {/* 野菜リスト */}
-      {classifiedItemList.vegetable.length > 0 && (
-        <ul className="vegetableList">
-          <div className="listTypeTag">野菜</div>
-          {classifiedItemList.vegetable.map((item, index) => (
-            <div key={index}>
-              <input type="checkbox" /> {item.name}  {item.info}
-            </div>
-          ))}
-        </ul>
-      )}
-
-      {/* 肉リスト */}
-      {classifiedItemList.meat.length > 0 && (
-        <ul className="meatList">
-          <div className="listTypeTag">肉</div>
-          {classifiedItemList.meat.map((item, index) => (
-            <div key={index}>
-              <input type="checkbox" /> {item.name}  {item.info}
-            </div>
-          ))}
-        </ul>
-      )}
-
-      {/* その他リスト */}
-      {classifiedItemList.others.length > 0 && (
-        <ul className="normalList">
-          <div className="listTypeTag">その他</div>
-          {classifiedItemList.others.map((item, index) => (
-            <div key={index}>
-              <input type="checkbox" /> {item.name}  {item.info}
-            </div>
-          ))}
-        </ul>
-      )}
+      {Object.entries(classifiedItemList).map(([categoryKey, items]) => (
+        <ShoppingList
+          key={categoryKey}
+          itemList={items}
+          className={`${categoryKey}List`}
+          labelName={getCategoryLabel(categoryKey)}
+        />
+      ))}
     </div>
   );
 };
