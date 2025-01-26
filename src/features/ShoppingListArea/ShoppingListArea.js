@@ -68,7 +68,7 @@ const ShoppingListArea = () => {
       {toggleStates.classifyItems ? (
         <ClassifiedShoppingList classifiedItemList={classifiedItemList} />
       ) : (
-        <ShoppingList itemList={itemList} />
+        <ShoppingList itemList={itemList} className="normalList" />
       )}
     </div>
   );
