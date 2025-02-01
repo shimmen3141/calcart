@@ -1,23 +1,15 @@
 import ShoppingList from "./ShoppingList";
+import { CATEGORIES } from "../ShoppingListArea/categories";
 
 const ClassifiedShoppingList = ({ classifiedItemList }) => {
-  const getCategoryLabel = (categoryKey) => {
-    const labels = {
-      vegetable: "野菜",
-      meat: "肉",
-      others: "その他",
-    };
-    return labels[categoryKey] || "";
-  };
-
   return (
     <div>
-      {Object.entries(classifiedItemList).map(([categoryKey, items]) => (
+      {Object.entries(CATEGORIES).map(([key, { label }]) => (
         <ShoppingList
-          key={categoryKey}
-          itemList={items}
-          className={`${categoryKey}List`}
-          labelName={getCategoryLabel(categoryKey)}
+          key={key}
+          itemList={classifiedItemList[key]}
+          className={`${key}List`}
+          labelName={label}
         />
       ))}
     </div>
