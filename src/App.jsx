@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.scss";
-import { AppHeader, MainContents, AppFooter } from "features";
+import { AppHeader, AppFooter } from "components";
+import { MainContents } from "features";
 import { CartProvider, ToggleSwitchProvider, ModalProvider } from "contexts";
 
 const App = () => {

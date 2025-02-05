@@ -6,3 +6,7 @@ export { default as HelpButton } from "./HelpButton/HelpButton";
 export { default as Modal } from "./Modal/Modal";
 export { default as SettingButton } from "./SettingButton/SettingButton";
 export { default as ToggleSwitch } from "./ToggleSwitch/ToggleSwitch";
+
+
+export { default as AppFooter } from "./layout/AppFooter/AppFooter";
+export { default as AppHeader } from "./layout/AppHeader/AppHeader";
