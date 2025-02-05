@@ -63,7 +63,8 @@ const ShoppingListArea = () => {
   return (
     <div className="shoppingList">
       <div className="title">
-        買い物リスト <CopyButton text={copyText} />
+        買い物リスト
+        {copyText && <CopyButton text={copyText} />}
       </div>
       {content}
     </div>
