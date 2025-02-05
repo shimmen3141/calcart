@@ -51,13 +51,13 @@ const ShoppingListArea = () => {
     ? classifiedItemListText
     : itemListText;
 
+  let content;
   if (itemList.length === 0) {
-    return (
-      <div className="shoppingList">
-        <div className="title">買い物リスト</div>
-        <EmptyShoppingList />
-      </div>
-    );
+    content = <EmptyShoppingList />;
+  } else if (toggleStates.classifyItems) {
+    content = <ClassifiedShoppingList classifiedItemList={classifiedItemList} />;
+  } else {
+    content = <ShoppingList itemList={itemList} className="normalList" />;
   }
 
   return (
@@ -65,11 +65,7 @@ const ShoppingListArea = () => {
       <div className="title">
         買い物リスト <CopyButton text={copyText} />
       </div>
-      {toggleStates.classifyItems ? (
-        <ClassifiedShoppingList classifiedItemList={classifiedItemList} />
-      ) : (
-        <ShoppingList itemList={itemList} className="normalList" />
-      )}
+      {content}
     </div>
   );
 };
