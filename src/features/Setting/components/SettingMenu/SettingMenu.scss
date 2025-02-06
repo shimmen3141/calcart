@@ -12,6 +12,7 @@
 
 .settingButton {
   position: absolute;
+  top: 13px;
   right: 2rem;
 
   @include hover {

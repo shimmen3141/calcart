@@ -11,4 +11,5 @@ export { default as ShoppingListArea } from "./ShoppingListArea/ShoppingListArea
 
 // Setting
 export { default as LabeledToggleSwitch } from "./Setting/components/LabeledToggleSwitch/LabeledToggleSwitch";
+export { default as SettingMenu } from "./Setting/components/SettingMenu/SettingMenu";
 export { default as ToggleSwitchArea } from "./Setting/components/ToggleSwitchArea/ToggleSwitchArea";
