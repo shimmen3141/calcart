@@ -1,3 +1,4 @@
+import "./SettingMenu.scss";
 import { ToggleSwitchArea } from "features";
 import { DropdownMenu, useDropdownMenu, SettingButton } from "components";
 
