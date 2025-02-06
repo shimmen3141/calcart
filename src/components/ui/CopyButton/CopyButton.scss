@@ -1,4 +1,4 @@
-@use "../../../styles/mixin" as *;
+@use "styles" as *;
 
 .copyButton {
   height: 2rem;
@@ -10,11 +10,11 @@
   position: relative;
   background-color: white;
   border: 1px solid gray;
-  box-shadow: 0px 2px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.2);
   cursor: pointer;
 
-  @include hover  {
-      transition: 0.2s all;
-      transform: scale(1.05);
-    }
+  @include hover {
+    transition: 0.2s all;
+    transform: scale(1.05);
+  }
 }

@@ -1,4 +1,4 @@
-@use "../../../styles/mixin" as *;
+@use "styles" as *;
 
 .closeButton {
   /* border-radius: 50%; */
@@ -37,9 +37,9 @@
     transform: translate(-50%, -50%) rotate(-45deg);
   }
 
-  @include hover  {
+  @include hover {
     background-color: #ff2020;
-    
+
     &:before,
     &:after {
       background-color: #fff;
