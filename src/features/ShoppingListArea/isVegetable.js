@@ -1,20 +1,19 @@
 import { vegetableList, vegetableExceptionList } from "data";
 
-// 文字列が vegetableList の単語を含むか判定する関数
-const isVegetable = (input) => {
+// 入力文字列が vegetableList の単語を含むか判定する関数
+const isVegetable = (str) => {
   for (let item of vegetableExceptionList) {
-    if (input.includes(item)) {
+    if (str.includes(item)) {
       return false;
     }
   }
 
-  for (let row of vegetableList) {
-    for (let veg of row) {
-      if (input.includes(veg)) {
-        return true;
-      }
+  for (let item of vegetableList) {
+    if (str.includes(item)) {
+      return true;
     }
   }
+
   return false;
 };
 
