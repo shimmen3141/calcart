@@ -4,9 +4,9 @@ export { default as Cart } from "./Cart/Cart";
 export { default as CartCountSpinButton } from "./CartCountSpinButton/CartCountSpinButton";
 export { default as Carts } from "./Carts/Carts";
 export { default as InputFormatTag } from "./InputFormatTag/InputFormatTag";
-export { default as ShoppingList } from "./ShoppingList/ShoppingList";
-export { default as ClassifiedShoppingList } from "./ShoppingList/ClassifiedShoppingList";
-export { default as EmptyShoppingList } from "./ShoppingList/EmptyShoppingList";
+export { default as ShoppingList } from "./ShoppingList/components/ShoppingLists/ShoppingList";
+export { default as ClassifiedShoppingList } from "./ShoppingList/components/ShoppingLists/ClassifiedShoppingList";
+export { default as EmptyShoppingList } from "./ShoppingList/components/ShoppingLists/EmptyShoppingList";
 export { default as ShoppingListArea } from "./ShoppingList/components/ShoppingListArea";
 
 // Setting
