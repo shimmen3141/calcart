@@ -1,5 +1,5 @@
 import ShoppingList from "./ShoppingList";
-import { CATEGORIES } from "../../../ShoppingListArea/categories";
+import { CATEGORIES } from "features/ShoppingList/constans/categories";
 
 const ClassifiedShoppingList = ({ classifiedItemList }) => {
   return (

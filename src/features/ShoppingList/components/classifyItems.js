@@ -1,4 +1,4 @@
-import { CATEGORIES, CATEGORY_KEYS } from "../../ShoppingListArea/categories";
+import { CATEGORIES, CATEGORY_KEYS } from "features/ShoppingList/constans/categories";
 
 // アイテム分類関数
 const classifyItem = (itemName) => {
