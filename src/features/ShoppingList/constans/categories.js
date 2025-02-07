@@ -1,5 +1,4 @@
-import isVegetable from "./isVegetable";
-import isMeat from "./isMeat";
+import { isMeat, isVegetable } from "features/ShoppingList/utils/classifier";
 
 export const CATEGORIES = {
   vegetable: {
