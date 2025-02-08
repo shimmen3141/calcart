@@ -1,4 +1,4 @@
-export const meatList = [
+export const MEAT_LIST = [
   "肉",
 
   "鶏むね",
@@ -39,4 +39,3 @@ export const meatList = [
   "ラム",
   "マトン",
 ];
-

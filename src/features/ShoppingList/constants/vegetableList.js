@@ -1,5 +1,5 @@
 // 野菜リスト
-export const vegetableList = [
+export const VEGETABLE_LIST = [
   // 根菜類
   "ニンジン", "にんじん", "人参",
   "イモ", "いも", "芋", "薯", "藷", "蕷",

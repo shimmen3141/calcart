@@ -1,5 +1,5 @@
 // 野菜の名称が含まれるが野菜ではない品目リスト
-export const vegetableExceptionList = [
+export const VEGETABLE_EXCEPTION_LIST = [
   "ケチャップ",
   //   "トマトケチャップ",
   "ソース",
@@ -14,10 +14,9 @@ export const vegetableExceptionList = [
   //   "トマト缶",
   //   "コーン缶",
   "ジュース",
-  
+
   "豆板醬",
   "豆板醤",
   "豆鼓醬",
   "豆鼓醤",
 ];
-

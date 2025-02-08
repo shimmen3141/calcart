@@ -1,4 +1,4 @@
 export { CATEGORY_KEYS, CATEGORIES } from "./categories";
-export { meatList } from "./meatList";
-export { vegetableList } from "./vegetableList";
-export { vegetableExceptionList } from "./vegetableExceptionList";
+export { MEAT_LIST } from "./meatList";
+export { VEGETABLE_LIST } from "./vegetableList";
+export { VEGETABLE_EXCEPTION_LIST } from "./vegetableExceptionList";
