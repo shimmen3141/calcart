@@ -1,4 +1,4 @@
-import { meatList } from "data";
+import { meatList } from "features/ShoppingList/constants";
 
 // 文字列が meatList の単語を含むか判定する関数
 const isMeat = (str) => {

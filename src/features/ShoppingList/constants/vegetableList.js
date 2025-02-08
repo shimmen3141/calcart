@@ -1,5 +1,5 @@
 // 野菜リスト
-const vegetableList = [
+export const vegetableList = [
   // 根菜類
   "ニンジン", "にんじん", "人参",
   "イモ", "いも", "芋", "薯", "藷", "蕷",
@@ -76,5 +76,3 @@ const vegetableList = [
   //   "エダマメ", "えだまめ", "枝豆",
   //   "ソラマメ","そらまめ", "空豆",
 ];
-
-export default vegetableList;
