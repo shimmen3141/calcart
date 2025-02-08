@@ -1,6 +1,6 @@
 import React from "react";
-import aggregateItems from "./aggregateItems";
-import classifyItems from "./classifyItems";
+import aggregateItems from "features/ShoppingList/utils/textProcessing/aggregateItems";
+import classifyItems from "features/ShoppingList/utils/textProcessing/classifyItems";
 import {
   ShoppingList,
   ClassifiedShoppingList,
