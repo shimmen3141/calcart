@@ -1,6 +1,10 @@
 import React from "react";
 import { useToggleSwitch, useModal } from "contexts";
-import { classifyInputFormat, divideInput } from "functions";
+import {
+  classifyInputFormat,
+  cleanLines,
+  splitTextByLinebreak,
+} from "functions";
 import "./InputFormatTag.scss";
 
 const InputFormatTag = ({ inputText }) => {
@@ -8,11 +12,13 @@ const InputFormatTag = ({ inputText }) => {
 
   const { toggleStates } = useToggleSwitch();
 
+  const lines = splitTextByLinebreak(inputText);
+
   // 入力内容を改行ごとに分割してそれぞれ処理する
-  const lines = divideInput(inputText, toggleStates.removeSymbols);
+  const cleanedLines = cleanLines(lines, toggleStates.removeSymbols);
 
   // 入力内容から入力形式を分類する
-  const inputFormat = classifyInputFormat(lines);
+  const inputFormat = classifyInputFormat(cleanedLines);
 
   // inputFormatに基づいて表示するテキストを決定
   const getTagLabel = () => {

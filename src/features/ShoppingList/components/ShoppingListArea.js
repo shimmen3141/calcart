@@ -8,7 +8,12 @@ import {
 } from "features";
 import { CopyButton } from "components";
 import { useCart, useToggleSwitch } from "contexts";
-import { classifyInputFormat, divideInput, parseLines } from "functions";
+import {
+  classifyInputFormat,
+  cleanLines,
+  parseLines,
+  splitTextByLinebreak,
+} from "functions";
 import "./ShoppingList.scss";
 
 const ShoppingListArea = () => {
@@ -21,13 +26,14 @@ const ShoppingListArea = () => {
     return carts
       .filter((cart) => cart.count > 0)
       .flatMap((cart) => {
+        const lines = splitTextByLinebreak(cart.inputText);
         // 入力内容を改行ごとに分割してそれぞれ処理する
-        const lines = divideInput(cart.inputText, toggleStates.removeSymbols);
+        const cleanedLines = cleanLines(lines, toggleStates.removeSymbols);
         // 入力内容から入力形式を分類する
-        const inputFormat = classifyInputFormat(lines);
+        const inputFormat = classifyInputFormat(cleanedLines);
         // 入力形式をもとに入力内容を処理する
         const parsedIngredients = parseLines(
-          lines,
+          cleanedLines,
           inputFormat,
           toggleStates.spoonToGram
         );
@@ -55,7 +61,9 @@ const ShoppingListArea = () => {
   if (itemList.length === 0) {
     content = <EmptyShoppingList />;
   } else if (toggleStates.classifyItems) {
-    content = <ClassifiedShoppingList classifiedItemList={classifiedItemList} />;
+    content = (
+      <ClassifiedShoppingList classifiedItemList={classifiedItemList} />
+    );
   } else {
     content = <ShoppingList itemList={itemList} className="normalList" />;
   }

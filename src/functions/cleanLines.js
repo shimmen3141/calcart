@@ -8,9 +8,8 @@ import {
 } from "functions";
 
 // 入力内容を改行ごとに分割し、それぞれ処理する関数
-export default function divideInput(text, isRemoveSymbolsApplied) {
-  const lines = text
-    .split("\n")
+export default function cleanLines(lines, isRemoveSymbolsApplied) {
+  const cleanedLines = lines
     .map((line) => convertFullToHalf(line)) // 全角を半角に変換
     .map((line) => convertRadicalToKanji(line)) // 部首文字を漢字に変換
     .map((line) => convertEllipsisToSpace(line)) // 三点リーダーを半角スペースに置換
@@ -20,5 +19,5 @@ export default function divideInput(text, isRemoveSymbolsApplied) {
     .map((line) => convertFractionToDecimal(line)) // 分数を小数に変換
     .map((line) => line.trim()); // 文字列前後の余計な空白文字を削除
 
-  return lines;
+  return cleanedLines;
 }
