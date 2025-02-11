@@ -13,3 +13,4 @@ export { default as removeNumbers } from "./removeNumbers";
 export { default as removeSymbols } from "./removeSymbols";
 export { default as roundQuantities } from "./roundQuantities";
 export { default as splitIntoNumAndChar } from "./splitIntoNumAndChar";
+export { default as splitTextByLinebreak } from "./splitTextByLinebreak";
