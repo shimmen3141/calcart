@@ -9,8 +9,7 @@ export default function parseLines(lines, currentFormat, isSpoonToGramApplied) {
       .map((line) => {
         // 最初のスペースで2つに分割
         const [name, quantity] = line.split(/(?<=^[^\s]+)\s/);
-        const info =
-          quantity !== undefined ? quantity.replace(/\s+/g, "") : "適量";
+        const info = quantity ? quantity.replace(/\s+/g, "") : "適量";
         const fixedInfo = isSpoonToGramApplied
           ? convertSpoonToGram(name, info)
           : info;
@@ -23,7 +22,7 @@ export default function parseLines(lines, currentFormat, isSpoonToGramApplied) {
       // 偶数行が材料名
       const name = lines[i];
       // 奇数行が分量
-      const quantity = lines[i + 1] ? lines[i + 1] : "適量";
+      const quantity = lines[i + 1] ?? "適量";
       const fixedInfo = isSpoonToGramApplied
         ? convertSpoonToGram(name, quantity)
         : quantity;
