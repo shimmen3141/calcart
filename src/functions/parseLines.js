@@ -1,7 +1,5 @@
-import { convertSpoonToGram } from "functions";
-
 // 入力形式をもとに入力内容を処理する関数
-export default function parseLines(lines, currentFormat, isSpoonToGramApplied) {
+export default function parseLines(lines, currentFormat) {
   let parsedIngredients = [];
 
   if (currentFormat === "one-line") {
@@ -10,11 +8,7 @@ export default function parseLines(lines, currentFormat, isSpoonToGramApplied) {
         // 最初のスペースで2つに分割
         const [name, quantity] = line.split(/(?<=^[^\s]+)\s/);
         const info = quantity ? quantity.replace(/\s+/g, "") : "適量";
-        const fixedInfo = isSpoonToGramApplied
-          ? convertSpoonToGram(name, info)
-          : info;
-
-        return { name: name, info: fixedInfo };
+        return { name: name, info: info };
       })
       .filter((ingredient) => ingredient !== null);
   } else if (currentFormat === "two-line") {
@@ -23,10 +17,7 @@ export default function parseLines(lines, currentFormat, isSpoonToGramApplied) {
       const name = lines[i];
       // 奇数行が分量
       const quantity = lines[i + 1] ?? "適量";
-      const fixedInfo = isSpoonToGramApplied
-        ? convertSpoonToGram(name, quantity)
-        : quantity;
-      parsedIngredients.push({ name: name, info: fixedInfo });
+      parsedIngredients.push({ name: name, info: quantity });
     }
   }
 

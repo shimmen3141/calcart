@@ -13,6 +13,7 @@ import {
   cleanLines,
   parseLines,
   splitTextByLinebreak,
+  convertSpoonToGram,
 } from "functions";
 import "./ShoppingList.scss";
 
@@ -32,13 +33,16 @@ const ShoppingListArea = () => {
         // 入力内容から入力形式を分類する
         const inputFormat = classifyInputFormat(cleanedLines);
         // 入力形式をもとに入力内容を処理する
-        const parsedIngredients = parseLines(
-          cleanedLines,
-          inputFormat,
-          toggleStates.spoonToGram
-        );
+        let items = parseLines(cleanedLines, inputFormat);
 
-        return parsedIngredients.map((ingredient) => ({
+        if (toggleStates.spoonToGram) {
+          items = items.map((item) => ({
+            name: item.name,
+            info: convertSpoonToGram(item.name, item.info),
+          }));
+        }
+
+        return items.map((ingredient) => ({
           name: ingredient.name,
           info: ingredient.info,
           count: cart.count,
