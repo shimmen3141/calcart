@@ -37,14 +37,13 @@ const ShoppingListArea = () => {
 
         if (toggleStates.spoonToGram) {
           items = items.map((item) => ({
-            name: item.name,
+            ...item,
             info: convertSpoonToGram(item.name, item.info),
           }));
         }
 
-        return items.map((ingredient) => ({
-          name: ingredient.name,
-          info: ingredient.info,
+        return items.map((item) => ({
+          ...item,
           count: cart.count,
         }));
       });
