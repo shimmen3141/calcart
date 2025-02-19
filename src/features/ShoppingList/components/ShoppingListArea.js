@@ -23,7 +23,7 @@ const ShoppingListArea = () => {
   const { carts } = useCart();
   const { toggleStates } = useToggleSwitch();
 
-  const organizeIngredient = (carts) => {
+  const parseCartsToItems = (carts) => {
     return carts
       .filter((cart) => cart.count > 0)
       .flatMap((cart) => {
@@ -50,7 +50,7 @@ const ShoppingListArea = () => {
       });
   };
 
-  const items = organizeIngredient(carts);
+  const items = parseCartsToItems(carts);
 
   const { itemList, itemListText } = aggregateItems({ items });
   const { classifiedItemList, classifiedItemListText } = classifyItems({
