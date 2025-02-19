@@ -11,7 +11,7 @@ import { useCart, useToggleSwitch } from "contexts";
 import {
   classifyInputFormat,
   cleanLines,
-  parseLines,
+  parseLinesToItems,
   splitTextByLinebreak,
   convertSpoonToGram,
 } from "functions";
@@ -27,13 +27,14 @@ const ShoppingListArea = () => {
     return carts
       .filter((cart) => cart.count > 0)
       .flatMap((cart) => {
+        // 入力内容を改行ごとに分割する
         const lines = splitTextByLinebreak(cart.inputText);
-        // 入力内容を改行ごとに分割してそれぞれ処理する
+        // 各行をクリーニングする
         const cleanedLines = cleanLines(lines, toggleStates.removeSymbols);
         // 入力内容から入力形式を分類する
         const inputFormat = classifyInputFormat(cleanedLines);
-        // 入力形式をもとに入力内容を処理する
-        let items = parseLines(cleanedLines, inputFormat);
+        // 入力形式をもとにObjectに変換する
+        let items = parseLinesToItems(cleanedLines, inputFormat);
 
         if (toggleStates.spoonToGram) {
           items = items.map((item) => ({

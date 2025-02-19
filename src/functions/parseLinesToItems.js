@@ -1,5 +1,5 @@
 // 入力形式をもとに入力内容を処理する関数
-export default function parseLines(lines, currentFormat) {
+export default function parseLinesToItems(lines, currentFormat) {
   let parsedIngredients = [];
 
   if (currentFormat === "one-line") {
