@@ -15,9 +15,9 @@ export default function cleanLines(lines, isRemoveSymbolsApplied) {
     .map((line) => convertEllipsisToSpace(line)) // 三点リーダーを半角スペースに置換
     .map((line) => (isRemoveSymbolsApplied ? removeSymbols(line) : line)) // 余計な記号を削除
     .map((line) => removeExtraSpaces(line)) // 括弧の周りの余計な空白文字を削除
-    .filter((line) => line.trim()) // 空行を無視
     .map((line) => convertFractionToDecimal(line)) // 分数を小数に変換
-    .map((line) => line.trim()); // 文字列前後の余計な空白文字を削除
+    .map((line) => line.trim()) // 文字列前後の余計な空白文字を削除
+    .filter((line) => line) // 空行などflasy値を除去
 
   return cleanedLines;
 }
