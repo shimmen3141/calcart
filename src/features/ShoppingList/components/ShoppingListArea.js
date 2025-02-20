@@ -25,7 +25,7 @@ const ShoppingListArea = () => {
   const { toggleStates } = useToggleSwitch();
 
   const parseCartsToItems = (carts) => {
-    return carts
+    const items = carts
       .filter((cart) => cart.count > 0)
       .flatMap((cart) => {
         // 入力内容を改行ごとに分割する
@@ -49,28 +49,30 @@ const ShoppingListArea = () => {
           info: multiplyQuantities(item.info, cart.count),
         }));
       });
+    return mergeDuplicateItems(items);
   };
 
   const items = parseCartsToItems(carts);
-
-  const { itemList, itemListText } = mergeDuplicateItems({ items });
-  const { classifiedItemList, classifiedItemListText } = classifyItems({
-    itemList,
-  });
+  const itemsText = items
+    .map((item) => `${item.name}  ${item.info}`)
+    .join("\n");
+  const { classifiedItemList, classifiedItemListText } = classifyItems(
+    items,
+  );
 
   const copyText = toggleStates.classifyItems
     ? classifiedItemListText
-    : itemListText;
+    : itemsText;
 
   let content;
-  if (itemList.length === 0) {
+  if (items.length === 0) {
     content = <EmptyShoppingList />;
   } else if (toggleStates.classifyItems) {
     content = (
       <ClassifiedShoppingList classifiedItemList={classifiedItemList} />
     );
   } else {
-    content = <ShoppingList itemList={itemList} className="normalList" />;
+    content = <ShoppingList itemList={items} className="normalList" />;
   }
 
   return (

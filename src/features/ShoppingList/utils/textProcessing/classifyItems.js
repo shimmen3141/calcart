@@ -11,7 +11,7 @@ const classifyItem = (itemName) => {
 };
 
 // リストを分類する関数
-export default function classifyItems({ itemList }) {
+export default function classifyItems(items) {
   // カテゴリごとの初期化
   const classifiedItemList = CATEGORY_KEYS.reduce((acc, key) => {
     acc[key] = [];
@@ -19,7 +19,7 @@ export default function classifyItems({ itemList }) {
   }, {});
 
   // アイテム分類処理
-  itemList.forEach((item) => {
+  items.forEach((item) => {
     const categoryKey = classifyItem(item.name);
     classifiedItemList[categoryKey].push(item);
   });
