@@ -17,7 +17,7 @@ export default function cleanLines(lines, isRemoveSymbolsApplied) {
     .map((line) => removeExtraSpaces(line)) // 括弧の周りの余計な空白文字を削除
     .map((line) => convertFractionToDecimal(line)) // 分数を小数に変換
     .map((line) => line.trim()) // 文字列前後の余計な空白文字を削除
-    .filter((line) => line) // 空行などflasy値を除去
+    .filter((line) => line) // 空行などfalsy値を除去
 
   return cleanedLines;
 }
