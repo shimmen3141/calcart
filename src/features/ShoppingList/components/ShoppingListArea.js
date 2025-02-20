@@ -1,5 +1,5 @@
 import React from "react";
-import aggregateItems from "features/ShoppingList/utils/textProcessing/aggregateItems";
+import mergeDuplicateItems from "features/ShoppingList/utils/textProcessing/mergeDuplicateItems";
 import classifyItems from "features/ShoppingList/utils/textProcessing/classifyItems";
 import {
   ShoppingList,
@@ -53,7 +53,7 @@ const ShoppingListArea = () => {
 
   const items = parseCartsToItems(carts);
 
-  const { itemList, itemListText } = aggregateItems({ items });
+  const { itemList, itemListText } = mergeDuplicateItems({ items });
   const { classifiedItemList, classifiedItemListText } = classifyItems({
     itemList,
   });

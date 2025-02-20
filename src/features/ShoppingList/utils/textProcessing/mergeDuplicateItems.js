@@ -6,10 +6,9 @@ import {
 } from "functions";
 
 // 重複した item を集約する関数
-export default function aggregateItems({ items }) {
+export default function mergeDuplicateItems({ items }) {
   // 第一段階: name と infoの形式 が等しい要素を集約
   const firstAggregation = items.reduce((acc, item) => {
-
     // name と infoの形式 が等しい要素を取得
     const existingItem = acc.find(
       (i) =>
