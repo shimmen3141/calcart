@@ -14,6 +14,7 @@ import {
   parseLinesToItems,
   splitTextByLinebreak,
   convertSpoonToGram,
+  multiplyQuantities,
 } from "functions";
 import "./ShoppingList.scss";
 
@@ -45,7 +46,7 @@ const ShoppingListArea = () => {
 
         return items.map((item) => ({
           ...item,
-          count: cart.count,
+          info: multiplyQuantities(item.info, cart.count),
         }));
       });
   };

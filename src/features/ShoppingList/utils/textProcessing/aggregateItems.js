@@ -1,5 +1,4 @@
 import {
-  multiplyQuantities,
   roundQuantities,
   containsNumber,
   removeNumbers,
@@ -10,19 +9,17 @@ import {
 export default function aggregateItems({ items }) {
   // 第一段階: name と infoの形式 が等しい要素を集約
   const firstAggregation = items.reduce((acc, item) => {
-    // info に含まれる数値を count 倍したもの
-    const updatedInfo = multiplyQuantities(item.info, item.count);
 
     // name と infoの形式 が等しい要素を取得
     const existingItem = acc.find(
       (i) =>
         i.name === item.name &&
-        removeNumbers(i.info) === removeNumbers(updatedInfo)
+        removeNumbers(i.info) === removeNumbers(item.info)
     );
 
     if (existingItem) {
       const existingParts = splitIntoNumAndChar(existingItem.info);
-      const newParts = splitIntoNumAndChar(updatedInfo);
+      const newParts = splitIntoNumAndChar(item.info);
       let combinedInfo = "";
 
       // 数値と文字列を交互に処理して結合
@@ -37,10 +34,7 @@ export default function aggregateItems({ items }) {
       // 文字列に含まれる数値を小数第3位で四捨五入
       existingItem.info = roundQuantities(combinedInfo);
     } else {
-      acc.push({
-        ...item,
-        info: updatedInfo,
-      });
+      acc.push({ ...item });
     }
     return acc;
   }, []);
