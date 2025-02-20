@@ -13,7 +13,7 @@ const classifyItem = (itemName) => {
 // リストを分類する関数
 export default function classifyItems(items) {
   // カテゴリごとの初期化
-  const classifiedItemList = CATEGORY_KEYS.reduce((acc, key) => {
+  const classifiedItems = CATEGORY_KEYS.reduce((acc, key) => {
     acc[key] = [];
     return acc;
   }, {});
@@ -21,10 +21,10 @@ export default function classifyItems(items) {
   // アイテム分類処理
   items.forEach((item) => {
     const categoryKey = classifyItem(item.name);
-    classifiedItemList[categoryKey].push(item);
+    classifiedItems[categoryKey].push(item);
   });
 
-  const classifiedItemListText = Object.entries(classifiedItemList)
+  const classifiedItemsText = Object.entries(classifiedItems)
     .map(([category, items]) =>
       items.length > 0
         ? items.map((item) => `${item.name}  ${item.info}`).join("\n")
@@ -33,5 +33,5 @@ export default function classifyItems(items) {
     .filter(Boolean) // 空のセクションを削除
     .join("\n\n"); // 1行間をあけて各セクションを結合;
 
-  return { classifiedItemList, classifiedItemListText };
+  return { classifiedItems, classifiedItemsText };
 }

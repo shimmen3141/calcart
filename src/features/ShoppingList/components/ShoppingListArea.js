@@ -56,23 +56,17 @@ const ShoppingListArea = () => {
   const itemsText = items
     .map((item) => `${item.name}  ${item.info}`)
     .join("\n");
-  const { classifiedItemList, classifiedItemListText } = classifyItems(
-    items,
-  );
+  const { classifiedItems, classifiedItemsText } = classifyItems(items);
 
-  const copyText = toggleStates.classifyItems
-    ? classifiedItemListText
-    : itemsText;
+  const copyText = toggleStates.classifyItems ? classifiedItemsText : itemsText;
 
   let content;
   if (items.length === 0) {
     content = <EmptyShoppingList />;
   } else if (toggleStates.classifyItems) {
-    content = (
-      <ClassifiedShoppingList classifiedItemList={classifiedItemList} />
-    );
+    content = <ClassifiedShoppingList classifiedItems={classifiedItems} />;
   } else {
-    content = <ShoppingList itemList={items} className="normalList" />;
+    content = <ShoppingList items={items} className="normalList" />;
   }
 
   return (

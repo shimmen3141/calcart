@@ -1,13 +1,13 @@
 import ShoppingList from "./ShoppingList";
 import { CATEGORIES } from "features/ShoppingList/constants";
 
-const ClassifiedShoppingList = ({ classifiedItemList }) => {
+const ClassifiedShoppingList = ({ classifiedItems }) => {
   return (
     <div>
       {Object.entries(CATEGORIES).map(([key, { label }]) => (
         <ShoppingList
           key={key}
-          itemList={classifiedItemList[key]}
+          items={classifiedItems[key]}
           className={`${key}List`}
           labelName={label}
         />
