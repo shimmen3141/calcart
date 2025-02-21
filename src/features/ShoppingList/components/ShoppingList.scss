@@ -1,9 +1,8 @@
+@use "styles" as *;
+
 .shoppingList {
   width: 90vw;
   max-width: 760px;
-  /* background-color: rgb(255, 255, 222);
-  border: 3px solid yellow;
-  border-radius: 10px; */
   margin: 2rem auto;
   padding: 1rem;
 
@@ -16,75 +15,15 @@
   }
 
   .normalList, .othersList {
-    position: relative;
-    width: auto;
-    background-color: rgb(255, 255, 225);
-    border: 3px solid yellow;
-    border-radius: 10px;
-    box-sizing: border-box;
-    padding: 2rem 1rem;
-    white-space: pre-wrap;
-
-    .listTypeTag {
-      position: absolute;
-      width: 4rem;
-      text-align: center;
-      background-color: yellow;
-      color: gray;
-      top: 0;
-      right: 0;
-      font-weight: bold;
-      padding: 2px 4px;
-      border-radius: 0 0 0 8px;
-    }
+    @include listStyles(rgb(255, 255, 225), yellow, yellow, gray);
   }
 
   .vegetableList {
-    position: relative;
-    width: auto;
-    background-color: rgb(225, 255, 225);
-    border: 3px solid green;
-    border-radius: 10px;
-    box-sizing: border-box;
-    padding: 2rem 1rem;
-    white-space: pre-wrap;
-
-    .listTypeTag {
-      position: absolute;
-      width: 4rem;
-      text-align: center;
-      background-color: green;
-      color: rgb(225, 255, 225);
-      top: 0;
-      right: 0;
-      font-weight: bold;
-      padding: 2px 4px;
-      border-radius: 0 0 0 8px;
-    }
+    @include listStyles(rgb(225, 255, 225), green, green, rgb(225, 255, 225));
   }
 
   .meatList {
-    position: relative;
-    width: auto;
-    background-color: rgb(255, 225, 225);
-    border: 3px solid red;
-    border-radius: 10px;
-    box-sizing: border-box;
-    padding: 2rem 1rem;
-    white-space: pre-wrap;
-
-    .listTypeTag {
-      position: absolute;
-      width: 4rem;
-      text-align: center;
-      background-color: red;
-      color: rgb(255, 225, 225);
-      top: 0;
-      right: 0;
-      font-weight: bold;
-      padding: 2px 4px;
-      border-radius: 0 0 0 8px;
-    }
+    @include listStyles(rgb(255, 225, 225), red, red, rgb(255, 225, 225));
   }
 
   .empty {

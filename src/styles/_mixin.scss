@@ -1,12 +1,36 @@
 @mixin hover {
-    @media (hover: hover) and (pointer: fine) {
-        &:hover {
-            @content;
-        }
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      @content;
     }
-    @media (hover: none) {
-        &:active {
-            @content;
-        }
+  }
+  @media (hover: none) {
+    &:active {
+      @content;
     }
+  }
+}
+
+@mixin listStyles($bg-color, $border-color, $label-bg-color, $label-text-color) {
+  position: relative;
+  width: auto;
+  background-color: $bg-color;
+  border: 3px solid $border-color;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 2rem 1rem;
+  white-space: pre-wrap;
+
+  .listTypeTag {
+    position: absolute;
+    width: 4rem;
+    text-align: center;
+    background-color: $label-bg-color;
+    color: $label-text-color;
+    top: 0;
+    right: 0;
+    font-weight: bold;
+    padding: 2px 4px;
+    border-radius: 0 0 0 8px;
+  }
 }
