@@ -20,11 +20,11 @@ const ClassifiedShoppingList = ({ items }) => {
         買い物リスト
         {classifiedItemsText && <CopyButton text={classifiedItemsText} />}
       </div>
-      {Object.entries(CATEGORIES).map(([key, { label }]) => (
+      {Object.entries(CATEGORIES).map(([key, { label, listStyle }]) => (
         <BaseShoppingList
           key={key}
           items={classifiedItems[key]}
-          className={`${key}List`}
+          className={listStyle}
           labelName={label}
         />
       ))}

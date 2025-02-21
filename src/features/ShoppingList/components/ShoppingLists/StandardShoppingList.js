@@ -12,7 +12,7 @@ const StandardShoppingList = ({ items }) => {
         買い物リスト
         {itemsText && <CopyButton text={itemsText} />}
       </div>
-      <BaseShoppingList items={items} className="normalList" />
+      <BaseShoppingList items={items} className="standardList" />
     </div>
   );
 };
