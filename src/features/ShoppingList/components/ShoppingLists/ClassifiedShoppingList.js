@@ -15,7 +15,7 @@ const ClassifiedShoppingList = ({ items }) => {
     .join("\n\n"); // 1行間をあけて各セクションを結合
 
   return (
-    <div className="shoppingList">
+    <div className="shoppingListContainer">
       <div className="title">
         買い物リスト
         {classifiedItemsText && <CopyButton text={classifiedItemsText} />}

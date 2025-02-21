@@ -1,6 +1,6 @@
 const EmptyShoppingList = () => {
   return (
-    <div className="shoppingList">
+    <div className="shoppingListContainer">
       <div className="title">買い物リスト</div>
       <div className="empty">
         <div>カートが空です</div>

@@ -7,7 +7,7 @@ const StandardShoppingList = ({ items }) => {
     .join("\n");
 
   return (
-    <div className="shoppingList">
+    <div className="shoppingListContainer">
       <div className="title">
         買い物リスト
         {itemsText && <CopyButton text={itemsText} />}
