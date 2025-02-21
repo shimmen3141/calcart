@@ -1,11 +1,11 @@
-import ShoppingList from "./ShoppingList";
+import BaseShoppingList from "./BaseShoppingList";
 import { CATEGORIES } from "features/ShoppingList/constants";
 
 const ClassifiedShoppingList = ({ classifiedItems }) => {
   return (
     <div>
       {Object.entries(CATEGORIES).map(([key, { label }]) => (
-        <ShoppingList
+        <BaseShoppingList
           key={key}
           items={classifiedItems[key]}
           className={`${key}List`}

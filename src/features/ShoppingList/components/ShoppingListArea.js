@@ -74,7 +74,7 @@ const ShoppingListArea = () => {
   } else if (toggleStates.classifyItems) {
     content = <ClassifiedShoppingList classifiedItems={classifiedItems} />;
   } else {
-    content = <ShoppingList items={items} className="normalList" />;
+    content = <ShoppingList items={items} />;
   }
 
   return (
