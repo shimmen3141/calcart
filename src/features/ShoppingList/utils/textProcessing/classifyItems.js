@@ -24,14 +24,5 @@ export default function classifyItems(items) {
     classifiedItems[categoryKey].push(item);
   });
 
-  const classifiedItemsText = Object.entries(classifiedItems)
-    .map(([category, items]) =>
-      items.length > 0
-        ? items.map((item) => `${item.name}  ${item.info}`).join("\n")
-        : ""
-    )
-    .filter(Boolean) // 空のセクションを削除
-    .join("\n\n"); // 1行間をあけて各セクションを結合;
-
-  return { classifiedItems, classifiedItemsText };
+  return classifiedItems;
 }
