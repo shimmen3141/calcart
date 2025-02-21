@@ -1,10 +1,17 @@
 import BaseShoppingList from "./BaseShoppingList";
+import { CopyButton } from "components";
 
 const StandardShoppingList = ({ items }) => {
-  if (items.length === 0) return null;
+  const itemsText = items
+    .map((item) => `${item.name}  ${item.info}`)
+    .join("\n");
 
   return (
-    <div>
+    <div className="shoppingList">
+      <div className="title">
+        買い物リスト
+        {itemsText && <CopyButton text={itemsText} />}
+      </div>
       <BaseShoppingList items={items} className="normalList" />
     </div>
   );

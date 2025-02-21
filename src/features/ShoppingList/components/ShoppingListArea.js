@@ -1,12 +1,10 @@
 import React from "react";
 import mergeDuplicateItems from "features/ShoppingList/utils/textProcessing/mergeDuplicateItems";
-import classifyItems from "features/ShoppingList/utils/textProcessing/classifyItems";
 import {
   StandardShoppingList,
   ClassifiedShoppingList,
   EmptyShoppingList,
 } from "features";
-import { CopyButton } from "components";
 import { useCart, useToggleSwitch } from "contexts";
 import {
   classifyInputFormat,
@@ -53,39 +51,17 @@ const ShoppingListArea = () => {
   };
 
   const items = parseCartsToItems(carts);
-  const itemsText = items
-    .map((item) => `${item.name}  ${item.info}`)
-    .join("\n");
-  const classifiedItems = classifyItems(items);
-  const classifiedItemsText = Object.entries(classifiedItems)
-    .map(([category, items]) =>
-      items.length > 0
-        ? items.map((item) => `${item.name}  ${item.info}`).join("\n")
-        : ""
-    )
-    .filter(Boolean) // 空のセクションを削除
-    .join("\n\n"); // 1行間をあけて各セクションを結合
-
-  const copyText = toggleStates.classifyItems ? classifiedItemsText : itemsText;
 
   let content;
   if (items.length === 0) {
     content = <EmptyShoppingList />;
   } else if (toggleStates.classifyItems) {
-    content = <ClassifiedShoppingList classifiedItems={classifiedItems} />;
+    content = <ClassifiedShoppingList items={items} />;
   } else {
     content = <StandardShoppingList items={items} />;
   }
 
-  return (
-    <div className="shoppingList">
-      <div className="title">
-        買い物リスト
-        {copyText && <CopyButton text={copyText} />}
-      </div>
-      {content}
-    </div>
-  );
+  return <div>{content}</div>;
 };
 
 export default ShoppingListArea;
