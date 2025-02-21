@@ -1,6 +1,6 @@
 import BaseShoppingList from "./BaseShoppingList";
 
-const ShoppingList = ({ items }) => {
+const StandardShoppingList = ({ items }) => {
   if (items.length === 0) return null;
 
   return (
@@ -10,4 +10,4 @@ const ShoppingList = ({ items }) => {
   );
 };
 
-export default ShoppingList;
+export default StandardShoppingList;

@@ -2,7 +2,7 @@ import React from "react";
 import mergeDuplicateItems from "features/ShoppingList/utils/textProcessing/mergeDuplicateItems";
 import classifyItems from "features/ShoppingList/utils/textProcessing/classifyItems";
 import {
-  ShoppingList,
+  StandardShoppingList,
   ClassifiedShoppingList,
   EmptyShoppingList,
 } from "features";
@@ -74,7 +74,7 @@ const ShoppingListArea = () => {
   } else if (toggleStates.classifyItems) {
     content = <ClassifiedShoppingList classifiedItems={classifiedItems} />;
   } else {
-    content = <ShoppingList items={items} />;
+    content = <StandardShoppingList items={items} />;
   }
 
   return (
