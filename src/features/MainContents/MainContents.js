@@ -1,4 +1,4 @@
-import { ShoppingListArea, Carts } from "features";
+import { ShoppingListContainer, Carts } from "features";
 import { Modal } from "components";
 import "./MainContents.scss";
 
@@ -8,7 +8,7 @@ const MainContents = () => {
   return (
     <div className="mainContents">
       <Carts />
-      <ShoppingListArea />
+      <ShoppingListContainer />
       <Modal />
     </div>
   );

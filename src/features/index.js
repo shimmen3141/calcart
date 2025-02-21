@@ -7,7 +7,7 @@ export { default as InputFormatTag } from "./InputFormatTag/InputFormatTag";
 export { default as StandardShoppingList } from "./ShoppingList/components/ShoppingLists/StandardShoppingList";
 export { default as ClassifiedShoppingList } from "./ShoppingList/components/ShoppingLists/ClassifiedShoppingList";
 export { default as EmptyShoppingList } from "./ShoppingList/components/ShoppingLists/EmptyShoppingList";
-export { default as ShoppingListArea } from "./ShoppingList/components/ShoppingListArea";
+export { default as ShoppingListContainer } from "./ShoppingList/components/ShoppingListContainer";
 
 // Setting
 export { default as LabeledToggleSwitch } from "./Setting/components/LabeledToggleSwitch/LabeledToggleSwitch";

@@ -16,7 +16,7 @@ import {
 } from "functions";
 import "./ShoppingList.scss";
 
-const ShoppingListArea = () => {
+const ShoppingListContainer = () => {
   console.log("ShoppingList");
 
   const { carts } = useCart();
@@ -64,4 +64,4 @@ const ShoppingListArea = () => {
   return <div>{content}</div>;
 };
 
-export default ShoppingListArea;
+export default ShoppingListContainer;
