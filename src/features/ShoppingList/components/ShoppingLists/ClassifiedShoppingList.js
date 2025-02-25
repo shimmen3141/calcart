@@ -1,6 +1,6 @@
 import BaseShoppingList from "features/ShoppingList/components/common/BaseShoppingList";
+import ShoppingListHeader from "features/ShoppingList/components/common/ShoppingListHeader";
 import { CATEGORIES } from "features/ShoppingList/constants";
-import { CopyButton } from "components";
 import classifyItems from "features/ShoppingList/utils/textProcessing/classifyItems";
 
 const ClassifiedShoppingList = ({ items }) => {
@@ -16,10 +16,10 @@ const ClassifiedShoppingList = ({ items }) => {
 
   return (
     <div className="shoppingListContainer">
-      <div className="title">
-        買い物リスト
-        {classifiedItemsText && <CopyButton text={classifiedItemsText} />}
-      </div>
+      <ShoppingListHeader
+        title="買い物リスト"
+        copyText={classifiedItemsText}
+      />
       {Object.entries(CATEGORIES).map(([key, { label, listStyle }]) => (
         <BaseShoppingList
           key={key}

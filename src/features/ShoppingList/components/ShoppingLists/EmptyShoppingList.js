@@ -1,7 +1,9 @@
+import ShoppingListHeader from "features/ShoppingList/components/common/ShoppingListHeader";
+
 const EmptyShoppingList = () => {
   return (
     <div className="shoppingListContainer">
-      <div className="title">買い物リスト</div>
+      <ShoppingListHeader title="買い物リスト" />
       <div className="empty">
         <div>カートが空です</div>
         <div>カートに材料を入力してください</div>

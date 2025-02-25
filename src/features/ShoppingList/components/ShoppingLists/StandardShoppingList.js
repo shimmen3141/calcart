@@ -1,5 +1,5 @@
 import BaseShoppingList from "features/ShoppingList/components/common/BaseShoppingList";
-import { CopyButton } from "components";
+import ShoppingListHeader from "features/ShoppingList/components/common/ShoppingListHeader";
 
 const StandardShoppingList = ({ items }) => {
   const itemsText = items
@@ -8,10 +8,7 @@ const StandardShoppingList = ({ items }) => {
 
   return (
     <div className="shoppingListContainer">
-      <div className="title">
-        買い物リスト
-        {itemsText && <CopyButton text={itemsText} />}
-      </div>
+      <ShoppingListHeader title="買い物リスト" copyText={itemsText} />
       <BaseShoppingList items={items} className="standardList" />
     </div>
   );

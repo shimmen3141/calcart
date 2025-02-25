@@ -1,10 +1,10 @@
 import { CopyButton } from "components";
 
-const ShoppingListHeader = ({ title, itemsText }) => {
+const ShoppingListHeader = ({ title, copyText }) => {
   return (
     <div className="title">
       {title}
-      {itemsText && <CopyButton text={itemsText} />}
+      {copyText && <CopyButton text={copyText} />}
     </div>
   );
 };
