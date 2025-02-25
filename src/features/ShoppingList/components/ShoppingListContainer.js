@@ -1,19 +1,11 @@
 import React from "react";
-import mergeDuplicateItems from "features/ShoppingList/utils/textProcessing/mergeDuplicateItems";
 import {
   StandardShoppingList,
   ClassifiedShoppingList,
   EmptyShoppingList,
 } from "features";
 import { useCart, useToggleSwitch } from "contexts";
-import {
-  classifyInputFormat,
-  cleanLines,
-  parseLinesToItems,
-  splitTextByLinebreak,
-  convertSpoonToGram,
-  multiplyQuantities,
-} from "functions";
+import parseCartsToItems from "features/ShoppingList/utils/textProcessing/parseCartsToItems";
 import "./ShoppingList.scss";
 
 const ShoppingListContainer = () => {
@@ -22,35 +14,12 @@ const ShoppingListContainer = () => {
   const { carts } = useCart();
   const { toggleStates } = useToggleSwitch();
 
-  const parseCartsToItems = (carts) => {
-    const items = carts
-      .filter((cart) => cart.count > 0)
-      .flatMap((cart) => {
-        // 入力内容を改行ごとに分割する
-        const lines = splitTextByLinebreak(cart.inputText);
-        // 各行をクリーニングする
-        const cleanedLines = cleanLines(lines, toggleStates.removeSymbols);
-        // 入力内容から入力形式を分類する
-        const inputFormat = classifyInputFormat(cleanedLines);
-        // 入力形式をもとにObjectに変換する
-        let items = parseLinesToItems(cleanedLines, inputFormat);
-
-        if (toggleStates.spoonToGram) {
-          items = items.map((item) => ({
-            ...item,
-            info: convertSpoonToGram(item.name, item.info),
-          }));
-        }
-
-        return items.map((item) => ({
-          ...item,
-          info: multiplyQuantities(item.info, cart.count),
-        }));
-      });
-    return mergeDuplicateItems(items);
+  const options = {
+    removeSymbols: toggleStates.removeSymbols,
+    spoonToGram: toggleStates.spoonToGram,
   };
 
-  const items = parseCartsToItems(carts);
+  const items = parseCartsToItems(carts, options);
 
   let content;
   if (items.length === 0) {
