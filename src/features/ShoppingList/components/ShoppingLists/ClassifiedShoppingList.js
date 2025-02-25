@@ -1,4 +1,4 @@
-import BaseShoppingList from "./BaseShoppingList";
+import BaseShoppingList from "features/ShoppingList/components/common/BaseShoppingList";
 import { CATEGORIES } from "features/ShoppingList/constants";
 import { CopyButton } from "components";
 import classifyItems from "features/ShoppingList/utils/textProcessing/classifyItems";

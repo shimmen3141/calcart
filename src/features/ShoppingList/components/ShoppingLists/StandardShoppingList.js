@@ -1,4 +1,4 @@
-import BaseShoppingList from "./BaseShoppingList";
+import BaseShoppingList from "features/ShoppingList/components/common/BaseShoppingList";
 import { CopyButton } from "components";
 
 const StandardShoppingList = ({ items }) => {
