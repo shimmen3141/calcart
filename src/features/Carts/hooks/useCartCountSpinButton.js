@@ -15,6 +15,7 @@ const useCartCountSpinButton = ({ cartId }) => {
 
   useEffect(() => {
     updateCart(cartId, "count", Number(value));
+    // eslint-disable-next-line
   }, [value]);
 
   const handleCountUp = () => {

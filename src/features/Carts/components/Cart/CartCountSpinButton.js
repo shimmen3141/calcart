@@ -1,4 +1,4 @@
-import useCartCountSpinButton from "./useCartCountSpinButton";
+import useCartCountSpinButton from "features/Carts/hooks/useCartCountSpinButton";
 import { motion } from "framer-motion";
 import "./CartCountSpinButton.scss";
 

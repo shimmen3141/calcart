@@ -1,5 +1,5 @@
 import React from "react";
-import useCartInput from "./useCartInput";
+import useCartInput from "features/Carts/hooks/useCartInput";
 import { InputFormatTag, CartCountSpinButton } from "features";
 import { CloseButton } from "components";
 import { useCart } from "contexts"
