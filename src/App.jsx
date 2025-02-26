@@ -1,7 +1,6 @@
 import React from "react";
 import "./App.scss";
-import { AppHeader, AppFooter } from "components";
-import { MainContents } from "features";
+import { MainPage } from "pages";
 import { CartProvider, ToggleSwitchProvider, ModalProvider } from "contexts";
 
 const App = () => {
@@ -10,9 +9,7 @@ const App = () => {
       <ModalProvider>
         <ToggleSwitchProvider>
           <div className="app">
-            <AppHeader />
-            <MainContents />
-            <AppFooter />
+            <MainPage />
           </div>
         </ToggleSwitchProvider>
       </ModalProvider>

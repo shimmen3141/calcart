@@ -16,4 +16,3 @@ export { default as LabeledToggleSwitch } from "./Setting/components/LabeledTogg
 export { default as SettingMenu } from "./Setting/components/SettingMenu/SettingMenu";
 export { default as ToggleSwitchArea } from "./Setting/components/ToggleSwitchArea/ToggleSwitchArea";
 
-export { default as MainContents } from "./MainContents/MainContents";

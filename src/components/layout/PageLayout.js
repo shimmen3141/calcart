@@ -1,5 +1,4 @@
-import AppHeader from "./AppHeader/AppHeader";
-import AppFooter from "./AppFooter/AppFooter";
+import { AppHeader, AppFooter } from "components";
 import "./PageLayout.scss";
 
 const PageLayout = ({ children }) => {
