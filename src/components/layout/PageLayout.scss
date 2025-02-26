@@ -1,0 +1,13 @@
+.pageLayout {
+  background-color: #d3d3d3;
+
+  .pageContent {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+  }
+}
