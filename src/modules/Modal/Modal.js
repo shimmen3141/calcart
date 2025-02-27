@@ -1,6 +1,5 @@
-import React from "react";
 import { CloseButton } from "components";
-import { useModal } from "contexts";
+import { useModal } from "modules/Modal";
 import { useScrollLock } from "hooks";
 import { modalContents } from "./modalContents";
 import { motion, AnimatePresence } from "framer-motion";

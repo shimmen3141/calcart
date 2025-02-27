@@ -1,6 +1,6 @@
 import PageLayout from "components/layout/PageLayout";
 import { Carts, ShoppingListContainer } from "features";
-import { Modal } from "components";
+import { Modal } from "modules/Modal";
 
 const MainPage = () => {
   return (
