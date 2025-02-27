@@ -1,17 +1,17 @@
 import React, { createContext, useContext, useState } from "react";
 
 // Context の作成
-const ToggleSwitchContext = createContext();
+const SettingToggleContext = createContext();
 
 // Context プロバイダの作成
-export const ToggleSwitchProvider = ({ children }) => {
-  const [toggleStates, setToggleStates] = useState({
+export const SettingToggleProvider = ({ children }) => {
+  const [settingToggles, setToggleStates] = useState({
     removeSymbols: true,
     spoonToGram: true,
     classifyItems: true,
   });
 
-  const handleSwitchChange = (id) => {
+  const handleToggleChange = (id) => {
     setToggleStates((prevStates) => ({
       ...prevStates,
       [id]: !prevStates[id], // 該当のスイッチだけを反転
@@ -19,15 +19,15 @@ export const ToggleSwitchProvider = ({ children }) => {
   };
 
   return (
-    <ToggleSwitchContext.Provider
-      value={{ toggleStates, handleSwitchChange }}
+    <SettingToggleContext.Provider
+      value={{ settingToggles, handleToggleChange }}
     >
       {children}
-    </ToggleSwitchContext.Provider>
+    </SettingToggleContext.Provider>
   );
 };
 
 // カスタムフックで Context を使用
-export const useToggleSwitch = () => {
-  return useContext(ToggleSwitchContext);
+export const useSettingToggle = () => {
+  return useContext(SettingToggleContext);
 };

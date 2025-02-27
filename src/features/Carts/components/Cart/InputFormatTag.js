@@ -1,5 +1,5 @@
 import React from "react";
-import { useToggleSwitch, useModal } from "contexts";
+import { useSettingToggle, useModal } from "contexts";
 import {
   classifyInputFormat,
   cleanLines,
@@ -10,12 +10,12 @@ import "./InputFormatTag.scss";
 const InputFormatTag = ({ inputText }) => {
   const { handleOpenModal } = useModal();
 
-  const { toggleStates } = useToggleSwitch();
+  const { settingToggles } = useSettingToggle();
 
   const lines = splitTextByLinebreak(inputText);
 
   // 入力内容を改行ごとに分割してそれぞれ処理する
-  const cleanedLines = cleanLines(lines, toggleStates.removeSymbols);
+  const cleanedLines = cleanLines(lines, settingToggles.removeSymbols);
 
   // 入力内容から入力形式を分類する
   const inputFormat = classifyInputFormat(cleanedLines);

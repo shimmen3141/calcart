@@ -1,11 +1,11 @@
 import { ToggleSwitch, HelpButton } from "components";
-import { useModal, useToggleSwitch } from "contexts";
+import { useModal, useSettingToggle } from "contexts";
 import "./LabeledToggleSwitch.scss";
 
 const LabeledToggleSwitch = ({ id, labelText }) => {
   console.log("LabeledToggleSwitch");
 
-  const { toggleStates, handleSwitchChange } = useToggleSwitch();
+  const { settingToggles, handleToggleChange } = useSettingToggle();
 
   const { handleOpenModal } = useModal();
 
@@ -15,8 +15,8 @@ const LabeledToggleSwitch = ({ id, labelText }) => {
       <HelpButton onClick={() => handleOpenModal(id)} />
       <ToggleSwitch
         id={id}
-        isChecked={toggleStates[id]}
-        onChange={() => handleSwitchChange(id)}
+        isChecked={settingToggles[id]}
+        onChange={() => handleToggleChange(id)}
       />
     </div>
   );

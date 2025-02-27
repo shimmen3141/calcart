@@ -4,7 +4,7 @@ import {
   ClassifiedShoppingList,
   EmptyShoppingList,
 } from "features";
-import { useCart, useToggleSwitch } from "contexts";
+import { useCart, useSettingToggle } from "contexts";
 import parseCartsToItems from "features/ShoppingList/utils/textProcessing/parseCartsToItems";
 import "./ShoppingList.scss";
 
@@ -12,11 +12,11 @@ const ShoppingListContainer = () => {
   console.log("ShoppingList");
 
   const { carts } = useCart();
-  const { toggleStates } = useToggleSwitch();
+  const { settingToggles } = useSettingToggle();
 
   const options = {
-    removeSymbols: toggleStates.removeSymbols,
-    spoonToGram: toggleStates.spoonToGram,
+    removeSymbols: settingToggles.removeSymbols,
+    spoonToGram: settingToggles.spoonToGram,
   };
 
   const items = parseCartsToItems(carts, options);
@@ -24,7 +24,7 @@ const ShoppingListContainer = () => {
   let content;
   if (items.length === 0) {
     content = <EmptyShoppingList />;
-  } else if (toggleStates.classifyItems) {
+  } else if (settingToggles.classifyItems) {
     content = <ClassifiedShoppingList items={items} />;
   } else {
     content = <StandardShoppingList items={items} />;

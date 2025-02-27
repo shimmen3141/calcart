@@ -1,17 +1,17 @@
 import React from "react";
 import "./App.scss";
 import { MainPage } from "pages";
-import { CartProvider, ToggleSwitchProvider, ModalProvider } from "contexts";
+import { CartProvider, SettingToggleProvider, ModalProvider } from "contexts";
 
 const App = () => {
   return (
     <CartProvider>
       <ModalProvider>
-        <ToggleSwitchProvider>
+        <SettingToggleProvider>
           <div className="app">
             <MainPage />
           </div>
-        </ToggleSwitchProvider>
+        </SettingToggleProvider>
       </ModalProvider>
     </CartProvider>
   );
