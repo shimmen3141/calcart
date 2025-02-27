@@ -5,14 +5,14 @@ const SettingToggleContext = createContext();
 
 // Context プロバイダの作成
 export const SettingToggleProvider = ({ children }) => {
-  const [settingToggles, setToggleStates] = useState({
+  const [settingToggles, setSettingToggles] = useState({
     removeSymbols: true,
     spoonToGram: true,
     classifyItems: true,
   });
 
   const handleToggleChange = (id) => {
-    setToggleStates((prevStates) => ({
+    setSettingToggles((prevStates) => ({
       ...prevStates,
       [id]: !prevStates[id], // 該当のスイッチだけを反転
     }));
