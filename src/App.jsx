@@ -1,7 +1,8 @@
 import React from "react";
 import "./App.scss";
 import { MainPage } from "pages";
-import { CartProvider, SettingToggleProvider, ModalProvider } from "contexts";
+import { CartProvider, ModalProvider } from "contexts";
+import { SettingToggleProvider } from "features";
 
 const App = () => {
   return (

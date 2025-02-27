@@ -15,4 +15,7 @@ export { default as EmptyShoppingList } from "./ShoppingList/components/Shopping
 export { default as LabeledToggleSwitch } from "./Setting/components/LabeledToggleSwitch/LabeledToggleSwitch";
 export { default as SettingMenu } from "./Setting/components/SettingMenu/SettingMenu";
 export { default as ToggleSwitchArea } from "./Setting/components/ToggleSwitchArea/ToggleSwitchArea";
-
+export {
+  SettingToggleProvider,
+  useSettingToggle,
+} from "./Setting/contexts/SettingToggleContext";

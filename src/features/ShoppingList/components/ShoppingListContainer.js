@@ -3,8 +3,10 @@ import {
   StandardShoppingList,
   ClassifiedShoppingList,
   EmptyShoppingList,
+  useSettingToggle,
 } from "features";
-import { useCart, useSettingToggle } from "contexts";
+import { useCart } from "contexts";
+//import { useSettingToggle } from "features";
 import parseCartsToItems from "features/ShoppingList/utils/textProcessing/parseCartsToItems";
 import "./ShoppingList.scss";
 

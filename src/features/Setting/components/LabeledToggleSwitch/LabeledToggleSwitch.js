@@ -1,5 +1,6 @@
 import { ToggleSwitch, HelpButton } from "components";
-import { useModal, useSettingToggle } from "contexts";
+import { useModal } from "contexts";
+import { useSettingToggle } from "features";
 import "./LabeledToggleSwitch.scss";
 
 const LabeledToggleSwitch = ({ id, labelText }) => {

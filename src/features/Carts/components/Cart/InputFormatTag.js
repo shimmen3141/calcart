@@ -1,5 +1,6 @@
 import React from "react";
-import { useSettingToggle, useModal } from "contexts";
+import { useModal } from "contexts";
+import { useSettingToggle } from "features";
 import {
   classifyInputFormat,
   cleanLines,
