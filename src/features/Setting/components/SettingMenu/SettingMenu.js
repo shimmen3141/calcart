@@ -1,6 +1,7 @@
 import "./SettingMenu.scss";
 import { ToggleSwitchArea } from "features";
-import { DropdownMenu, useDropdownMenu, SettingButton } from "components";
+import { SettingButton } from "components";
+import { DropdownMenu, useDropdownMenu } from "modules/DropdownMenu";
 
 const SettingMenu = () => {
   const { isOpen, toggleDropdown } = useDropdownMenu();
