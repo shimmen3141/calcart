@@ -2,9 +2,9 @@ import "./CopyIcon.scss";
 
 const CopyIcon = () => {
   return (
-    <div className="copy-icon-wrapper">
-      <div className="copy-icon-background"></div>
-      <div className="dli-copy">
+    <div className="copyIconWrapper">
+      <div className="copyIconBack"></div>
+      <div className="copyIconFront">
         <div></div>
       </div>
     </div>

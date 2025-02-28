@@ -1,13 +1,13 @@
 $copy-icon-color: #333;
 $copy-icon-background: #fff;
 
-.copy-icon-wrapper {
+.copyIconWrapper {
   position: relative;
   display: inline-block;
   cursor: pointer;
 }
 
-.copy-icon-background {
+.copyIconBack {
   position: absolute;
   bottom: 0.2em;
   left: 0.2em;
@@ -20,7 +20,7 @@ $copy-icon-background: #fff;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0.63em 100%, 0.63em 0.5em, 0.315em 0.2em, 0 0.2em);
 }
 
-.dli-copy {
+.copyIconFront {
   position: relative;
   display: inline-block;
   vertical-align: middle;
@@ -34,7 +34,7 @@ $copy-icon-background: #fff;
   clip-path: polygon(0.515em 0%, 100% 0.315em, 100% 100%, 0 100%, 0 0);
 }
 
-.dli-copy > div {
+.copyIconFront > div {
   content: "";
   position: absolute;
   top: -0.1em;
@@ -49,7 +49,7 @@ $copy-icon-background: #fff;
   overflow: hidden;
 }
 
-.dli-copy > div::before {
+.copyIconFront > div::before {
   content: "";
   position: absolute;
   top: 0;
