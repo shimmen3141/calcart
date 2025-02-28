@@ -3,8 +3,8 @@ import useCopyButton from "./useCopyButton";
 import CopyIcon from "./CopyIcon";
 import "./CopyButton.scss";
 
-const CopyButton = ({ text }) => {
-  const { copyStatus, handleCopy } = useCopyButton({ text });
+const CopyButton = ({ copyText }) => {
+  const { copyStatus, handleCopy } = useCopyButton({ copyText });
 
   return (
     <div className="copyButton" onClick={handleCopy}>

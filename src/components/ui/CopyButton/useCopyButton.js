@@ -1,12 +1,12 @@
 import { useState } from "react";
 
-const useCopyButton = ({ text }) => {
+const useCopyButton = ({ copyText }) => {
   // ボタンの表示テキストを管理する変数
   const [copyStatus, setCopyStatus] = useState("コピー");
 
   const handleCopy = () => {
     navigator.clipboard
-      .writeText(text)
+      .writeText(copyText)
       .then(() => {
         // コピー成功時にボタンのテキストを変更
         setCopyStatus("コピー完了！");

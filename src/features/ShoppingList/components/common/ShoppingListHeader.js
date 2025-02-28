@@ -4,7 +4,7 @@ const ShoppingListHeader = ({ title, copyText }) => {
   return (
     <div className="title">
       {title}
-      {copyText && <CopyButton text={copyText} />}
+      {copyText && <CopyButton copyText={copyText} />}
     </div>
   );
 };
