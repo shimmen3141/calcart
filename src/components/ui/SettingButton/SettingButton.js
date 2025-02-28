@@ -1,11 +1,9 @@
-import "./SettingButton.scss";
+import GearIcon from "./GearIcon";
 
 const SettingButton = ({ onClick }) => {
   return (
-    <div className="outer" onClick={onClick}>
-      <div className="iconGear">
-        <div></div>
-      </div>
+    <div onClick={onClick}>
+      <GearIcon />
     </div>
   );
 };
