@@ -18,3 +18,66 @@
     transform: scale(1.05);
   }
 }
+
+$copy-icon-color: #333;
+$copy-icon-background: #fff;
+
+.copy-icon-wrapper {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.copy-icon-background {
+  position: absolute;
+  bottom: 0.2em;
+  left: 0.2em;
+  width: 0.63em;
+  height: 0.9em;
+  background: $copy-icon-background;
+  border: 0.1em solid $copy-icon-color;
+  border-radius: 0.1em;
+  box-sizing: content-box;
+}
+
+.dli-copy {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  color: $copy-icon-color;
+  width: 0.63em;
+  height: 0.9em;
+  background: $copy-icon-background;
+  border: 0.1em solid currentColor;
+  border-radius: 0.1em;
+  box-sizing: content-box;
+  clip-path: polygon(0.515em 0%, 100% 0.315em, 100% 100%, 0 100%, 0 0);
+}
+
+.dli-copy > div {
+  content: "";
+  position: absolute;
+  top: -0.1em;
+  left: 50%;
+  width: 0.315em;
+  height: 0.315em;
+  border: 0.1em solid currentColor;
+  border-top: 0;
+  border-right: 0;
+  border-radius: 0 0 0 0.1em;
+  box-sizing: content-box;
+  overflow: hidden;
+}
+
+.dli-copy > div::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 0.44548em;
+  height: 0.1em;
+  background: currentColor;
+  transform: rotate(45deg);
+  transform-origin: left top;
+}
