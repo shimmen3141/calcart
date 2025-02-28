@@ -17,7 +17,15 @@ $copy-icon-background: #fff;
   border: 0.1em solid $copy-icon-color;
   border-radius: 0.1em;
   box-sizing: content-box;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0.63em 100%, 0.63em 0.5em, 0.315em 0.2em, 0 0.2em);
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 100%,
+    0.63em 100%,
+    0.63em 0.5em,
+    0.315em 0.2em,
+    0 0.2em
+  );
 }
 
 .copyIconFront {
@@ -32,32 +40,32 @@ $copy-icon-background: #fff;
   border-radius: 0.1em;
   box-sizing: content-box;
   clip-path: polygon(0.515em 0%, 100% 0.315em, 100% 100%, 0 100%, 0 0);
-}
 
-.copyIconFront > div {
-  content: "";
-  position: absolute;
-  top: -0.1em;
-  left: 50%;
-  width: 0.315em;
-  height: 0.315em;
-  border: 0.1em solid currentColor;
-  border-top: 0;
-  border-right: 0;
-  border-radius: 0 0 0 0.1em;
-  box-sizing: content-box;
-  overflow: hidden;
-}
+  > div {
+    content: "";
+    position: absolute;
+    top: -0.1em;
+    left: 50%;
+    width: 0.315em;
+    height: 0.315em;
+    border: 0.1em solid currentColor;
+    border-top: 0;
+    border-right: 0;
+    border-radius: 0 0 0 0.1em;
+    box-sizing: content-box;
+    overflow: hidden;
 
-.copyIconFront > div::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: 0.44548em;
-  height: 0.1em;
-  background: currentColor;
-  transform: rotate(45deg);
-  transform-origin: left top;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 0.44548em;
+      height: 0.1em;
+      background: currentColor;
+      transform: rotate(45deg);
+      transform-origin: left top;
+    }
+  }
 }
