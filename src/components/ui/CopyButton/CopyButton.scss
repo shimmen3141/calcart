@@ -1,15 +1,18 @@
 @use "styles" as *;
 
 .copyButton {
-  font-size: 20px;
-  border-radius: 100vh;
+  width: 8.5rem;
   display: flex;
-  justify-content: center;
   align-items: center;
   position: relative;
-  background-color: white;
-  padding: 2rem;
+  margin: 2rem;
+  gap: 1rem;
   cursor: pointer;
+
+  .copyStatus {
+    font-size: 1rem;
+    color: black;
+  }
 
   @include hover {
     transition: 0.2s all;
