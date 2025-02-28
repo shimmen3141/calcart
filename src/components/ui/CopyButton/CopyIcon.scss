@@ -1,3 +1,5 @@
+/* 参考: https://design-library.jp/lab/icons-copy */
+
 $copy-icon-color: #333;
 $copy-icon-background: #fff;
 
@@ -8,6 +10,7 @@ $copy-icon-background: #fff;
   cursor: pointer;
 }
 
+// 後ろの紙
 .copyIconBack {
   position: absolute;
   bottom: 0.2em;
@@ -29,6 +32,7 @@ $copy-icon-background: #fff;
   );
 }
 
+// 手前の紙
 .copyIconFront {
   position: relative;
   display: inline-block;
@@ -42,6 +46,7 @@ $copy-icon-background: #fff;
   box-sizing: content-box;
   clip-path: polygon(0.515em 0%, 100% 0.315em, 100% 100%, 0 100%, 0 0);
 
+  // 紙の折れ曲がり
   > div {
     content: "";
     position: absolute;
