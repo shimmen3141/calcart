@@ -12,6 +12,8 @@
   }
 
   .actionButtons {
+    font-size: 0.9rem;
+
     .copyButton {
       @include hover {
         --copy-icon-color: gray;
