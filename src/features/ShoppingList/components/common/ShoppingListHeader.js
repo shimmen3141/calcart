@@ -4,7 +4,7 @@ import "./ShoppingListHeader.scss";
 const ShoppingListHeader = ({ title, copyText }) => {
   return (
     <div className="shoppingListHeader">
-      {title}
+      <div className="title">{title}</div>
       {copyText && <CopyButton copyText={copyText} />}
     </div>
   );

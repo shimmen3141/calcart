@@ -6,7 +6,7 @@ $copy-icon-background: #fff;
 .copyIconWrapper {
   position: relative;
   display: inline-block;
-  font-size: 1.25rem;
+  font-size: 1rem;
   cursor: pointer;
 }
 
@@ -18,7 +18,7 @@ $copy-icon-background: #fff;
   width: 0.63em;
   height: 0.9em;
   background: $copy-icon-background;
-  border: 0.1em solid $copy-icon-color;
+  border: 0.15em solid $copy-icon-color;
   border-radius: 0.1em;
   box-sizing: content-box;
   clip-path: polygon(
@@ -41,7 +41,7 @@ $copy-icon-background: #fff;
   width: 0.63em;
   height: 0.9em;
   background: $copy-icon-background;
-  border: 0.1em solid currentColor;
+  border: 0.15em solid currentColor;
   border-radius: 0.1em;
   box-sizing: content-box;
   clip-path: polygon(0.515em 0%, 100% 0.315em, 100% 100%, 0 100%, 0 0);
@@ -54,7 +54,7 @@ $copy-icon-background: #fff;
     left: 50%;
     width: 0.315em;
     height: 0.315em;
-    border: 0.1em solid currentColor;
+    border: 0.15em solid currentColor;
     border-top: 0;
     border-right: 0;
     border-radius: 0 0 0 0.1em;
