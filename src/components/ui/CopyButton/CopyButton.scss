@@ -2,14 +2,14 @@
 
 .copyButton {
   width: 8rem;
+  font-size: 1rem;
   display: flex;
   align-items: center;
   position: relative;
-  gap: 0.8rem;
+  gap: 0.5rem;
   cursor: pointer;
 
   .copyStatus {
-    font-size: 1rem;
     color: var(--copy-icon-color);
   }
 }
