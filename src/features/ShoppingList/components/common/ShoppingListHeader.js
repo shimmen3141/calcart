@@ -1,8 +1,9 @@
 import { CopyButton } from "components";
+import "./ShoppingListHeader.scss";
 
 const ShoppingListHeader = ({ title, copyText }) => {
   return (
-    <div className="title">
+    <div className="shoppingListHeader">
       {title}
       {copyText && <CopyButton copyText={copyText} />}
     </div>

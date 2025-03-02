@@ -6,14 +6,6 @@
   margin: 2rem auto;
   padding: 1rem;
 
-  .title {
-    height: 2rem;
-    font-size: 1.5rem;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-  }
-
   .standardList {
     @include listStyles(rgb(255, 255, 225), yellow, yellow, gray);
   }
