@@ -1,3 +1,5 @@
+@use "styles" as *;
+
 .shoppingListHeader {
   height: 2rem;
   display: flex;
@@ -6,5 +8,13 @@
   .title {
     font-size: 1.5rem;
     font-weight: bold;
+  }
+
+  .actionButtons {
+    .copyButton {
+      @include hover {
+        --copy-icon-color: gray;
+      }
+    }
   }
 }
