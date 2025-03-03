@@ -1,7 +1,6 @@
 import React from "react";
-import { Cart } from "features";
+import { Cart, CartsHeader, AddCartButton } from "features";
 import { useCart } from "contexts";
-import { AddCartButton } from "features";
 import { motion, AnimatePresence } from "framer-motion";
 import "./Carts.scss";
 
@@ -12,6 +11,7 @@ const Carts = () => {
 
   return (
     <div>
+      <CartsHeader title="カート" />
       <AddCartButton />
       <div className="carts">
         <AnimatePresence>

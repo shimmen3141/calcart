@@ -1,3 +1,5 @@
+import "./CartsHeader.scss";
+
 const CartsHeader = ({ title }) => {
   return (
     <div className="cartsHeader">
