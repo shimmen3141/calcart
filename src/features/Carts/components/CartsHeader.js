@@ -1,6 +1,6 @@
 const CartsHeader = ({ title }) => {
   return (
-    <div className="CartsHeader">
+    <div className="cartsHeader">
       <div className="title">{title}</div>
     </div>
   );

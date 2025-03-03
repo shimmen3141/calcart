@@ -1,0 +1,16 @@
+@use "styles" as *;
+
+.cartsHeader {
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  background-color: $green-600;
+
+  .title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: $white;
+    margin-left: 1rem;
+  }
+}
