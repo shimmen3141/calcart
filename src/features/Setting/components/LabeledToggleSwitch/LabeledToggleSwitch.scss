@@ -1,8 +1,10 @@
+@use "styles" as *;
+
 .labeledToggleSwitch {
-  background-color: white;
+  background-color: $white;
   width: fit-content;
   height: 3rem;
-  border: 3px solid #ddd;
+  border: 3px solid $gray-200;
   padding: 0.5rem 1rem;
   margin-bottom: -3px; /* borderを重ねるためborder幅の分ずらす */
 
