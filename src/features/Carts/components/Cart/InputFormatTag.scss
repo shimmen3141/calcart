@@ -1,3 +1,5 @@
+@use "styles" as *;
+
 .inputFormatTag {
   height: auto;
   width: 5rem;
@@ -10,25 +12,25 @@
 }
 
 .not-entered {
-  background-color: #ececec;
-  color: #666666;
-  border: 1px solid #666666;
+  background-color: $gray-100;
+  color: $gray-600;
+  border: 1px solid $gray-600;
 }
 
 .one-line {
-  background-color: #d5f2ff;
-  color: #0000ff;
-  border: 1px solid #0000ff;
+  background-color: $blue-100;
+  color: $blue-700;
+  border: 1px solid $blue-600;
 }
 
 .two-line {
-  background-color: #d5f2ff;
-  color: #0000ff;
-  border: 1px solid #0000ff;
+  background-color: $blue-100;
+  color: $blue-700;
+  border: 1px solid $blue-600;
 }
 
 .default {
-  background-color: #ffe4e4;
-  color: #ff0000;
-  border: 1px solid #ff0000;
+  background-color: $red-100;
+  color: $red-700;
+  border: 1px solid $red-600;
 }
