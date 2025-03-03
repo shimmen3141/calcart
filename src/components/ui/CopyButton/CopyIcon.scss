@@ -3,7 +3,7 @@
 /* 参考: https://design-library.jp/lab/icons-copy */
 
 :root {
-  --copy-icon-color: $gray-800;
+  --copy-icon-color: #{$gray-800};
   --copy-icon-background: rgba(0, 0, 0, 0);
 }
 
