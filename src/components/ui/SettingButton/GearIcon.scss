@@ -1,6 +1,8 @@
+@use "styles" as *;
+
 /* 参考: https://qiita.com/mimoe/items/0bcba94da365499e9c6b */
 
-$gear-icon-color: #ccc;
+$gear-icon-color: $gray-400;
 
 .gearIconWrapper {
   position: relative;
