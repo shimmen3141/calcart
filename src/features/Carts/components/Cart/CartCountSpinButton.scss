@@ -10,11 +10,11 @@
   & button {
     height: 2rem;
     width: 2rem;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: bold;
-    background-color: rgb(255, 129, 56);
-    color: white;
-    border: 1px solid #b84c00;
+    background-color: $orange-700;
+    color: $white;
+    border: 1px solid $orange-900;
     cursor: pointer;
 
     @include hover {
@@ -24,8 +24,8 @@
 
     &:disabled {
       pointer-events: none;
-      background-color: rgb(190, 190, 190);
-      border: 1px solid rgb(190, 190, 190);
+      background-color: $gray-200;
+      border: 1px solid $gray-200;
     }
   }
 
@@ -34,8 +34,8 @@
     white-space: nowrap;
     left: 50%;
     transform: translateX(-50%);
-    background-color: gray;
-    color: white;
+    background-color: $gray-500;
+    color: $white;
     font-size: 0.8rem;
     border-radius: 0.2rem;
     padding: 0.1rem 0.5rem 0.1rem 0.5rem;
