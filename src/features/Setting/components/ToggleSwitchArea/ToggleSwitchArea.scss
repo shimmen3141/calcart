@@ -1,9 +1,11 @@
+@use "styles" as *;
+
 .toggleSwitchArea {
   .triangle {
     position: absolute;
     top: calc(6px - 1rem);
     right: 36px;
-    background: white;
+    background: $white;
     height: calc(tan(60deg) * 20px / 2);
     width: 20px;
     clip-path: polygon(50% 0, 100% 100%, 0 100%);
@@ -13,7 +15,7 @@
     position: absolute;
     top: calc(6px - 1rem);
     right: 36px;
-    background: #ddd;
+    background: $gray-200;
     height: calc(tan(60deg) * 20px / 2);
     width: 20px;
     clip-path: polygon(50% 0, 100% 100%, 0 100%);
@@ -28,10 +30,10 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15);
 
     .labeledToggleSwitch {
-      background-color: white;
+      background-color: $white;
       width: fit-content;
       height: 3rem;
-      border: 3px solid #ddd;
+      border: 3px solid $gray-200;
       padding: 0.5rem 1rem;
       margin-bottom: -3px; /* borderを重ねるためborder幅の分ずらす */
 
