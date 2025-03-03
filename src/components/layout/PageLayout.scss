@@ -1,5 +1,7 @@
+@use "styles" as *;
+
 .pageLayout {
-  background-color: #d3d3d3;
+  background-color: $gray-100;
 
   .pageContent {
     position: relative;
@@ -8,6 +10,6 @@
     padding: 0.5rem;
     display: flex;
     flex-direction: column;
-    background-color: white;
+    background-color: $white;
   }
 }
