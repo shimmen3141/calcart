@@ -26,7 +26,7 @@
     left: 50%;
     width: 3px; /* 棒の幅（太さ） */
     height: 20px; /* 棒の高さ */
-    background: #333;
+    background: $gray-800;
   }
 
   &:before {
@@ -38,11 +38,11 @@
   }
 
   @include hover {
-    background-color: #ff2020;
+    background-color: $red-600;
 
     &:before,
     &:after {
-      background-color: #fff;
+      background-color: $white;
     }
   }
 
