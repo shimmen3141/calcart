@@ -7,15 +7,15 @@
   padding: 1rem;
 
   .standardList {
-    @include listStyles($yellow-100, $yellow-900, $yellow-900, $gray-500);
+    @include listStyles($yellow-100, $yellow-500, $yellow-500, $gray-500);
   }
 
   .vegetableList {
-    @include listStyles($green-100, $green-900, $green-900, $green-100);
+    @include listStyles($green-100, $green-600, $green-600, $green-100);
   }
 
   .meatList {
-    @include listStyles($red-100, $red-700, $red-700, $red-100);
+    @include listStyles($red-100, $red-500, $red-500, $red-100);
   }
 
   .empty {

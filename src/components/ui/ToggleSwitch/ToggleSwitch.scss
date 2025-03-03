@@ -1,3 +1,5 @@
+@use "styles" as *;
+
 .toggleSwitch {
   /* 標準の四角形のチェックボックスを消す。 */
   input {
@@ -20,7 +22,7 @@
     height: var(--switchHeight);
     border-radius: var(--switchHeight);
 
-    background: #ccc;
+    background: $gray-200;
     transition: 0.4s;
 
     &:after {
@@ -39,14 +41,14 @@
       /* 影は適当。丸がはみ出ない場合は影を消したほうが、よりマテリアルデザイン風でいいかもしれない */
       box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 
-      background: #fff;
+      background: $white;
       transition: 0.4s;
     }
   }
 
   input:checked {
     + label {
-      background-color: #4bd865;
+      background-color: $green-600;
 
       &:after {
         left: calc(

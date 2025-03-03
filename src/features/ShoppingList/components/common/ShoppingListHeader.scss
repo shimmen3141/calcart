@@ -5,13 +5,12 @@
   display: flex;
   align-items: center;
   gap: 2rem;
-  background-color: $orange-100;
-  border-left: $orange-500 5px solid;
+  background-color: $green-600;
 
   .title {
     font-size: 1.4rem;
     font-weight: bold;
-    color: $gray-800;
+    color: $white;
     margin-left: 1rem;
   }
 
@@ -19,8 +18,10 @@
     font-size: 0.9rem;
 
     .copyButton {
+      --copy-icon-color: #{$white};
+
       @include hover {
-        --copy-icon-color: #{$gray-300};
+        --copy-icon-color: #{$orange-300};
       }
     }
   }
