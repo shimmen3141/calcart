@@ -7,10 +7,10 @@
   align-items: center;
 
   border-radius: 100vh;
-  border: 2px solid #b84c00;
-  background-color: rgb(255, 129, 56);
-  color: white;
-  box-shadow: 2px 2px 4px gray;
+  border: 2px solid $orange-900;
+  background-color: $orange-700;
+  color: $white;
+  box-shadow: 2px 2px 4px $gray-500;
   font-size: 1.2rem;
   font-weight: bold;
   padding: 0.5rem 1rem 0.5rem 1rem;
@@ -24,7 +24,7 @@
 
   &:disabled {
     pointer-events: none;
-    background-color: rgb(190, 190, 190);
-    border: 2px solid rgb(190, 190, 190);
+    background-color: $gray-200;
+    border: 2px solid $gray-200;
   }
 }
