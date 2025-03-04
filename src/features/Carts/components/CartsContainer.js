@@ -1,10 +1,11 @@
 import { CartsHeader, AddCartButton, Carts } from "features";
+import "./CartsContainer.scss";
 
 const CartsContainer = () => {
   console.log("CartsContainer");
 
   return (
-    <div>
+    <div className="cartsContainer">
       <CartsHeader title="カート" />
       <AddCartButton />
       <Carts />
