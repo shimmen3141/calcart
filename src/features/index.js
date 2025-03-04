@@ -1,4 +1,5 @@
 // Carts
+export { default as CartsContainer } from "./Carts/components/CartsContainer";
 export { default as Carts } from "./Carts/components/Carts";
 export { default as CartsHeader } from "./Carts/components/CartsHeader";
 export { default as AddCartButton } from "./Carts/components/AddCartButton";
