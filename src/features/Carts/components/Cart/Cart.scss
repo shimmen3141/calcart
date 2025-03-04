@@ -44,10 +44,17 @@
       transform: scale(1.05);
     }
   }
-
-  .spinButtonArea {
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-  }
 }
+
+.spinButtonContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3rem;
+
+    .spinButtonArea {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }

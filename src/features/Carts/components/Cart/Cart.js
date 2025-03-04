@@ -2,14 +2,13 @@ import React from "react";
 import useCartInput from "features/Carts/hooks/useCartInput";
 import { InputFormatTag, CartIcon, CartCountSpinButton } from "features";
 import { CloseButton } from "components";
-import { useCart } from "contexts"
+import { useCart } from "contexts";
 import "./Cart.scss";
 
 const Cart = React.memo(({ cartId, cartNumber }) => {
-  const { inputText, handleInputChange, handleClear } =
-    useCartInput({
-      cartId,
-    });
+  const { inputText, handleInputChange, handleClear } = useCartInput({
+    cartId,
+  });
 
   const { handleRemoveCart, hasMinCarts } = useCart();
 
@@ -36,10 +35,12 @@ const Cart = React.memo(({ cartId, cartNumber }) => {
           </button>
         </div>
       </div>
+      <div className="spinButtonContainer">
         <CartIcon cartId={cartId} />
-      <div className="spinButtonArea">
-        <div>カート台数：</div>
-        <CartCountSpinButton cartId={cartId} />
+        <div className="spinButtonArea">
+          <div>カート台数：</div>
+          <CartCountSpinButton cartId={cartId} />
+        </div>
       </div>
     </div>
   );
