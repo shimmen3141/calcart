@@ -3,14 +3,18 @@
 .pageLayout {
   background-color: $gray-100;
 
-  .pageContent {
-    position: relative;
+  .pageContainer {
+    padding-bottom: 1rem;
+    background-color: $white;
     max-width: 800px;
     margin: 0 auto;
-    padding: 0.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-    background-color: $white;
+
+    .pageContent {
+      position: relative;
+      padding: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+    }
   }
 }

@@ -5,7 +5,9 @@ const PageLayout = ({ children }) => {
   return (
     <div className="pageLayout">
       <AppHeader />
-      <div className="pageContent">{children}</div>
+      <div className="pageContainer">
+        <div className="pageContent">{children}</div>
+      </div>
       <AppFooter />
     </div>
   );
