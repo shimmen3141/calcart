@@ -15,14 +15,20 @@ const useScrollLock = ({ isScrollLocked }) => {
   useEffect(() => {
     if (targetRef.current === null) return;
 
+    const scrollbarWidth =
+      window.innerWidth - document.documentElement.clientWidth;
+
     if (isScrollLocked) {
       disableBodyScroll(targetRef.current);
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
     } else {
       enableBodyScroll(targetRef.current);
+      document.body.style.paddingRight = "";
     }
 
     return () => {
       clearAllBodyScrollLocks();
+      document.body.style.paddingRight = "";
     };
   }, [isScrollLocked, targetRef]);
 
