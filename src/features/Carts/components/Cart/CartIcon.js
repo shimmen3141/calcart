@@ -1,4 +1,5 @@
 import { useCart } from "contexts";
+import "./CartIcon.scss";
 
 const CartIcon = ({ cartId }) => {
   const { getCartCount, getCartInputText } = useCart();
@@ -20,6 +21,7 @@ const CartIcon = ({ cartId }) => {
     <img
       src={`${process.env.PUBLIC_URL}/images/${imageName}`}
       alt="Cart Icon"
+      className="cartIcon"
     />
   );
 };
