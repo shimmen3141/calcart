@@ -7,7 +7,11 @@ import "./Modal.scss";
 
 const Modal = () => {
   const { openedModal, handleCloseModal } = useModal();
-  const { targetRef } = useScrollLock({ isScrollLocked: openedModal });
+  const animationDuration = 200;
+  const { targetRef } = useScrollLock({
+    isScrollLocked: openedModal,
+    animationDuration,
+  });
   const { title, content } = modalContents[openedModal] || modalContents.default;
 
   return (
@@ -25,7 +29,7 @@ const Modal = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
+            transition={{ duration: animationDuration / 1000 }}
           >
             <div className="header">
               <CloseButton onClick={() => handleCloseModal(openedModal)} />
