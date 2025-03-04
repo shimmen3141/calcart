@@ -16,23 +16,25 @@ const Cart = React.memo(({ cartId, cartNumber }) => {
   console.log(`Cart${cartNumber}`);
 
   return (
-    <div className="cart">
-      <h2>カート{cartNumber + 1} </h2>
-      <CloseButton
-        onClick={() => handleRemoveCart(cartId, cartNumber)}
-        disabled={hasMinCarts()}
-      />
-      <InputFormatTag inputText={inputText} />
-      <div>材料リストを入力：</div>
-      <textarea
-        value={inputText}
-        onChange={handleInputChange}
-        placeholder={`---例1 (1行1材料)---\nにんじん 2本\nタマネギ 3個\n醤油 50ml\n\n---例2 (2行1材料)---\nにんじん\n2本\nタマネギ\n3個\n醤油\n50ml`}
-      />
-      <div>
-        <button className="clearButton" onClick={handleClear}>
-          クリア
-        </button>
+    <div>
+      <div className="cart">
+        <h2>カート{cartNumber + 1} </h2>
+        <CloseButton
+          onClick={() => handleRemoveCart(cartId, cartNumber)}
+          disabled={hasMinCarts()}
+        />
+        <InputFormatTag inputText={inputText} />
+        <div>材料リストを入力：</div>
+        <textarea
+          value={inputText}
+          onChange={handleInputChange}
+          placeholder={`---例1 (1行1材料)---\nにんじん 2本\nタマネギ 3個\n醤油 50ml\n\n---例2 (2行1材料)---\nにんじん\n2本\nタマネギ\n3個\n醤油\n50ml`}
+        />
+        <div>
+          <button className="clearButton" onClick={handleClear}>
+            クリア
+          </button>
+        </div>
       </div>
       <div className="spinButtonArea">
         <div>カート台数：</div>
