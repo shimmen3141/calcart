@@ -20,6 +20,7 @@ const useScrollLock = ({ isScrollLocked, animationDuration = 0 }) => {
 
     if (isScrollLocked) {
       disableBodyScroll(targetRef.current);
+      // スクロールバーが消えた分だけ padding を追加
       document.body.style.paddingRight = `${scrollbarWidth}px`;
     } else {
       const timeoutId = setTimeout(() => {
@@ -32,6 +33,7 @@ const useScrollLock = ({ isScrollLocked, animationDuration = 0 }) => {
 
   }, [isScrollLocked, animationDuration]);
 
+  // コンポーネントがアンマウントされたときにスクロールを解除
   useEffect(() => {
     return () => {
       clearAllBodyScrollLocks();
