@@ -6,7 +6,7 @@ const CartsContainer = () => {
 
   return (
     <div className="cartsContainer">
-      <CartsHeader title="カート" />
+      <CartsHeader title="アイテム入力" />
       <AddCartButton />
       <Carts />
     </div>
