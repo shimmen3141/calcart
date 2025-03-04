@@ -1,6 +1,6 @@
 import React from "react";
 import useCartInput from "features/Carts/hooks/useCartInput";
-import { InputFormatTag, CartCountSpinButton } from "features";
+import { InputFormatTag, CartIcon, CartCountSpinButton } from "features";
 import { CloseButton } from "components";
 import { useCart } from "contexts"
 import "./Cart.scss";
@@ -36,6 +36,7 @@ const Cart = React.memo(({ cartId, cartNumber }) => {
           </button>
         </div>
       </div>
+        <CartIcon cartId={cartId} />
       <div className="spinButtonArea">
         <div>カート台数：</div>
         <CartCountSpinButton cartId={cartId} />

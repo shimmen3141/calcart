@@ -11,10 +11,17 @@ const CartIcon = ({ cartId }) => {
 
   // cartCount が3以上なら "3"、0～2なら cartCount の数字
   const displayCount = cartCount >= 3 ? 3 : cartCount;
-  
+
   const imageName = `${baseName}_${displayCount}.png`;
 
-  return <img src={${imageName}} alt="Cart Icon" />;
+  console.log(`imageName: ${imageName}`);
+
+  return (
+    <img
+      src={`${process.env.PUBLIC_URL}/images/${imageName}`}
+      alt="Cart Icon"
+    />
+  );
 };
 
 export default CartIcon;
