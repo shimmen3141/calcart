@@ -7,13 +7,21 @@ const CartIcon = ({ cartId }) => {
   const cartCount = getCartCount(cartId);
   const cartInputText = getCartInputText(cartId);
 
-  // cartInputText が空なら"cart_empty"、そうでなければ"cart_full"
   const baseName = cartInputText === "" ? "cart_empty" : "cart_full";
 
-  // cartCount が3以上なら "3"、0～2なら cartCount の数字
-  const displayCount = cartCount >= 3 ? 3 : cartCount;
+  let count = 0;
+  const parsedCount = Number(cartCount);
+  if (isNaN(parsedCount) || parsedCount <= 0) {
+    count = 0;
+  } else if (parsedCount <= 1) {
+    count = 1;
+  } else if (parsedCount <= 2) {
+    count = 2;
+  } else {
+    count = 3;
+  }
 
-  const imageName = `${baseName}_${displayCount}.png`;
+  const imageName = `${baseName}_${count}.png`;
 
   console.log(`imageName: ${imageName}`);
 
