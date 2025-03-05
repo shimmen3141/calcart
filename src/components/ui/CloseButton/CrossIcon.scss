@@ -2,7 +2,7 @@
 
 :root {
   --cross-icon-color: #{$gray-800};
-  --cross-icon-background: rgba(0, 0, 0, 0);
+  --cross-icon-background: transparent;
 }
 
 .crossIcon {
@@ -10,7 +10,7 @@
   display: inline-block;
   width: 1.4em;
   height: 1.4em;
-  color: var(--cross-icon-background);
+  color: trandparent;
 
   &::before,
   &::after {
@@ -20,7 +20,7 @@
     left: 50%;
     width: 0.1em;
     height: 1em;
-    background-color: var(--cross-icon-color);
+    background-color: currentColor;
     transform-origin: center;
   }
 

@@ -1,7 +1,6 @@
 @use "styles" as *;
 
 .closeButton {
-  /* border-radius: 50%; */
   position: absolute;
   display: flex;
   justify-content: center;
@@ -15,43 +14,26 @@
   border: none;
 
   cursor: pointer;
-  transition: 0.3s all;
+  transition: 0.2s all;
 
-  &:before,
-  &:after {
-    /* 共通設定 */
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 3px; /* 棒の幅（太さ） */
-    height: 20px; /* 棒の高さ */
-    background: $gray-800;
-  }
-
-  &:before {
-    transform: translate(-50%, -50%) rotate(45deg);
-  }
-
-  &:after {
-    transform: translate(-50%, -50%) rotate(-45deg);
+  .crossIcon {
+    font-size: 1.2rem;
+    color: $gray-800;
   }
 
   @include hover {
     background-color: $red-600;
 
-    &:before,
-    &:after {
-      background-color: $white;
+    .crossIcon {
+      color: $white;
     }
   }
 
   &:disabled {
     pointer-events: none;
-  }
 
-  &:disabled:before,
-  &:disabled:after {
-    background: transparent;
+    .crossIcon {
+      color: transparent;
+    }
   }
 }
