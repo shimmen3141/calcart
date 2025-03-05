@@ -22,13 +22,14 @@ const Cart = React.memo(({ cartId, cartNumber }) => {
           <CartCountSpinButton cartId={cartId} />
         </div>
         <CartIcon cartId={cartId} />
-      </div>
-      <div className="cart">
-        <h2>カート{cartNumber + 1} </h2>
         <CloseButton
           onClick={() => handleRemoveCart(cartId, cartNumber)}
           disabled={hasMinCarts()}
+          variant="circle"
         />
+      </div>
+      <div className="cart">
+        <h2>カート{cartNumber + 1} </h2>
         <InputFormatTag inputText={inputText} />
         <div>材料リストを入力：</div>
         <textarea

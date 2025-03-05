@@ -11,12 +11,6 @@
   box-sizing: border-box;
   overflow: hidden;
 
-  .closeButton {
-    position: absolute;
-    top: 0;
-    right: 0;
-  }
-
   & h2 {
     font-size: 24px;
     margin: 0 0 1.5rem 1rem;
@@ -53,14 +47,24 @@
 }
 
 .spinButtonContainer {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 3rem;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 8rem;
+  gap: 3rem;
 
-    .spinButtonArea {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+  .spinButtonArea {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
+
+  .closeButton {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+  }
+}
