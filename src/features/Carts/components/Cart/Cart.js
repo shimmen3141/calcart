@@ -16,6 +16,13 @@ const Cart = React.memo(({ cartId, cartNumber }) => {
 
   return (
     <div>
+      <div className="spinButtonContainer">
+        <div className="spinButtonArea">
+          <div>カート台数：</div>
+          <CartCountSpinButton cartId={cartId} />
+        </div>
+        <CartIcon cartId={cartId} />
+      </div>
       <div className="cart">
         <h2>カート{cartNumber + 1} </h2>
         <CloseButton
@@ -33,13 +40,6 @@ const Cart = React.memo(({ cartId, cartNumber }) => {
           <button className="clearButton" onClick={handleClear}>
             クリア
           </button>
-        </div>
-      </div>
-      <div className="spinButtonContainer">
-        <CartIcon cartId={cartId} />
-        <div className="spinButtonArea">
-          <div>カート台数：</div>
-          <CartCountSpinButton cartId={cartId} />
         </div>
       </div>
     </div>
