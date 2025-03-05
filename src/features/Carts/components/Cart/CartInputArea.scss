@@ -7,7 +7,7 @@
   padding: 1rem;
   background-color: $green-100;
   border: 3px solid $green-600;
-  border-radius: 10px;
+  border-radius: 1rem;
   box-sizing: border-box;
   z-index: 0;
 
@@ -32,13 +32,48 @@
     transform: scale(1.1);
   }
 
+  .text {
+    color: $gray-800;
+  }
+
+  .textareaWrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
   & textarea {
     display: flex;
-    width: 98%;
-    margin: 0 auto 5px auto;
+    width: 100%;
+    margin-bottom: 5px;
     height: calc(75vw * 1.2);
     max-height: 400px;
+    color: $gray-800;
+    border-color: $green-500;
+    border-radius: 0.5rem;
+    border-width: 2px;
+    padding: 0.5rem;
     resize: none;
+
+    &::-webkit-scrollbar {
+      width: 0.5rem;
+      background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: $gray-100;
+      border-radius: 0.25rem;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $green-400;
+      border-radius: 0.25rem;
+    }
+
+    &:focus {
+      border-color: $orange-400;
+      outline: none;
+    }
   }
 
   .clearButton {
