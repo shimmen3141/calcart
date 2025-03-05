@@ -9,7 +9,30 @@
   border: 3px solid $green-600;
   border-radius: 10px;
   box-sizing: border-box;
-  overflow: hidden;
+  z-index: 0;
+  //overflow: hidden;
+
+  .triangle {
+    position: absolute;
+    top: calc(-1 * tan(60deg) * 2rem / 2 + 1px);
+    right: 4.5rem;
+    background: $green-100;
+    height: calc(tan(60deg) * 2rem / 2);
+    width: 2rem;
+    clip-path: polygon(50% 0, 100% 100%, 0 100%);
+
+  }
+
+  .triangleBorder {
+    position: absolute;
+    top: calc(-1 * tan(60deg) * 2rem / 2 - 3px);
+    right: 4.5rem;
+    background: $green-600;
+    height: calc(tan(60deg) * 2rem / 2);
+    width: 2rem;
+    clip-path: polygon(50% 0, 100% 100%, 0 100%);
+    transform: scale(1.1);
+  }
 
   & textarea {
     display: flex;

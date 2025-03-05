@@ -32,6 +32,8 @@ const Cart = React.memo(({ cartId, cartNumber }) => {
         />
       </div>
       <div className="cart">
+        <div className="triangleBorder"></div>
+        <div className="triangle"></div>
         <InputFormatTag inputText={inputText} />
         <div>材料リストを入力：</div>
         <textarea
