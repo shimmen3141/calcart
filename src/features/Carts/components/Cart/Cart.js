@@ -18,7 +18,7 @@ const Cart = React.memo(({ cartId, cartNumber }) => {
     <div>
       <div className="spinButtonContainer">
         <div className="spinButtonArea">
-          <div>カート台数：</div>
+          <div className="text">カート台数：</div>
           <CartCountSpinButton cartId={cartId} />
         </div>
         <div className="cartIconArea">

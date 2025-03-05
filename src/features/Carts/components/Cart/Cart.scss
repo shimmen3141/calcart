@@ -10,6 +10,10 @@
   height: 9rem;
   gap: 3rem;
 
+  .text {
+    color: $gray-800;
+  }
+
   .spinButtonArea {
     display: flex;
     flex-direction: column;
