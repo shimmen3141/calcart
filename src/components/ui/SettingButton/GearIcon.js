@@ -2,8 +2,8 @@ import "./GearIcon.scss";
 
 const GearIcon = () => {
   return (
-    <div className="gearIconWrapper">
-      <div className="gearIcon">
+    <div className="gearIcon">
+      <div className="gearIconParts">
         <div></div>
       </div>
     </div>
