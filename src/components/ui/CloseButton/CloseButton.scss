@@ -5,14 +5,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 3rem;
-  height: 100%;
-  max-height: 3rem;
   top: 0;
   right: 0;
-  background-color: transparent;
-  border: none;
-
   cursor: pointer;
   transition: 0.2s all;
 
@@ -23,7 +17,6 @@
 
   @include hover {
     background-color: $red-600;
-
     .crossIcon {
       color: $white;
     }
@@ -31,9 +24,27 @@
 
   &:disabled {
     pointer-events: none;
-
+    background-color: transparent;
     .crossIcon {
       color: transparent;
     }
+  }
+
+  // 四角の閉じるボタン
+  &--square {
+    width: 3rem;
+    height: 100%;
+    max-height: 3rem;
+    background-color: transparent;
+    border: none;
+  }
+
+  // 丸の閉じるボタン
+  &--circle {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border-color: $gray-800;
+    background-color: $white;
   }
 }
