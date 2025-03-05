@@ -6,4 +6,20 @@
   gap: 0.8rem;
   overflow-x: auto;
   margin: 0 0.5rem 0 0.5rem;
+  padding-bottom:0.5rem;
+
+  &::-webkit-scrollbar {
+    height: 0.8rem;
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $gray-100;
+    border-radius: 0.4rem;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $orange-400;
+    border-radius: 0.4rem;
+  }
 }
