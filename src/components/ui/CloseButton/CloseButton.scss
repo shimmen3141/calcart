@@ -1,12 +1,9 @@
 @use "styles" as *;
 
 .closeButton {
-  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
-  top: 0;
-  right: 0;
   cursor: pointer;
   transition: 0.2s all;
 
@@ -30,7 +27,7 @@
     }
   }
 
-  // 四角の閉じるボタン
+  // 四角形の閉じるボタン
   &--square {
     width: 3rem;
     height: 100%;
@@ -39,7 +36,7 @@
     border: none;
   }
 
-  // 丸の閉じるボタン
+  // 円形の閉じるボタン
   &--circle {
     width: 2rem;
     height: 2rem;

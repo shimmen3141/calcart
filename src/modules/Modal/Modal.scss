@@ -40,8 +40,14 @@
     color: white;
     padding: 0rem 1rem;
     box-sizing: border-box;
-    
+
     overflow: auto;
+
+    .closeButton {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
   }
 
   .main {
