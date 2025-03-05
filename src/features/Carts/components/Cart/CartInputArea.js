@@ -1,5 +1,6 @@
 import useCartInput from "features/Carts/hooks/useCartInput";
 import { InputFormatTag } from "features";
+import "./CartInputArea.scss";
 
 const CartInputArea = ({ cartId }) => {
   const { inputText, handleInputChange, handleClear } = useCartInput({
@@ -7,7 +8,7 @@ const CartInputArea = ({ cartId }) => {
   });
 
   return (
-    <div className="cart">
+    <div className="cartInputArea">
       <div className="triangleBorder"></div>
       <div className="triangle"></div>
       <InputFormatTag inputText={inputText} />
