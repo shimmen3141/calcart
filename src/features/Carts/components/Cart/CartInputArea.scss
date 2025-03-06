@@ -14,7 +14,7 @@
   .triangle {
     position: absolute;
     top: calc(-1 * tan(60deg) * 2rem / 2 + 1px);
-    right: 4.5rem;
+    left: 4.5rem;
     background: $green-100;
     height: calc(tan(60deg) * 2rem / 2);
     width: 2rem;
@@ -24,7 +24,7 @@
   .triangleBorder {
     position: absolute;
     top: calc(-1 * tan(60deg) * 2rem / 2 - 3px);
-    right: 4.5rem;
+    left: 4.5rem;
     background: $green-600;
     height: calc(tan(60deg) * 2rem / 2);
     width: 2rem;
