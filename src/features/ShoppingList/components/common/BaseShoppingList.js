@@ -9,7 +9,9 @@ const BaseShoppingList = ({ items, className, labelName }) => {
         {labelName && <div className="listTypeTag">{labelName}</div>}
         {items.map((item, index) => (
           <div key={index}>
-            <input type="checkbox" /> {item.name} {item.info}
+            <label>
+              <input type="checkbox" /> {item.name} {item.info}
+            </label>
           </div>
         ))}
       </div>
