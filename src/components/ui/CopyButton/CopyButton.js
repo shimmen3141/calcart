@@ -1,4 +1,3 @@
-import React from "react";
 import useCopyButton from "./useCopyButton";
 import CopyIcon from "./CopyIcon";
 import "./CopyButton.scss";

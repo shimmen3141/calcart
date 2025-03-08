@@ -1,4 +1,3 @@
-import React from "react";
 import "./ToggleSwitch.scss";
 
 const ToggleSwitch = ({ id, isChecked, onChange }) => {
