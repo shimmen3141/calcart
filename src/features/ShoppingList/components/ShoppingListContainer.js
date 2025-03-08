@@ -1,10 +1,8 @@
 import React from "react";
-import {
-  StandardShoppingList,
-  ClassifiedShoppingList,
-  EmptyShoppingList,
-  useSettingToggle,
-} from "features";
+import StandardShoppingList from "./ShoppingLists/StandardShoppingList";
+import ClassifiedShoppingList from "./ShoppingLists/ClassifiedShoppingList";
+import EmptyShoppingList from "./ShoppingLists/EmptyShoppingList";
+import { useSettingToggle } from "features/Setting/contexts";
 import { useCart } from "contexts";
 import { parseCartsToItems } from "features/ShoppingList/utils";
 import "./ShoppingListContainer.scss";
