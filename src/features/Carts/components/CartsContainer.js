@@ -1,4 +1,6 @@
-import { CartsHeader, AddCartButton, Carts } from "features";
+import CartsHeader from "./CartsHeader";
+import AddCartButton from "./AddCartButton";
+import Carts from "./Carts";
 import "./CartsContainer.scss";
 
 const CartsContainer = () => {

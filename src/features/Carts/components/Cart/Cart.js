@@ -1,9 +1,7 @@
 import React from "react";
-import {
-  CartIcon,
-  CartCountSpinButton,
-  CartInputArea,
-} from "features";
+import CartIcon from "./CartIcon";
+import CartCountSpinButton from "./CartCountSpinButton";
+import CartInputArea from "./CartInputArea";
 import { CloseButton } from "components";
 import { useCart } from "contexts";
 import "./Cart.scss";

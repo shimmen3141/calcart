@@ -1,5 +1,4 @@
-import React from "react";
-import { Cart } from "features";
+import Cart from "./Cart/Cart";
 import { useCart } from "contexts";
 import { motion, AnimatePresence } from "framer-motion";
 import "./Carts.scss";

@@ -1,4 +1,4 @@
-import useCartInput from "features/Carts/hooks/useCartInput";
+import { useCartInput } from "features/Carts/hooks";
 import { InputFormatTag } from "features";
 import "./CartInputArea.scss";
 
