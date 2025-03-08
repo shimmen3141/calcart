@@ -1,5 +1,5 @@
 import { useCartInput } from "features/Carts/hooks";
-import { InputFormatTag } from "features";
+import InputFormatTag from "./InputFormatTag";
 import "./CartInputArea.scss";
 
 const CartInputArea = ({ cartId }) => {

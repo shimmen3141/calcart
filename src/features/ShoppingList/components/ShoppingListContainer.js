@@ -1,4 +1,3 @@
-import React from "react";
 import StandardShoppingList from "./ShoppingLists/StandardShoppingList";
 import ClassifiedShoppingList from "./ShoppingLists/ClassifiedShoppingList";
 import EmptyShoppingList from "./ShoppingLists/EmptyShoppingList";
