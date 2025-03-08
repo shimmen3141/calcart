@@ -1,4 +1,12 @@
 .baseShoppingList{
   padding-left: 0.5rem;
-  padding-right: 0.5rem; 
+  padding-right: 0.5rem;
+
+  & label {
+    cursor: pointer;
+  }
+
+  & input {
+    cursor: pointer;
+  }
 }
