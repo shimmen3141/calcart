@@ -1,4 +1,4 @@
-import { LabeledToggleSwitch } from "features";
+import LabeledToggleSwitch from "./LabeledToggleSwitch";
 import "./ToggleSwitchArea.scss";
 
 const ToggleSwitchArea = () => {
