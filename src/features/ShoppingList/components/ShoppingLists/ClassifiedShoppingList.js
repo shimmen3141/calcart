@@ -1,7 +1,7 @@
-import BaseShoppingList from "features/ShoppingList/components/common/BaseShoppingList";
-import ShoppingListHeader from "features/ShoppingList/components/common/ShoppingListHeader";
+import BaseShoppingList from "../common/BaseShoppingList";
+import ShoppingListHeader from "../common/ShoppingListHeader";
 import { CATEGORIES } from "features/ShoppingList/constants";
-import classifyItems from "features/ShoppingList/utils/textProcessing/classifyItems";
+import { classifyItems } from "features/ShoppingList/utils";
 
 const ClassifiedShoppingList = ({ items }) => {
   const classifiedItems = classifyItems(items);
@@ -16,10 +16,7 @@ const ClassifiedShoppingList = ({ items }) => {
 
   return (
     <div className="shoppingListContainer">
-      <ShoppingListHeader
-        title="買い物リスト"
-        copyText={classifiedItemsText}
-      />
+      <ShoppingListHeader title="買い物リスト" copyText={classifiedItemsText} />
       {Object.entries(CATEGORIES).map(([key, { label, listStyle }]) => (
         <BaseShoppingList
           key={key}

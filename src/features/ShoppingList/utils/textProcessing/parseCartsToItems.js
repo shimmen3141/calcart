@@ -6,7 +6,7 @@ import {
   convertSpoonToGram,
   multiplyQuantities,
 } from "functions";
-import mergeDuplicateItems from "features/ShoppingList/utils/textProcessing/mergeDuplicateItems";
+import mergeDuplicateItems from "./mergeDuplicateItems";
 
 const parseCartsToItems = (
   carts,

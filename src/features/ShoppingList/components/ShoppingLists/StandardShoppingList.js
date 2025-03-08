@@ -1,5 +1,5 @@
-import BaseShoppingList from "features/ShoppingList/components/common/BaseShoppingList";
-import ShoppingListHeader from "features/ShoppingList/components/common/ShoppingListHeader";
+import BaseShoppingList from "../common/BaseShoppingList";
+import ShoppingListHeader from "../common/ShoppingListHeader";
 
 const StandardShoppingList = ({ items }) => {
   const itemsText = items

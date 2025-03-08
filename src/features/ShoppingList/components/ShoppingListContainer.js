@@ -6,7 +6,7 @@ import {
   useSettingToggle,
 } from "features";
 import { useCart } from "contexts";
-import parseCartsToItems from "features/ShoppingList/utils/textProcessing/parseCartsToItems";
+import { parseCartsToItems } from "features/ShoppingList/utils";
 import "./ShoppingListContainer.scss";
 
 const ShoppingListContainer = () => {

@@ -1,4 +1,4 @@
-import ShoppingListHeader from "features/ShoppingList/components/common/ShoppingListHeader";
+import ShoppingListHeader from "../common/ShoppingListHeader";
 
 const EmptyShoppingList = () => {
   return (
