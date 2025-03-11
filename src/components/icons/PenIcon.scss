@@ -1,0 +1,43 @@
+@use "styles" as *;
+
+/* 参考: https://design-library.jp/lab/icons-create */
+
+.penIcon {
+  display: inline-block;
+  vertical-align: middle;
+  color: $white;
+  line-height: 1;
+  position: relative;
+  width: 1.05em;
+  height: 0.2em;
+  background: currentColor;
+  border-radius: 0 0.075em 0.075em 0;
+  transform: rotate(-45deg);
+
+  &::before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-color: transparent;
+    border-width: 0.1em 0.15em;
+    border-right-color: currentColor;
+    border-left: 0;
+    position: absolute;
+    top: 0;
+    right: 100%;
+    bottom: 0;
+    margin: auto;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 0.15em;
+    border-left: 0.05em solid #fff;
+    box-sizing: content-box;
+  }
+}
