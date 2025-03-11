@@ -1,3 +1,9 @@
+// icons
+export { default as CopyIcon } from "./icons/CopyIcon";
+export { default as CrossIcon } from "./icons/CrossIcon";
+export { default as GearIcon } from "./icons/GearIcon";
+export { default as ListIcon } from "./icons/ListIcon";
+
 // layout
 export { default as AppFooter } from "./layout/AppFooter/AppFooter";
 export { default as AppHeader } from "./layout/AppHeader/AppHeader";
