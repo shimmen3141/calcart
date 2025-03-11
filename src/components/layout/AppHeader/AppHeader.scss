@@ -26,8 +26,13 @@
   align-items: center;
   padding: 1rem;
 
+  .appHeaderIcon {
+    width: 3.2rem;
+    margin-right: 0.3rem;
+  }
+
   .title {
     color: $green-700;
-    font-size: 32px;
+    font-size: 2.2rem;
   }
 }
