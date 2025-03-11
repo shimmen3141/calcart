@@ -3,10 +3,7 @@
 /* 参考: https://design-library.jp/lab/icons-create */
 
 .penIcon {
-  display: inline-block;
-  vertical-align: middle;
   color: $white;
-  line-height: 1;
   position: relative;
   width: 1.05em;
   height: 0.2em;
@@ -27,7 +24,6 @@
     top: 0;
     right: 100%;
     bottom: 0;
-    margin: auto;
   }
 
   &::after {
@@ -37,7 +33,7 @@
     right: 0;
     bottom: 0;
     width: 0.15em;
-    border-left: 0.05em solid #fff;
+    border-left: 0.05em solid $black;
     box-sizing: content-box;
   }
 }
