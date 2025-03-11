@@ -1,4 +1,4 @@
-import GearIcon from "./GearIcon";
+import GearIcon from "components/icons/GearIcon";
 
 const SettingButton = ({ onClick }) => {
   return (

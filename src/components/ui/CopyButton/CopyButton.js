@@ -1,5 +1,5 @@
 import useCopyButton from "./useCopyButton";
-import CopyIcon from "./CopyIcon";
+import CopyIcon from "components/icons/CopyIcon";
 import "./CopyButton.scss";
 
 const CopyButton = ({ copyText }) => {

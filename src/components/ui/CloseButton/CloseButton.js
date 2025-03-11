@@ -1,4 +1,4 @@
-import CrossIcon from "./CrossIcon";
+import CrossIcon from "components/icons/CrossIcon";
 import "./CloseButton.scss";
 
 const CloseButton = ({ onClick, disabled, variant = "square" }) => {
