@@ -1,33 +1,43 @@
 @use "styles" as *;
 
 .listIcon {
-  width: 32px;
-  height: 30px;
-  margin: 13px auto;
-  border: 1px solid $white;
-  border-radius: 1px;
+  $icon-size: 1em;
+  width: $icon-size;
+  height: $icon-size;
+  border: 0.1em solid $white;
+  border-radius: 0.1em;
   position: relative;
   color: $white;
-}
 
-// 箇条書きのビュレット
-.listIcon:before {
-  position: absolute;
-  top: 12px;
-  left: 3px;
-  content: "";
-  width: 4px;
-  height: 4px;
-  box-shadow: inset 0 0 0 2px currentColor, 0 -7px 0 0 currentColor, 0 7px 0 0 currentColor;
-}
+  $interval-length: calc(#{$icon-size} / 4);
+  $negative-interval-length: calc(-1 * $interval-length);
 
-// ビュレットの右の直線
-.listIcon:after {
-  position: absolute;
-  top: 13px;
-  left: 9px;
-  content: "";
-  width: 18px;
-  height: 2px;
-  box-shadow: inset 0 0 0 2px currentColor, 0 -7px 0 0 currentColor, 0 7px 0 0 currentColor;
+  // 箇条書きのビュレット
+  $bullet-size: 0.12em;
+  &:before {
+    position: absolute;
+    top: calc((#{$icon-size} - #{$bullet-size}) / 2);
+    left: 0.1em;
+    content: "";
+    width: $bullet-size;
+    height: $bullet-size;
+    box-shadow: inset 0 0 0 0.1em currentColor,
+      0 #{$negative-interval-length} 0 0 currentColor,
+      0 #{$interval-length} 0 0 currentColor;
+  }
+
+  // ビュレットの右の直線
+  $line-height: 0.08em;
+  $line-width: calc(100% - #{$bullet-size} - 0.3em);
+  &:after {
+    position: absolute;
+    top: calc((#{$icon-size} - #{$line-height}) / 2);
+    left: calc(#{$bullet-size} + 0.2em);
+    content: "";
+    width: $line-width;
+    height: $line-height;
+    box-shadow: inset 0 0 0 0.1em currentColor,
+      0 #{$negative-interval-length} 0 0 currentColor,
+      0 #{$interval-length} 0 0 currentColor;
+  }
 }
