@@ -11,9 +11,8 @@
 }
 
 .settingButton {
-  position: absolute;
-  top: 13px;
-  right: 2rem;
+  position: relative;
+  font-size: 2.4rem;
 
   @include hover {
     transform: scale(1.1);

@@ -7,7 +7,7 @@ const SettingMenu = () => {
   const { isOpen, toggleDropdown } = useDropdownMenu();
 
   return (
-    <div>
+    <div className="settingMenu">
       <div className={`settingButton ${isOpen ? "open" : ""}`}>
         <SettingButton onClick={toggleDropdown} />
       </div>
