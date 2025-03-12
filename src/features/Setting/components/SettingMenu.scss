@@ -12,7 +12,9 @@
 
 .settingButton {
   position: relative;
+  color: $gray-400;
   font-size: 2.4rem;
+  cursor: pointer;
 
   @include hover {
     transform: scale(1.1);

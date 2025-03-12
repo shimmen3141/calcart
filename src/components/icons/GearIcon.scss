@@ -2,9 +2,8 @@
 
 /* 参考: https://qiita.com/mimoe/items/0bcba94da365499e9c6b */
 
-$gear-icon-color: $gray-400;
-
 .gearIcon {
+  $gear-icon-color: currentColor;
   position: relative;
   display: flex;
   justify-content: center;
@@ -13,10 +12,8 @@ $gear-icon-color: $gray-400;
   height: 1em;
   color: $gear-icon-color;
   background-color: transparent;
-  cursor: pointer;
 
   .gearBody {
-    color: transparent;
     width: 0.375em;
     height: 0.375em;
     border: 0.1875em solid $gear-icon-color;
