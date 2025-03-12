@@ -3,10 +3,9 @@ import "./GearIcon.scss";
 const GearIcon = () => {
   return (
     <div className="gearIcon">
-      <div className="gearTooth"></div>
-      <div className="gearTooth"></div>
-      <div className="gearTooth"></div>
-      <div className="gearTooth"></div>
+      {[...Array(4)].map((_, index) => (
+        <div className="gearTooth" key={index}></div>
+      ))}
       <div className="gearBody"></div>
     </div>
   );
