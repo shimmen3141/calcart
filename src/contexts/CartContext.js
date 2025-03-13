@@ -107,6 +107,11 @@ export const CartProvider = ({ children }) => {
     return cart ? Number(cart.count) : 1;
   };
 
+  const getCartInputMode = (cartId) => {
+    const cart = carts.find((cart) => cart.id === cartId);
+    return cart ? cart.inputMode : "one-line";
+  };
+
   const getCartInputText = (cartId) => {
     const cart = carts.find((cart) => cart.id === cartId);
     return cart ? cart.inputText : "";
@@ -125,6 +130,7 @@ export const CartProvider = ({ children }) => {
         hasMinCarts,
         updateCart,
         getCartCount,
+        getCartInputMode,
         getCartInputText,
       }}
     >
