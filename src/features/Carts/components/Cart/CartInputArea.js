@@ -1,9 +1,17 @@
 import { useCartInput } from "features/Carts/hooks";
 import InputFormatTag from "./InputFormatTag";
+import InputModeRadioButton from "./InputModeRadioButton";
 import "./CartInputArea.scss";
 
 const CartInputArea = ({ cartId }) => {
-  const { inputText, handleInputChange, handleClear } = useCartInput({
+  const {
+    inputText,
+    inputMode,
+    handleInputChange,
+    handleClear,
+    handleModeChange,
+    placeholder,
+  } = useCartInput({
     cartId,
   });
 
@@ -12,12 +20,18 @@ const CartInputArea = ({ cartId }) => {
       <div className="triangleBorder"></div>
       <div className="triangle"></div>
       <InputFormatTag inputText={inputText} />
+      <div className="text">入力モードを選択：</div>
+      <InputModeRadioButton
+        cartId={cartId}
+        inputMode={inputMode}
+        handleModeChange={handleModeChange}
+      />
       <div className="text">アイテムリストを入力：</div>
       <div className="textareaWrapper">
         <textarea
           value={inputText}
           onChange={handleInputChange}
-          placeholder={`---例1 (1行1材料)---\nにんじん 2本\nタマネギ 3個\n醤油 50ml\n\n---例2 (2行1材料)---\nにんじん\n2本\nタマネギ\n3個\n醤油\n50ml`}
+          placeholder={placeholder}
         />
       </div>
       <button className="clearButton" onClick={handleClear}>

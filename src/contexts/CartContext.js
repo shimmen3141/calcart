@@ -32,7 +32,10 @@ export const CartProvider = ({ children }) => {
   const handleAddCart = () => {
     if (carts.length < maxCarts) {
       // 新しいカートを追加
-      setCarts([...carts, { id: Date.now(), inputText: "", count: 1 }]);
+      setCarts([
+        ...carts,
+        { id: Date.now(), inputMode: "one-line", inputText: "", count: 1 },
+      ]);
 
       // 新しい入力欄にスクロール
       setTimeout(() => {

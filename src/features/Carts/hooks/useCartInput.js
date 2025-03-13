@@ -40,12 +40,18 @@ const useCartInput = ({ cartId }) => {
     setInputMode(mode);
   };
 
+  const placeholder =
+    inputMode === "one-line"
+      ? `---例1 (1行1材料)---\nにんじん 2本\nタマネギ 3個\n醤油 50ml`
+      : `---例2 (2行1材料)---\nにんじん\n2本\nタマネギ\n3個\n醤油\n50ml`;
+
   return {
     inputText,
     inputMode,
     handleInputChange,
     handleClear,
     handleModeChange,
+    placeholder,
   };
 };
 
