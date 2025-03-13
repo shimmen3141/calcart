@@ -23,8 +23,6 @@ const CartIcon = ({ cartId }) => {
 
   const imageName = `${baseName}_${count}.png`;
 
-  console.log(`imageName: ${imageName}`);
-
   return (
     <img
       src={`${process.env.PUBLIC_URL}/images/${imageName}`}
