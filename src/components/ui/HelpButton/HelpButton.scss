@@ -11,7 +11,7 @@
   background-color: $gray-800;
   font-size: 0.8rem;
   font-weight: bold;
-
+  user-select: none;
   cursor: pointer;
 
   @include hover {

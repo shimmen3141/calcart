@@ -4,6 +4,7 @@
   position: relative;
   width: 85vw;
   max-width: 360px;
+  min-width: 340px;
   padding: 1rem;
   background-color: $green-100;
   border: 3px solid $green-600;
@@ -39,12 +40,14 @@
   .radioButtonWrapper {
     display: flex;
     justify-content: center;
+    margin-top: 0.5rem;
     margin-bottom: 1rem;
   }
 
   .textareaWrapper {
     display: flex;
     justify-content: center;
+    margin-top: 0.3rem;
     width: 100%;
   }
 

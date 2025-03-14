@@ -1,6 +1,8 @@
 @use "styles" as *;
 
 .toggleSwitchArea {
+  user-select: none;
+
   .triangle {
     position: absolute;
     top: calc(6px - 1rem);
@@ -55,11 +57,11 @@
       }
 
       &:first-child {
-      border-radius: 20px 20px 0 0;
+        border-radius: 20px 20px 0 0;
       }
 
       &:last-child {
-      border-radius: 0 0 20px 20px;
+        border-radius: 0 0 20px 20px;
       }
     }
   }

@@ -19,7 +19,7 @@ const CartInputArea = ({ cartId }) => {
     <div className="cartInputArea">
       <div className="triangleBorder"></div>
       <div className="triangle"></div>
-      <InputFormatTag inputText={inputText} />
+      {/* <InputFormatTag inputText={inputText} /> */}
       <div className="text">入力モードを選択：</div>
       <div className="radioButtonWrapper">
         <InputModeRadioButton

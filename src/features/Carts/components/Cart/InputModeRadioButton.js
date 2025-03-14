@@ -15,7 +15,10 @@ const InputModeRadioButton = ({ cartId, inputMode, handleModeChange }) => {
           />
           1行ずつ入力
         </div>
-        <div className="desc">例：ニンジン 2本</div>
+        <div className="desc">
+          例：<div className="item">ニンジン</div>&nbsp;
+          <div className="info">2本</div>
+        </div>
       </label>
       <label className="radioButtonContainer">
         <div className="radioButton">
@@ -30,9 +33,11 @@ const InputModeRadioButton = ({ cartId, inputMode, handleModeChange }) => {
           2行ずつ入力
         </div>
         <div className="desc">
-          例：ニンジン
-          <br />
-          2本
+          例：
+          <div>
+            <div className="item">ニンジン</div>
+            <div className="info">2本</div>
+          </div>
         </div>
       </label>
     </div>
