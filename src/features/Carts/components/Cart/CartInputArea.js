@@ -1,5 +1,4 @@
 import { useCartInput } from "features/Carts/hooks";
-import InputFormatTag from "./InputFormatTag";
 import InputModeRadioButton from "./InputModeRadioButton";
 import "./CartInputArea.scss";
 
@@ -19,7 +18,6 @@ const CartInputArea = ({ cartId }) => {
     <div className="cartInputArea">
       <div className="triangleBorder"></div>
       <div className="triangle"></div>
-      {/* <InputFormatTag inputText={inputText} /> */}
       <div className="text">入力モードを選択：</div>
       <div className="radioButtonWrapper">
         <InputModeRadioButton

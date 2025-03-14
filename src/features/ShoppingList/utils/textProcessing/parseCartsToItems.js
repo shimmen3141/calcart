@@ -1,7 +1,6 @@
 import {
   splitTextByLinebreak,
   cleanLines,
-  //classifyInputFormat,
   parseLinesToItems,
   convertSpoonToGram,
   multiplyQuantities,
@@ -19,8 +18,6 @@ const parseCartsToItems = (
       const lines = splitTextByLinebreak(cart.inputText);
       // 各行をクリーニングする (オプションに応じて記号除去)
       const cleanedLines = cleanLines(lines, options.removeSymbols);
-      // 入力形式を分類する
-      //const inputFormat = classifyInputFormat(cleanedLines);
       // 行をオブジェクトに変換する
       let items = parseLinesToItems(cleanedLines, cart.inputMode);
 
