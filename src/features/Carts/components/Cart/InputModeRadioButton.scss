@@ -4,7 +4,6 @@
   position: relative;
   display: flex;
   flex-direction: row;
-  gap: 0.5rem;
 
   .radioButtonContainer {
     display: flex;
@@ -14,11 +13,20 @@
     padding-right: 0.8rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-    border: solid 3px $green-400;
-    border-radius: 1rem;
+    border: solid 2px $green-400;
     width: 100%;
     user-select: none;
     cursor: pointer;
+
+    &:first-child {
+      border-top-left-radius: 1rem;
+      border-bottom-left-radius: 1rem;
+    }
+
+    &:last-child {
+      border-top-right-radius: 1rem;
+      border-bottom-right-radius: 1rem;
+    }
 
     .radioButton {
       display: flex;
