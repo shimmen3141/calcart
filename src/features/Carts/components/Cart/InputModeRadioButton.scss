@@ -1,0 +1,79 @@
+@use "styles" as *;
+
+.inputModeRadioButton {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+
+  .radioButtonContainer {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+
+    .radioButton {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      gap: 0.5rem;
+
+      .radioMark {
+        position: relative;
+        height: 22px; /* 大きさ */
+        width: 22px; /* 大きさ */
+        border: solid 2px #d4dae2; /* 線 */
+        border-radius: 50%;
+        box-sizing: border-box;
+
+        /* 選択時に重ねる円 */
+        &:after {
+          content: "";
+          position: absolute;
+          background: #2e80ff; /* 色 */
+          border-radius: 50%;
+          top: 2px;
+          bottom: 2px;
+          left: 2px;
+          right: 2px;
+          opacity: 0; /* 透明にしておく */
+        }
+      }
+
+      input {
+        display: none;
+        cursor: pointer;
+      }
+    }
+
+    .desc {
+      font-size: 0.85rem;
+      color: #555;
+    }
+
+    // input:checked ~ .radioMark:after {
+    //   opacity: 1;
+    // }
+
+    // input:checked ~ .desc {
+    //   background-color: rgba(244, 67, 54, 0.1);
+    //   border-radius: 0.2rem;
+    //   padding: 0.1rem;
+    // }
+
+    // &:first-of-type {
+    //   left: 0.5rem;
+    // }
+
+    // &:nth-of-type(2) {
+    //   left: calc(50% + 0.5rem);
+    // }
+
+    &:has(:checked) {
+      background-color: orange;
+
+      .radioMark:after {
+        opacity: 1;
+      }
+    }
+  }
+}

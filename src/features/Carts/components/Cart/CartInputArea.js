@@ -21,11 +21,13 @@ const CartInputArea = ({ cartId }) => {
       <div className="triangle"></div>
       <InputFormatTag inputText={inputText} />
       <div className="text">入力モードを選択：</div>
-      <InputModeRadioButton
-        cartId={cartId}
-        inputMode={inputMode}
-        handleModeChange={handleModeChange}
-      />
+      <div className="radioButtonWrapper">
+        <InputModeRadioButton
+          cartId={cartId}
+          inputMode={inputMode}
+          handleModeChange={handleModeChange}
+        />
+      </div>
       <div className="text">アイテムリストを入力：</div>
       <div className="textareaWrapper">
         <textarea

@@ -36,6 +36,12 @@
     color: $green-900;
   }
 
+  .radioButtonWrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
   .textareaWrapper {
     display: flex;
     justify-content: center;
