@@ -55,6 +55,11 @@ const seasoningList = [
     grams: 3,
   },
   {
+    canonicalName: "パン粉",
+    identifiers: ["パン粉"],
+    grams: 1,
+  },
+  {
     canonicalName: "油類(サラダ油、ごま油、オリーブオイル、ラード)",
     identifiers: ["油", "オリーブオイル", "ラード"],
     grams: 4,
