@@ -1,4 +1,4 @@
-import { teaspoonGramsList } from "data";
+import { seasoningList } from "data";
 import "./TeaspoonGramsTable.scss";
 
 const TeaspoonGramsTable = () => {
@@ -11,8 +11,8 @@ const TeaspoonGramsTable = () => {
         </tr>
       </thead>
       <tbody>
-        {teaspoonGramsList.map((item) => (
-          <tr key={item.id}>
+        {seasoningList.map((item) => (
+          <tr key={item.name}>
             <td>{item.name}</td>
             <td>{item.grams} g</td>
           </tr>
