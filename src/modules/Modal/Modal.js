@@ -23,7 +23,7 @@ const Modal = () => {
             onClick={() => handleCloseModal(openedModal)}
           ></div>
           <motion.div
-            className="modal-window"
+            className="modalWindow"
             ref={targetRef}
             key="content"
             initial={{ opacity: 0 }}
