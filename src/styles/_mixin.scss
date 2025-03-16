@@ -1,3 +1,4 @@
+// ホバーの挙動をデバイスごとに定義
 @mixin hover {
   @media (hover: hover) and (pointer: fine) {
     &:hover {
@@ -11,6 +12,7 @@
   }
 }
 
+// ShoppingListのスタイルを定義
 @mixin listStyles($bg-color, $border-color, $label-bg-color, $label-text-color) {
   position: relative;
   width: auto;
@@ -32,5 +34,18 @@
     font-weight: bold;
     padding: 2px 4px;
     border-radius: 0 0 0 8px;
+  }
+}
+
+// デバイスを判定するブレイクポイント
+$breakpoints: (
+  'pc': 'screen and (min-width: 768px)',
+  'sp': 'screen and (max-width: 767px)',
+  );
+
+// メディアクエリのミックスイン
+@mixin mediaQuery($breakpoint) {
+  @media #{map.get($breakpoints, $breakpoint)} {
+    @content;
   }
 }
