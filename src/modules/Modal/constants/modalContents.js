@@ -1,8 +1,7 @@
-import "./modalContents.scss";
-import RemoveSymbolsModalContent from "./ModalContents/RemoveSymbolsModalContent";
-import SpoonToGramModalContent from "./ModalContents/SpoonToGramModalContent";
-import ClassifyItemsModalContent from "./ModalContents/ClassifyItemsModalContent";
-import DefaultModalContent from "./ModalContents/DefaultModalContent";
+import RemoveSymbolsModalContent from "../components/ModalContents/RemoveSymbolsModalContent";
+import SpoonToGramModalContent from "../components/ModalContents/SpoonToGramModalContent";
+import ClassifyItemsModalContent from "../components/ModalContents/ClassifyItemsModalContent";
+import DefaultModalContent from "../components/ModalContents/DefaultModalContent";
 
 export const modalContents = {
   removeSymbols: {

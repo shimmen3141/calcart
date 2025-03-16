@@ -1,6 +1,6 @@
 import { CloseButton } from "components";
-import { useModal } from "./ModalContext";
-import { modalContents } from "./modalContents";
+import { useModal } from "modules/Modal/contexts";
+import { modalContents } from "modules/Modal/constants";
 import { useScrollLock } from "hooks";
 import { motion, AnimatePresence } from "framer-motion";
 import "./Modal.scss";
