@@ -12,18 +12,16 @@
 }
 
 .modalWindow {
-  $hedear-height: 2.5rem;
   $border-radius: 1.5rem;
+  $hedear-height: 2.5rem;
+  $main-height: calc(100% - $hedear-height - $border-radius);
   
-
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  min-width: 500px;
   width: 75vw;
   max-width: 600px;
-  min-height: 500px;
   height: 90vh;
   max-height: 1000px;
   border-radius: $border-radius;
@@ -51,13 +49,16 @@
 
     .closeButton {
       position: absolute;
+      font-size: 1rem;
       top: 0;
       right: 0;
     }
   }
 
   .main {
-    height: calc(100% - $hedear-height - $border-radius);
+    height: $main-height;
+    padding-right: 2.5%;
+    padding-left: 2.5%;
     overflow: auto;
 
     &::-webkit-scrollbar {
