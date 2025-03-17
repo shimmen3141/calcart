@@ -2,10 +2,10 @@ import { ToggleSwitch, HelpButton } from "components";
 import { useModal } from "modules/Modal";
 import { useSettingToggle } from "../contexts";
 import { SETTINGS_CONFIG } from "../constants";
-import "./LabeledToggleSwitch.scss";
+import "./SettingToggleSwitch.scss";
 
-const LabeledToggleSwitch = ({ settingId }) => {
-  console.log("LabeledToggleSwitch");
+const SettingToggleSwitch = ({ settingId }) => {
+  console.log("SettingToggleSwitch");
 
   const { settingToggles, handleToggleChange } = useSettingToggle();
 
@@ -20,7 +20,7 @@ const LabeledToggleSwitch = ({ settingId }) => {
   const { labelText, relatedModalId, settingId: id } = setting;
 
   return (
-    <div className="labeledToggleSwitch">
+    <div className="settingToggleSwitch">
       <div className="labelText">{labelText}</div>
       <HelpButton onClick={() => handleOpenModal(relatedModalId)} />
       <ToggleSwitch
@@ -32,4 +32,4 @@ const LabeledToggleSwitch = ({ settingId }) => {
   );
 };
 
-export default LabeledToggleSwitch;
+export default SettingToggleSwitch;

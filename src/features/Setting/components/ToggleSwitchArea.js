@@ -1,4 +1,4 @@
-import LabeledToggleSwitch from "./LabeledToggleSwitch";
+import SettingToggleSwitch from "./SettingToggleSwitch";
 import { SETTINGS_CONFIG } from "../constants";
 import "./ToggleSwitchArea.scss";
 
@@ -11,9 +11,9 @@ const ToggleSwitchArea = () => {
     <div className="toggleSwitchArea">
       <div className="triangleBorder"></div>
       <div className="triangle"></div>
-      <div className="labeledToggleSwitches">
+      <div className="settingToggleSwitches">
         {settings.map((setting) => (
-          <LabeledToggleSwitch
+          <SettingToggleSwitch
             key={setting.settingId}
             settingId={setting.settingId}
           />
