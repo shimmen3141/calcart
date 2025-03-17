@@ -9,12 +9,9 @@ const ToggleSwitchArea = () => {
       <div className="triangleBorder"></div>
       <div className="triangle"></div>
       <div className="labeledToggleSwitches">
-        <LabeledToggleSwitch id="removeSymbols" labelText="記号を消去" />
-        <LabeledToggleSwitch
-          id="spoonToGram"
-          labelText="大さじ・小さじをグラムに変換"
-        />
-        <LabeledToggleSwitch id="classifyItems" labelText="リストを分割" />
+        <LabeledToggleSwitch settingId="removeSymbols" />
+        <LabeledToggleSwitch settingId="spoonToGram" />
+        <LabeledToggleSwitch settingId="classifyItems" />
       </div>
     </div>
   );
