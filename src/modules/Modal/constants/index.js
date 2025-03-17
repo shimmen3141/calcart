@@ -1,1 +1,1 @@
-export { modalContents } from "./modalContents";
+export { MODAL_CONFIG } from "./modalConfig";

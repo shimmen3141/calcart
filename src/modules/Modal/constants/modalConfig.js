@@ -3,7 +3,7 @@ import SpoonToGramModalContent from "../components/ModalContents/SpoonToGramModa
 import ClassifyItemsModalContent from "../components/ModalContents/ClassifyItemsModalContent";
 import DefaultModalContent from "../components/ModalContents/DefaultModalContent";
 
-export const modalContents = {
+export const MODAL_CONFIG = {
   removeSymbols: {
     modalId: "removeSymbols",
     title: "記号の消去",

@@ -1,6 +1,6 @@
 import { CloseButton } from "components";
 import { useModal } from "modules/Modal/contexts";
-import { modalContents } from "modules/Modal/constants";
+import { MODAL_CONFIG } from "modules/Modal/constants";
 import { useScrollLock } from "hooks";
 import { motion, AnimatePresence } from "framer-motion";
 import "./Modal.scss";
@@ -12,7 +12,7 @@ const Modal = () => {
     isScrollLocked: openedModal,
     animationDuration,
   });
-  const { title, content } = modalContents[openedModal] || modalContents.default;
+  const { title, content } = MODAL_CONFIG[openedModal] || MODAL_CONFIG.default;
 
   return (
     <AnimatePresence>
