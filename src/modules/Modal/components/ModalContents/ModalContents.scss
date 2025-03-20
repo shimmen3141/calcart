@@ -2,12 +2,40 @@
 
 .modal-content {
   display: flex;
-  flex-direction: column;
 
   .border {
     margin: 2.5%;
     border: 2px solid $gray-200;
     display: inline-block;
     padding: 2.5%;
+  }
+
+  .section {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@include mediaQuery('sp') {
+  .modal-content {
+    flex-direction: column;
+
+    .section {
+      padding: 3%;
+    }
+  }
+}
+
+@include mediaQuery('pc') {
+  .modal-content {
+    flex-direction: row;
+    
+    .section {
+      padding: 2%;
+
+      &:not(:last-child) {
+        border-right: 2px dashed $gray-200;
+      }
+    }
   }
 }

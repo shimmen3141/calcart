@@ -57,9 +57,8 @@
 
   .main {
     height: $main-height;
-    padding-right: 2.5%;
-    padding-left: 2.5%;
     overflow: auto;
+    padding-top: 1%;
 
     &::-webkit-scrollbar {
       width: 0.7rem;
@@ -75,5 +74,19 @@
       background-color: $orange-400;
       border-radius: 0.35rem;
     }
+  }
+}
+
+@include mediaQuery('sp') {
+  .modalWindow {
+    width: 90vw;
+    max-width: 400px;
+  }
+}
+
+@include mediaQuery('pc') {
+  .modalWindow {
+    width: 90vw;
+    max-width: 1600px;
   }
 }

@@ -1,3 +1,5 @@
+@use 'sass:map';
+
 // ホバーの挙動をデバイスごとに定義
 @mixin hover {
   @media (hover: hover) and (pointer: fine) {
