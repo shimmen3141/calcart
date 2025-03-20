@@ -12,9 +12,11 @@
 }
 
 .modalWindow {
-  $border-radius: 1.5rem;
-  $hedear-height: 2.5rem;
+  $font-size: clamp(0.3rem, 3vw, 1rem);
+  $border-radius: calc($font-size * 1.5);
+  $hedear-height: calc($font-size * 2.5);
   $main-height: calc(100% - $hedear-height - $border-radius);
+  $scrollbar-width: calc($font-size * 0.7);
   
   position: fixed;
   top: 50%;
@@ -24,7 +26,7 @@
   max-height: 1000px;
   border-radius: $border-radius;
   background: $white;
-  font-size: 1rem;
+  font-size: $font-size;
   z-index: 4;
 
   .header {
@@ -36,18 +38,19 @@
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
     width: 100%;
     height: $hedear-height;
+    font-size: $font-size;
 
     display: flex;
     align-items: center;
     color: $white;
-    padding: 0rem 1rem;
+    padding-left: $font-size;
     box-sizing: border-box;
 
     overflow: auto;
 
     .closeButton {
       position: absolute;
-      font-size: 1rem;
+      font-size: $font-size;
       top: 0;
       right: 0;
     }
@@ -59,18 +62,18 @@
     padding-top: 1%;
 
     &::-webkit-scrollbar {
-      width: 0.7rem;
+      width: $scrollbar-width;
       background-color: transparent;
     }
 
     &::-webkit-scrollbar-track {
       background: $gray-100;
-      border-radius: 0.35rem;
+      border-radius: calc($scrollbar-width / 2);
     }
 
     &::-webkit-scrollbar-thumb {
       background-color: $orange-400;
-      border-radius: 0.35rem;
+      border-radius: calc($scrollbar-width / 2);
     }
   }
 }
