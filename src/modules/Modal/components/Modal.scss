@@ -17,7 +17,7 @@
   $hedear-height: calc($font-size * 2.5);
   $main-height: calc(100% - $hedear-height - $border-radius);
   $scrollbar-width: calc($font-size * 0.7);
-  
+
   position: fixed;
   top: 50%;
   left: 50%;
@@ -78,16 +78,22 @@
   }
 }
 
-@include mediaQuery('sp') {
+@include mediaQuery("sp") {
   .modalWindow {
     width: 90vw;
     max-width: 400px;
   }
 }
 
-@include mediaQuery('pc') {
+@include mediaQuery("pc") {
   .modalWindow {
     width: 90vw;
     max-width: 1000px;
+
+    // sectionが1つの場合
+    &:not(:has(.section:nth-of-type(2))) {
+      width: 45vw;
+      max-width: 500px;
+    }
   }
 }
