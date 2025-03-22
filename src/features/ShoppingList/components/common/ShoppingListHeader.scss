@@ -25,10 +25,10 @@
     font-size: 0.9rem;
 
     .copyButton {
-      --copy-icon-color: #{$white};
+      color: #{$white};
 
       @include hover {
-        --copy-icon-color: #{$orange-300};
+        color: #{$orange-300};
       }
     }
   }

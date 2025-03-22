@@ -2,11 +2,6 @@
 
 /* 参考: https://design-library.jp/lab/icons-copy */
 
-:root {
-  --copy-icon-color: #{$gray-800};
-  --copy-icon-background: transparent;
-}
-
 .copyIcon {
   position: relative;
   display: inline-block;
@@ -22,8 +17,8 @@
   left: 0.2em;
   width: 0.63em;
   height: 0.9em;
-  color: var(--copy-icon-color);
-  background: var(--copy-icon-background);
+  color: currentColor;
+  background: transparent;
   border: 0.15em solid currentColor;
   border-radius: 0.1em;
   box-sizing: content-box;
@@ -45,10 +40,10 @@
   left: 0em;
   display: inline-block;
   vertical-align: middle;
-  color: var(--copy-icon-color);
+  color: currentColor;
   width: 0.63em;
   height: 0.9em;
-  background: var(--copy-icon-background);
+  background: transparent;
   border: 0.15em solid currentColor;
   border-radius: 0.1em;
   box-sizing: content-box;

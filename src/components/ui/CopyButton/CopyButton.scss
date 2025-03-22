@@ -4,19 +4,20 @@
   width: 7rem;
   display: flex;
   position: relative;
-  border-bottom-color: var(--copy-icon-color);
+  border-bottom-color: currentColor;
   border-bottom-width: 1px;
   border-bottom-style: solid;
   gap: 0.4rem;
   cursor: pointer;
 
   .copyIcon {
+    color: currentColor;
     margin-right: auto;
   }
 
   .copyStatus {
     flex-grow: 1;
     text-align: center;
-    color: var(--copy-icon-color);
+    color: currentColor;
   }
 }
