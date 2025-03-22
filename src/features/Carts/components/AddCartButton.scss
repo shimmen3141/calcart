@@ -5,6 +5,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 0.5rem;
 
   border-radius: 100vh;
   border: 2px solid $orange-700;
@@ -17,6 +18,10 @@
   margin-left: 1rem;
   width: 11rem;
   cursor: pointer;
+
+  .plusIcon {
+    font-size: 1rem;
+  }
 
   @include hover {
     transition: 0.2s all;

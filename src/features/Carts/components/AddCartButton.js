@@ -1,4 +1,5 @@
 import { useCart } from "contexts";
+import { PlusIcon } from "components";
 import "./AddCartButton.scss";
 
 const AddCartButton = () => {
@@ -10,7 +11,8 @@ const AddCartButton = () => {
       onClick={handleAddCart}
       disabled={hasMaxCarts()}
     >
-      + カートを追加
+      <PlusIcon />
+      カートを追加
     </button>
   );
 };
