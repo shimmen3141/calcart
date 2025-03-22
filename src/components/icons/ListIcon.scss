@@ -6,10 +6,9 @@
   $icon-size: 1em;
   width: $icon-size;
   height: $icon-size;
-  border: 0.1em solid $white;
+  border: 0.1em solid currentColor;
   border-radius: 0.1em;
   position: relative;
-  color: $white;
 
   $interval-length: calc(#{$icon-size} / 4);
   $negative-interval-length: calc(-1 * $interval-length);
