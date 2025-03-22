@@ -3,7 +3,9 @@ export { default as CopyIcon } from "./icons/CopyIcon";
 export { default as CrossIcon } from "./icons/CrossIcon";
 export { default as GearIcon } from "./icons/GearIcon";
 export { default as ListIcon } from "./icons/ListIcon";
+export { default as MinusIcon } from "./icons/MinusIcon";
 export { default as PenIcon } from "./icons/PenIcon";
+export { default as PlusIcon } from "./icons/PlusIcon";
 
 // layout
 export { default as AppFooter } from "./layout/AppFooter/AppFooter";
