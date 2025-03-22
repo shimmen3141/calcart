@@ -1,4 +1,5 @@
 import { useCartCountSpinButton } from "features/Carts/hooks";
+import { PlusIcon, MinusIcon } from "components";
 import { motion } from "framer-motion";
 import "./CartCountSpinButton.scss";
 
@@ -19,7 +20,7 @@ const CartCountSpinButton = ({ cartId }) => {
   return (
     <div className="spinButton">
       <button onClick={handleCountDown} disabled={isMinCount()}>
-        -
+        <MinusIcon />
       </button>
       <input
         type="text"
@@ -32,7 +33,7 @@ const CartCountSpinButton = ({ cartId }) => {
         onCompositionEnd={() => setIsComposing(false)}
       />
       <button onClick={handleCountUp} disabled={isMaxCount()}>
-        +
+        <PlusIcon />
       </button>
       {errorMessage && (
         <motion.div
