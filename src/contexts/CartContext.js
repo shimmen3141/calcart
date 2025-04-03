@@ -5,15 +5,21 @@ import { useLocalStorage } from "hooks";
 const MAX_CARTS = 5;
 // カートの下限数
 const MIN_CARTS = 1;
+// カートのデフォルト値
+const createDefaultCart = () => ({
+  id: Date.now(),
+  inputMode: "one-line",
+  inputText: "",
+  count: 1,
+});
+
 // Context の作成
 const CartContext = createContext();
 
 // Context プロバイダの作成
 export const CartProvider = ({ children }) => {
   // carts の初期状態
-  const [carts, setCarts] = useLocalStorage("carts", [
-    { id: Date.now(), inputMode: "one-line", inputText: "", count: 1 },
-  ]);
+  const [carts, setCarts] = useLocalStorage("carts", [createDefaultCart()]);
 
   // 全てのカートに対応する ref を格納するための配列
   const cartRefs = useRef([]);
@@ -30,10 +36,7 @@ export const CartProvider = ({ children }) => {
   const handleAddCart = () => {
     if (carts.length < MAX_CARTS) {
       // 新しいカートを追加
-      setCarts([
-        ...carts,
-        { id: Date.now(), inputMode: "one-line", inputText: "", count: 1 },
-      ]);
+      setCarts([...carts, createDefaultCart()]);
 
       // 新しい入力欄にスクロール
       setTimeout(() => {
