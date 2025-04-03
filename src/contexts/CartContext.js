@@ -1,6 +1,10 @@
 import React, { createContext, useContext, useRef } from "react";
 import { useLocalStorage } from "hooks";
 
+// カートの上限数
+const MAX_CARTS = 5;
+// カートの下限数
+const MIN_CARTS = 1;
 // Context の作成
 const CartContext = createContext();
 
@@ -22,15 +26,9 @@ export const CartProvider = ({ children }) => {
     }
   };
 
-  // カートの上限数
-  const maxCarts = 5;
-
-  // カートの下限数
-  const minCarts = 1;
-
   // カート追加ボタンの押下により発火する関数
   const handleAddCart = () => {
-    if (carts.length < maxCarts) {
+    if (carts.length < MAX_CARTS) {
       // 新しいカートを追加
       setCarts([
         ...carts,
@@ -88,12 +86,12 @@ export const CartProvider = ({ children }) => {
 
   // カート数が下限に達したか判定する関数
   const hasMinCarts = () => {
-    return carts.length <= minCarts;
+    return carts.length <= MIN_CARTS;
   };
 
   // カート数が上限に達したか判定する関数
   const hasMaxCarts = () => {
-    return carts.length >= maxCarts;
+    return carts.length >= MAX_CARTS;
   };
 
   // カートを更新する関数
